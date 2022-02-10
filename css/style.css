@@ -1,22 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
 
-:root{
-  --blue:#2980b9;
-  --black:#333;
-  --white:#fff;
-  --light-color:#777;
-  --light-bg:#eee;
-  --box-shadow:0 5px 10px rgba(0,0,0,.1);
-}
 
 *{
   font-family: 'Poppins', sans-serif;
-  margin:0; padding:0;
+  margin:0;
+  padding:0;
   box-sizing: border-box;
-  outline: none; border:none;
+  outline: none;
+  border:none;
   text-decoration: none;
   text-transform: capitalize;
-  transition: all .2s linear;
+  transition: all .4s linear;
 }
 
 html::-webkit-scrollbar{
@@ -24,7 +18,7 @@ html::-webkit-scrollbar{
 }
 
 html::-webkit-scrollbar-track{
-  background: var(--blue);
+  background: #2980b9;
 }
 
 html::-webkit-scrollbar-thumb{
@@ -34,7 +28,7 @@ html::-webkit-scrollbar-thumb{
 
 .title{
   font-size: 25px;
-  color:var(--blue);
+  color:#2980b9;
   margin-bottom: 15px;
 }
 
@@ -43,30 +37,33 @@ html::-webkit-scrollbar-thumb{
   display: inline-block;
   padding:7px 20px;
   border-radius: 5px;
-  background: var(--blue);
-  color:var(--white);
+  background:#2980b9;
+  color:#fff;
   font-size: 17px;
-  box-shadow: var(--box-shadow);
+  box-shadow: 0 5px 10px rgba(0,0,0,.1);
 }
 
 .btn:hover{
-  background: var(--black);
+  background: #333;
 }
 
 .container{
-  padding:100px 9%;
-  background: linear-gradient(45deg, deeppink, var(--blue));
+  padding: 100px 7%;
+  background: linear-gradient(45deg, deeppink,#a3666c,#2980b9), url(images/back.png);
+  /* background-image: url(images/back.png); */
+  /* background-attachment: fixed; */
+  background-size: cover;
   display: flex;
 }
 
 .container .profile{
   flex:1 1 400px;
-  background: var(--white);
+  background: #fff;
   padding:20px 30px;
   text-align: center;
   position: sticky;
   top:20px; left:0;
-  border-right:2px solid var(--black);
+  border-right:2px solid #333;
   align-self: flex-start;
 }
 
@@ -74,18 +71,18 @@ html::-webkit-scrollbar-thumb{
   height: 150px;
   width: 150px;
   border-radius: 50%;
-  border:2px solid var(--black);
+  border:2px solid #333;
   object-fit: cover;
   margin-bottom: 10px;
 }
 
 .container .profile h3{
-  color:var(--black);
+  color:#333;
   font-size: 20px;
 }
 
 .container .profile p{
-  color:var(--blue);
+  color:#2980b9;
   padding:5px 0;
   margin-bottom: 10px;
   font-size: 15px;
@@ -101,19 +98,19 @@ html::-webkit-scrollbar-thumb{
   line-height: 50px;
   font-size: 20px;
   border-radius: 50%;
-  color:var(--black);
-  background: var(--light-bg);
+  color:#333;
+  background:#eee;
 }
 
 .container .profile .share a:hover{
-  background: var(--blue);
-  color:var(--white);
-  box-shadow: var(--box-shadow);
+  background: #2980b9;
+  color:#fff;
+  box-shadow: 0 5px 10px rgba(0,0,0,.1);
 }
 
 .container .information{
   flex:1 1 1000px;
-  background: var(--white);
+  background: #fff;
   padding:20px 30px;
 }
 
@@ -121,7 +118,7 @@ html::-webkit-scrollbar-thumb{
   font-size: 17px;
   line-height: 2;
   padding-bottom: 10px;
-  color:var(--light-color);
+  color:#777;
 }
 
 .container .information .about .box-container{
@@ -137,11 +134,11 @@ html::-webkit-scrollbar-thumb{
 .container .information .about .box-container .box h3{
   font-size: 15px;
   padding:10px 0;
-  color:var(--black);
+  color:#333;
 }
 
 .container .information .about .box-container .box h3 span{
-  color:var(--light-color);
+  color:#777;
 }
 
 .container .information .services{
@@ -159,7 +156,7 @@ html::-webkit-scrollbar-thumb{
   text-align: center;
   border-radius: 5px;
   padding:20px;
-  background: var(--light-bg);
+  background: #eee;
 }
 
 .container .information .services .box-container .box img{
@@ -169,7 +166,12 @@ html::-webkit-scrollbar-thumb{
 
 .container .information .services .box-container .box h3{
   font-size: 15px;
-  color:var(--light-color);
+  color:#777;
+}
+.container .information .about .box-container .box h3 a{
+  text-decoration: none;
+  color:#333;
+  text-transform: none;
 }
 
 .container .information .skills .box-container{
@@ -186,23 +188,23 @@ html::-webkit-scrollbar-thumb{
   padding: 10px 0;
   display: flex;
   justify-content: space-between;
-  color:var(--black);
+  color:#333;
   font-size: 15px;
 }
 
 .container .information .skills .box-container .box .progress h3 span{
-  color:var(--light-color);
+  color:#777;
 }
 
 .container .information .skills .box-container .box .progress .bar{
   overflow: hidden;
   border-radius: 50px;
   height: 10px;
-  background: var(--light-bg);
+  background:#eee;
 }
 
 .container .information .skills .box-container .box .progress .bar span{
-  background: var(--blue);
+  background: #2980b9;
   height: 100%;
   display: block;
   border-radius: 50px;
@@ -254,22 +256,22 @@ html::-webkit-scrollbar-thumb{
   padding:20px;
   border-radius: 5px;
   flex:1 1 350px;
-  background: var(--light-bg);
+  background: #eee;
 }
 
 .container .information .experience .box-container .box span{
-  color:var(--blue);
+  color:#2980b9;
   font-size: 15px;
 }
 
 .container .information .experience .box-container .box h3{
-  color:var(--black);
+  color:#333;
   font-size: 17px;
   padding:5px 0;
 }
 
 .container .information .experience .box-container .box p{
-  color:var(--light-color);
+  color:#777;
   line-height: 2;
   font-size: 13px;
 }
@@ -293,23 +295,30 @@ html::-webkit-scrollbar-thumb{
   line-height: 40px;
   font-size: 15px;
   border-radius: 50%;
-  background: var(--blue);
-  color:var(--white);
+  background: #2980b9;
+  color:#fff;
   text-align: center;
 }
 
 .container .information .contact .box-container .box h3{
   font-size: 17px;
-  color:var(--black);
+  color:#333;
   padding-bottom: 5px;
 }
 
 .container .information .contact .box-container .box p{
   font-size: 14px;
-  color:var(--light-color);
+  color:#777;
   line-height: 2;
 }
-
+.container .information .contact .box-container .box p a{
+  color:#333 ;
+  text-decoration: none;
+  text-transform: none;
+}
+.container .information .box-container .box p a:hover{
+color:#2980B9;
+}
 @media (max-width:1200px) {
   
   .container{
@@ -321,7 +330,7 @@ html::-webkit-scrollbar-thumb{
   .container .profile{
     position: static;
     border-radius: 5px;
-    box-shadow: var(--box-shadow);
+    box-shadow: 0 5px 10px rgba(0,0,0,.1);
     padding:20px;
     border-right: none;
     margin:0 auto;
@@ -330,7 +339,7 @@ html::-webkit-scrollbar-thumb{
 
   .container .information{
     border-radius: 5px;
-    box-shadow: var(--box-shadow);
+    box-shadow: 0 5px 10px rgba(0,0,0,.1);
     padding:20px;
   }
 
