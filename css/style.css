@@ -10,11 +10,11 @@
   border:none;
   text-decoration: none;
   text-transform: capitalize;
-  transition: all .4s linear;
+  transition: all .3s linear;
 }
 
 html::-webkit-scrollbar{
-  width:10px;
+  width:5px;
 }
 
 html::-webkit-scrollbar-track{
@@ -22,7 +22,7 @@ html::-webkit-scrollbar-track{
 }
 
 html::-webkit-scrollbar-thumb{
-  background: var(--white);
+  background: #fff;
   border-radius: 50px;
 }
 
@@ -139,6 +139,7 @@ html::-webkit-scrollbar-thumb{
 
 .container .information .about .box-container .box h3 span{
   color:#777;
+  margin-right: 2px;
 }
 
 .container .information .services{
