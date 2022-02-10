@@ -49,9 +49,7 @@ html::-webkit-scrollbar-thumb{
 
 .container{
   padding: 100px 7%;
-/*   background: linear-gradient(45deg, deeppink,#a3666c,#2980b9), url(images/back.png); */
-    background: linear-gradient(45deg, deeppink,transparent,#2980b9), url(images/back.png);
-
+  background: linear-gradient(45deg, deeppink,transparent,#2980b9), url(images/back.png);
   /* background-image: url(images/back.png); */
   /* background-attachment: fixed; */
   background-size: cover;
@@ -64,7 +62,8 @@ html::-webkit-scrollbar-thumb{
   padding:20px 30px;
   text-align: center;
   position: sticky;
-  top:100px; left:0;
+  top:100px; 
+  left:0;
   border-right:2px solid #333;
   align-self: flex-start;
 }
