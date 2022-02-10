@@ -49,7 +49,9 @@ html::-webkit-scrollbar-thumb{
 
 .container{
   padding: 100px 7%;
-  background: linear-gradient(45deg, deeppink,#a3666c,#2980b9), url(images/back.png);
+/*   background: linear-gradient(45deg, deeppink,#a3666c,#2980b9), url(images/back.png); */
+    background: linear-gradient(45deg, deeppink,transparent,#2980b9), url(images/back.png);
+
   /* background-image: url(images/back.png); */
   /* background-attachment: fixed; */
   background-size: cover;
