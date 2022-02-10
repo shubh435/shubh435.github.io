@@ -34,7 +34,7 @@ html::-webkit-scrollbar{
     display: flex;
     justify-content: space-between;
     margin: 0 auto;
-    padding: 26px;
+    padding: 20px;
     align-content: space-around;
     flex-wrap: nowrap;
     flex-direction: row;
