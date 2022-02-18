@@ -1,12 +1,24 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,400;0,800;1,600&display=swap');
+
 *{
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
+    transition: 0.3s linear ;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
 }
+html::-webkit-scrollbar {
+    width: 5px;
+}
+
 .header{
     min-height: 100vh;
     width: 100%;
-    background-image:linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(image/banner.png);
+    background-image:linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 10, 0.7)),url(image/banner.png);
     background-position: center;
     background-size: cover;
     position: relative;
@@ -35,7 +47,7 @@ nav img{
 .nav-links ul li a{
     color: #fff;
     text-decoration: none;
-    font-size: 13px;
+    font-size: 18px;
    
 }
 
@@ -44,17 +56,19 @@ nav img{
     content: '';
     width: 100%;
     height: 2px;
-    background: #f44336;
+    background: transparent;
     display: block;
     margin: 2px;
     transition: 0.5s;
 }
 
-.nav-links ul li a:hover::after
+.nav-links ul li:hover::after
 {
-    width: 100%;
+   
+    background: #f44336;
     
 }
+
 .text-box
 {
     width: 90%;
@@ -80,17 +94,18 @@ nav img{
     display: inline-block;
     text-decoration: none;
     color: #fff;
-    border: 1px solid #fff;
+    border: 1px solid #f44336;
     padding: 12px 34px;
     font-size: 13px;
     background: transparent;
     position: relative;
     cursor: pointer;
+    transition: 0.8s;
 }
 .btn:hover{
-    border: 1px solid #f44336;
+    border: 1px solid #fff ;
     background: #f44336;
-    transition: 0.9s;
+    
 }
 nav .fa{
     display: none;
@@ -114,6 +129,7 @@ nav .fa{
     text-align: left;
     z-index: 2;
     transition: 1s;
+    display: none;
 }
 nav .fa{
     display: block;
@@ -125,6 +141,7 @@ nav .fa{
 }
 .nav-links ul{
     padding: 13px;
+    list-style-type: none;
 }
 
     }
@@ -141,33 +158,36 @@ nav .fa{
         padding-top:100px ;
 
     }
-    h1{
+    .course  h1{
         font-size: 36px;
         font-weight: 600;
 
     }
-p{
+    .course p{
     color: #f44336;
     font-size: 13px;
     font-weight: 300;
     line-height: 22px;
     padding: 10px;
 }
-.row
+  .row
 {
-    margin-top: 5%;
+    margin-top: 2%;
     display: flex;
     justify-content: space-between;
 
+
 }
-.course-col
+ .row .course-col
 {
-    flex-basis: 31%;
+    flex-basis: 32%;
+    min-height: 250px;
     background: #fff3f3;
-    border-radius: 10px;
+    border-radius: 15px;
     margin-bottom: 5%;
-    padding: 20px 12px;
-    box-sizing: border-box;   
+    padding: 20px 15px;
+    box-sizing: border-box;  
+    transition: ease-in-out 0.5s; 
 }
 .course-col p{
     color: gray;
@@ -193,11 +213,12 @@ p{
 .campus
 {
     width:80%;
-    margin:auto ;
-    padding-top:50px ;
+    margin:0  auto ;
+    padding-top:30px ;
     text-align: center;
 }
 .campus p{
+    margin: 10px 0;
 color: gray;
 }
 .campus-col
@@ -252,8 +273,9 @@ color: gray;
     padding-top: 100px;
 
 }
-p{
+.facilities p{
     color: gray;
+    margin-top: 10px;
 }
 .facilities-col
 {
@@ -269,12 +291,13 @@ p{
 }
 .facilities-col p{
     padding:0;
+    text-align: justify;
 
 }
 .facilities-col h3{
     margin-bottom: 15px;
     margin-top: 16px;
-    text-align: left;
+    text-align: center;
 
 }
 
