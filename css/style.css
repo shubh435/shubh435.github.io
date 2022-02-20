@@ -159,8 +159,11 @@ html::-webkit-scrollbar-thumb{
   border-radius: 5px;
   padding:20px;
   background: #eee;
+ 
 }
-
+.container .information .services .box-container .box:hover{
+ box-shadow: 0.2em 0.1em 0.8rem #ccc; 
+}
 .container .information .services .box-container .box img{
   height: 50px;
   margin-bottom: 10px;
