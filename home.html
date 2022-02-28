@@ -7,9 +7,12 @@
     <title>Home</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/project.css">
+    
+
 </head>
 <body>
-    <header class="header" id="header">
+    <header class="header fixed" id="header">
         <nav class="navabar" id="masthead">
             <div class="header-box"> <div class="logo" id="logo">
                  <!-- <img src="logo.png" alt="logo"> -->
@@ -31,11 +34,11 @@
              </div>
              <div id="top-menu" class="menu">
                  <ul>
-                     <li><a href="Home.html">Home</a></li>
-                     <li><a href="#">Skills</a></li>
-                     <li><a href="#">Projects</a></li>
-                     <li><a href="#">Video</a></li>
-                     <li><a href="#">My Blog</a></li>
+                     <li><a href="#banner">Home</a></li>
+                     <li><a href="#Skills">Skills</a></li>
+                     <li><a href="#Projects">Projects</a></li>
+                     <li><a href="#Video">Video</a></li>
+                     <li><a href="#Blog">My Blog</a></li>
                  </ul>
              </div>
              <div class="search" id="search">
@@ -46,13 +49,13 @@
         </nav>
     </header>
 
-    <section id="banner">
+    <section id="banner" >
         <div class="home-banner">
             <h2>Welcome</h2>
             <p>Hi i am shubham</p>
         </div>
     </section>
-    <section id="video">
+    <!-- <section id="video">
         <div class="videodiv">
             <div class="left-1">
                <h2>About Me</h2> 
@@ -70,9 +73,93 @@
                 <img src="images/icon-7.png" alt="img">
         </div>
     </div>
+</section> -->
+<div class="container">
+<section id="Skills" class="skills">
+
+
+        <h4 class="title">my skills</h4>
+        <div class="box-container">
+            <div class="box">
+                <div class="progress">
+                    <h3>html <span>95%</span></h3>
+                    <div class="bar"><span></span></div>
+                </div>
+                <div class="progress">
+                    <h3>css <span>85%</span></h3>
+                    <div class="bar"><span></span></div>
+                </div>
+                <div class="progress">
+                    <h3>javascript <span>60%</span></h3>
+                    <div class="bar"><span></span></div>
+                </div>
+                <div class="progress">
+                    <h3>React  <span>50%</span></h3>
+                    <div class="bar"><span></span></div>
+                </div>
+            </div>
+            <div class="box">
+                <div class="progress">
+                    <h3>web design <span>80%</span></h3>
+                    <div class="bar"><span></span></div>
+                </div>
+                <div class="progress">
+                    <h3>Wordpress <span>70%</span></h3>
+                    <div class="bar"><span></span></div>
+                </div>
+                <div class="progress">
+                    <h3>python<span>50%</span></h3>
+                    <div class="bar"><span></span></div>
+                </div>
+                <div class="progress">
+                    <h3>Java <span>50%</span></h3>
+                    <div class="bar"><span></span></div>
+                </div>
+            </div>
+        </div>
+   
+
 </section>
 
 
+<br class="spacer">
+<section id="Projects">
+
+    
+<div class="projects">
+    <div class="project1">
+        <h3>name</h3>
+        <img src="" alt="project1">
+        <p>description</p>
+        <button>Read More</button>
+    </div>
+    <div class="project1">
+        <h3>name</h3>
+        <img src="" alt="project2">
+        <p>description</p>
+        <button>Read More</button>
+    </div>
+    <div class="project1">
+        <h3>name</h3>
+        <img src="" alt="project3">
+        <p>description</p>
+        <button>Read More</button>
+    </div>
+</div>
+
+</section>
+
+
+
+<section id="Video">
+
+</section>
+
+
+<section id="Blog">
+
+</section>
+</div>
     <!-- footer -->
     <footer class="footer" id="footer">
         <nav class="foter-section">
@@ -87,6 +174,7 @@
             <div class="content">
                 <h3>links</h3>
                 <ul>
+                    <li><a href="index.html">Portfolio</a></li>
                     <li><a href="#">Contact Us</a></li>
                     <li><a href="#">Skills</a></li>
                 </ul>
@@ -99,5 +187,7 @@
             </div>
         </nav>
     </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
