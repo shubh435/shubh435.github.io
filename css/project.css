@@ -16,13 +16,21 @@
 .project:hover{
     box-shadow: .2rem .2rem .8rem .1rem rgba(0, 0, 0, .1);
 }
-.project1 button{
+/* .project1 button{
     background: transparent;
     width: 50%;
     display: flex;
     justify-content: center;
     margin: 10px auto;
     color: #fff;
+} */
+
+.project a{
+    color: #fff;
+    cursor: pointer;
+    text-decoration: none;
+    
+
 }
 .project img{
     width: 100%;
