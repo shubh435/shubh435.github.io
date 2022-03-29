@@ -1,374 +1,433 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap");
 
-
-*{
-  font-family: 'Poppins', sans-serif;
-  margin:0;
-  padding:0;
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
   outline: none;
-  border:none;
+  border: none;
   text-decoration: none;
   text-transform: capitalize;
-  transition: all .3s linear;
+  transition: all 0.3s linear;
 }
 
-html::-webkit-scrollbar{
-  width:5px;
+html::-webkit-scrollbar {
+  width: 5px;
 }
 
-html::-webkit-scrollbar-track{
+html::-webkit-scrollbar-track {
   background: #2980b9;
 }
 
-html::-webkit-scrollbar-thumb{
+html::-webkit-scrollbar-thumb {
   background: #fff;
   border-radius: 50px;
 }
 
-.title{
+.title {
   font-size: 25px;
-  color:#2980b9;
+  color: #2980b9;
   margin-bottom: 15px;
 }
 
-.btn{
+.btn {
   margin-top: 10px;
   display: inline-block;
-  padding:7px 20px;
+  padding: 7px 20px;
   border-radius: 5px;
-  background:#2980b9;
-  color:#fff;
+  background: #2980b9;
+  color: #fff;
   font-size: 17px;
-  box-shadow: 0 5px 10px rgba(0,0,0,.1);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
 
-.btn:hover{
+.btn:hover {
   background: #333;
 }
 
-.container{
+.container {
   padding: 100px 7%;
-  background: linear-gradient(45deg, deeppink,transparent,#2980b9), url(../images/back.png);
+  background: linear-gradient(45deg, deeppink, transparent, #2980b9),
+    url(../images/back.png);
   /* background-image: url(images/back.png); */
   /* background-attachment: fixed; */
   background-size: cover;
   display: flex;
 }
 
-.container .profile{
-  flex:1 1 400px;
+.container .profile {
+  flex: 1 1 400px;
   background: #fff;
-  padding:20px 30px;
+  padding: 20px 30px;
   text-align: center;
   position: sticky;
-  top:100px; 
-  left:0;
-  border-right:2px solid #333;
+  top: 100px;
+  left: 0;
+  border-right: 2px solid #333;
   align-self: flex-start;
 }
 
-.container .profile img{
+.container .profile img {
   height: 150px;
   width: 150px;
   border-radius: 50%;
-  border:2px solid #333;
+  border: 2px solid #333;
   object-fit: cover;
   margin-bottom: 10px;
-  background: linear-gradient(360deg,deeppink,#2980b9);
-  filter:contrast(1.3) ;
+  background: linear-gradient(360deg, deeppink, #2980b9);
+  filter: contrast(1.3);
 }
 
-.container .profile h3{
-  color:#333;
+.container .profile h3 {
+  color: #333;
   font-size: 20px;
 }
 
-.container .profile p{
-  color:#2980b9;
-  padding:5px 0;
+.container .profile p {
+  color: #2980b9;
+  padding: 5px 0;
   margin-bottom: 10px;
   font-size: 15px;
 }
 
-.container .profile .share{
-  margin:10px 0;
+.container .profile .share {
+  margin: 10px 0;
 }
 
-.container .profile .share a{
+.container .profile .share a {
   height: 50px;
   width: 50px;
   line-height: 50px;
   font-size: 20px;
   border-radius: 50%;
-  color:#333;
-  background:#eee;
+  color: #333;
+  background: #eee;
 }
 
-.container .profile .share a:hover{
+.container .profile .share a:hover {
   background: #2980b9;
-  color:#fff;
-  box-shadow: 0 5px 10px rgba(0,0,0,.1);
+  color: #fff;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
 
-.container .information{
-  flex:1 1 1000px;
+.container .information {
+  flex: 1 1 1000px;
   background: #fff;
-  padding:20px 30px;
+  padding: 20px 30px;
 }
 
-.container .information .about p{
+.container .information .about p {
   font-size: 17px;
   line-height: 2;
   padding-bottom: 10px;
-  color:#777;
+  color: #777;
   text-transform: none;
 }
 
-.container .information .about .box-container{
+.container .information .about .box-container {
   display: flex;
   flex-wrap: wrap;
-  gap:15px;
+  gap: 15px;
 }
 
-.container .information .about .box-container .box{
-  flex:1 1 250px;
+.container .information .about .box-container .box {
+  flex: 1 1 250px;
 }
 
-.container .information .about .box-container .box h3{
+.container .information .about .box-container .box h3 {
   font-size: 15px;
-  padding:10px 0;
-  color:#333;
+  padding: 10px 0;
+  color: #333;
 }
 
-.container .information .about .box-container .box h3 span{
-  color:#777;
+.container .information .about .box-container .box h3 span {
+  color: #777;
   margin-right: 2px;
 }
 
-.container .information .services{
-  padding:20px 0;
+.container .information .services {
+  padding: 20px 0;
 }
 
-.container .information .services .box-container{
+.container .information .services .box-container {
   display: flex;
   flex-wrap: wrap;
-  gap:15px;
+  gap: 15px;
 }
 
-.container .information .services .box-container .box{
-  flex:1 1 17px;
+.container .information .services .box-container .box {
+  flex: 1 1 17px;
   text-align: center;
   border-radius: 5px;
-  padding:20px;
+  padding: 20px;
   background: #eee;
- 
 }
-.container .information .services .box-container .box:hover{
- box-shadow: 0.2em 0.1em 0.8rem #ccc; 
+.container .information .services .box-container .box:hover {
+  box-shadow: 0.2em 0.1em 0.8rem #ccc;
 }
-.container .information .services .box-container .box img{
+.container .information .services .box-container .box img {
   height: 50px;
   margin-bottom: 10px;
 }
 
-.container .information .services .box-container .box h3{
+.container .information .services .box-container .box h3 {
   font-size: 15px;
-  color:#777;
+  color: #777;
 }
-.container .information .about .box-container .box h3 a{
+.container .information .about .box-container .box h3 a {
   text-decoration: none;
-  color:#333;
+  color: #333;
   text-transform: none;
 }
 
-.container .information .skills .box-container{
+.container .information .skills .box-container {
   display: flex;
   flex-wrap: wrap;
-  gap:15px;
+  gap: 15px;
 }
 
-.container .information .skills .box-container .box{
-  flex:1 1 300px;
+.container .information .skills .box-container .box {
+  flex: 1 1 300px;
 }
 
-.container .information .skills .box-container .box .progress h3{
+.container .information .skills .box-container .box .progress h3 {
   padding: 10px 0;
   display: flex;
   justify-content: space-between;
-  color:#333;
+  color: #333;
   font-size: 15px;
 }
 
-.container .information .skills .box-container .box .progress h3 span{
-  color:#777;
+.container .information .skills .box-container .box .progress h3 span {
+  color: #777;
 }
 
-.container .information .skills .box-container .box .progress .bar{
+.container .information .skills .box-container .box .progress .bar {
   overflow: hidden;
   border-radius: 50px;
   height: 10px;
-  background:#eee;
+  background: #eee;
 }
 
-.container .information .skills .box-container .box .progress .bar span{
+.container .information .skills .box-container .box .progress .bar span {
   background: #2980b9;
   height: 100%;
   display: block;
   border-radius: 50px;
 }
 
-.container .information .skills .box-container .box:first-child .progress:nth-child(1) .bar span{
+.container
+  .information
+  .skills
+  .box-container
+  .box:first-child
+  .progress:nth-child(1)
+  .bar
+  span {
   width: 95%;
 }
 
-.container .information .skills .box-container .box:first-child .progress:nth-child(2) .bar span{
+.container
+  .information
+  .skills
+  .box-container
+  .box:first-child
+  .progress:nth-child(2)
+  .bar
+  span {
   width: 85%;
 }
 
-.container .information .skills .box-container .box:first-child .progress:nth-child(3) .bar span{
+.container
+  .information
+  .skills
+  .box-container
+  .box:first-child
+  .progress:nth-child(3)
+  .bar
+  span {
   width: 60%;
 }
 
-.container .information .skills .box-container .box:first-child .progress:nth-child(4) .bar span{
+.container
+  .information
+  .skills
+  .box-container
+  .box:first-child
+  .progress:nth-child(4)
+  .bar
+  span {
   width: 40%;
 }
 
-.container .information .skills .box-container .box:last-child .progress:nth-child(1) .bar span{
+.container
+  .information
+  .skills
+  .box-container
+  .box:last-child
+  .progress:nth-child(1)
+  .bar
+  span {
   width: 80%;
 }
 
-.container .information .skills .box-container .box:last-child .progress:nth-child(2) .bar span{
+.container
+  .information
+  .skills
+  .box-container
+  .box:last-child
+  .progress:nth-child(2)
+  .bar
+  span {
   width: 70%;
 }
 
-.container .information .skills .box-container .box:last-child .progress:nth-child(3) .bar span{
+.container
+  .information
+  .skills
+  .box-container
+  .box:last-child
+  .progress:nth-child(3)
+  .bar
+  span {
   width: 50%;
 }
 
-.container .information .skills .box-container .box:last-child .progress:nth-child(4) .bar span{
+.container
+  .information
+  .skills
+  .box-container
+  .box:last-child
+  .progress:nth-child(4)
+  .bar
+  span {
   width: 50%;
 }
 
-.container .information .experience{
-  margin:20px 0;
+.container .information .experience {
+  margin: 20px 0;
 }
 
-.container .information .experience .box-container{
+.container .information .experience .box-container {
   display: flex;
   flex-wrap: wrap;
-  gap:15px;
+  gap: 15px;
 }
 
-.container .information .experience .box-container .box{
-  padding:20px;
+.container .information .experience .box-container .box {
+  padding: 20px;
   border-radius: 5px;
-  flex:1 1 350px;
+  flex: 1 1 350px;
   background: #eee;
+  text-align: center;
 }
 
-.container .information .experience .box-container .box span{
-  color:#2980b9;
+.container .information .experience .box-container .box span {
+  color: #2980b9;
   font-size: 15px;
 }
 
-.container .information .experience .box-container .box h3{
-  color:#333;
+.container .information .experience .box-container .box h3 {
+  color: #333;
   font-size: 17px;
-  padding:5px 0;
+  padding: 5px 0;
+  text-align: center;
 }
 
-.container .information .experience .box-container .box p{
-  color:#777;
+.container .information .experience .box-container .box img {
+  width: 80%;
+  min-height: auto;
+  border-radius: 8px;
+  margin: 20px 5px;
+}
+.container .information .experience .box-container .box p {
+  color: #777;
   line-height: 2;
   font-size: 13px;
 }
 
-.container .information .contact .box-container{
+.container .information .contact .box-container {
   display: flex;
   flex-wrap: wrap;
-  gap:15px;
+  gap: 15px;
 }
 
-.container .information .contact .box-container .box{
+.container .information .contact .box-container .box {
   flex: 1 1 200px;
   display: flex;
   align-self: flex-start;
-  gap:10px;
+  gap: 10px;
 }
 
-.container .information .contact .box-container .box i{
+.container .information .contact .box-container .box i {
   height: 40px;
   width: 40px;
   line-height: 40px;
   font-size: 15px;
   border-radius: 50%;
   background: #2980b9;
-  color:#fff;
+  color: #fff;
   text-align: center;
 }
 
-.container .information .contact .box-container .box h3{
+.container .information .contact .box-container .box h3 {
   font-size: 17px;
-  color:#333;
+  color: #333;
   padding-bottom: 5px;
 }
 
-.container .information .contact .box-container .box p{
+.container .information .contact .box-container .box p {
   font-size: 14px;
-  color:#777;
+  color: #777;
   line-height: 2;
 }
-.container .information .contact .box-container .box p a{
-  color:#333 ;
+.container .information .contact .box-container .box p a {
+  color: #333;
   text-decoration: none;
   text-transform: none;
 }
-.container .information .box-container .box p a:hover{
-color:#2980B9;
+.container .information .box-container .box p a:hover {
+  color: #2980b9;
 }
-@media (max-width:1200px) {
-  
-  .container{
+@media (max-width: 1200px) {
+  .container {
     flex-flow: column;
-    padding:20px;
+    padding: 20px;
     justify-content: center;
   }
 
-  .container .profile{
+  .container .profile {
     position: static;
     border-radius: 5px;
-    box-shadow: 0 5px 10px rgba(0,0,0,.1);
-    padding:20px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
     border-right: none;
-    margin:0 auto;
+    margin: 0 auto;
     margin-bottom: 15px;
   }
 
-  .container .information{
+  .container .information {
     border-radius: 5px;
-    box-shadow: 0 5px 10px rgba(0,0,0,.1);
-    padding:20px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
   }
-
 }
 
-@media (max-width:450px){
-
-  .container .profile{
+@media (max-width: 450px) {
+  .container .profile {
     width: 100%;
   }
 
-  .container .profile .btn{
+  .container .profile .btn {
     width: 100%;
   }
 
-  .container .information .about p{
+  .container .information .about p {
     font-size: 12px;
   }
 
-  .container .information .experience .box-container .box p{
+  .container .information .experience .box-container .box p {
     font-size: 12px;
   }
-
 }
