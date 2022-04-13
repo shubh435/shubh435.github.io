@@ -247,7 +247,7 @@ html::-webkit-scrollbar-thumb {
   .progress:nth-child(3)
   .bar
   span {
-  width: 60%;
+  width: 70%;
 }
 
 .container
@@ -258,7 +258,7 @@ html::-webkit-scrollbar-thumb {
   .progress:nth-child(4)
   .bar
   span {
-  width: 40%;
+  width: 60%;
 }
 
 .container
@@ -280,7 +280,7 @@ html::-webkit-scrollbar-thumb {
   .progress:nth-child(2)
   .bar
   span {
-  width: 70%;
+  width: 60%;
 }
 
 .container
@@ -291,7 +291,7 @@ html::-webkit-scrollbar-thumb {
   .progress:nth-child(3)
   .bar
   span {
-  width: 50%;
+  width: 60%;
 }
 
 .container
@@ -302,7 +302,7 @@ html::-webkit-scrollbar-thumb {
   .progress:nth-child(4)
   .bar
   span {
-  width: 50%;
+  width: 40%;
 }
 
 .container .information .experience {
