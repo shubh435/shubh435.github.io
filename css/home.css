@@ -1,16 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap");
 
 body {
-  background: linear-gradient(45deg, #2980b9, deeppink);
+  background:rgba(0, 0, 0, .78);
   background-position: center;
   background-size: 100% 100%;
   background-repeat: no-repeat;
-  color: #fff;
-  
+  color: rgba(255, 255, 255, .71);
 }
 html {
-    scroll-behavior: smooth;
-  }
+  scroll-behavior: smooth;
+}
 * {
   font-family: "Poppins", sans-serif;
   margin: 0;
@@ -21,7 +20,6 @@ html {
   text-decoration: none;
   text-transform: capitalize;
   transition: all 0.3s linear;
-  
 }
 ul {
   list-style: none;
@@ -32,7 +30,8 @@ html::-webkit-scrollbar {
 .header {
   margin: 0;
   padding: 0;
-  background: linear-gradient(45deg, deeppink, #2980b9);
+background: rgba(0, 0, 0, .78);
+/* background: linear-gradient(45deg, deeppink, #2980b9); */
   width: 100%;
 }
 .navbar {
@@ -46,27 +45,39 @@ html::-webkit-scrollbar {
   justify-content: space-between;
   margin: 0 auto;
   padding: 20px;
-  align-content: space-around;
-  flex-wrap: nowrap;
-  flex-direction: row;
+  width: 100%;
+
   align-items: center;
 }
 .logo {
   width: 14%;
   padding: 5px;
 }
+.logo img {
+  width: 70px;
+  height: 70px;
+  border: 2px solid;
 
-.search {
+  border-color: rgba(0, 0, 0, .7) rgba(0, 0, 0, .6);
+  box-shadow:.1rem .1rem .1rem .1rem  #333 ;
+  border-radius: 50%;
+}
+
+.icons {
   width: 20%;
-  display: inline-block;
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 2.3rem;
+  align-items: center;
+ 
+
 }
-.search input {
-  display: inline-block;
-  border-radius: 8px;
-  width: 200px;
-  padding: 10px 8px;
-  text-align: center;
+.icons a{
+  color: rgba(255, 255, 255, .71);
 }
+@media screen and (max-width: 1240) {
+}
+
 .fixed {
   position: sticky;
   z-index: 10;
@@ -191,11 +202,11 @@ html::-webkit-scrollbar {
 /* footer */
 .footer {
   width: 100%;
-  background: linear-gradient(45deg, deeppink, #2980b9);
   background-repeat: no-repeat;
   background-size: cover;
   margin: 0;
   padding: 0;
+background: rgba(0, 0, 0, .78);
   color: #fff;
 }
 .footer .foter-section {
@@ -236,8 +247,7 @@ html::-webkit-scrollbar {
 .footer .foter-section .social-links ul li a:hover,
 .footer .foter-section .social-links ul li a:focus,
 .footer .foter-section .content ul li a:hover,
-.footer .foter-section .content ul li a:focus
- {
+.footer .foter-section .content ul li a:focus {
   color: #2980b9;
 }
 .footer .foter-section .content ul li {
@@ -282,14 +292,14 @@ html::-webkit-scrollbar {
 }
 /* section skill */
 .skills {
-  padding: 40px 0 0  0;
-  background: linear-gradient(135deg, deeppink, #2980b9);
-  margin:0;
+  padding: 40px 0 0 0;
+  /* background: linear-gradient(135deg, deeppink, #2980b9); */
+  background-color: transparent;
+  margin: 0;
   background-position: center;
   background-attachment: fixed;
   background-size: cover;
-  background-repeat: no-repeat
-
+  background-repeat: no-repeat;
 }
 .skills .title {
   font-size: 30px;
@@ -301,20 +311,20 @@ html::-webkit-scrollbar {
 .skills .box-container {
   display: flex;
   flex-wrap: wrap;
- justify-content: space-between;
- margin: 40px auto;
+  justify-content: space-between;
+  margin: 40px auto;
 }
 
 .skills .box-container .box {
   /* flex: 1 1 300px; */
-  
+
   width: 44%;
 }
-.skills .box-container .box:first-child{
-    margin-right: 1%;
+.skills .box-container .box:first-child {
+  margin-right: 1%;
 }
-.progress{
-    margin: 10px 0;
+.progress {
+  margin: 10px 0;
 }
 .skills .box-container .box .progress h3 {
   padding: 10px 0;
@@ -374,7 +384,3 @@ html::-webkit-scrollbar {
 .skills .box-container .box:last-child .progress:nth-child(4) .bar span {
   width: 50%;
 }
-
-
-
-

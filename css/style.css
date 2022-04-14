@@ -76,7 +76,7 @@ html::-webkit-scrollbar-thumb {
   object-fit: cover;
   margin-bottom: 10px;
   background: linear-gradient(360deg, deeppink, #2980b9);
-  filter: contrast(1.3);
+  filter: contrast(1.1);
 }
 
 .container .profile h3 {
