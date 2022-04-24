@@ -1,18 +1,13 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap");
 body {
-  background:rgba(0, 0, 0, .78);
-  background-position: center;
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  color: rgba(255, 255, 255, .71);
+  margin: 0;
 }
 html {
   scroll-behavior: smooth;
 }
 * {
-  font-family: "Poppins", sans-serif;
   margin: 0;
+  font-family: "Open sans", Helvetica, Arial;
   padding: 0;
   box-sizing: border-box;
   outline: none;
@@ -28,10 +23,10 @@ html::-webkit-scrollbar {
   width: 5px;
 }
 .header {
+  background: linear-gradient(45deg, rgba(0, 0, 0, 0.8), #141714);
+
   margin: 0;
   padding: 0;
-background: rgba(0, 0, 0, .78);
-/* background: linear-gradient(45deg, deeppink, #2980b9); */
   width: 100%;
 }
 .navbar {
@@ -58,8 +53,8 @@ background: rgba(0, 0, 0, .78);
   height: 70px;
   border: 2px solid;
 
-  border-color: rgba(0, 0, 0, .7) rgba(0, 0, 0, .6);
-  box-shadow:.1rem .1rem .1rem .1rem  #333 ;
+  border-color: rgba(0, 0, 0, 0.7) rgba(0, 0, 0, 0.6);
+  box-shadow: 0.1rem 0.1rem 0.1rem 0.1rem #333;
   border-radius: 50%;
 }
 
@@ -69,11 +64,9 @@ background: rgba(0, 0, 0, .78);
   justify-content: space-evenly;
   font-size: 2.3rem;
   align-items: center;
- 
-
 }
-.icons a{
-  color: rgba(255, 255, 255, .71);
+.icons a {
+  color: rgba(255, 255, 255, 0.71);
 }
 @media screen and (max-width: 1240) {
 }
@@ -136,8 +129,20 @@ background: rgba(0, 0, 0, .78);
 .home-banner {
   width: 100%;
   height: 93vh;
-  background: linear-gradient(45deg, rgba(0, 0, 0, 0.6), transparent),
-    url(../images/banner.jpg);
+  background: linear-gradient(
+      45deg,
+      rgba(255, 0, 255, 0.3),
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 111, 111, 0.2),
+      rgba(0, 111, 111, 0.1),
+      transparent,
+     
+      rgba(0, 111, 111, 0.1) ,
+      rgba(0, 111, 111, 0.2),
+      rgba(0, 0, 0, 0.2),
+      rgba(255, 0, 255, 0.3)
+    ),
+    url(../images/bacBnanner.png);
   background-repeat: no-repeat;
   background-size: cover;
   color: #fff;
@@ -206,7 +211,7 @@ background: rgba(0, 0, 0, .78);
   background-size: cover;
   margin: 0;
   padding: 0;
-background: rgba(0, 0, 0, .78);
+  background: rgba(0, 0, 0, 0.78);
   color: #fff;
 }
 .footer .foter-section {
@@ -293,8 +298,8 @@ background: rgba(0, 0, 0, .78);
 /* section skill */
 .skills {
   padding: 40px 0 0 0;
-  /* background: linear-gradient(135deg, deeppink, #2980b9); */
-  background-color: transparent;
+  background:  #3F003F;
+  /* background-color: transparent; */
   margin: 0;
   background-position: center;
   background-attachment: fixed;
