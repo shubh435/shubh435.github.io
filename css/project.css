@@ -1,36 +1,40 @@
-#Projects{
-    width: 100%;
-    background:  rgba(0, 0, 0, 0.3) !important;
-    color:rgba(0, 0, 0, .8) !important;
+#Projects {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.3) !important;
+  color: rgba(0, 0, 0, 0.8) !important;
 }
-a{
-    color:rgba(0, 0, 0, .8);
+a {
+  color: rgba(0, 0, 0, 0.8);
 }
-p{
-    font-size: small;
+p {
+  font-size: small;
 }
-.projects{
-  
-    padding: 30px 0;
-    margin: 20px 0;
-   
-    
-    margin: 10px auto;
-    display: flex;
-    justify-content: space-between;
+.projects {
+  padding: 30px 0;
+  margin: 20px 0;
 
+  margin: 10px auto;
+  display: flex;
+  justify-content: space-between;
 }
-.project{
-   
-    padding: 10px 14px;
-    text-align: center;
-    width: 350px;
-    min-height: 40vh;
-    border-radius: 10px;
-    border: 1px inset rgba(0, 0, 0, .1);
+.project {
+  box-shadow: inset -3px -6px 16px 0px #00000026,
+    inset 9px 5px 14px 0px #00000026;
+  border-radius: 10px;
+  padding: 5em 5em 2em;
+  margin: 20px 15px;
+  height: 100%;
+  position: relative;
+  transition: ease-in-out 0.5s;
+  padding: 5em 2rem;
+  text-align: center;
+  width: 350px;
+  min-height: 40vh;
+  border-radius: 10px;
 }
-.project:hover{
-    box-shadow: .2rem .2rem .8rem .1rem rgba(0, 0, 0, .1);
+.project:hover {
+  box-shadow: 5px 5px 20px 5px rgba(0, 0, 0, 0.1);
+  transition: ease-in-out 0.5s;
 }
 /* .project1 button{
     background: transparent;
@@ -41,16 +45,13 @@ p{
     color: #fff;
 } */
 
-.project a{
-    cursor: pointer;
-    text-decoration: none;
-    
-
+.project a {
+  cursor: pointer;
+  text-decoration: none;
 }
-.project img{
-    width: 100%;
-    min-height: auto;
-    border-radius: 8px;
-    margin :20px 5px;
-
+.project img {
+  width: 100%;
+  min-height: auto;
+  border-radius: 8px;
+  margin: 20px 5px;
 }
