@@ -25,16 +25,16 @@ p {
   margin: 20px 15px;
   height: 100%;
   position: relative;
-  transition: ease-in-out 0.5s;
+  transition: all ease-in-out 0.5s;
   padding: 5em 2rem;
   text-align: center;
-  width: 350px;
-  min-height: 40vh;
+  /* width: */
   border-radius: 10px;
 }
 .project:hover {
   box-shadow: 5px 5px 20px 5px rgba(0, 0, 0, 0.1);
-  transition: ease-in-out 0.5s;
+
+  transition: all linear 0.5s;
 }
 /* .project1 button{
     background: transparent;
@@ -54,4 +54,24 @@ p {
   min-height: auto;
   border-radius: 8px;
   margin: 20px 5px;
+}
+.project img:hover {
+  transform: scale(1.1, 1.1);
+}
+.title {
+  margin-top: 2rem;
+}
+.title h3 {
+  margin-bottom: .52rem;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.underline {
+  width: 5rem;
+  height: 0.25rem;
+  margin-left: auto;
+  margin-right: auto;
+ background: #ffb700;
 }

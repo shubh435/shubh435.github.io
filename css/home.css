@@ -16,6 +16,9 @@ html {
   text-transform: capitalize;
   transition: all 0.3s linear;
 }
+img{
+  border: none;
+}
 ul {
   list-style: none;
 }
@@ -125,6 +128,17 @@ html::-webkit-scrollbar {
 }
 #banner {
   margin: 0;
+}
+#top-menu i{
+  display: none;
+}
+@media screen and (max-width:600) {
+  #top-menu{
+    display: none;
+  }
+  #top-menu i{
+    display: block;
+  }
 }
 .home-banner {
   width: 100%;
@@ -398,3 +412,4 @@ html::-webkit-scrollbar {
 .skills .box-container .box:last-child .progress:nth-child(4) .bar span {
   width: 50%;
 }
+
