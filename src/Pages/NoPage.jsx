@@ -2,8 +2,11 @@ import React from 'react'
 
 const NoPage = () => {
   return (
-    <div>NoPage</div>
-  )
+   
+   <div className="container">
+    No page found
+   </div>
+    )
 }
 
 export default NoPage
