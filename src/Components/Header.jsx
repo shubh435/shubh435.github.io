@@ -2,8 +2,14 @@ import React from "react";
 
 import { Fragment } from "react";
 import { Disclosure } from "@headlessui/react";
-import {  MenuIcon, XIcon } from "@heroicons/react/outline";
-import { BsFacebook, BsGithub, BsLinkedin, BsTwitter, BsWhatsapp } from "react-icons/bs";
+import { MenuIcon, XIcon } from "@heroicons/react/outline";
+import {
+  BsFacebook,
+  BsGithub,
+  BsLinkedin,
+  BsTwitter,
+  BsWhatsapp,
+} from "react-icons/bs";
 import { NavLink } from "react-router-dom";
 import logo from "../assets/Images/pic.png";
 const navigation = [
@@ -92,6 +98,7 @@ function Header() {
                 {icons.map((icon) => {
                   return (
                     <button
+                      key={icon.name}
                       type="button"
                       className="bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
                     >
