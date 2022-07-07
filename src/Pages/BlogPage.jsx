@@ -1,11 +1,13 @@
-import React from 'react'
-import Header from '../Components/Header'
+import React from "react";
+import Header from "../Components/Header";
 
 const BlogPage = () => {
   return (
-    <><Header/>
-    BlogPage</>
-  )
-}
+    <>
+      <Header />
+      BlogPage
+    </>
+  );
+};
 
-export default BlogPage
+export default BlogPage;

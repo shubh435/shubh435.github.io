@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { Fragment } from "react";
 import { Disclosure } from "@headlessui/react";
@@ -12,43 +12,50 @@ import {
 } from "react-icons/bs";
 import { NavLink } from "react-router-dom";
 import logo from "../assets/Images/pic.png";
-const navigation = [
-  { name: "Home", href: "/", current: true },
-  { name: "Skills", href: "/Skills", current: false },
-  { name: "Projects", href: "/Projects", current: false },
-  { name: "Video", href: "/Video", current: false },
-  { name: "Blog", href: "/Blog", current: false },
-];
 
-const icons = [
-  { name: "Github", icon: <BsGithub className="h-6 w-6" aria-hidden="true" /> },
-  {
-    name: "Twitter",
-    icon: <BsTwitter className="h-6 w-6" aria-hidden="true" />,
-  },
-  {
-    name: "Facebook",
-    icon: <BsFacebook className="h-6 w-6" aria-hidden="true" />,
-  },
-  {
-    name: "whatsapp",
-    icon: <BsWhatsapp className="h-6 w-6" aria-hidden="true" />,
-  },
-  {
-    name: "LinkedIn",
-    icon: <BsLinkedin className="h-6 w-6" aria-hidden="true" />,
-  },
-];
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
 function Header() {
+  // const [currentLink, setCurrentLink] = useState(true);
+
+  const navigation = [
+    { name: "Home", href: "/", current: true },
+    { name: "Skills", href: "/Skills", current: false },
+    { name: "Projects", href: "/Projects", current: false },
+    { name: "Video", href: "/Video", current: false },
+    { name: "Blog", href: "/Blog", current: false },
+  ];
+
+  const icons = [
+    {
+      name: "Github",
+      icon: <BsGithub className="h-6 w-6" aria-hidden="true" />,
+    },
+    {
+      name: "Twitter",
+      icon: <BsTwitter className="h-6 w-6" aria-hidden="true" />,
+    },
+    {
+      name: "Facebook",
+      icon: <BsFacebook className="h-6 w-6" aria-hidden="true" />,
+    },
+    {
+      name: "whatsapp",
+      icon: <BsWhatsapp className="h-6 w-6" aria-hidden="true" />,
+    },
+    {
+      name: "LinkedIn",
+      icon: <BsLinkedin className="h-6 w-6" aria-hidden="true" />,
+    },
+  ];
+  
   return (
-    <Disclosure as="nav" className="bg-gray-800">
+    <Disclosure as="nav" className="fixed bg-transparent left-0 right-0 top-0">
       {({ open }) => (
         <>
-          <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 ">
             <div className="relative flex items-center justify-between h-16">
               <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                 {/* Mobile menu button*/}
@@ -100,7 +107,7 @@ function Header() {
                     <button
                       key={icon.name}
                       type="button"
-                      className="bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
+                      className="bg-transparent mx-2 text-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
                     >
                       <span className="sr-only">{icon.name}</span>
                       {/* <BellIcon className="h-6 w-6" aria-hidden="true" /> */}
