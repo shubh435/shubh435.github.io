@@ -1,12 +1,13 @@
 import React from "react";
-import "./App.css";
-import DrawerAppBar from "./components/Appbar";
+import { BrowserRouter } from "react-router-dom";
+
+import RouteToNavigate from "./routes";
 
 function App() {
   return (
-    <>
-      <DrawerAppBar />
-    </>
+    <BrowserRouter>
+      <RouteToNavigate />
+    </BrowserRouter>
   );
 }
 
