@@ -1,49 +1,47 @@
-import * as React from "react";
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import Divider from "@mui/material/Divider";
-import Drawer from "@mui/material/Drawer";
-import IconButton from "@mui/material/IconButton";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItemText from "@mui/material/ListItemText";
-import MenuIcon from "@mui/icons-material/Menu";
-import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
-import { render } from "@testing-library/react";
-
+import * as React from "react"
+import {
+  Typography,
+  Toolbar,
+  ListItemText,
+  ListItemButton,
+  ListItem,
+  List,
+  IconButton,
+  Drawer,
+  Divider,
+  Box,
+  AppBar,
+} from "@mui/material"
+import { Theme } from "@mui/system"
+import { withStyles } from "@mui/styles"
+import MenuIcon from "@mui/icons-material/Menu"
 interface DrawerAppBarProps {
-  /**
-   * Injected by the documentation to work in an iframe.
-   * You won't need it on your project.
-   */
-  window?: () => Window;
+  window?: () => Window
+  classes?: any
 }
 interface DrawerAppBarState {
-  mobileOpen: boolean;
+  mobileOpen: boolean
 }
 
-const drawerWidth = 240;
-const navItems = ["Home", "About Me", "Skills", "Project", "Contact"];
+const drawerWidth = 240
+const navItems = ["Home", "About Me", "Skills", "Project", "Contact"]
 
 class DrawerAppBar extends React.PureComponent<
   DrawerAppBarProps,
   DrawerAppBarState
 > {
   constructor(props: DrawerAppBarProps) {
-    super(props);
+    super(props)
     this.state = {
       mobileOpen: false,
-    };
+    }
   }
 
   handleDrawerToggle = () => {
     this.setState({
       mobileOpen: !this.state.mobileOpen,
-    });
-  };
+    })
+  }
 
   drawer = (
     <Box onClick={this.handleDrawerToggle} sx={{ textAlign: "center" }}>
@@ -61,12 +59,13 @@ class DrawerAppBar extends React.PureComponent<
         ))}
       </List>
     </Box>
-  );
+  )
 
   render() {
+    const { classes } = this.props
     return (
       <Box sx={{ display: "flex" }}>
-        <AppBar sx={{ background: "#0d0d0d" }} component="nav">
+        <AppBar className={classes.appbarBackground} component="nav">
           <Toolbar>
             <IconButton
               color="inherit"
@@ -126,8 +125,11 @@ class DrawerAppBar extends React.PureComponent<
           </Drawer>
         </Box>
       </Box>
-    );
+    )
   }
 }
+const styles = (theme: Theme) => ({
+  appbarBackground: { background: "#ffa500 !important" },
+})
 
-export default DrawerAppBar;
+export default withStyles(styles)(DrawerAppBar)
