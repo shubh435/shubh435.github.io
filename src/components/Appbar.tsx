@@ -128,8 +128,11 @@ class DrawerAppBar extends React.PureComponent<
     )
   }
 }
-const styles = (theme: Theme) => ({
-  appbarBackground: { background: "#ffa500 !important" },
+const styles: any = (theme: Theme) => ({
+  appbarBackground: {
+    background: "#000000 !important",
+    position: "sticky !important",
+  },
 })
 
 export default withStyles(styles)(DrawerAppBar)
