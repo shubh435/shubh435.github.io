@@ -34,7 +34,7 @@ class Slider extends React.PureComponent<SliderProps, SliderState> {
     )
 
     const renderer = new THREE.WebGLRenderer({ antialias: true })
-    renderer.setSize(window.innerWidth / 2, window.innerHeight)
+    renderer.setSize(window.innerWidth, window.innerHeight)
     renderer.setPixelRatio(window.devicePixelRatio)
     renderer.outputEncoding = THREE.sRGBEncoding
     this.threeJsref.current?.appendChild(renderer.domElement)
@@ -124,35 +124,60 @@ class Slider extends React.PureComponent<SliderProps, SliderState> {
   render() {
     // sx={{ position: "absolute", top: "50%", left: 0, zIndex: 20 }}
     return (
-      <Container
+      <Box
         sx={{
           position: "relative",
           mx: "auto",
           display: "flex",
           justifyContent: "space-between",
-          backgroundColor: "#000000",
+          // backgroundColor: "#000000",
+          background: "red",
           flexWrap: "wrap",
         }}
       >
-        <Box>
+        <Box
+          sx={{
+            width: { xs: "90%", sm: "40%" },
+            position: "absolute",
+            top: "30%",
+            paddingLeft: "20%",
+          }}
+          color="#fff"
+        >
           <Typography>Hello , I'm</Typography>
-          <Typography>Shubham S. Sarode</Typography>
+          <Typography sx={{ fontSize: 50 }}>Shubham S. Sarode</Typography>
           <Typography>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque at,
             numquam asperiores facere voluptatem repellat. Quasi sapiente nulla
             officiis deleniti vitae, a repudiandae quia quisquam aperiam eum.
             Beatae, aperiam aliquid.
           </Typography>
-          <Button>Hire me </Button>
-          <Button>
-            Porjects
-            <IoIosEye color={"#fff"} size={20} />
-          </Button>
+          <Box
+            sx={{
+              width: "100%",
+              display: "flex",
+              justifyContent: "flex-start",
+              gap: 10,
+              mt:3
+            }}
+          >
+            <Button variant="outlined">Hire me </Button>
+            <Button
+              variant="outlined"
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+                gap: 5,
+              }}
+            >
+              <span> Porjects </span> <IoIosEye color={"#fff"} size={20} />
+            </Button>
+          </Box>
         </Box>
         <Box>
           <Box ref={this.threeJsref} />
         </Box>
-      </Container>
+      </Box>
     )
   }
 }

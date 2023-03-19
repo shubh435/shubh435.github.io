@@ -11,6 +11,7 @@ import {
   Divider,
   Box,
   AppBar,
+  Container,
 } from "@mui/material"
 import { Theme } from "@mui/system"
 import { withStyles } from "@mui/styles"
@@ -66,42 +67,52 @@ class DrawerAppBar extends React.PureComponent<
     return (
       <Box sx={{ display: "flex" }}>
         <AppBar className={classes.appbarBackground} component="nav">
-          <Toolbar>
-            <IconButton
-              color="inherit"
-              aria-label="open drawer"
-              edge="start"
-              onClick={this.handleDrawerToggle}
-              sx={{ mr: 2, display: { sm: "none" } }}
-            >
-              <MenuIcon />
-            </IconButton>
-            <Typography
-              variant="h1"
-              component="div"
-              sx={{
-                width: "18%",
-                fontSize: "18px",
-                display: { xs: "none", sm: "block" },
-              }}
-            >
-              SSS
-            </Typography>
-            <Box
-              sx={{
-                display: { xs: "none", sm: "flex" },
-                gap: "30px",
-                width: "80%",
-                justifyContent: "center",
-              }}
-            >
-              {navItems.map((item) => (
-                <Typography variant="button" key={item} sx={{ color: "#fff" }}>
-                  {item}
-                </Typography>
-              ))}
-            </Box>
-          </Toolbar>
+          <Container sx={{ mx: "auto" }}>
+            <Toolbar>
+              <IconButton
+                color="inherit"
+                aria-label="open drawer"
+                edge="start"
+                onClick={this.handleDrawerToggle}
+                sx={{ mr: 2, display: { sm: "none" } }}
+              >
+                <MenuIcon />
+              </IconButton>
+              <Typography
+                variant="h1"
+                component="div"
+                sx={{
+                  width: "18%",
+                  fontSize: "18px",
+                  display: { xs: "none", sm: "block" },
+                  backgroundImage:
+                    "https://www.shutterstock.com/image-illustration/3d-illustration-colorful-wavy-multicolor-260nw-1897581025.jpg",
+                  // color: "transparent",
+                  backgroundClip: "text",
+                }}
+              >
+                SSS
+              </Typography>
+              <Box
+                sx={{
+                  display: { xs: "none", sm: "flex" },
+                  gap: "30px",
+                  width: "80%",
+                  justifyContent: "center",
+                }}
+              >
+                {navItems.map((item) => (
+                  <Typography
+                    variant="button"
+                    key={item}
+                    sx={{ color: "#fff" }}
+                  >
+                    {item}
+                  </Typography>
+                ))}
+              </Box>
+            </Toolbar>
+          </Container>
         </AppBar>
         <Box component="nav">
           <Drawer
