@@ -1,12 +1,17 @@
+import { ThemeProvider } from "@mui/system";
 import React from "react";
-import "./App.css";
-import DrawerAppBar from "./components/Appbar";
+import { BrowserRouter } from "react-router-dom";
+
+import RouteToNavigate from "./routes";
+import theme from "./Theme/Theme";
 
 function App() {
   return (
-    <>
-      <DrawerAppBar />
-    </>
+    <BrowserRouter>
+      <ThemeProvider theme={theme}>
+        <RouteToNavigate />
+      </ThemeProvider>
+    </BrowserRouter>
   );
 }
 
