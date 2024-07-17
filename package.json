@@ -1,7 +1,7 @@
 {
   "name": "portfolio",
   "version": "0.1.0",
-  "homepage": "https://github.com/shubh435/shubh435.github.io.git",
+  "homepage": "https://shubh435.github.io",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.10.5",
