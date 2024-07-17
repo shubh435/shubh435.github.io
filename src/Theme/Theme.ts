@@ -54,6 +54,7 @@ const defaultTheme = createTheme({
 
   palette: {
     mode: "light",
+    
     primary: {
       main: "#DF201F",
       dark: "#161A1D",
@@ -75,6 +76,7 @@ const defaultTheme = createTheme({
       lg: 1200,
       xl: 1536,
     },
+  
   },
 });
 const theme = {
