@@ -8,7 +8,6 @@ import { RoomEnvironment } from "three/examples/jsm/environments/RoomEnvironment
 // // import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader.js"
 // import { globImage } from "../assets"
 import { IoIosEye } from "react-icons/io"
-import { Container } from "@mui/system"
 
 interface SliderProps {}
 
@@ -147,10 +146,8 @@ class Slider extends React.PureComponent<SliderProps, SliderState> {
           <Typography>Hello , I'm</Typography>
           <Typography sx={{ fontSize: 50 }}>Shubham S. Sarode</Typography>
           <Typography>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque at,
-            numquam asperiores facere voluptatem repellat. Quasi sapiente nulla
-            officiis deleniti vitae, a repudiandae quia quisquam aperiam eum.
-            Beatae, aperiam aliquid.
+          Software Engineer with 2.5+ years of experience
+          in front-end development, seeking full-time front-end roles.
           </Typography>
           <Box
             sx={{

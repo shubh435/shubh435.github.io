@@ -17,10 +17,8 @@ class AboutUs extends React.Component<AboutUsProps, AboutUsState> {
         </Box>
         <Box>
           <Typography>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Possimus
-            expedita reiciendis autem porro deserunt necessitatibus dolor
-            voluptates, perspiciatis error ex dignissimos fuga culpa? Incidunt
-            labore dignissimos nesciunt sed perferendis nemo.
+          Software Engineer with 2.5+ years of experience
+          in front-end development, seeking full-time front-end roles.
           </Typography>
         </Box>
       </Box>
