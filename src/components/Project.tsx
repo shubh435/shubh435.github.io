@@ -33,7 +33,7 @@ class Project extends React.Component<ProjectProps, ProjectState> {
      </Box>
         <Box className="about-me-content" width={"100%"} sx={{display:'flex',flexWrap:"wrap",justifyContent:"space-between", gap:4}} >
           {
-            this.state.projectData.length>0?this.state.projectData.splice(0,3).map(projectdata =>(
+            this.state.projectData.length>0?this.state.projectData.sort((a,b)=>b.rating-a.rating).splice(0,3).map(projectdata =>(
               <RecipeReviewCard {...projectdata} />
             ))
             :  <Typography component={"p"} >No project found</Typography>

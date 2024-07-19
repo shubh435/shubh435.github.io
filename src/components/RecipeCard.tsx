@@ -9,12 +9,13 @@ import Collapse from '@mui/material/Collapse';
 import Avatar from '@mui/material/Avatar';
 import IconButton, { IconButtonProps } from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-import { red } from '@mui/material/colors';
+import { red as red } from '@mui/material/colors';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import ShareIcon from '@mui/icons-material/RemoveRedEye';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import { ProjectData } from '../assets/data';
+import { Link, useNavigate } from 'react-router-dom';
 
 interface ExpandMoreProps extends IconButtonProps {
   expand: boolean;
@@ -33,7 +34,7 @@ const ExpandMore = styled((props: ExpandMoreProps) => {
 
 export default function RecipeReviewCard(props:ProjectData) {
   const [expanded, setExpanded] = React.useState(false);
-
+const navigate = useNavigate()
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
@@ -43,14 +44,19 @@ export default function RecipeReviewCard(props:ProjectData) {
       <CardHeader
         avatar={
           <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-            R
+            {props.projectName.slice(0,1)}
           </Avatar>
         }
-        // action={
-        //   <IconButton aria-label="settings">
-        //     <MoreVertIcon />
-        //   </IconButton>
-        // }
+        action={
+          <CardActions disableSpacing sx={{display:"flex",alignItems:"center"}}>
+          <Link aria-label="add to favorites" style={{color:'#000',marginRight:10,width:20,height:20}} target='_blank' to={props.sorceCodeLink}>
+            <GitHubIcon />
+          </Link>
+          <Link aria-label="share" style={{color:'#000',marginRight:10,width:20,height:20}} target='_blank' to={props.tryLink} >
+            <ShareIcon  />
+          </Link>
+        </CardActions>
+        }
         sx={{}}
         title={props.projectName}
         subheader={props.subheader}
@@ -66,29 +72,7 @@ export default function RecipeReviewCard(props:ProjectData) {
           {props.description}
         </Typography>
       </CardContent>
-      <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites">
-          <GitHubIcon />
-        </IconButton>
-        <IconButton aria-label="share">
-          <ShareIcon />
-        </IconButton>
-        <ExpandMore
-          expand={expanded}
-          onClick={handleExpandClick}
-          aria-expanded={expanded}
-          aria-label="show more"
-        >
-          <ExpandMoreIcon />
-        </ExpandMore>
-      </CardActions>
-      <Collapse in={expanded} timeout="auto" unmountOnExit>
-        <CardContent>
-          <Typography paragraph>
-            {props.moreDes}
-          </Typography>
-        </CardContent>
-      </Collapse>
+     
     </Card>
   );
 }

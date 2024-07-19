@@ -54,19 +54,6 @@ const defaultTheme = createTheme({
 
   palette: {
     mode: "light",
-    
-    primary: {
-      main: "#DF201F",
-      dark: "#161A1D",
-    },
-    secondary: {
-      main: "#94CD00",
-      dark: "#161A1D",
-    },
-    info: {
-      dark: "#A2A3A5",
-      main: "#161A1D",
-    },
   },
   breakpoints: {
     values: {

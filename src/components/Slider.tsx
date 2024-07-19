@@ -163,7 +163,6 @@ class Slider extends React.PureComponent<SliderProps, SliderState> {
                 display: "flex",
                 justifyContent: "center",
                 gap: 5,
-                background:"orange",
                 color:"#fff"
               }}>Hire me </Button>
             <Button
@@ -172,11 +171,10 @@ class Slider extends React.PureComponent<SliderProps, SliderState> {
                 display: "flex",
                 justifyContent: "center",
                 gap: 5,
-                borderColor:"orange",
-                color:"orange"
+
               }}
             >
-              <span> Porjects </span> <IoIosEye color={"orange"} size={20} />
+              <span> Porjects </span> <IoIosEye color={"#FFF"} size={20} />
             </Button>
           </Box>
         </Box>
