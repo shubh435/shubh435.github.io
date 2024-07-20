@@ -1,12 +1,13 @@
 import * as React from "react";
 import DrawerAppBar from "../Appbar";
 import Footer from "../Footer";
+import { Outlet } from "react-router-dom";
 
 interface LayoutProps {
-  children: React.ReactNode;
+  children?: React.ReactNode;
 }
 
-interface LayoutState {}
+interface LayoutState { }
 
 class Layout extends React.Component<LayoutProps, LayoutState> {
   constructor(props: LayoutProps) {
@@ -17,7 +18,7 @@ class Layout extends React.Component<LayoutProps, LayoutState> {
     return (
       <>
         <DrawerAppBar />
-        {this.props.children}
+        <Outlet />
         <Footer />
       </>
     );

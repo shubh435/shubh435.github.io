@@ -25,7 +25,9 @@ interface DrawerAppBarState {
 }
 
 const drawerWidth = 240
-const navItems = ["Home", "About Me", "Skills", "Project", "Contact"]
+const navItems = [{
+  id: 1, name: "Home"
+}, { id: 2, name: "About Me" }, { id: 3, name: "Skills" }, { id: 4, name: "Project" }, { id: 5, name: "Contact" }]
 
 class DrawerAppBar extends React.PureComponent<
   DrawerAppBarProps,
@@ -52,9 +54,9 @@ class DrawerAppBar extends React.PureComponent<
       <Divider />
       <List>
         {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
+          <ListItem key={item.id} disablePadding>
             <ListItemButton sx={{ textAlign: "center" }}>
-              <ListItemText primary={item} />
+              <ListItemText primary={item.name} />
             </ListItemButton>
           </ListItem>
         ))}
@@ -104,10 +106,10 @@ class DrawerAppBar extends React.PureComponent<
                 {navItems.map((item) => (
                   <Typography
                     variant="button"
-                    key={item}
+                    key={item.name}
                     sx={{ color: "#fff" }}
                   >
-                    {item}
+                    {item.name}
                   </Typography>
                 ))}
               </Box>

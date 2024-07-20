@@ -14,11 +14,11 @@ class Dashboard extends React.Component<DashboardProps, DashboardState> {
   }
   render() {
     return (
-      <Layout>
+      <>
         <Slider />
         <AboutUs />
         <Project />
-      </Layout>
+      </>
     )
   }
 }

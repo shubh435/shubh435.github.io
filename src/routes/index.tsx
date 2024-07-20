@@ -1,10 +1,12 @@
 import * as React from "react";
 import { Routes, Route } from "react-router-dom";
 import Dashboard from "./Dashboard";
+import Project from "./Project/Project";
+import Layout from "../components/Layout";
 
-interface RouteToNavigateProps {}
+interface RouteToNavigateProps { }
 
-interface RouteToNavigateState {}
+interface RouteToNavigateState { }
 
 class RouteToNavigate extends React.Component<
   RouteToNavigateProps,
@@ -17,7 +19,10 @@ class RouteToNavigate extends React.Component<
   render() {
     return (
       <Routes>
-        <Route path="/" element={<Dashboard />} />
+        <Route path="" element={<Layout />} >
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/project" element={<Project />} />
+        </Route>
       </Routes>
     );
   }

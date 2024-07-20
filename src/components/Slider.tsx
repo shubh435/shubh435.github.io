@@ -1,13 +1,10 @@
 import { Box, Button, Typography } from "@mui/material"
 import React from "react"
 import * as THREE from "three"
-// import Stats from "three/examples/jsm/libs/stats.module"
-// import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js"
 import { RoomEnvironment } from "three/examples/jsm/environments/RoomEnvironment.js"
-// import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js"
-// // import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader.js"
-// import { globImage } from "../assets"
+import { globImage } from "../assets/assets"
 import { IoIosEye } from "react-icons/io"
+import { Link } from "react-router-dom"
 
 interface SliderProps {}
 
@@ -22,16 +19,12 @@ class Slider extends React.PureComponent<SliderProps, SliderState> {
   }
 
   renderGlobe = () => {
-    // @ts-ignore
-    // const stats = new Stats()
-    // this.threeJsref.current?.appendChild(stats.dom)
     const camera = new THREE.PerspectiveCamera(
       75,
       window.innerWidth / window.innerHeight,
       0.1,
       1000
     )
-
     const renderer = new THREE.WebGLRenderer({ antialias: true })
     renderer.setSize(window.innerWidth, window.innerHeight)
     renderer.setPixelRatio(window.devicePixelRatio)
@@ -39,77 +32,37 @@ class Slider extends React.PureComponent<SliderProps, SliderState> {
     this.threeJsref.current?.appendChild(renderer.domElement)
 
     const pmremGenerator = new THREE.PMREMGenerator(renderer)
-
     const scene = new THREE.Scene()
     scene.background = new THREE.Color(0x000000)
-    scene.environment = pmremGenerator.fromScene(
-      new RoomEnvironment(),
-      0.04
-    ).texture
+    scene.environment = pmremGenerator.fromScene(new RoomEnvironment(), 0.04).texture
 
-    const geometry = new THREE.BoxGeometry(1, 1)
-    const material = new THREE.MeshBasicMaterial({ color: 0x003333 })
-    const cube = new THREE.Mesh(geometry, material)
-    scene.add(cube)
+    // Create a sphere geometry for the globe
+    const geometry = new THREE.SphereGeometry(1, 32, 32)
 
-    camera.position.set(-3, -0.2, 5)
+    // Load a texture for the globe (replace 'path/to/earth_texture.jpg' with the actual path)
+    const textureLoader = new THREE.TextureLoader()
+    const texture = textureLoader.load(globImage)
 
-    // controlls
-    // const controls = new OrbitControls(camera, renderer.domElement)
-    // controls.target.set(0, 0.5, 0)
-    // controls.update()
-    // controls.enablePan = false
-    // controls.enableDamping = true
+    // Create a material using the texture
+    const material = new THREE.MeshStandardMaterial({ map: texture })
 
-    // // draco loader
-    // const dracoLoader = new DRACOLoader()
-    // dracoLoader.setDecoderPath("jsm/libs/draco/gltf/")
+    // Create the globe mesh
+    const globe = new THREE.Mesh(geometry, material)
+    scene.add(globe)
 
-    // load images
-    // const loader = new GLTFLoader()
-    // // loader.setDRACOLoader(dracoLoader)
-    // loader.load(
-    //   globImage,
+    camera.position.set(0, 0, 3)
 
-    //   (response) => {
-    //     console.log("----response", response)
-    //   },
-    //   undefined,
-    //   //   function (gltf) {
-    //   //     const model = gltf.scene
-    //   //     model.position.set(1, 1, 0)
-    //   //     model.scale.set(0.01, 0.01, 0.01)
-    //   //     scene.add(model)
-
-    //   //     // mixer = new THREE.AnimationMixer(model)
-    //   //     // mixer.clipAction(gltf.animations[0]).play()
-
-    //   //     animate()
-    //   //   },
-    //   (e) => {
-    //     console.error(e)
-    //   }
-    // )
-
-    // on window resize
+    // On window resize
     window.onresize = function () {
       camera.aspect = window.innerWidth / window.innerHeight
       camera.updateProjectionMatrix()
       renderer.setSize(window.innerWidth, window.innerHeight)
     }
 
-    // function to animate
+    // Function to animate
     function animate() {
       requestAnimationFrame(animate)
-      cube.rotation.x += 0.01
-      cube.rotation.y += 0.01
-      //   const delta = clock.getDelta()
-
-      //   mixer.update(delta)
-
-      //   controls.update()
-
-      //   stats.update()
+      globe.rotation.y += 0.004
       renderer.render(scene, camera)
     }
 
@@ -121,7 +74,6 @@ class Slider extends React.PureComponent<SliderProps, SliderState> {
   }
 
   render() {
-    // sx={{ position: "absolute", top: "50%", left: 0, zIndex: 20 }}
     return (
       <Box
         sx={{
@@ -129,7 +81,6 @@ class Slider extends React.PureComponent<SliderProps, SliderState> {
           mx: "auto",
           display: "flex",
           justifyContent: "space-between",
-          // backgroundColor: "#000000",
           background: "red",
           flexWrap: "wrap",
         }}
@@ -146,8 +97,7 @@ class Slider extends React.PureComponent<SliderProps, SliderState> {
           <Typography>Hello , I'm</Typography>
           <Typography sx={{ fontSize: 50 }}>Shubham S. Sarode</Typography>
           <Typography>
-          Software Engineer with 2.5+ years of experience
-          in front-end development, seeking full-time front-end roles.
+            Software Engineer with 2.5+ years of experience in front-end development, seeking full-time front-end roles.
           </Typography>
           <Box
             sx={{
@@ -155,26 +105,29 @@ class Slider extends React.PureComponent<SliderProps, SliderState> {
               display: "flex",
               justifyContent: "flex-start",
               gap: 10,
-              mt:3
+              mt: 3,
             }}
           >
-            <Button variant="outlined" 
-               sx={{
+            <Link to="https://drive.google.com/file/d/1jj2iw1bHdgiWZ-DPCCIwxll1guDj43VK/view?usp=sharing"
+             
+              style={{
                 display: "flex",
                 justifyContent: "center",
                 gap: 5,
-                color:"#fff"
-              }}>Hire me </Button>
+                color: "#fff",
+              }}
+            >
+              Hire me
+            </Link>
             <Button
               variant="outlined"
               sx={{
                 display: "flex",
                 justifyContent: "center",
                 gap: 5,
-
               }}
             >
-              <span> Porjects </span> <IoIosEye color={"#FFF"} size={20} />
+              <span>Projects</span> <IoIosEye color={"#FFF"} size={20} />
             </Button>
           </Box>
         </Box>
