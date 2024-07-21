@@ -1,12 +1,14 @@
-import { Box, Button, Typography } from "@mui/material"
+import { Box, Button, Container, Typography } from "@mui/material"
 import React from "react"
 import * as THREE from "three"
 import { RoomEnvironment } from "three/examples/jsm/environments/RoomEnvironment.js"
 import { globImage } from "../assets/assets"
 import { IoIosEye } from "react-icons/io"
-import { Link } from "react-router-dom"
+import withRouter from "../utils/withRouter"
 
-interface SliderProps {}
+interface SliderProps {
+  navigate : (text:string) => void;
+}
 
 interface SliderState {}
 
@@ -72,30 +74,31 @@ class Slider extends React.PureComponent<SliderProps, SliderState> {
   componentDidMount(): void {
     this.renderGlobe()
   }
-
+  navigateTo = (text:string) => {
+    if(text.includes("http")){
+      // window.location.href = text;
+      window.open(text, '_blank')
+      return false;
+    }
+    this.props.navigate(text)
+  }
   render() {
     return (
-      <Box
+      <Box sx={{   background:"#000000"}}>
+      <Container
         sx={{
           position: "relative",
           mx: "auto",
           display: "flex",
           justifyContent: "space-between",
-          background: "red",
-          flexWrap: "wrap",
+          background:"#000000"
         }}
       >
         <Box
-          sx={{
-            width: { xs: "90%", sm: "40%" },
-            position: "absolute",
-            top: "30%",
-            paddingLeft: "20%",
-          }}
           color="#fff"
         >
           <Typography>Hello , I'm</Typography>
-          <Typography sx={{ fontSize: 50 }}>Shubham S. Sarode</Typography>
+          <Typography sx={{ fontSize: 50 }}>Shubham Sarode</Typography>
           <Typography>
             Software Engineer with 2.5+ years of experience in front-end development, seeking full-time front-end roles.
           </Typography>
@@ -108,17 +111,17 @@ class Slider extends React.PureComponent<SliderProps, SliderState> {
               mt: 3,
             }}
           >
-            <Link to="https://drive.google.com/file/d/1jj2iw1bHdgiWZ-DPCCIwxll1guDj43VK/view?usp=sharing"
-             
-              style={{
+            <Button
+              variant="outlined"
+              sx={{
                 display: "flex",
                 justifyContent: "center",
-                gap: 5,
                 color: "#fff",
               }}
+              onClick={()=> this.navigateTo("https://drive.google.com/file/d/1jj2iw1bHdgiWZ-DPCCIwxll1guDj43VK/view?usp=sharing")}
             >
               Hire me
-            </Link>
+            </Button>
             <Button
               variant="outlined"
               sx={{
@@ -126,17 +129,19 @@ class Slider extends React.PureComponent<SliderProps, SliderState> {
                 justifyContent: "center",
                 gap: 5,
               }}
+              onClick={()=> this.navigateTo("/project")}
             >
               <span>Projects</span> <IoIosEye color={"#FFF"} size={20} />
             </Button>
           </Box>
         </Box>
-        <Box>
+        <Box    >
           <Box ref={this.threeJsref} />
         </Box>
+      </Container>
       </Box>
     )
   }
 }
 
-export default Slider
+export default withRouter(Slider);

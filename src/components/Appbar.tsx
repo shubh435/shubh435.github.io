@@ -16,18 +16,25 @@ import {
 import { Theme } from "@mui/system"
 import { withStyles } from "@mui/styles"
 import MenuIcon from "@mui/icons-material/Menu"
+import withRouter from "../utils/withRouter"
 interface DrawerAppBarProps {
   window?: () => Window
-  classes?: any
+  classes?: any,
+  navigate: (text: string) => void
 }
+
 interface DrawerAppBarState {
   mobileOpen: boolean
 }
 
 const drawerWidth = 240
-const navItems = [{
-  id: 1, name: "Home"
-}, { id: 2, name: "About Me" }, { id: 3, name: "Skills" }, { id: 4, name: "Project" }, { id: 5, name: "Contact" }]
+const navItems = [
+  { id: 1, name: "Home", routes: "/" },
+  { id: 2, name: "About Me", routes: "#" },
+  { id: 3, name: "Skills", routes: "#" },
+  { id: 4, name: "Project", routes: '/project' },
+  { id: 5, name: "Contact", routes: "/#" }
+]
 
 class DrawerAppBar extends React.PureComponent<
   DrawerAppBarProps,
@@ -46,6 +53,9 @@ class DrawerAppBar extends React.PureComponent<
     })
   }
 
+  navigateTo = (routes: string) => {
+    this.props.navigate(routes)
+  }
   drawer = (
     <Box onClick={this.handleDrawerToggle} sx={{ textAlign: "center" }}>
       <Typography variant="h6" sx={{ my: 2 }}>
@@ -107,6 +117,7 @@ class DrawerAppBar extends React.PureComponent<
                   <Typography
                     variant="button"
                     key={item.name}
+                    onClick={() => this.navigateTo(item.routes)}
                     sx={{ color: "#fff" }}
                   >
                     {item.name}
@@ -148,4 +159,4 @@ const styles: any = (theme: Theme) => ({
   },
 })
 
-export default withStyles(styles)(DrawerAppBar)
+export default withStyles(styles)(withRouter(DrawerAppBar))
