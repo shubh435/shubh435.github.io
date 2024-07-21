@@ -10,43 +10,86 @@ interface SliderProps {
   navigate: (text: string) => void;
 }
 
-interface SliderState { }
+const startRotaionTimeX = 0.0001;
+const startRotaionTimeY = 0.0001;
+const speedRotaionTimeGlobeY = 0.005;
+const speedRotaionTimeGlobeX = 0.005;
+
+interface SliderState {}
 
 class Slider extends React.PureComponent<SliderProps, SliderState> {
-  threeJsref: React.RefObject<HTMLDivElement>;
+  starsRef: React.RefObject<HTMLDivElement>;
+  globeRef: React.RefObject<HTMLDivElement>;
+
   constructor(props: SliderProps) {
     super(props);
     this.state = {};
-    this.threeJsref = React.createRef();
+    this.starsRef = React.createRef();
+    this.globeRef = React.createRef();
   }
 
-  renderGlobe = () => {
-    const camera = new THREE.PerspectiveCamera(
-      75,
-      window.innerWidth / window.innerHeight,
-      0.1,
-      1000
-    );
+  generateStars = () => {
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
     const renderer = new THREE.WebGLRenderer({ antialias: true });
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.setPixelRatio(window.devicePixelRatio);
     renderer.outputEncoding = THREE.sRGBEncoding;
-    this.threeJsref.current?.appendChild(renderer.domElement);
+    this.starsRef.current?.appendChild(renderer.domElement);
+
+    const scene = new THREE.Scene();
+    scene.background = new THREE.Color(0x000000);
+
+    const starGeometry = new THREE.BufferGeometry();
+    const starMaterial = new THREE.PointsMaterial({ color: 0xffffff });
+
+    const starVertices = [];
+    for (let i = 0; i < 10000; i++) {
+      const x = THREE.MathUtils.randFloatSpread(2000);
+      const y = THREE.MathUtils.randFloatSpread(2000);
+      const z = THREE.MathUtils.randFloatSpread(2000);
+
+      starVertices.push(x, y, z);
+    }
+
+    starGeometry.setAttribute('position', new THREE.Float32BufferAttribute(starVertices, 3));
+    const stars = new THREE.Points(starGeometry, starMaterial);
+    scene.add(stars);
+
+    camera.position.z = 1;
+
+    function animateStars() {
+      requestAnimationFrame(animateStars);
+      stars.rotation.x += startRotaionTimeX;
+      stars.rotation.y += startRotaionTimeY;
+      renderer.render(scene, camera);
+    }
+
+    animateStars();
+  };
+
+  renderGlobe = () => {
+    console.log('renderGlobe called');
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    renderer.setSize(window.innerWidth / 1.5, window.innerHeight / 1.5); // Increase size of renderer
+    renderer.setPixelRatio(window.devicePixelRatio);
+    renderer.outputEncoding = THREE.sRGBEncoding;
+    this.globeRef.current?.appendChild(renderer.domElement);
 
     const pmremGenerator = new THREE.PMREMGenerator(renderer);
     const scene = new THREE.Scene();
-    scene.background = new THREE.Color(0x000000);
-    scene.environment = pmremGenerator.fromScene(
-      new RoomEnvironment(),
-      0.04
-    ).texture;
+    scene.environment = pmremGenerator.fromScene(new RoomEnvironment(), 0.04).texture;
 
-    // Create a sphere geometry for the globe
-    const geometry = new THREE.SphereGeometry(1, 32, 32);
+    // Create a sphere geometry for the globe with increased radius
+    const geometry = new THREE.SphereGeometry(2, 32, 32); // Increase the size from 1 to 2
 
-    // Load a texture for the globe (replace 'path/to/earth_texture.jpg' with the actual path)
+    // Load a texture for the globe
     const textureLoader = new THREE.TextureLoader();
-    const texture = textureLoader.load(globImage);
+    const texture = textureLoader.load(globImage, () => {
+      console.log('Texture loaded');
+      // Once the texture is loaded, render the scene
+      renderer.render(scene, camera);
+    });
 
     // Create a material using the texture
     const material = new THREE.MeshStandardMaterial({ map: texture });
@@ -55,39 +98,64 @@ class Slider extends React.PureComponent<SliderProps, SliderState> {
     const globe = new THREE.Mesh(geometry, material);
     scene.add(globe);
 
-    camera.position.set(0, 0, 3);
+    camera.position.set(0, 0, 5); // Adjust camera position for larger globe
 
-    // On window resize
-    window.onresize = function () {
-      camera.aspect = window.innerWidth / window.innerHeight;
-      camera.updateProjectionMatrix();
-      renderer.setSize(window.innerWidth, window.innerHeight);
+    // Mouse move event
+    let mouseX = 0;
+    let mouseY = 0;
+
+    const onMouseMove = (event: MouseEvent) => {
+      mouseX = (event.clientX / window.innerWidth) * 2 - 1;
+      mouseY = -(event.clientY / window.innerHeight) * 2 + 1;
     };
 
+    window.addEventListener('mousemove', onMouseMove);
+
+    // On window resize
+    window.addEventListener('resize', () => {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth / 1.5, window.innerHeight / 1.5);
+    });
+
     // Function to animate
-    function animate() {
-      requestAnimationFrame(animate);
-      globe.rotation.y += 0.004;
+    function animateGlobe() {
+      requestAnimationFrame(animateGlobe);
+      globe.rotation.x += mouseY * speedRotaionTimeGlobeX;
+      globe.rotation.y += mouseX * speedRotaionTimeGlobeY;
       renderer.render(scene, camera);
     }
 
-    animate();
+    animateGlobe();
   };
 
   componentDidMount(): void {
+    this.generateStars();
     this.renderGlobe();
   }
+
   navigateTo = (text: string) => {
     if (text.includes("http")) {
-      // window.location.href = text;
       window.open(text, "_blank");
       return false;
     }
     this.props.navigate(text);
   };
+
   render() {
     return (
-      <Box sx={{ background: "#000000" }}>
+      <Box sx={{ position: 'relative', background: '#000000', overflow: 'hidden' }}>
+        <Box
+          ref={this.starsRef}
+          sx={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            zIndex: 0, // Ensure the stars are behind
+          }}
+        />
         <Container
           sx={{
             position: "relative",
@@ -96,9 +164,11 @@ class Slider extends React.PureComponent<SliderProps, SliderState> {
             flexDirection: "row",
             alignItems: "center",
             textAlign: "left",
-            background: "#000000",
+            background: "transparent", // Make the background transparent
             minHeight: "100vh",
             justifyContent: "space-between",
+            overflow: "hidden",
+            zIndex: 10, // Ensure it is above the stars
           }}
         >
           <Box color="#fff" sx={{ maxWidth: "50%", zIndex: 10000 }}>
@@ -151,9 +221,16 @@ class Slider extends React.PureComponent<SliderProps, SliderState> {
               justifyContent: "center",
               alignItems: "center",
               width: "50%",
+              height: "100%", // Ensure the height is set to 100%
+              position: "relative", // Ensure relative positioning
             }}
           >
-            <Box ref={this.threeJsref} />
+            <Box
+              ref={this.globeRef}
+              sx={{
+                zIndex: 10, // Ensure the globe is on top
+              }}
+            />
           </Box>
         </Container>
       </Box>
