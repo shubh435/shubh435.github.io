@@ -2,15 +2,12 @@
     scale: 1.5;
     font-family: sans-serif;
     width: 320px;
-    height: 200px;
     border-radius: 80% 80%;
-    padding: 1.5rem;
     display: flex;
     --color: rgba(67, 67, 67, 0.2);
     background-image: linear-gradient(to right, var(--color) 1px, transparent 1px),
       linear-gradient(to bottom, var(--color) 1px, transparent 1px);
     background-size: 0.5rem 0.5rem;
-    box-shadow: inset 0 0 40px 20px rgb(0, 0, 0);
     flex-direction: column;
     align-content: center;
     justify-content: center;
@@ -19,7 +16,7 @@
   
   .border-light {
     position: relative;
-    display: flex;
+    /* display: flex; */
     border-radius: 8px;
     background: transparent;
   }
@@ -211,6 +208,8 @@
       rgb(126, 126, 126) 20%,
       rgba(67, 67, 67, 0.143)
     );
+    display: flex;
+    flex:1;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     z-index: 2;

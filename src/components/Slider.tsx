@@ -2,9 +2,10 @@ import { Box, Button, Container, Typography } from "@mui/material";
 import React from "react";
 import * as THREE from "three";
 import { RoomEnvironment } from "three/examples/jsm/environments/RoomEnvironment.js";
-import { globImage } from "../assets/assets";
+import { globImage, starImage } from "../assets/assets";
 import { IoIosEye } from "react-icons/io";
 import withRouter from "../utils/withRouter";
+import { navigateTo } from "../utils/utils";
 
 interface SliderProps {
   navigate: (text: string) => void;
@@ -15,7 +16,7 @@ const startRotaionTimeY = 0.0001;
 const speedRotaionTimeGlobeY = 0.005;
 const speedRotaionTimeGlobeX = 0.005;
 
-interface SliderState {}
+interface SliderState { }
 
 class Slider extends React.PureComponent<SliderProps, SliderState> {
   starsRef: React.RefObject<HTMLDivElement>;
@@ -39,8 +40,17 @@ class Slider extends React.PureComponent<SliderProps, SliderState> {
     const scene = new THREE.Scene();
     scene.background = new THREE.Color(0x000000);
 
+    // Load the star texture
+    const textureLoader = new THREE.TextureLoader();
+    const starTexture = textureLoader.load(starImage);
+
     const starGeometry = new THREE.BufferGeometry();
-    const starMaterial = new THREE.PointsMaterial({ color: 0xffffff });
+    const starMaterial = new THREE.PointsMaterial({
+      map: starTexture,
+      size: 1, // Adjust the size as needed
+      transparent: true, // Ensure transparency is handled if your texture has alpha
+      alphaTest: 0.1 // Threshold for alpha transparency
+    });
 
     const starVertices = [];
     for (let i = 0; i < 10000; i++) {
@@ -134,14 +144,6 @@ class Slider extends React.PureComponent<SliderProps, SliderState> {
     this.renderGlobe();
   }
 
-  navigateTo = (text: string) => {
-    if (text.includes("http")) {
-      window.open(text, "_blank");
-      return false;
-    }
-    this.props.navigate(text);
-  };
-
   render() {
     return (
       <Box sx={{ position: 'relative', background: '#000000', overflow: 'hidden' }}>
@@ -195,8 +197,8 @@ class Slider extends React.PureComponent<SliderProps, SliderState> {
                   color: "#fff",
                 }}
                 onClick={() =>
-                  this.navigateTo(
-                    "https://drive.google.com/file/d/1jj2iw1bHdgiWZ-DPCCIwxll1guDj43VK/view?usp=sharing"
+                  navigateTo(
+                    "https://drive.google.com/file/d/1jj2iw1bHdgiWZ-DPCCIwxll1guDj43VK/view?usp=sharing", this.props.navigate
                   )
                 }
               >
@@ -209,7 +211,7 @@ class Slider extends React.PureComponent<SliderProps, SliderState> {
                   justifyContent: "center",
                   gap: 1,
                 }}
-                onClick={() => this.navigateTo("/project")}
+                onClick={() => navigateTo("/project", this.props.navigate)}
               >
                 <span>Projects</span> <IoIosEye color={"#FFF"} size={20} />
               </Button>

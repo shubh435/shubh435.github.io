@@ -1,15 +1,16 @@
 import { Box, Button, Container, Typography } from "@mui/material"
 import React from "react"
-import { styled } from '@mui/material/styles';
 import RecipeReviewCard from "./RecipeCard";
 import { ProjectData, projectdata } from "../assets/data";
-interface ProjectProps {}
+import { navigateTo } from "../utils/utils";
+import withRouter from "../utils/withRouter";
+interface ProjectProps {
+  navigate:(text:string) => void;
+}
 
 interface ProjectState {
   projectData:ProjectData[]
 }
-
-
 
 
 class Project extends React.Component<ProjectProps, ProjectState> {
@@ -19,6 +20,7 @@ class Project extends React.Component<ProjectProps, ProjectState> {
       projectData:projectdata
     }
   }
+  
   render() {
     return (
       <Box>
@@ -29,7 +31,7 @@ class Project extends React.Component<ProjectProps, ProjectState> {
         marginBottom:2
       }}>
      <Typography component={"h2"} variant="h2" m={1}>Project</Typography>
-    <Button variant="contained">View all</Button>
+    <Button onClick={()=>navigateTo("/project",this.props.navigate)} variant="contained">View all</Button>
      </Box>
         <Box className="about-me-content" width={"100%"} sx={{display:'flex',flexWrap:"wrap",justifyContent:"space-between", gap:4}} >
           {
@@ -46,4 +48,4 @@ class Project extends React.Component<ProjectProps, ProjectState> {
   }
 }
 
-export default Project
+export default withRouter(Project)
