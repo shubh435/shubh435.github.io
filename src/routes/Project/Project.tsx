@@ -1,46 +1,51 @@
-import { Box, Container } from "@mui/material";
+import { Box, Container, Typography } from "@mui/material";
 import React from "react";
 import "./Project.css"
+import RecipeReviewCard from "../../components/RecipeCard";
+import { projectdata } from "../../assets/data";
 
 interface ProjectProps {
-    
+
 }
- 
+
 interface ProjectState {
-    
+
 }
- 
+
 class Project extends React.Component<ProjectProps, ProjectState> {
-    constructor(props: ProjectProps) {
-        super(props);
-        this.state = {  };
-    }
-    render() { 
-        return (<Box sx={{minHeight:"100vh",background:"black"}}>
-       <Container sx={{display:"flex",justifyContent:"center",paddingTop:"4%"}}>
-       <div className="card">
-  <div className="border-light">
-    <div className="input-content">
-      <div className="light">
-        <span className="clip-container"></span>
-      </div>
-      <div className="search-icon">
-        <svg
-          className="svg"
-          fill="none"
-          stroke="currentColor"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <circle cx="11" cy="11" r="8"></circle>
-          <line x1="21" x2="16.65" y1="21" y2="16.65"></line>
-        </svg>
-      </div>
-      <input type="text" name="text" className="input" placeholder="Search..." />
-      {/* <button  className="sort-btn">
+  constructor(props: ProjectProps) {
+    super(props);
+    this.state = {};
+  }
+  render() {
+    return (<Box sx={{ minHeight: "100vh", background: "black" }}>
+      <Container >
+        <Box sx={{ display: "flex", justifyContent: "center", paddingTop: "4%" }}>
+
+
+          <div className="card">
+            <div className="border-light">
+              <div className="input-content">
+                <div className="light">
+                  <span className="clip-container"></span>
+                </div>
+                <div className="search-icon">
+                  <svg
+                    className="svg"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" x2="16.65" y1="21" y2="16.65"></line>
+                  </svg>
+                </div>
+                <input type="text" name="text" className="input" placeholder="Search..." />
+                {/* <button  className="sort-btn">
         <span></span>
         <span></span>
         <svg
@@ -58,15 +63,23 @@ class Project extends React.Component<ProjectProps, ProjectState> {
           ></path>
         </svg>
       </button> */}
-    </div>
-  </div>
-</div>
+              </div>
+            </div>
+          </div>
+        </Box>
+        <Box width={"100%"} sx={{ display: 'flex', flexWrap: "wrap", py: "5%", gap: 4 }} >
+          {
+            projectdata.length > 0 ? projectdata.sort((a, b) => b.rating - a.rating).map(projectdata => (
+              <RecipeReviewCard key={projectdata.id}{...projectdata} />
+            ))
+              : <Typography component={"p"} >No project found</Typography>
+          }
+        </Box>
 
+      </Container>
 
-       </Container>
-
-        </Box>  );
-    }
+    </Box>);
+  }
 }
- 
+
 export default Project;
