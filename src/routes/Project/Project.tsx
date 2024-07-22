@@ -1,4 +1,4 @@
-import { Box, Container, Typography } from "@mui/material";
+import { Box, Container, Grid, Typography } from "@mui/material";
 import React from "react";
 import "./Project.css"
 import RecipeReviewCard from "../../components/RecipeCard";
@@ -67,14 +67,17 @@ class Project extends React.Component<ProjectProps, ProjectState> {
             </div>
           </div>
         </Box>
-        <Box width={"100%"} sx={{ display: 'flex', flexWrap: "wrap", py: "5%", gap: 4 }} >
+        <Grid container spacing={4} className="about-me-content" sx={{py:"5%"}} >
           {
             projectdata.length > 0 ? projectdata.sort((a, b) => b.rating - a.rating).map(projectdata => (
-              <RecipeReviewCard key={projectdata.id}{...projectdata} />
+              <Grid item lg={4} md={6} sm={12} xs={12}  >
+                    <RecipeReviewCard key={projectdata.id} {...projectdata} />
+
+                  </Grid>
             ))
               : <Typography component={"p"} >No project found</Typography>
           }
-        </Box>
+        </Grid>
 
       </Container>
 

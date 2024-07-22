@@ -1,43 +1,42 @@
 import * as React from 'react';
-import { styled } from '@mui/material/styles';
 import {
   Card, CardHeader, CardMedia, CardContent, CardActions,
-  Avatar, IconButton, Typography
+  Avatar,  Typography
 } from '@mui/material';
 // import Collapse from '@mui/material/Collapse';
-import { IconButtonProps } from '@mui/material/IconButton';
+// import { IconButtonProps } from '@mui/material/IconButton';
 import { red as red } from '@mui/material/colors';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import ShareIcon from '@mui/icons-material/RemoveRedEye';
 // import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 // import MoreVertIcon from '@mui/icons-material/MoreVert';
 import { ProjectData } from '../assets/data';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-interface ExpandMoreProps extends IconButtonProps {
-  expand: boolean;
-}
+// interface ExpandMoreProps extends IconButtonProps {
+//   expand: boolean;
+// }
 
-const ExpandMore = styled((props: ExpandMoreProps) => {
-  const { expand, ...other } = props;
-  return <IconButton {...other} />;
-})(({ theme, expand }) => ({
-  transform: !expand ? 'rotate(0deg)' : 'rotate(180deg)',
-  marginLeft: 'auto',
-  transition: theme.transitions.create('transform', {
-    duration: theme.transitions.duration.shortest,
-  }),
-}));
+// const ExpandMore = styled((props: ExpandMoreProps) => {
+//   const { expand, ...other } = props;
+//   return <IconButton {...other} />;
+// })(({ theme, expand }) => ({
+//   transform: !expand ? 'rotate(0deg)' : 'rotate(180deg)',
+//   marginLeft: 'auto',
+//   transition: theme.transitions.create('transform', {
+//     duration: theme.transitions.duration.shortest,
+//   }),
+// }));
 
 export default function RecipeReviewCard(props: ProjectData) {
-  const [expanded, setExpanded] = React.useState(false);
-  const navigate = useNavigate()
-  const handleExpandClick = () => {
-    setExpanded(!expanded);
-  };
+  // const [expanded, setExpanded] = React.useState(false);
+  // const navigate = useNavigate()
+  // const handleExpandClick = () => {
+  //   setExpanded(!expanded);
+  // };
 
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{minHeight:'80vh'}}>
       <CardHeader
         avatar={
           <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">

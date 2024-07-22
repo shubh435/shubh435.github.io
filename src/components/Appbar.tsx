@@ -77,9 +77,10 @@ class DrawerAppBar extends React.PureComponent<
   render() {
     const { classes } = this.props
     return (
-      <Box sx={{ display: "flex" }}>
-        <AppBar className={classes.appbarBackground} component="nav">
-          <Container sx={{ mx: "auto" }}>
+      <Box  sx={{display:"flex",background:"#000 !important", }}>
+
+          <Container >
+        <AppBar   className={classes.appbarBackground} component="nav" >
             <Toolbar>
               <IconButton
                 color="inherit"
@@ -100,6 +101,7 @@ class DrawerAppBar extends React.PureComponent<
                   backgroundImage:
                     "https://www.shutterstock.com/image-illustration/3d-illustration-colorful-wavy-multicolor-260nw-1897581025.jpg",
                   // color: "transparent",
+                  // textCli
                   backgroundClip: "text",
                 }}
               >
@@ -110,7 +112,7 @@ class DrawerAppBar extends React.PureComponent<
                   display: { xs: "none", sm: "flex" },
                   gap: "30px",
                   width: "80%",
-                  justifyContent: "center",
+                  justifyContent: "end",
                 }}
               >
                 {navItems.map((item) => (
@@ -125,8 +127,9 @@ class DrawerAppBar extends React.PureComponent<
                 ))}
               </Box>
             </Toolbar>
-          </Container>
         </AppBar>
+          </Container>
+        
         <Box component="nav">
           <Drawer
             // container={this.container}

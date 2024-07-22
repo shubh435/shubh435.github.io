@@ -1,4 +1,4 @@
-import { Box, Button, Container, Typography } from "@mui/material";
+import { Box, Button, Container, Grid, Typography } from "@mui/material";
 import React from "react";
 import * as THREE from "three";
 import { RoomEnvironment } from "three/examples/jsm/environments/RoomEnvironment.js";
@@ -173,7 +173,10 @@ class Slider extends React.PureComponent<SliderProps, SliderState> {
             zIndex: 10, // Ensure it is above the stars
           }}
         >
-          <Box color="#fff" sx={{ maxWidth: "50%", zIndex: 10000 }}>
+          <Grid container>
+          <Grid item lg={2} md={2} ></Grid>
+            <Grid item lg={4} md={4} sm={12} sx={{m:"auto"}}>
+            <Box color="#fff" sx={{ width: "100%", zIndex: 10000 }}>
             <Typography>Hello, I'm</Typography>
             <Typography sx={{ fontSize: 50 }}>Shubham Sarode</Typography>
             <Typography>
@@ -217,12 +220,14 @@ class Slider extends React.PureComponent<SliderProps, SliderState> {
               </Button>
             </Box>
           </Box>
-          <Box
+            </Grid>
+            <Grid item lg={6} md={6} sm={12} sx={{m:"auto"}}>
+            <Box
             sx={{
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
-              width: "50%",
+              width: "100%",
               height: "100%", // Ensure the height is set to 100%
               position: "relative", // Ensure relative positioning
             }}
@@ -234,6 +239,10 @@ class Slider extends React.PureComponent<SliderProps, SliderState> {
               }}
             />
           </Box>
+              </Grid>
+          </Grid>
+         
+         
         </Container>
       </Box>
     );
