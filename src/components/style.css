@@ -1,0 +1,20 @@
+.my-heading-text{
+    text-transform: uppercase;
+    font-size: 40px !important;
+    font-size: 150px;
+  line-height: 160px;
+  margin-left: -10px;
+  color: transparent;
+   text-transform: uppercase;
+  -webkit-text-stroke: 1px #fff;
+  background-image: url(../assets/back.png);
+  -webkit-background-clip: text;
+  background-position:0 0 ;
+  animation: back 20s linear infinite;
+}
+
+@keyframes back{
+    100%{
+        background-position: 2000px 0;
+    }
+  }

@@ -4,49 +4,49 @@ import { createTheme } from "@mui/material/styles";
 
 const defaultTheme = createTheme({
   typography: {
-    fontFamily: "Domine",
+    fontFamily: "Roboto",
     h1: {
       fontSize: "26px",
       fontWeight: 700,
-      fontFamily: "Domine",
+      fontFamily: "Roboto",
       fontStyle: "normal",
     },
     h2: {
-      fontFamily: "Domine",
+      fontFamily: "Roboto",
       fontSize: "22px",
       fontWeight: 600,
     },
     h3: {
-      fontFamily: "Domine",
+      fontFamily: "Roboto",
       fontSize: "18px",
       fontWeight: 500,
     },
     h4: {
-      fontFamily: "Domine",
+      fontFamily: "Roboto",
       fontSize: "16px",
       fontWeight: 400,
       LineHeight: "28px",
     },
     h5: {
-      fontFamily: "Domine",
+      fontFamily: "Roboto",
       fontSize: "14px",
       fontWeight: 400,
       LineHeight: "24px",
     },
     h6: {
-      fontFamily: "Montserrat Alternates",
+      fontFamily: "Roboto",
       fontSize: "12px",
       fontWeight: 600,
       LineHeight: "28px",
     },
     caption: {
-      fontFamily: "Fall in love",
+      fontFamily: "Roboto",
       fontWeight: 400,
       lineHeight: "50px",
       fontStyle: "normal",
     },
     button: {
-      fontFamily: "Domine",
+      fontFamily: "Roboto",
       fontSize: "18px",
       fontWeight: 500,
     },

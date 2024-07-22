@@ -13,9 +13,10 @@ import projectImage10 from "./Screenshot 2024-07-21 at 7.22.05 PM.png"
 import projectImage11 from "./Screenshot 2024-07-21 at 7.25.36 PM.png"
 import projectImage12 from "./Screenshot 2024-07-21 at 7.27.21 PM.png"
 import projectImage13 from "./Screenshot 2024-07-21 at 7.32.12 PM.png"
+import backImage from "./back.png"
 export {
     globImage, project1Image, project2Image,
     project3Image, starImage, projectImage4, projectImage5,
     noImageFound, projectImage7, projectImage8, projectImage9,
-    projectImage10, projectImage11, projectImage12, projectImage13
+    projectImage10, projectImage11, projectImage12, projectImage13,backImage
 }

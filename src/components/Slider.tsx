@@ -6,7 +6,7 @@ import { globImage, starImage } from "../assets/assets";
 import { IoIosEye } from "react-icons/io";
 import withRouter from "../utils/withRouter";
 import { navigateTo } from "../utils/utils";
-
+import "./style.css"
 interface SliderProps {
   navigate: (text: string) => void;
 }
@@ -178,7 +178,7 @@ class Slider extends React.PureComponent<SliderProps, SliderState> {
             <Grid item lg={4} md={4} sm={12} sx={{m:"auto"}}>
             <Box color="#fff" sx={{ width: "100%", zIndex: 10000 }}>
             <Typography>Hello, I'm</Typography>
-            <Typography sx={{ fontSize: 50 }}>Shubham Sarode</Typography>
+            <Typography className="my-heading-text">Shubham Sarode</Typography>
             <Typography>
               Software Engineer with 2.5+ years of experience in front-end
               development, seeking full-time front-end roles.
