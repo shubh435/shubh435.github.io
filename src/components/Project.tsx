@@ -38,9 +38,12 @@ class Project extends React.PureComponent<ProjectProps, ProjectState> {
           </Box>
           <Box className="about-me-content" width={"100%"} sx={{ display: 'flex', flexWrap: "wrap", justifyContent: "space-between", gap: 4 }} >
             {
-              this.state.projectData.length > 0 ? this.state.projectData.sort((a, b) => b.rating - a.rating).splice(0, 3).map(projectdata => (
-                <RecipeReviewCard  key={projectdata.id}{...projectdata} />
-              ))
+              this.state.projectData.length > 0 ? this.state.projectData.sort((a, b) => b.rating - a.rating).map((projectdata, index) => {
+                if (index >= 3) return;
+                return (
+                  <RecipeReviewCard key={projectdata.id} {...projectdata} />
+                )
+              })
                 : <Typography component={"p"} >No project found</Typography>
             }
           </Box>
