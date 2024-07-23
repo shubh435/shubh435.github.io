@@ -2,9 +2,10 @@ import React from "react"
 import AboutUs from "../../components/AboutUs"
 import Slider from "../../components/Slider"
 import Project from "../../components/Project"
-interface DashboardProps {}
+import SkillSection from "../../components/SkillSection"
+interface DashboardProps { }
 
-interface DashboardState {}
+interface DashboardState { }
 
 class Dashboard extends React.Component<DashboardProps, DashboardState> {
   constructor(props: DashboardProps) {
@@ -16,6 +17,7 @@ class Dashboard extends React.Component<DashboardProps, DashboardState> {
       <>
         <Slider />
         <AboutUs />
+        <SkillSection />
         <Project />
       </>
     )
