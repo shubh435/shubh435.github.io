@@ -1,6 +1,7 @@
 // SkillSection.js
 import React from 'react';
-import { Box, Typography, Grid, Paper, Chip, Container } from '@mui/material';
+import { Box, Typography, Grid, Container } from '@mui/material';
+import LampEffect from './LampEffect';
 
 const skills = [
     'React',
@@ -29,9 +30,7 @@ const SkillSection = () => {
                 <Grid container spacing={2}>
                     {skills.map((skill, index) => (
                         <Grid item key={index}>
-                            <Paper elevation={3} sx={{ padding: 2, textAlign: 'center' }}>
-                                <Chip label={skill} color="primary" sx={{textTransform:"capitalize"}} />
-                            </Paper>
+                            <LampEffect label={skill} />
                         </Grid>
                     ))}
                 </Grid>

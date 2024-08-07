@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Typography, Link, Grid, Container, Button } from '@mui/material';
+import { Box, Typography, Link, Grid, Container } from '@mui/material';
 interface FooterProps {}
 
 interface FooterState {}
@@ -10,7 +10,7 @@ class Footer extends React.Component<FooterProps, FooterState> {
     this.state = {};
   }
   render() {
-    return  <Box sx={{ bgcolor: '#000', color: 'white', py: 3, mt: 5 }}>
+    return  <Box sx={{ bgcolor: '#000', color: 'white', py: 3 }}>
     <Container sx={{mx:'auto'}}>
       <Grid container spacing={2}>
         <Grid item xs={12} md={4}>

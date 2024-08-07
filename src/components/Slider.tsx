@@ -178,7 +178,7 @@ class Slider extends React.PureComponent<SliderProps, SliderState> {
             <Grid item lg={4} md={4} sm={12} sx={{m:"auto"}}>
             <Box color="#fff" sx={{ width: "100%", zIndex: 10000 }}>
             <Typography>Hello, I'm</Typography>
-            <Typography className="my-heading-text">Shubham Sarode</Typography>
+            <Typography component={"h3"} variant="h3" className="my-heading-text-shubham !text-[2.4rem]">Shubham Sarode</Typography>
             <Typography>
               Software Engineer with 2.5+ years of experience in front-end
               development, seeking full-time front-end roles.

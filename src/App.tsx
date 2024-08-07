@@ -12,6 +12,7 @@ function App() {
         <RouteToNavigate />
       </ThemeProvider>
     </Router>
+   
   );
 }
 

@@ -1,9 +1,11 @@
 import { Box, Button, Container, Grid, Typography } from "@mui/material"
 import React from "react"
-import RecipeReviewCard from "./RecipeCard";
 import { ProjectData, projectdata } from "../assets/data";
 import { navigateTo } from "../utils/utils";
 import withRouter from "../utils/withRouter";
+import ThreeDCard from "./ThreeJS3DCard";
+import './LampEffect.css';
+
 interface ProjectProps {
   navigate: (text: string) => void;
 }
@@ -26,7 +28,8 @@ class Project extends React.PureComponent<ProjectProps, ProjectState> {
 
   render() {
     return (
-      <Box>
+      <section className={`bg-transparent back-imag-setup
+       bg-fixed bg-center bg-no-repeat bg-cover py-4 m-o`} >
         <Container component={"section"} className="about-me" >
           <Box sx={{
             display: 'flex',
@@ -34,7 +37,7 @@ class Project extends React.PureComponent<ProjectProps, ProjectState> {
             marginBottom: 2,
             width: '100%',
           }}>
-            <Typography component={"h2"} variant="h2" m={1}>Project</Typography>
+            <Typography component={"h2"} className="text-white" variant="h2" m={1}>Project</Typography>
             <Button onClick={() => navigateTo("/project", this.props.navigate)} variant="contained">View all</Button>
           </Box>
           <Grid container spacing={4}  className="about-me-content" >
@@ -43,7 +46,14 @@ class Project extends React.PureComponent<ProjectProps, ProjectState> {
                 if (index >= 3) return;
                 return (
                   <Grid item  lg={4} md={6} sm={12} xs={12}  >
-                    <RecipeReviewCard key={projectdata.id} {...projectdata} />
+
+                    {/* <RecipeReviewCard key={projectdata.id}  /> */}
+                    <ThreeDCard
+
+{...projectdata}
+        title={projectdata.projectName}
+        description={projectdata.description}
+        imageUrl={projectdata.porjectImage} />
 
                   </Grid>
                 )
@@ -52,7 +62,7 @@ class Project extends React.PureComponent<ProjectProps, ProjectState> {
             }
           </Grid>
         </Container>
-      </Box>
+      </section>
 
     )
   }
