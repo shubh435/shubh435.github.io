@@ -1,19 +1,48 @@
 .lamp-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: #0a0a0a;
-  }
-  
-  .lamp-light {
-    width: 200px;
-    height: 5px;
-    background-color: #00bfff;
-    box-shadow: 0 0 30px 10px #00bfff;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #0a0a0a;
+  padding: 20px;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  transition: background-color 0.5s ease-in-out;
+}
 
-  .back-imag-setup{
-    background-image: url(/src/assets/2209_w015_n003_980b_p15_980.jpg);
-  }
-  
+.lamp-light {
+  width: 200px;
+  height: 5px;
+  background-color: #00bfff;
+  box-shadow: 0 0 30px 10px #00bfff;
+  transition: box-shadow 0.3s ease-in-out;
+  border-radius: 2px;
+}
+
+.lamp-container:hover {
+  background-color: #151515;
+}
+
+.lamp-container:hover .lamp-light {
+  box-shadow: 0 0 50px 20px #00ffff;
+}
+
+.lamp-text h3 {
+  margin-top: 15px;
+  color: white;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+  transition: color 0.3s ease-in-out;
+}
+
+.lamp-container:hover .lamp-text h3 {
+  color: #00bfff;
+}
+
+.back-imag-setup {
+  background-image: url(/src/assets/2209_w015_n003_980b_p15_980.jpg);
+  background-size: cover;
+  background-position: center;
+}

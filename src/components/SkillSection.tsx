@@ -24,10 +24,10 @@ const SkillSection = () => {
     return (
         <Box sx={{ padding: 3, backgroundColor: '#f5f5f5', borderRadius: 2, marginTop: 3 }}>
             <Container >
-                <Typography component={"h2"} variant="h2" gutterBottom>
+                <Typography component={"h2"} variant="h2" gutterBottom textTransform={"uppercase"}>
                     Skills
                 </Typography>
-                <Grid container spacing={2}>
+                <Grid container spacing={2} justifyContent={"space-between"}>
                     {skills.map((skill, index) => (
                         <Grid item key={index}>
                             <LampEffect label={skill} />
