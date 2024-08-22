@@ -1,12 +1,12 @@
 import * as React from "react";
 import { Routes, Route } from "react-router-dom";
-import Dashboard from "./Dashboard";
-import Project from "./Project/Project";
 import Layout from "../components/Layout";
+const Dashboard = React.lazy(() => import("./Dashboard"));
+const Project = React.lazy(() => import("./Project/Project"));
 
-interface RouteToNavigateProps { }
+interface RouteToNavigateProps {}
 
-interface RouteToNavigateState { }
+interface RouteToNavigateState {}
 
 class RouteToNavigate extends React.Component<
   RouteToNavigateProps,
@@ -16,14 +16,32 @@ class RouteToNavigate extends React.Component<
     super(props);
     this.state = {};
   }
-  render() {
+
+  Loader: React.FC = () => {
     return (
-      <Routes>
-        <Route path="" element={<Layout />} >
-          <Route path="/" element={<Dashboard />} />
-          <Route path="/project" element={<Project />} />
-        </Route>
-      </Routes>
+      <div className="loader-container">
+        <div className="loader">
+          {Array(6)
+            .fill("")
+            .map(() => (
+              <div className="ring"></div>
+            ))}
+        </div>
+      </div>
+    );
+  };
+
+  render() {
+    const { Loader } = this;
+    return (
+      <React.Suspense fallback={<Loader />}>
+        <Routes>
+          <Route path="" element={<Layout />}>
+            <Route path="/" element={<Dashboard />} />
+            <Route path="/project" element={<Project />} />
+          </Route>
+        </Routes>
+      </React.Suspense>
     );
   }
 }
