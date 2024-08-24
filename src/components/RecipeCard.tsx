@@ -16,7 +16,7 @@ import { Link } from "react-router-dom";
 
 export default function RecipeReviewCard(props: ProjectData) {
   return (
-    <Card sx={{ minHeight: "80vh" }}>
+    <Card sx={{}}>
       <CardHeader
         avatar={
           <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
