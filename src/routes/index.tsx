@@ -20,13 +20,7 @@ class RouteToNavigate extends React.Component<
   Loader: React.FC = () => {
     return (
       <div className="loader-container">
-        <div className="loader">
-          {Array(6)
-            .fill("")
-            .map(() => (
-              <div className="ring"></div>
-            ))}
-        </div>
+        <div className="loader" />
       </div>
     );
   };
