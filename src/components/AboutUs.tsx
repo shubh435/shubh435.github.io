@@ -11,10 +11,10 @@ class AboutUs extends React.Component<AboutUsProps, AboutUsState> {
   }
   render() {
     return (
-      <Box id="about">
+      <Box id="about" className="bg-[#f5f5f5] w-full mb-0">
         <Container
           component={"section"}
-          className="about-me"
+          className="about-me "
           sx={{
             minHeight: 300,
             display: "flex",

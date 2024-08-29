@@ -29,7 +29,7 @@ class Project extends React.PureComponent<ProjectProps, ProjectState> {
     return (
       <section
         className={`bg-transparent back-imag-setup
-       bg-fixed bg-center bg-no-repeat bg-cover py-4 m-o`}
+       bg-fixed bg-center bg-no-repeat bg-cover py-4 m-0`}
       >
         <Container component={"section"} className="about-me">
           <Box

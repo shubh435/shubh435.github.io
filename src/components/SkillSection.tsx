@@ -26,8 +26,6 @@ const SkillSection = () => {
       sx={{
         padding: 3,
         backgroundColor: "#f5f5f5",
-        borderRadius: 2,
-        marginTop: 3,
       }}
       id="skill"
     >
