@@ -1,4 +1,4 @@
-import * as React from "react"
+import * as React from "react";
 import {
   Typography,
   Toolbar,
@@ -12,50 +12,51 @@ import {
   Box,
   AppBar,
   Container,
-} from "@mui/material"
-import { Theme } from "@mui/system"
-import { withStyles } from "@mui/styles"
-import MenuIcon from "@mui/icons-material/Menu"
-import withRouter from "../utils/withRouter"
+} from "@mui/material";
+import { Theme } from "@mui/system";
+import { withStyles } from "@mui/styles";
+import MenuIcon from "@mui/icons-material/Menu";
+import withRouter from "../utils/withRouter";
 interface DrawerAppBarProps {
-  window?: () => Window
-  classes?: any,
-  navigate: (text: string) => void
+  window?: () => Window;
+  classes?: any;
+  navigate: (text: string) => void;
 }
 
 interface DrawerAppBarState {
-  mobileOpen: boolean
+  mobileOpen: boolean;
 }
 
-const drawerWidth = 240
+const drawerWidth = 240;
 const navItems = [
   { id: 1, name: "Home", routes: "/" },
-  { id: 2, name: "About Me", routes: "#" },
-  { id: 3, name: "Skills", routes: "#" },
-  { id: 4, name: "Project", routes: '/project' },
-  { id: 5, name: "Contact", routes: "/#" }
-]
+  { id: 2, name: "About Me", routes: "#about" },
+  { id: 3, name: "Skills", routes: "#skill" },
+  { id: 4, name: "Project", routes: "/project" },
+  { id: 5, name: "Contact", routes: "#footer" },
+];
 
 class DrawerAppBar extends React.PureComponent<
   DrawerAppBarProps,
   DrawerAppBarState
 > {
   constructor(props: DrawerAppBarProps) {
-    super(props)
+    super(props);
     this.state = {
       mobileOpen: false,
-    }
+    };
   }
 
   handleDrawerToggle = () => {
     this.setState({
       mobileOpen: !this.state.mobileOpen,
-    })
-  }
+    });
+  };
 
   navigateTo = (routes: string) => {
-    this.props.navigate(routes)
-  }
+    // this.props.navigate(routes);
+    window.location.href = routes;
+  };
   drawer = (
     <Box onClick={this.handleDrawerToggle} sx={{ textAlign: "center" }}>
       <Typography variant="h6" sx={{ my: 2 }}>
@@ -72,15 +73,14 @@ class DrawerAppBar extends React.PureComponent<
         ))}
       </List>
     </Box>
-  )
+  );
 
   render() {
-    const { classes } = this.props
+    const { classes } = this.props;
     return (
-      <Box  sx={{display:"flex",background:"#000 !important", }}>
-
-          <Container >
-        <AppBar   className={classes.appbarBackground} component="nav" >
+      <Box sx={{ display: "flex", background: "#000 !important" }}>
+        <Container>
+          <AppBar className={classes.appbarBackground} component="nav">
             <Toolbar>
               <IconButton
                 color="inherit"
@@ -127,9 +127,9 @@ class DrawerAppBar extends React.PureComponent<
                 ))}
               </Box>
             </Toolbar>
-        </AppBar>
-          </Container>
-        
+          </AppBar>
+        </Container>
+
         <Box component="nav">
           <Drawer
             // container={this.container}
@@ -152,7 +152,7 @@ class DrawerAppBar extends React.PureComponent<
           </Drawer>
         </Box>
       </Box>
-    )
+    );
   }
 }
 const styles: any = (theme: Theme) => ({
@@ -160,6 +160,6 @@ const styles: any = (theme: Theme) => ({
     background: "#000000 !important",
     position: "sticky !important",
   },
-})
+});
 
-export default withStyles(styles)(withRouter(DrawerAppBar))
+export default withStyles(styles)(withRouter(DrawerAppBar));

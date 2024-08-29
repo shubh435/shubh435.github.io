@@ -157,6 +157,7 @@ class Slider extends React.PureComponent<SliderProps, SliderState> {
     return (
       <Box
         sx={{ position: "relative", background: "#000000", overflow: "hidden" }}
+        id="/"
       >
         <Box
           ref={this.starsRef}
