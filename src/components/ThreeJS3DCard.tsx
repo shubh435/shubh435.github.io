@@ -1,5 +1,4 @@
 import React from 'react';
-// import './ThreeDCard.css';
 import withRouter from '../utils/withRouter';
 
 interface ThreeDCardProps {
@@ -33,7 +32,7 @@ const ThreeDCard: React.FC<ThreeDCardProps> = ({ title, description, imageUrl ,t
           </p>
           <div className="transition duration-200 ease-linear w-full mt-4">
             <img
-              alt="thumbnail"
+              alt="shubham"
               loading="lazy"
               width="1000"
               height="1000"

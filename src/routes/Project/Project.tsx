@@ -16,7 +16,7 @@ class Project extends React.Component<ProjectProps, ProjectState> {
   render() {
     return (
       <Box sx={{ minHeight: "100vh", background: "black" }}>
-        <Container>
+        <Container component={"section"}>
           <Box
             sx={{ display: "flex", justifyContent: "center", paddingTop: "4%" }}
           >
@@ -56,6 +56,7 @@ class Project extends React.Component<ProjectProps, ProjectState> {
             spacing={4}
             className="about-me-content"
             sx={{ py: "5%" }}
+            component={"section"}
           >
             {projectdata.length > 0 ? (
               projectdata

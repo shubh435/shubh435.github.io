@@ -55,7 +55,7 @@ class Project extends React.PureComponent<ProjectProps, ProjectState> {
               View all
             </Button>
           </Box>
-          <Grid container spacing={4} className="about-me-content">
+          <Grid container spacing={4} className="about-me-content" >
             {this.state.projectData.length > 0 ? (
               this.state.projectData
                 .sort((a, b) => b.rating - a.rating)

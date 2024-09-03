@@ -55,10 +55,10 @@ export default function RecipeReviewCard(props: ProjectData) {
         component="img"
         height="194"
         image={props.porjectImage}
-        alt="Paella dish"
+        alt="Shubham Sarode"
       />
       <CardContent>
-        <Typography variant="body2" color="text.secondary">
+        <Typography variant="body2" component={"p"} color="text.secondary">
           {props.description}
         </Typography>
       </CardContent>

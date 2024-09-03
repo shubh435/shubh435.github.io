@@ -186,18 +186,18 @@ class Slider extends React.PureComponent<SliderProps, SliderState> {
           }}
         >
           <Grid container>
-            <Grid item lg={2} md={2}></Grid>
-            <Grid item lg={4} md={4} sm={12} sx={{ m: "auto" }}>
+            <Grid item lg={2} md={2} component={"section"}></Grid>
+            <Grid item lg={4} md={4} sm={12} sx={{ m: "auto" }} component={"section"}>
               <Box color="#fff" sx={{ width: "100%", zIndex: 10000 }}>
-                <Typography>Hello, I'm</Typography>
+                <Typography component={"p"}>Hello, I'm</Typography>
                 <Typography
-                  component={"h3"}
-                  variant="h3"
+                  component={"h1"}
+                  variant="h1"
                   className="my-heading-text-shubham !text-[2.4rem]"
                 >
                   Shubham Sarode
                 </Typography>
-                <Typography>
+                <Typography component={"p"}>
                   Software Engineer with 2.5+ years of experience in front-end
                   development, seeking full-time front-end roles.
                 </Typography>
@@ -240,7 +240,7 @@ class Slider extends React.PureComponent<SliderProps, SliderState> {
                 </Box>
               </Box>
             </Grid>
-            <Grid item lg={6} md={6} sm={12} sx={{ m: "auto" }}>
+            <Grid item lg={6} md={6} sm={12} sx={{ m: "auto" }} component={"section"} >
               <Box
                 sx={{
                   display: "flex",
