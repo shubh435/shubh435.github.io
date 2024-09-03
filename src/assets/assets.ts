@@ -1,20 +1,20 @@
-import globImage from "./glob.jpeg";
-import project1Image from "./Cover 1.png";
-import project2Image from "./Screenshot 2024-07-19 at 12.08.52 AM.png";
-import project3Image from "./Screenshot 2024-07-19 at 12.18.56 AM.png";
-import starImage from "./star.png";
-import projectImage4 from "./Screenshot 2024-07-21 at 6.45.40 PM.png";
-import projectImage5 from "./Screenshot 2024-07-21 at 6.54.26 PM.png";
-import noImageFound from "./istockphoto-1409329028-612x612.jpg";
-import projectImage7 from "./Screenshot 2024-07-21 at 7.07.16 PM.png";
-import projectImage8 from "./Screenshot 2024-07-21 at 7.11.02 PM.png";
-import projectImage9 from "./Screenshot 2024-07-21 at 7.18.31 PM.png";
-import projectImage10 from "./Screenshot 2024-07-21 at 7.22.05 PM.png";
-import projectImage11 from "./Screenshot 2024-07-21 at 7.25.36 PM.png";
-import projectImage12 from "./Screenshot 2024-07-21 at 7.27.21 PM.png";
-import projectImage13 from "./Screenshot 2024-07-21 at 7.32.12 PM.png";
-import backImage from "./back.png";
-import paralexImage from "./2209_w015_n003_980b_p15_980.jpg";
+import globImage from "./Shubham_glob.jpeg";
+import project1Image from "./Shubham_doctor_app.png";
+import project2Image from "./Shubham_Color_Generator.png";
+import project3Image from "./Shubham_Travel.png";
+import starImage from "./Shubham_star.png";
+import projectImage4 from "./Shubham_Responsive_img.png";
+import projectImage5 from "./Shubham_Cocktail.png";
+import noImageFound from "./shubham_no_Image_found.jpg";
+import projectImage7 from "./Shubham_Band_project.png";
+import projectImage8 from "./Shubham_Eccomerce.png";
+import projectImage9 from "./Shubham_ColorFlipper.png";
+import projectImage10 from "./Shubham_Moview_app.png";
+import projectImage11 from "./Shubham_University.png";
+import projectImage12 from "./Shubham_Card.png";
+import projectImage13 from "./Shubham_Menu.png";
+import backImage from "./Shubham_textBackgound.png";
+import paralexImage from "./Shubham_Parallex.jpg";
 export {
   globImage,
   project1Image,
