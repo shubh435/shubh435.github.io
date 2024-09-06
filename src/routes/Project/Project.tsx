@@ -21,7 +21,7 @@ class Project extends React.Component<ProjectProps, ProjectState> {
       projectdata: projectdata,
       searchData: projectdata,
     };
-    this.debounceSearch = this.debounce(this.performSearch, 800);
+    this.debounceSearch = this.debounce(this.performSearch, 400);
   }
 
   debounce = (func: (text: string) => void, delay: number) => {
