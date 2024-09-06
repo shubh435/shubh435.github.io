@@ -2,17 +2,55 @@ import { Box, Container, Grid, Typography } from "@mui/material";
 import React from "react";
 import "./Project.css";
 import RecipeReviewCard from "../../components/RecipeCard";
-import { projectdata } from "../../assets/data";
+import { ProjectData, projectdata } from "../../assets/data";
 
 interface ProjectProps {}
 
-interface ProjectState {}
+interface ProjectState {
+  searchText: string;
+  projectdata: ProjectData[];
+  searchData: ProjectData[];
+}
 
 class Project extends React.Component<ProjectProps, ProjectState> {
+  debounceSearch: (text: string) => void;
   constructor(props: ProjectProps) {
     super(props);
-    this.state = {};
+    this.state = {
+      searchText: "",
+      projectdata: projectdata,
+      searchData: projectdata,
+    };
+    this.debounceSearch = this.debounce(this.performSearch, 800);
   }
+
+  debounce = (func: (text: string) => void, delay: number) => {
+    let timeoutId: ReturnType<typeof setTimeout>;
+    return (text: string) => {
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(() => {
+        func(text);
+      }, delay);
+    };
+  };
+
+  performSearch = (text: string) => {
+    const searchData = projectdata.filter((project) =>
+      project.projectName.toLowerCase().includes(text.toLowerCase())
+    );
+    this.setState({ projectdata: searchData });
+  };
+
+  handleChange = (searchText: string) => {
+    this.setState({ searchText: searchText }, () =>
+      this.debounceSearch(this.state.searchText)
+    );
+  };
+
+  componentDidMount(): void {
+    this.setState({ projectdata: projectdata });
+  }
+
   render() {
     return (
       <Box sx={{ minHeight: "100vh", background: "black" }}>
@@ -43,6 +81,8 @@ class Project extends React.Component<ProjectProps, ProjectState> {
                   </div>
                   <input
                     type="text"
+                    value={this.state.searchText}
+                    onChange={(event) => this.handleChange(event.target.value)}
                     name="text"
                     className="input"
                     placeholder="Search..."
@@ -58,12 +98,12 @@ class Project extends React.Component<ProjectProps, ProjectState> {
             sx={{ py: "5%" }}
             component={"section"}
           >
-            {projectdata.length > 0 ? (
-              projectdata
+            {this.state.projectdata.length > 0 ? (
+              this.state.projectdata
                 .sort((projectA, projectB) => projectB.rating - projectA.rating)
                 .map((projectdata) => (
-                  <Grid item lg={4} md={6} sm={12} xs={12}>
-                    <RecipeReviewCard key={projectdata.id} {...projectdata} />
+                  <Grid key={projectdata.id} item lg={4} md={6} sm={12} xs={12}>
+                    <RecipeReviewCard {...projectdata} />
                   </Grid>
                 ))
             ) : (
