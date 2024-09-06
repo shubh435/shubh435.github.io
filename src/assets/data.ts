@@ -1,4 +1,4 @@
-import { noImageFound, project1Image, project2Image, project3Image, projectImage10, projectImage11, projectImage12, projectImage13, projectImage4, projectImage5, projectImage7, projectImage8, projectImage9 } from "./assets"
+import { noImageFound, project1Image, project2Image, project3Image, projectImage10, projectImage11, projectImage12, projectImage13, projectImage14, projectImage4, projectImage5, projectImage7, projectImage8, projectImage9 } from "./assets"
 
 export interface ProjectData {
     id: number,
@@ -184,7 +184,7 @@ export const projectdata: ProjectData[] = [
     , {
         id:15,
         projectName: "Practice agency web app",
-        porjectImage: projectImage13,
+        porjectImage: projectImage14,
         description: "Practice agency demo web app using js",
         moreDes: "Shubham",
         subheader: "2021",
