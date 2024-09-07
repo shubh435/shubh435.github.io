@@ -1,4 +1,4 @@
-import { noImageFound, project1Image, project2Image, project3Image, projectImage10, projectImage11, projectImage12, projectImage13, projectImage14, projectImage4, projectImage5, projectImage7, projectImage8, projectImage9 } from "./assets"
+import { noImageFound, project1Image, project2Image, project3Image, projectImage10, projectImage11, projectImage12, projectImage13, projectImage14, projectImage15, projectImage16, projectImage4, projectImage5, projectImage7, projectImage8, projectImage9 } from "./assets"
 
 export interface ProjectData {
     id: number,
@@ -33,7 +33,7 @@ export const projectdata: ProjectData[] = [
         subheader: "2022",
         sorceCodeLink: "https://github.com/shubh435/color-generator",
         tryLink: "https://color-generator-peach.vercel.app/",
-        rating: 3
+        rating: 3.5
 
     },
     {
@@ -45,14 +45,14 @@ export const projectdata: ProjectData[] = [
         subheader: "2022",
         sorceCodeLink: "https://github.com/shubh435/doctors_app",
         tryLink: "https://travel-web-app-mauve.vercel.app/",
-        rating: 4
+        rating: 4.5
 
     }
     ,
     {
         id: 4,
         projectName: "Weather App",
-        porjectImage: "https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg",
+        porjectImage: projectImage16,
         description: "Shubham",
         moreDes: "Description",
         subheader: "2022",
@@ -70,7 +70,7 @@ export const projectdata: ProjectData[] = [
         subheader: "2022",
         sorceCodeLink: "https://github.com/shubh435/template-react-tailwind",
         tryLink: "https://template-react-tailwind.vercel.app/",
-        rating: 4
+        rating: 3.6
 
     }
     , {
@@ -106,7 +106,7 @@ export const projectdata: ProjectData[] = [
         subheader: "2023",
         sorceCodeLink: "https://github.com/shubh435/band--template",
         tryLink: "https://band-template.vercel.app/",
-        rating: 4
+        rating: 3.8
 
     }
     , {
@@ -118,7 +118,7 @@ export const projectdata: ProjectData[] = [
         subheader: "2023",
         sorceCodeLink: "https://github.com/shubh435/eccomerce-website-ext",
         tryLink: "https://eccomerce-website-ext.vercel.app/",
-        rating: 4
+        rating: 3.9
 
     }
     , {
@@ -130,7 +130,7 @@ export const projectdata: ProjectData[] = [
         subheader: "2022",
         sorceCodeLink: "https://github.com/shubh435/basic-slidder?tab=readme-ov-file",
         tryLink: "https://shubh435.github.io/basic-slidder/",
-        rating: 4
+        rating: 3.8
 
     }
     , {
@@ -154,7 +154,7 @@ export const projectdata: ProjectData[] = [
         subheader: "2022",
         sorceCodeLink: "https://github.com/shubh435/React-Movie",
         tryLink: "https://react-movie-gules.vercel.app/",
-        rating: 4
+        rating: 3.9
 
     }
     , {
@@ -166,7 +166,7 @@ export const projectdata: ProjectData[] = [
         subheader: "2021",
         sorceCodeLink: "https://github.com/shubh435/university?tab=readme-ov-file",
         tryLink: "https://shubh435.github.io/university/",
-        rating: 4
+        rating: 3.9
 
     }
     , {
@@ -192,5 +192,16 @@ export const projectdata: ProjectData[] = [
         tryLink: "https://agency-sandy.vercel.app/",
         rating: 3.5
 
+    }
+    , {
+        id:16,
+        projectName: "Bookly - Your Personalized Book Recommendation App",
+        porjectImage: projectImage15,
+        description: "Bookly is a web application designed to help users discover and track their next great read. Featuring an intuitive and user-friendly interface, Bookly allows users to browse a vast collection of books, read detailed descriptions, and receive personalized recommendations based on their reading preferences.",
+        moreDes: "Shubham",
+        subheader: "2021",
+        sorceCodeLink: "https://github.com/shubh435/bookly",
+        tryLink: "https://bookly-five.vercel.app/",
+        rating: 3.99
     }
 ]

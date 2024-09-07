@@ -13,8 +13,9 @@ import projectImage10 from "./Shubham_Moview_app.png";
 import projectImage11 from "./Shubham_University.png";
 import projectImage12 from "./Shubham_Card.png";
 import projectImage14 from "./Shubham_agency.png";
-
+import projectImage15 from "./Shubham_Bookly.png";
 import projectImage13 from "./Shubham_Menu.png";
+import projectImage16 from "./Shubham_Weather.png";
 import backImage from "./Shubham_textBackgound.png";
 import paralexImage from "./Shubham_Parallex.jpg";
 export {
@@ -35,5 +36,7 @@ export {
   paralexImage,
   projectImage13,
   backImage,
+  projectImage15,
+  projectImage16,
   projectImage14
 };

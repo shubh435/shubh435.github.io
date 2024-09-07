@@ -1,4 +1,5 @@
 .lamp-container {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -46,4 +47,35 @@
   background-image: url(/src/assets/Shubham_Parallex.jpg);
   background-size: cover;
   background-position: center;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .lamp-container {
+    padding: 15px;
+    min-height: 120px;
+  }
+
+  .lamp-light {
+    width: 150px;
+  }
+
+  .lamp-text h3 {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .lamp-container {
+    padding: 10px;
+    min-height: 100px;
+  }
+
+  .lamp-light {
+    width: '100%';
+  }
+
+  .lamp-text h3 {
+    font-size: 1rem;
+  }
 }
