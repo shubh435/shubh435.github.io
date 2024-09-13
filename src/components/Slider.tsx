@@ -16,7 +16,7 @@ const startRotaionTimeY = 0.0001;
 const speedRotaionTimeGlobeY = 0.005;
 const speedRotaionTimeGlobeX = 0.005;
 
-interface SliderState {}
+interface SliderState { }
 
 class Slider extends React.PureComponent<SliderProps, SliderState> {
   starsRef: React.RefObject<HTMLDivElement>;
@@ -161,29 +161,10 @@ class Slider extends React.PureComponent<SliderProps, SliderState> {
       >
         <Box
           ref={this.starsRef}
-          sx={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            width: "100%",
-            height: "100%",
-            zIndex: 0, // Ensure the stars are behind
-          }}
+          sx={webstyle.starContainer}
         />
         <Container
-          sx={{
-            position: "relative",
-            mx: "auto",
-            display: "flex",
-            flexDirection: "row",
-            alignItems: "center",
-            textAlign: "left",
-            background: "transparent", // Make the background transparent
-            minHeight: "100vh",
-            justifyContent: "space-between",
-            overflow: "hidden",
-            zIndex: 10, // Ensure it is above the stars
-          }}
+          sx={webstyle.container}
         >
           <Grid container>
             <Grid item lg={2} md={2} component={"section"}></Grid>
@@ -198,25 +179,16 @@ class Slider extends React.PureComponent<SliderProps, SliderState> {
                   Shubham Sarode
                 </Typography>
                 <Typography component={"p"}>
-                  Software Engineer with 2.5+ years of experience in front-end
-                  development, seeking full-time front-end roles.
+                  A passionate Software Engineer with 3 years of front-end development expertise,
+                   focused on building dynamic, user-friendly web and mobile applications. 
+                  Always eager to take on new challenges and create impactful digital experiences.
                 </Typography>
                 <Box
-                  sx={{
-                    width: "100%",
-                    display: "flex",
-                    justifyContent: "flex-start",
-                    gap: 2,
-                    mt: 3,
-                  }}
+                  sx={webstyle.buttonStyle}
                 >
                   <Button
                     variant="outlined"
-                    sx={{
-                      display: "flex",
-                      justifyContent: "center",
-                      color: "#fff",
-                    }}
+                    sx={webstyle.button}
                     onClick={() =>
                       navigateTo(
                         "https://drive.google.com/file/d/1jj2iw1bHdgiWZ-DPCCIwxll1guDj43VK/view?usp=sharing",
@@ -228,11 +200,7 @@ class Slider extends React.PureComponent<SliderProps, SliderState> {
                   </Button>
                   <Button
                     variant="outlined"
-                    sx={{
-                      display: "flex",
-                      justifyContent: "center",
-                      gap: 1,
-                    }}
+                    sx={webstyle.buttonStyle1}
                     onClick={() => navigateTo("/project", this.props.navigate)}
                   >
                     <span>Projects</span> <IoIosEye color={"#FFF"} size={20} />
@@ -242,14 +210,7 @@ class Slider extends React.PureComponent<SliderProps, SliderState> {
             </Grid>
             <Grid item lg={6} md={6} sm={12} sx={{ m: "auto" }} component={"section"} >
               <Box
-                sx={{
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  width: "100%",
-                  height: "100%", // Ensure the height is set to 100%
-                  position: "relative", // Ensure relative positioning
-                }}
+                sx={webstyle.globContainer}
               >
                 <Box
                   ref={this.globeRef}
@@ -267,3 +228,51 @@ class Slider extends React.PureComponent<SliderProps, SliderState> {
 }
 
 export default withRouter(Slider);
+const webstyle = {
+  buttonStyle1:{
+    display: "flex",
+    justifyContent: "center",
+    gap: 1,
+  },
+  globContainer:{
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    width: "100%",
+    height: "100%", 
+    position: "relative",
+  },
+  button:{
+    display: "flex",
+    justifyContent: "center",
+    color: "#fff",
+  },
+  buttonStyle:{
+    width: "100%",
+    display: "flex",
+    justifyContent: "flex-start",
+    gap: 2,
+    mt: 3,
+  },
+  starContainer: {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    width: "100%",
+    height: "100%",
+    zIndex: 0,
+  },
+  container: {
+    position: "relative",
+    mx: "auto",
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    textAlign: "left",
+    background: "transparent",
+    minHeight: "100vh",
+    justifyContent: "space-between",
+    overflow: "hidden",
+    zIndex: 10,
+  }
+}
