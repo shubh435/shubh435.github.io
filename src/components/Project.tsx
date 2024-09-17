@@ -26,6 +26,7 @@ class Project extends React.PureComponent<ProjectProps, ProjectState> {
   }
 
   render() {
+    const sortedArray = this.state.projectData.sort((item1, item2) => item2.rating - item1.rating)
     return (
       <section
         className={`bg-transparent back-imag-setup
@@ -57,10 +58,7 @@ class Project extends React.PureComponent<ProjectProps, ProjectState> {
           </Box>
           <Grid container spacing={4} className="about-me-content" >
             {this.state.projectData.length > 0 ? (
-              this.state.projectData
-                .sort((a, b) => b.rating - a.rating)
-                .map((projectdata, index) => {
-                  if (index >= 3) return;
+              sortedArray.slice(0,3).map((projectdata, index) => {
                   return (
                     <Grid item lg={4} md={6} sm={12} xs={12}>
                       <ThreeDCard

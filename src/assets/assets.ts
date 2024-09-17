@@ -16,6 +16,7 @@ import projectImage14 from "./Shubham_agency.png";
 import projectImage15 from "./Shubham_Bookly.png";
 import projectImage13 from "./Shubham_Menu.png";
 import projectImage16 from "./Shubham_Weather.png";
+import projectImage17 from "./Bannar Big.svg";
 import backImage from "./Shubham_textBackgound.png";
 import paralexImage from "./Shubham_Parallex.jpg";
 export {
@@ -38,5 +39,6 @@ export {
   backImage,
   projectImage15,
   projectImage16,
-  projectImage14
+  projectImage14,
+  projectImage17
 };

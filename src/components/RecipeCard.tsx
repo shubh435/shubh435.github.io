@@ -8,7 +8,7 @@ import {
   Avatar,
   Typography,
 } from "@mui/material";
-import { red as red } from "@mui/material/colors";
+import { red } from "@mui/material/colors";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import ShareIcon from "@mui/icons-material/RemoveRedEye";
 import { ProjectData } from "../assets/data";

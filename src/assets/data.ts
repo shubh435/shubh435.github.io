@@ -1,4 +1,4 @@
-import { noImageFound, project1Image, project2Image, project3Image, projectImage10, projectImage11, projectImage12, projectImage13, projectImage14, projectImage15, projectImage16, projectImage4, projectImage5, projectImage7, projectImage8, projectImage9 } from "./assets"
+import { noImageFound, project1Image, project2Image, project3Image, projectImage10, projectImage11, projectImage12, projectImage13, projectImage14, projectImage15, projectImage16, projectImage17, projectImage4, projectImage5, projectImage7, projectImage8, projectImage9 } from "./assets"
 
 export interface ProjectData {
     id: number,
@@ -202,6 +202,17 @@ export const projectdata: ProjectData[] = [
         subheader: "2021",
         sorceCodeLink: "https://github.com/shubh435/bookly",
         tryLink: "https://bookly-five.vercel.app/",
+        rating: 3.99
+    }
+    , {
+        id:17,
+        projectName: "Shopery - Organic eccomerce shop website",
+        porjectImage: projectImage17,
+        description: "Shopery is an organic e-commerce platform dedicated to providing customers with a wide range of eco-friendly, sustainable, and organic products. The website offers a seamless shopping experience, featuring categories like fresh produce, health supplements, eco-conscious personal care, and sustainable home goods. With a user-friendly interface and a focus on promoting environmentally responsible choices, Shopery aims to make it easy for customers to shop green and support a healthier lifestyle.",
+        moreDes: "Shubham",
+        subheader: "current working ...",
+        sorceCodeLink: "#",
+        tryLink: "#",
         rating: 3.99
     }
 ]
