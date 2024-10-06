@@ -1,6 +1,7 @@
 import * as React from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Outlet } from "react-router-dom";
 import Layout from "../components/Layout";
+import UiComponents from "./Component/UiComponents";
 const Dashboard = React.lazy(() => import("./Dashboard"));
 const Project = React.lazy(() => import("./Project/Project"));
 
@@ -30,9 +31,12 @@ class RouteToNavigate extends React.Component<
     return (
       <React.Suspense fallback={<Loader />}>
         <Routes>
-          <Route path="" element={<Layout />}>
-            <Route path="/" element={<Dashboard />} />
+          <Route path="/" element={<Layout />}>
+            <Route  index element={<Dashboard />} />
             <Route path="/project" element={<Project />} />
+          </Route>
+          <Route path="" element={<> <Outlet /></>}>
+            <Route path="/uiComponent" element={<UiComponents />} />
           </Route>
         </Routes>
       </React.Suspense>
