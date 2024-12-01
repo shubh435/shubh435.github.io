@@ -39,9 +39,9 @@ const SkillSection = () => {
         >
           Skills
         </Typography>
-        <Grid container spacing={2} justifyContent={"space-between"} component={"div"}>
+        <Grid container spacing={4}  component={"div"}>
           {skills.map((skill) => (
-            <Grid item key={skill} mx={"auto"} >
+            <Grid item key={skill} xs={6} sm={4} md={3} lg={3}  >
               <LampEffect label={skill} />
             </Grid>
           ))}

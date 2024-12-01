@@ -1,0 +1,42 @@
+<svg width="390" height="430" viewBox="0 0 390 430" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g className="symbol" filter="url(#inset-shadow)">
+        <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M202.884 13.3026C196.814 7.84601 188.099 6.46854 180.642 9.78694C173.182 13.1055 168.377 20.4983 168.377 28.6551V164.683L78.6175 75.0327C70.5431 66.9664 57.4523 66.9664 49.3779 75.0327C41.3037 83.0988 41.3037 96.1768 49.3779 104.243L159.813 214.548L49.3787 324.853C41.3045 332.919 41.3045 345.997 49.3787 354.063C57.453 362.129 70.5439 362.129 78.6182 354.063L168.377 264.413V400.441C168.377 408.598 173.182 415.99 180.642 419.309C188.099 422.629 196.814 421.251 202.884 415.794L306.262 322.847C310.618 318.931 313.105 313.35 313.105 307.495C313.105 301.639 310.618 296.06 306.262 292.142L219.958 214.548L306.262 136.954C310.618 133.037 313.105 127.457 313.105 121.602C313.105 115.746 310.618 110.166 306.262 106.249L202.884 13.3026ZM261.524 307.495L209.728 260.926V354.063L261.524 307.495ZM261.524 121.602L209.728 168.171V75.0327L261.524 121.602Z">
+        </path>
+        <circle cx="343" cy="215" r="30"></circle>
+        <circle cx="46" cy="215" r="30"></circle>
+    </g>
+
+    <g className="symbol-path symbol-path-glow">
+        <circle cx="343" cy="215" r="30"></circle>
+        <circle cx="46" cy="215" r="30"></circle>
+        <path d="M188.5 213.5L189.5 29L291.5 122C200.028 205.699 151.078 251.942 64 340" stroke-linecap="round"
+            stroke-linejoin="round"></path>
+        <path d="M188.5 215.5L189.5 400L291.5 307C200.028 223.301 151.078 177.058 64 89" stroke-linecap="round"
+            stroke-linejoin="round"></path>
+    </g>
+
+    <g className="symbol-path">
+        <circle cx="343" cy="215" r="10"></circle>
+        <circle cx="46" cy="215" r="10"></circle>
+        <path d="M188.5 213.5L189.5 29L291.5 122C200.028 205.699 151.078 251.942 64 340" stroke-linecap="round"
+            stroke-linejoin="round"></path>
+        <path d="M188.5 215.5L189.5 400L291.5 307C200.028 223.301 151.078 177.058 64 89" stroke-linecap="round"
+            stroke-linejoin="round"></path>
+    </g>
+
+    <defs>
+        <defs>
+            <filter id="inset-shadow">
+                <feOffset dx="0" dy="0"></feOffset>
+                <feGaussianBlur stdDeviation="10" result="offset-blur"></feGaussianBlur>
+                <feComposite operator="out" in="SourceGraphic" in2="offset-blur" result="inverse"></feComposite>
+                <feFlood flood-color="black" flood-opacity="1" result="color"></feFlood>
+                <feComposite operator="in" in="color" in2="inverse" result="shadow"></feComposite>
+                <feComposite operator="over" in="shadow" in2="SourceGraphic"></feComposite>
+                <fedropshadow dx="5" dy="5" stdDeviation="0" flood-opacity="0.2" flood-color="white"></fedropshadow>
+            
+            </filter>
+        </defs>
+    </defs>
+</svg>

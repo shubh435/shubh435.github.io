@@ -4,6 +4,8 @@ import Layout from "../components/Layout";
 import UiComponents from "./Component/UiComponents";
 const Dashboard = React.lazy(() => import("./Dashboard"));
 const Project = React.lazy(() => import("./Project/Project"));
+const KeyboardButton = React.lazy(() => import("../components/KeyboardButton"));
+
 
 interface RouteToNavigateProps {}
 
@@ -36,7 +38,9 @@ class RouteToNavigate extends React.Component<
             <Route path="/project" element={<Project />} />
           </Route>
           <Route path="" element={<> <Outlet /></>}>
-            <Route path="/uiComponent" element={<UiComponents />} />
+            <Route path="/uicomponent" element={<UiComponents />} />
+            <Route path="/keyboardbutton" element={<KeyboardButton />} />
+            
           </Route>
         </Routes>
       </React.Suspense>
