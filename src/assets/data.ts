@@ -21,7 +21,7 @@ export const projectdata: ProjectData[] = [
         moreDes: "Shubham",
         subheader: "current",
         sorceCodeLink: "https://github.com/shubh435/doctors_app",
-        tryLink: "https://drive.google.com/drive/folders/1XcXQ_GUbzN3lzEghGUXZ86m-wnadaOS6?usp=sharing",
+        tryLink: "https://github.com/shubh435/doctors_app/releases",
         rating: 5
     },
     {
