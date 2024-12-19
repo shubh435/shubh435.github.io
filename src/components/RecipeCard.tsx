@@ -7,7 +7,6 @@ import {
   Avatar,
   Typography,
 } from "@mui/material";
-import { red } from "@mui/material/colors";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import ShareIcon from "@mui/icons-material/RemoveRedEye";
 import { ProjectData } from "../assets/data";
@@ -18,7 +17,7 @@ export default function RecipeReviewCard(props: ProjectData) {
     <Card sx={{ height: 400, display: 'flex', flexDirection: 'column' }}>
       <CardHeader
         avatar={
-          <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
+          <Avatar sx={{ background: 'linear-gradient(180deg, rgba(70,170,114,1) 2%, rgba(0,0,0,1) 47%, rgba(45,160,164,1) 97%)' }} aria-label="recipe">
             {props.projectName.slice(0, 1)}
           </Avatar>
         }
