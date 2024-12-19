@@ -58,14 +58,14 @@ class Project extends React.PureComponent<ProjectProps, ProjectState> {
           </Box>
           <Grid container spacing={4} className="about-me-content" >
             {this.state.projectData.length > 0 ? (
-              sortedArray.slice(0,3).map((projectdata, index) => {
+              sortedArray.slice(0,3).map((projectdata) => {
                   return (
                     <Grid item lg={4} md={6} sm={12} xs={12}>
                       <ThreeDCard
                         {...projectdata}
                         title={projectdata.projectName}
                         description={projectdata.description}
-                        imageUrl={projectdata.porjectImage}
+                        imageUrl={projectdata.projectImage}
                       />
                     </Grid>
                   );

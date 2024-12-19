@@ -1,4 +1,3 @@
-import * as React from "react";
 import {
   Card,
   CardHeader,
@@ -16,7 +15,7 @@ import { Link } from "react-router-dom";
 
 export default function RecipeReviewCard(props: ProjectData) {
   return (
-    <Card sx={{}}>
+    <Card sx={{ height: 400, display: 'flex', flexDirection: 'column' }}>
       <CardHeader
         avatar={
           <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
@@ -32,7 +31,7 @@ export default function RecipeReviewCard(props: ProjectData) {
               aria-label="add to favorites"
               style={{ color: "#000", marginRight: 10, width: 20, height: 20 }}
               target="_blank"
-              to={props.sorceCodeLink}
+              to={props.sourceCodeLink}
             >
               <GitHubIcon />
             </Link>
@@ -53,11 +52,11 @@ export default function RecipeReviewCard(props: ProjectData) {
       />
       <CardMedia
         component="img"
-        height="194"
-        image={props.porjectImage}
+        sx={{ height: 194, objectFit: 'cover' }}
+        image={props.projectImage}
         alt="Shubham Sarode"
       />
-      <CardContent>
+      <CardContent sx={{ flexGrow: 1, overflowY: 'auto', maxHeight: 100 }}>
         <Typography variant="body2" component={"p"} color="text.secondary">
           {props.description}
         </Typography>

@@ -4,6 +4,13 @@ import Slider from "../../components/Slider";
 import Project from "../../components/Project";
 import SkillSection from "../../components/SkillSection";
 import { Helmet } from "react-helmet";
+type HelmetProps = React.ComponentProps<typeof Helmet>;
+
+const HelmetWithChildren: React.FC<HelmetProps & { children?: React.ReactNode }> = ({
+    children,
+    ...rest
+}) => <Helmet {...rest}>{children}</Helmet>;
+
 interface DashboardProps {}
 
 interface DashboardState {}
@@ -16,7 +23,7 @@ class Dashboard extends React.Component<DashboardProps, DashboardState> {
   render() {
     return (
       <>
-       <Helmet>
+       <HelmetWithChildren>
           <title>Shubham Sarode | Software Engineer</title>
           <meta
             name="description"
@@ -37,7 +44,7 @@ class Dashboard extends React.Component<DashboardProps, DashboardState> {
           <meta name="twitter:title" content="Shubham Sarode | Software Engineer" />
           <meta name="twitter:description" content="Explore the professional portfolio of Shubham Sarode, specializing in web and mobile app development." />
           <meta name="twitter:image" content="https://shubh435.github.io/shubham-image.jpg" />
-        </Helmet>
+        </HelmetWithChildren>
 
         <Slider />
         <AboutUs />
