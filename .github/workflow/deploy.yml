@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main
+      - master
   workflow_dispatch:
 permissions:
   contents: read
@@ -44,14 +44,18 @@ jobs:
       - name: Build project
         run: ${{ steps.detect-package-manager.outputs.runner }} npm run build
       - name: Upload artifact
+        id: upload-artifact
         uses: actions/upload-pages-artifact@v2
         with:
           path: ./build
+      - name: Set output
+        run: echo "page_url=${{ steps.upload-artifact.outputs.page_url }}" >> $GITHUB_ENV
+        id: set-output
   # Deployment job
   deploy:
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: ${{ steps.set-output.outputs.page_url }}
     runs-on: ubuntu-latest
     needs: build
     steps:
