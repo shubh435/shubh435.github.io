@@ -11,24 +11,22 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import ShareIcon from "@mui/icons-material/RemoveRedEye";
 import { ProjectData } from "../assets/data";
 import { Link } from "react-router-dom";
+import "./style.css"
 
 export default function RecipeReviewCard(props: ProjectData) {
   return (
-    <Card sx={{ height: 400, display: 'flex', flexDirection: 'column' }}>
+    <Card className="cardShubhamProject" sx={webstyle.card}>
       <CardHeader
         avatar={
-          <Avatar sx={{ background: 'linear-gradient(180deg, rgba(70,170,114,1) 2%, rgba(0,0,0,1) 47%, rgba(45,160,164,1) 97%)' }} aria-label="recipe">
+          <Avatar sx={webstyle.avatar} aria-label="recipe">
             {props.projectName.slice(0, 1)}
           </Avatar>
         }
         action={
-          <CardActions
-            disableSpacing
-            sx={{ display: "flex", alignItems: "center" }}
-          >
+          <CardActions disableSpacing sx={webstyle.cardActions}>
             <Link
               aria-label="add to favorites"
-              style={{ color: "#000", marginRight: 10, width: 20, height: 20 }}
+              style={webstyle.link}
               target="_blank"
               to={props.sourceCodeLink}
             >
@@ -36,7 +34,7 @@ export default function RecipeReviewCard(props: ProjectData) {
             </Link>
             <Link
               aria-label="share"
-              style={{ color: "#000", marginRight: 10, width: 20, height: 20 }}
+              style={webstyle.link}
               target="_blank"
               to={props.tryLink}
             >
@@ -44,22 +42,70 @@ export default function RecipeReviewCard(props: ProjectData) {
             </Link>
           </CardActions>
         }
-        sx={{}}
+        sx={webstyle.cardHeader}
         title={props.projectName}
         subheader={props.subheader}
-        titleTypographyProps={{ style: { textTransform: "capitalize" } }}
+        titleTypographyProps={{ sx: webstyle.titleTypography }}
+        subheaderTypographyProps={{ style: webstyle.subheaderTypography }}
       />
       <CardMedia
         component="img"
-        sx={{ height: 194, objectFit: 'cover' }}
+        sx={webstyle.cardMedia}
         image={props.projectImage}
         alt="Shubham Sarode"
       />
-      <CardContent sx={{ flexGrow: 1, overflowY: 'auto', maxHeight: 100 }}>
-        <Typography variant="body2" component={"p"} color="text.secondary">
+      <CardContent sx={webstyle.cardContent}>
+        <Typography variant="body2" component={"p"} sx={webstyle.typography}>
           {props.description}
         </Typography>
       </CardContent>
     </Card>
   );
+}
+
+const webstyle = {
+  card: {
+    height: 400,
+    display: 'flex',
+    flexDirection: 'column',
+    backgroundColor: "rgb(70,170,114) !important",
+    background: "linear-gradient(40deg, rgba(70,170,114,1) 2%, rgba(0,0,0,1) 47%, rgba(45,160,164,1) 97%) !important",
+    color: "white"
+  },
+  avatar: {
+    background: 'linear-gradient(180deg, rgba(70,170,114,1) 2%, rgba(0,0,0,1) 47%, rgba(45,160,164,1) 97%)',
+    color: 'white'
+  },
+  cardActions: {
+    display: "flex",
+    alignItems: "center"
+  },
+  link: {
+    color: "#fff",
+    marginRight: 10,
+    width: 20,
+    height: 20
+  },
+  cardHeader: {
+    color: 'white'
+  },
+  titleTypography: {
+    textTransform: "capitalize",
+    color: 'white'
+  },
+  subheaderTypography: {
+    color: 'white'
+  },
+  cardMedia: {
+    height: 194,
+    objectFit: 'cover'
+  },
+  cardContent: {
+    flexGrow: 1,
+    overflowY: 'auto',
+    maxHeight: 100
+  },
+  typography: {
+    color: 'white'
+  }
 }
