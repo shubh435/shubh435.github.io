@@ -3,13 +3,13 @@ import AboutUs from "../../components/AboutUs";
 import Slider from "../../components/Slider";
 import Project from "../../components/Project";
 import SkillSection from "../../components/SkillSection";
-import { Helmet } from "react-helmet";
-type HelmetProps = React.ComponentProps<typeof Helmet>;
+import { Helmet, HelmetProvider } from "react-helmet-async";
 
-const HelmetWithChildren: React.FC<HelmetProps & { children?: React.ReactNode }> = ({
-    children,
-    ...rest
-}) => <Helmet {...rest}>{children}</Helmet>;
+const HelmetWithChildren: React.FC<{ children?: React.ReactNode }> = ({ children }) => (
+  <HelmetProvider>
+    <Helmet>{children}</Helmet>
+  </HelmetProvider>
+);
 
 interface DashboardProps {}
 
