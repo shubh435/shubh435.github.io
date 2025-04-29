@@ -1,7 +1,7 @@
 {
   "name": "portfolio",
   "version": "0.1.0",
-  "homepage": "https://shubh435.github.io",
+  "homepage": "https://github.com/shubh435/shubh435.github.io",
   "private": true,
   "dependencies": {
     "@codemirror/lang-javascript": "^6.2.2",
