@@ -1,6 +1,8 @@
 import React from "react";
-import { Box } from "@mui/material";
+import { Box, Button, TextField } from "@mui/material";
 import "./Footer.css"
+import Grid2 from "@mui/material/Unstable_Grid2";
+
 interface FooterProps {}
 
 interface FooterState {}
@@ -70,38 +72,83 @@ class Footer extends React.Component<FooterProps, FooterState> {
             </Typography>
           </Box>
         </Container> */}
-       <section className="designs-section">
+     ;
+
+<section className="designs-section">
+  <Grid2 container spacing={4}>
+
+    {/* Left Column: Social Links */}
+    <Grid2 xs={12} md={6}>
       <h2>Connect with Me</h2>
       <div className="designs-links">
         <a href="https://github.com/shubh435" target="_blank" rel="noopener noreferrer" className="link-item">
-          <i className="fab fa-github"></i>
-          GitHub
+          <i className="fab fa-github"></i> GitHub
         </a>
         <a href="https://leetcode.com/u/shubh435/" target="_blank" rel="noopener noreferrer" className="link-item">
-          <i className="fab fa-leetcode"></i>
-          LeetCode
+          <i className="fab fa-leetcode"></i> LeetCode
         </a>
         <a href="https://www.linkedin.com/in/shubh435/" target="_blank" rel="noopener noreferrer" className="link-item">
-          <i className="fab fa-linkedin"></i>
-          LinkedIn
+          <i className="fab fa-linkedin"></i> LinkedIn
         </a>
-        {/* <a href="https://twitter.com/shubh435" target="_blank" rel="noopener noreferrer" className="link-item">
-          <i className="fab fa-twitter"></i>
-          Twitter
-        </a> */}
+        <a href="https://twitter.com/shubh435" target="_blank" rel="noopener noreferrer" className="link-item">
+          <i className="fab fa-twitter"></i> Twitter
+        </a>
       </div>
-      
+    </Grid2>
+
+    {/* Right Column: Contact Form */}
+    <Grid2 xs={12} md={6}>
       <div className="contact-info">
         <p>
           <strong>Email: </strong>
           <a href="mailto:shubhamsarode435@gmail.com" className="contact-link">shubhamsarode435@gmail.com</a>
         </p>
-        <p>
-          <strong>Mobile: </strong>
-          <a href="tel:+918605234316" className="contact-link">+91 8605234316</a>
-        </p>
+
+        <form className="contact-form">
+          <div className="form-group">
+            <label htmlFor="fullname">Full Name</label>
+            <TextField
+              id="fullname"
+              name="fullname"
+              placeholder="Enter your full name"
+              fullWidth
+              required
+            />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="email">Email Address</label>
+            <TextField
+              id="email"
+              name="email"
+              placeholder="Enter your email"
+              type="email"
+              fullWidth
+              required
+            />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="message">Your Message</label>
+            <textarea
+              id="message"
+              name="message"
+              placeholder="Type your message..."
+              rows={5}
+              className="message-textarea"
+              required
+            ></textarea>
+          </div>
+
+          <Button type="submit" variant="contained"  color="primary">
+            Message Me
+          </Button>
+        </form>
       </div>
-    </section>
+    </Grid2>
+
+  </Grid2>
+</section>
       </Box>
     );
   }
