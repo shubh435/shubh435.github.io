@@ -4,6 +4,7 @@ import Layout from "../components/Layout";
 const Dashboard = React.lazy(() => import("./Dashboard"));
 const Project = React.lazy(() => import("./Project/Project"));
 const KeyboardButton = React.lazy(() => import("../components/KeyboardButton"));
+const NoPageFound = React.lazy(() => import("./NoPageFoundPage"));
 
 
 interface RouteToNavigateProps {}
@@ -40,6 +41,7 @@ class RouteToNavigate extends React.Component<
             <Route path="/keyboardbutton" element={<KeyboardButton />} />
             
           </Route>
+          <Route path="*" element={<NoPageFound />} />
         </Routes>
       </React.Suspense>
     );
