@@ -55,7 +55,7 @@ export const projectdata: ProjectData[] = [
         subheader: "2022",
         sourceCodeLink: "https://github.com/shubh435/weather-app",
         tryLink: "https://electron-react-demo-bzkb.vercel.app",
-        rating: 4
+        rating: 3
     },
     {
         id: 5,

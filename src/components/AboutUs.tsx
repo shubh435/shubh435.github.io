@@ -28,7 +28,7 @@ class AboutUs extends React.Component<AboutUsProps, AboutUsState> {
           </Typography>
           <Box className="about-me-content">
             <Typography component={"p"}>
-              I am Shubham Sarode, a Software Engineer with 3+ years of
+              I am Shubham Sarode, a Software Engineer with 4+ years of
               experience in front end development, specializing in React JS,
               React Native, and Redux. I hold a Master’s degree in Computer
               Science from North Maharashtra University and a Bachelor’s degree
