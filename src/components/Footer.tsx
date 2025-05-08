@@ -75,10 +75,10 @@ class Footer extends React.Component<FooterProps, FooterState> {
      ;
 
 <section className="designs-section">
-  <Grid2 container spacing={4}>
+  <Grid2 container  justifyContent={"center"}>
 
     {/* Left Column: Social Links */}
-    <Grid2 xs={12} md={6}>
+    <Grid2 xs={12} md={5}>
       <h2>Connect with Me</h2>
       <div className="designs-links">
         <a href="https://github.com/shubh435" target="_blank" rel="noopener noreferrer" className="link-item">
@@ -97,7 +97,7 @@ class Footer extends React.Component<FooterProps, FooterState> {
     </Grid2>
 
     {/* Right Column: Contact Form */}
-    <Grid2 xs={12} md={6}>
+    <Grid2 xs={12} md={5}>
       <div className="contact-info">
         <p>
           <strong>Email: </strong>

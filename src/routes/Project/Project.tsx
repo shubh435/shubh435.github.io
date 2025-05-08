@@ -69,7 +69,7 @@ class Project extends React.Component<ProjectProps, ProjectState> {
   render() {
     const sortedArray = this.state.projectdata.sort((projectA, projectB) => projectB.rating - projectA.rating)
     return (
-      <Box sx={{ minHeight: "100vh", background: "black" }}>
+      <Box sx={{ minHeight: "100vh", background: "black" , marginTop:"5%"}}>
         <Container component={"section"}>
           <Box
             sx={{ display: "flex", justifyContent: "center", paddingTop: "4%" }}
