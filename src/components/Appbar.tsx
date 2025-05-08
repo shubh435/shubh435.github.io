@@ -78,7 +78,7 @@ class DrawerAppBar extends React.PureComponent<
   render() {
     const { classes } = this.props;
     return (
-      <Box sx={{ display: "flex", background: "#000 !important" , position:"relative"}}>
+      <Box sx={{ display: "flex", background: "#000 !important" }}>
         <Container>
           <AppBar className={classes.appbarBackground} component="nav">
             <Toolbar>
@@ -158,7 +158,7 @@ class DrawerAppBar extends React.PureComponent<
 const styles: any = (theme: Theme) => ({
   appbarBackground: {
     background: "#000000 !important",
-    position: "fixed !important",
+    position: "sticky !important",
   },
 });
 
