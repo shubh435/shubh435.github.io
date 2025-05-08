@@ -15,13 +15,12 @@
 }
 @media only screen and (max-width: 600px) {
   .card {
-    width: 90% !important;
+    width: 60% !important;
     margin: 10px auto;
   }
 }
 .border-light {
   position: relative;
-  /* display: flex; */
   border-radius: 8px;
   background: transparent;
 }

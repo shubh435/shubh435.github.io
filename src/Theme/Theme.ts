@@ -4,51 +4,64 @@ import { createTheme } from "@mui/material/styles";
 
 const defaultTheme = createTheme({
   typography: {
-    fontFamily: "Roboto",
+    fontFamily: "Bai Jamjuree",
     h1: {
-      fontSize: "26px",
+      fontSize: "22px",
       fontWeight: 700,
-      fontFamily: "Roboto",
+      fontFamily: "Bai Jamjuree",
       fontStyle: "normal",
     },
     h2: {
-      fontFamily: "Roboto",
-      fontSize: "22px",
-      fontWeight: 600,
+      fontFamily: "Bai Jamjuree",
+      fontSize: "20px",
+      fontWeight: 700,
+      textTransform: "capitalize",
     },
     h3: {
-      fontFamily: "Roboto",
+      fontFamily: "Bai Jamjuree",
       fontSize: "18px",
-      fontWeight: 500,
+      fontWeight: 700,
+      textTransform: "capitalize",
     },
     h4: {
-      fontFamily: "Roboto",
+      fontFamily: "Bai Jamjuree",
       fontSize: "16px",
       fontWeight: 400,
-      LineHeight: "28px",
     },
     h5: {
-      fontFamily: "Roboto",
+      fontFamily: "Bai Jamjuree",
       fontSize: "14px",
       fontWeight: 400,
-      LineHeight: "24px",
+      textTransform: "capitalize",
     },
     h6: {
-      fontFamily: "Roboto",
-      fontSize: "12px",
-      fontWeight: 600,
-      LineHeight: "28px",
+      fontFamily: "monospace",
+      fontSize: "13px",
+      fontWeight: 400,
     },
     caption: {
-      fontFamily: "Roboto",
+      fontFamily: "monospace",
       fontWeight: 400,
-      lineHeight: "50px",
+      fontSize: "18px",
       fontStyle: "normal",
     },
+    body2: {
+      fontFamily: "monospace",
+      fontWeight: 400,
+      fontSize: "14px",
+      fontStyle: "normal",
+    },
+    body1: {
+      fontFamily: "Bai Jamjuree",
+      fontSize: "14px",
+      fontWeight: 500,
+      textTransform: "capitalize",
+    },
     button: {
-      fontFamily: "Roboto",
+      fontFamily: "Bai Jamjuree",
       fontSize: "18px",
       fontWeight: 500,
+      textTransform: "capitalize",
     },
   },
 
@@ -63,10 +76,12 @@ const defaultTheme = createTheme({
       lg: 1200,
       xl: 1536,
     },
-  
+
   },
 });
 const theme = {
   ...defaultTheme,
 };
 export default theme;
+
+

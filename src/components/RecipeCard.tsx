@@ -42,11 +42,12 @@ export default function RecipeReviewCard(props: ProjectData) {
             </Link>
           </CardActions>
         }
+        
         sx={webstyle.cardHeader}
         title={props.projectName}
         subheader={props.subheader}
-        titleTypographyProps={{ sx: webstyle.titleTypography }}
-        subheaderTypographyProps={{ style: webstyle.subheaderTypography }}
+        titleTypographyProps={{ sx: webstyle.titleTypography,variant:"h3" }}
+        subheaderTypographyProps={{ style: webstyle.subheaderTypography,variant:"h6" }}
       />
       <CardMedia
         component="img"
@@ -68,8 +69,8 @@ const webstyle = {
     height: 400,
     display: 'flex',
     flexDirection: 'column',
-    backgroundColor: "rgb(70,170,114) !important",
-    background: "linear-gradient(40deg, rgba(70,170,114,1) 2%, rgba(0,0,0,1) 47%, rgba(45,160,164,1) 97%) !important",
+    backgroundColor: "black !important",
+    // background: "linear-gradient(180deg, hsl(310, 90%, 65%, 0.5) 2%, hsl(247, 90%, 25%, 0.5) 47%, hsl(247, 90%, 65%, 0.5) 97%) !important",
     color: "white"
   },
   avatar: {
