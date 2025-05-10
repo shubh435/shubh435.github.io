@@ -30,7 +30,7 @@ interface DrawerAppBarState {
 
 const drawerWidth = 240;
 const navItems = [
-  { id: 1, name: "Home", routes: "/" },
+  { id: 1, name: "Home", routes: "/#" },
   { id: 2, name: "About Me", routes: "#about" },
   { id: 3, name: "Skills", routes: "#skill" },
   { id: 4, name: "Project", routes: "/project" },
