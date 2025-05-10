@@ -17,6 +17,7 @@ import { Theme } from "@mui/system";
 import { withStyles } from "@mui/styles";
 import MenuIcon from "@mui/icons-material/Menu";
 import withRouter from "../utils/withRouter";
+import { navigateTo } from "../utils/utils";
 interface DrawerAppBarProps {
   window?: () => Window;
   classes?: any;
@@ -54,8 +55,7 @@ class DrawerAppBar extends React.PureComponent<
   };
 
   navigateTo = (routes: string) => {
-    // this.props.navigate(routes);
-    window.location.href = routes;
+    navigateTo(routes,this.props.navigate)
   };
   drawer = (
     <Box onClick={this.handleDrawerToggle} sx={{ textAlign: "center" }}>
@@ -66,8 +66,8 @@ class DrawerAppBar extends React.PureComponent<
       <List>
         {navItems.map((item) => (
           <ListItem key={item.id} disablePadding>
-            <ListItemButton sx={{ textAlign: "center" }}>
-              <ListItemText primary={item.name} />
+            <ListItemButton sx={{ textAlign: "center" }}  onClick={() => this.navigateTo(item.routes)}>
+              <ListItemText  sx={{ color: "#fff" }} primary={item.name} />
             </ListItemButton>
           </ListItem>
         ))}
@@ -78,9 +78,9 @@ class DrawerAppBar extends React.PureComponent<
   render() {
     const { classes } = this.props;
     return (
-      <Box sx={{ display: "flex", background: "#000 !important" }}>
-        <Container>
+      <Box sx={{ display: "flex", background: "#000 !important" ,position:"relative",flexDirection: "column"}}>
           <AppBar className={classes.appbarBackground} component="nav">
+        <Container>
             <Toolbar>
               <IconButton
                 color="inherit"
@@ -127,8 +127,8 @@ class DrawerAppBar extends React.PureComponent<
                 ))}
               </Box>
             </Toolbar>
-          </AppBar>
         </Container>
+          </AppBar>
 
         <Box component="nav">
           <Drawer
@@ -158,7 +158,8 @@ class DrawerAppBar extends React.PureComponent<
 const styles: any = (theme: Theme) => ({
   appbarBackground: {
     background: "#000000 !important",
-    position: "sticky !important",
+    top: 0,
+    zIndex: 1100,
   },
 });
 

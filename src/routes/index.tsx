@@ -35,10 +35,10 @@ class RouteToNavigate extends React.Component<
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route  index element={<Dashboard />} />
-            <Route path="/project" element={<Project />} />
+            <Route path="project" element={<Project />} />
           </Route>
           <Route path="" element={<> <Outlet /></>}>
-            <Route path="/keyboardbutton" element={<KeyboardButton />} />
+            <Route path="keyboardbutton" element={<KeyboardButton />} />
             
           </Route>
           <Route path="*" element={<NoPageFound />} />

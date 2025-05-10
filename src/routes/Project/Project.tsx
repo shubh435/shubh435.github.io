@@ -112,7 +112,7 @@ class Project extends React.Component<ProjectProps, ProjectState> {
           </Grid>
         </Container>
       </Box>
-    );
+    )
   }
 }
 

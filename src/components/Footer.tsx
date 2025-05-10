@@ -72,8 +72,6 @@ class Footer extends React.Component<FooterProps, FooterState> {
             </Typography>
           </Box>
         </Container> */}
-     ;
-
 <section className="designs-section">
   <Grid2 container  justifyContent={"center"}>
 
