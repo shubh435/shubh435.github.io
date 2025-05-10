@@ -1,9 +1,9 @@
 {
   "files": {
-    "main.css": "/static/css/main.67a5c9b5.css",
-    "main.js": "/static/js/main.f3c778dc.js",
-    "static/css/8.b18a8791.chunk.css": "/static/css/8.b18a8791.chunk.css",
-    "static/js/8.3dab3d62.chunk.js": "/static/js/8.3dab3d62.chunk.js",
+    "main.css": "/static/css/main.06a20428.css",
+    "main.js": "/static/js/main.247d6548.js",
+    "static/css/472.ec921b7f.chunk.css": "/static/css/472.ec921b7f.chunk.css",
+    "static/js/472.fd6d7b14.chunk.js": "/static/js/472.fd6d7b14.chunk.js",
     "static/css/859.18a19e46.chunk.css": "/static/css/859.18a19e46.chunk.css",
     "static/js/859.efb83bf0.chunk.js": "/static/js/859.efb83bf0.chunk.js",
     "static/css/856.1906aa2b.chunk.css": "/static/css/856.1906aa2b.chunk.css",
@@ -43,10 +43,10 @@
     "static/media/fa-v4compatibility.ttf": "/static/media/fa-v4compatibility.da94ef451f4969af06e6.ttf",
     "static/media/fa-v4compatibility.woff2": "/static/media/fa-v4compatibility.ea8f94e1d22e0d35ccd4.woff2",
     "index.html": "/index.html",
-    "main.67a5c9b5.css.map": "/static/css/main.67a5c9b5.css.map",
-    "main.f3c778dc.js.map": "/static/js/main.f3c778dc.js.map",
-    "8.b18a8791.chunk.css.map": "/static/css/8.b18a8791.chunk.css.map",
-    "8.3dab3d62.chunk.js.map": "/static/js/8.3dab3d62.chunk.js.map",
+    "main.06a20428.css.map": "/static/css/main.06a20428.css.map",
+    "main.247d6548.js.map": "/static/js/main.247d6548.js.map",
+    "472.ec921b7f.chunk.css.map": "/static/css/472.ec921b7f.chunk.css.map",
+    "472.fd6d7b14.chunk.js.map": "/static/js/472.fd6d7b14.chunk.js.map",
     "859.18a19e46.chunk.css.map": "/static/css/859.18a19e46.chunk.css.map",
     "859.efb83bf0.chunk.js.map": "/static/js/859.efb83bf0.chunk.js.map",
     "856.1906aa2b.chunk.css.map": "/static/css/856.1906aa2b.chunk.css.map",
@@ -58,7 +58,7 @@
     "593.407a2b32.chunk.js.map": "/static/js/593.407a2b32.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.67a5c9b5.css",
-    "static/js/main.f3c778dc.js"
+    "static/css/main.06a20428.css",
+    "static/js/main.247d6548.js"
   ]
 }
