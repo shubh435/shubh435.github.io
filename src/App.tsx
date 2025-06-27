@@ -1,19 +1,17 @@
 import { ThemeProvider } from "@mui/system";
 import React from "react";
-import '@fortawesome/fontawesome-free/css/all.min.css';
-import { HashRouter  as Router } from "react-router-dom";
+import "@fortawesome/fontawesome-free/css/all.min.css";
+import { HashRouter as Router } from "react-router-dom";
 
 import RouteToNavigate from "./routes";
-import theme from "./Theme/Theme";
-
+import {darkTheme,lightTheme} from "./Theme/Theme";
 function App() {
   return (
     <Router>
-      <ThemeProvider theme={theme}>
+      <ThemeProvider theme={darkTheme}>
         <RouteToNavigate />
       </ThemeProvider>
     </Router>
-   
   );
 }
 

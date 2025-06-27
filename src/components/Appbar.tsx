@@ -12,12 +12,14 @@ import {
   Box,
   AppBar,
   Container,
+  Button,
 } from "@mui/material";
 import { Theme } from "@mui/system";
 import { withStyles } from "@mui/styles";
 import MenuIcon from "@mui/icons-material/Menu";
 import withRouter from "../utils/withRouter";
 import { navigateTo } from "../utils/utils";
+import PortfolioContext from "../context/PortfolioContext";
 interface DrawerAppBarProps {
   window?: () => Window;
   classes?: any;
@@ -26,6 +28,7 @@ interface DrawerAppBarProps {
 
 interface DrawerAppBarState {
   mobileOpen: boolean;
+  isMode: "light" | "dark";
 }
 
 const drawerWidth = 240;
@@ -41,10 +44,12 @@ class DrawerAppBar extends React.PureComponent<
   DrawerAppBarProps,
   DrawerAppBarState
 > {
+    static contextType?: any = PortfolioContext;
   constructor(props: DrawerAppBarProps) {
     super(props);
     this.state = {
       mobileOpen: false,
+      isMode: "light",
     };
   }
 
@@ -66,8 +71,10 @@ class DrawerAppBar extends React.PureComponent<
       <List>
         {navItems.map((item) => (
           <ListItem key={item.id} disablePadding>
-            <ListItemButton sx={{ textAlign: "center" }}  onClick={() => this.navigateTo(item.routes)}>
-              <ListItemText  sx={{ color: "#fff" }} primary={item.name} />
+            <ListItemButton sx={{ textAlign: "center" }}
+              onClick={() => this.navigateTo(item.routes)}
+            >
+              <ListItemText sx={{ color: "#fff" }} primary={item.name} />
             </ListItemButton>
           </ListItem>
         ))}
@@ -77,10 +84,18 @@ class DrawerAppBar extends React.PureComponent<
 
   render() {
     const { classes } = this.props;
+    const {theme, toggleMode, mode } = this.context as any;
     return (
-      <Box sx={{ display: "flex", background: "#000 !important" ,position:"relative",flexDirection: "column"}}>
-          <AppBar className={classes.appbarBackground} component="nav">
-        <Container>
+      <Box
+        sx={{
+          display: "flex",
+          background: "#000 !important",
+          position: "relative",
+          flexDirection: "column",
+        }}
+      >
+        <AppBar className={classes.appbarBackground} component="nav">
+          <Container>
             <Toolbar>
               <IconButton
                 color="inherit"
@@ -125,10 +140,14 @@ class DrawerAppBar extends React.PureComponent<
                     {item.name}
                   </Typography>
                 ))}
+                <Button onClick={toggleMode}>
+                  Switch to {mode === "light" ? "dark" : "light"}{" "}
+                  mode
+                </Button>
               </Box>
             </Toolbar>
-        </Container>
-          </AppBar>
+          </Container>
+        </AppBar>
 
         <Box component="nav">
           <Drawer
