@@ -1,4 +1,4 @@
-import { noImageFound, project1Image, project2Image, project3Image, projectImage10, projectImage11, projectImage12, projectImage13, projectImage14, projectImage15, projectImage16, projectImage17, projectImage4, projectImage5, projectImage7, projectImage8, projectImage9 } from "./assets"
+import { noImageFound, project18, project19, project1Image, project2Image, project3Image, projectImage10, projectImage11, projectImage12, projectImage13, projectImage14, projectImage15, projectImage16, projectImage17, projectImage4, projectImage5, projectImage7, projectImage8, projectImage9 } from "./assets"
 
 export interface ProjectData {
     id: number,
@@ -9,21 +9,26 @@ export interface ProjectData {
     subheader: string,
     tryLink: string,
     sourceCodeLink: string,
-    rating: number
+    rating: number,
+    technology?:string,
+    category?: "Mobile" | "Web"
 }
 
 export const projectdata: ProjectData[] = [
     {
         id: 1,
-        projectName: "Doctor App",
+        projectName: "Doctor Mobile App",
         projectImage: project1Image,
         description: "The Doctor App is a user-friendly healthcare solution designed to simplify the interaction between patients and healthcare providers. Key features include appointment scheduling, secure patient records management, telemedicine support, prescription management, health monitoring integration, and secure payment processing. The app ensures efficient and convenient access to medical care, enhancing the overall patient experience.",
         moreDes: "Developed by Shubham",
         subheader: "Current",
         sourceCodeLink: "https://github.com/shubh435/doctors_app",
         tryLink: "https://github.com/shubh435/doctors_app/releases",
-        rating: 5
+        rating: 5,
+        category:"Mobile",
+        technology:"React Native"
     },
+    
     {
         id: 2,
         projectName: "Color Palette Generator",
@@ -199,5 +204,29 @@ export const projectdata: ProjectData[] = [
         sourceCodeLink: "#",
         tryLink: "#",
         rating: 3.99
+    },
+    {
+        id: 18,
+        projectName: "Doctor Web App",
+        projectImage: project18,
+        description: "The Doctor App is a user-friendly healthcare solution designed to simplify the interaction between patients and healthcare providers. Key features include appointment scheduling, secure patient records management, telemedicine support, prescription management, health monitoring integration, and secure payment processing. The app ensures efficient and convenient access to medical care, enhancing the overall patient experience.",
+        moreDes: "Developed by Shubham",
+        subheader: "Current",
+        sourceCodeLink: "https://github.com/Personal-Team-HealthCheckup/doctorApp",
+        tryLink: "https://healthcheck-nine.vercel.app/",
+        rating: 4.9,
+        technology:"React|NextJS"
+    },
+    {
+        id: 19,
+        projectName: "Realestate Web App",
+        projectImage: project19,
+        description: "The Realestate App is a user-friendly property showcasing solution designed to simplify the interaction between client and realestate providers.Basic UI to showcase with responsive",
+        moreDes: "Developed by Shubham",
+        subheader: "Current",
+        sourceCodeLink: "https://github.com/Personal-Team-HealthCheckup/doctorApp",
+        tryLink: "https://healthcheck-nine.vercel.app/",
+        rating: 2.9,
+        technology:"React"
     }
 ]
