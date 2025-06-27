@@ -1,5 +1,4 @@
 // SkillSection.js
-import React, { FC } from "react";
 import {
   FaReact, FaGithub, FaGitlab, FaAws, FaNode, FaGit,
 } from "react-icons/fa";
