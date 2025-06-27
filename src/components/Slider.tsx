@@ -179,7 +179,7 @@ class Slider extends React.PureComponent<SliderProps, SliderState> {
                   Shubham Sarode
                 </Typography>
                 <Typography component={"p"}>
-                  A passionate Software Engineer with 4+ years of front-end development expertise,
+                  A passionate Software Engineer with 3+ years of front-end development expertise,
                    focused on building dynamic, user-friendly web and mobile applications. 
                   Always eager to take on new challenges and create impactful digital experiences.
                 </Typography>
