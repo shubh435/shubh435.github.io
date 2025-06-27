@@ -20,6 +20,7 @@ import projectImage17 from "./Bannar Big.svg";
 import backImage from "./Shubham_textBackgound.png";
 import paralexImage from "./Shubham_Parallex.jpg";
 import logoImage from "./sslogo.png";
+import systemIcon from './systemicon.png'
 export {
   globImage,
   project1Image,
@@ -42,5 +43,6 @@ export {
   projectImage16,
   projectImage14,
   projectImage17,
-  logoImage
+  logoImage,
+  systemIcon
 };
