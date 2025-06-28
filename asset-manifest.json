@@ -1,9 +1,9 @@
 {
   "files": {
-    "main.css": "/static/css/main.06a20428.css",
-    "main.js": "/static/js/main.e7df5d8d.js",
-    "static/css/472.ec921b7f.chunk.css": "/static/css/472.ec921b7f.chunk.css",
-    "static/js/472.811f47aa.chunk.js": "/static/js/472.811f47aa.chunk.js",
+    "main.css": "/static/css/main.8c961407.css",
+    "main.js": "/static/js/main.39a1aeff.js",
+    "static/css/452.0b92281a.chunk.css": "/static/css/452.0b92281a.chunk.css",
+    "static/js/452.7718e9f8.chunk.js": "/static/js/452.7718e9f8.chunk.js",
     "static/css/859.18a19e46.chunk.css": "/static/css/859.18a19e46.chunk.css",
     "static/js/859.efb83bf0.chunk.js": "/static/js/859.efb83bf0.chunk.js",
     "static/css/856.1906aa2b.chunk.css": "/static/css/856.1906aa2b.chunk.css",
@@ -11,13 +11,15 @@
     "static/js/390.f4d60302.chunk.js": "/static/js/390.f4d60302.chunk.js",
     "static/js/453.ace21015.chunk.js": "/static/js/453.ace21015.chunk.js",
     "static/js/903.66ebcb7a.chunk.js": "/static/js/903.66ebcb7a.chunk.js",
-    "static/js/991.0470cd6e.chunk.js": "/static/js/991.0470cd6e.chunk.js",
-    "static/js/593.407a2b32.chunk.js": "/static/js/593.407a2b32.chunk.js",
+    "static/js/709.30bb6c1a.chunk.js": "/static/js/709.30bb6c1a.chunk.js",
+    "static/js/883.0fb967a6.chunk.js": "/static/js/883.0fb967a6.chunk.js",
+    "static/media/RealEstateShubham.png": "/static/media/RealEstateShubham.4200de66760260fb07c6.png",
     "static/media/Shubham_Moview_app.png": "/static/media/Shubham_Moview_app.f4f1c0d1c1ccf9148328.png",
     "static/media/Shubham_University.png": "/static/media/Shubham_University.3d91ddb29e32735c3fb6.png",
     "static/media/Shubham_Cocktail.png": "/static/media/Shubham_Cocktail.83e6f451df253d257ba3.png",
     "static/media/Shubham_Parallex.jpg": "/static/media/Shubham_Parallex.a503e8a81f53e9d08079.jpg",
     "static/media/Shubham_Travel.png": "/static/media/Shubham_Travel.8dbd6dd48735db600e29.png",
+    "static/media/realEstate2Shubham.png": "/static/media/realEstate2Shubham.95968552571b64641ff2.png",
     "static/media/Bannar Big.svg": "/static/media/Bannar Big.786149cd4e3ffb6d104369fe141fc460.svg",
     "static/media/Shubham_Eccomerce.png": "/static/media/Shubham_Eccomerce.8bc9933226e0bdfbc663.png",
     "static/media/Shubham_Bookly.png": "/static/media/Shubham_Bookly.449335a9303fb0e6702f.png",
@@ -26,6 +28,7 @@
     "static/media/Shubham_Menu.png": "/static/media/Shubham_Menu.a93482bea280b4ee8701.png",
     "static/media/Shubham_doctor_app.png": "/static/media/Shubham_doctor_app.d47966afd9ea7482f926.png",
     "static/media/Shubham_glob.jpeg": "/static/media/Shubham_glob.e337878b83eb262f4ed0.jpeg",
+    "static/media/doctorWebShubham.png": "/static/media/doctorWebShubham.6ca1b80e8b4a59df89c7.png",
     "static/media/Shubham_Weather.png": "/static/media/Shubham_Weather.0764cd2dbc54a776347f.png",
     "static/media/Shubham_Responsive_img.png": "/static/media/Shubham_Responsive_img.d104191fd18e3e0d1f72.png",
     "static/media/fa-solid-900.ttf": "/static/media/fa-solid-900.2582b0e4bcf85eceead0.ttf",
@@ -43,10 +46,10 @@
     "static/media/fa-v4compatibility.ttf": "/static/media/fa-v4compatibility.da94ef451f4969af06e6.ttf",
     "static/media/fa-v4compatibility.woff2": "/static/media/fa-v4compatibility.ea8f94e1d22e0d35ccd4.woff2",
     "index.html": "/index.html",
-    "main.06a20428.css.map": "/static/css/main.06a20428.css.map",
-    "main.e7df5d8d.js.map": "/static/js/main.e7df5d8d.js.map",
-    "472.ec921b7f.chunk.css.map": "/static/css/472.ec921b7f.chunk.css.map",
-    "472.811f47aa.chunk.js.map": "/static/js/472.811f47aa.chunk.js.map",
+    "main.8c961407.css.map": "/static/css/main.8c961407.css.map",
+    "main.39a1aeff.js.map": "/static/js/main.39a1aeff.js.map",
+    "452.0b92281a.chunk.css.map": "/static/css/452.0b92281a.chunk.css.map",
+    "452.7718e9f8.chunk.js.map": "/static/js/452.7718e9f8.chunk.js.map",
     "859.18a19e46.chunk.css.map": "/static/css/859.18a19e46.chunk.css.map",
     "859.efb83bf0.chunk.js.map": "/static/js/859.efb83bf0.chunk.js.map",
     "856.1906aa2b.chunk.css.map": "/static/css/856.1906aa2b.chunk.css.map",
@@ -54,11 +57,11 @@
     "390.f4d60302.chunk.js.map": "/static/js/390.f4d60302.chunk.js.map",
     "453.ace21015.chunk.js.map": "/static/js/453.ace21015.chunk.js.map",
     "903.66ebcb7a.chunk.js.map": "/static/js/903.66ebcb7a.chunk.js.map",
-    "991.0470cd6e.chunk.js.map": "/static/js/991.0470cd6e.chunk.js.map",
-    "593.407a2b32.chunk.js.map": "/static/js/593.407a2b32.chunk.js.map"
+    "709.30bb6c1a.chunk.js.map": "/static/js/709.30bb6c1a.chunk.js.map",
+    "883.0fb967a6.chunk.js.map": "/static/js/883.0fb967a6.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.06a20428.css",
-    "static/js/main.e7df5d8d.js"
+    "static/css/main.8c961407.css",
+    "static/js/main.39a1aeff.js"
   ]
 }
