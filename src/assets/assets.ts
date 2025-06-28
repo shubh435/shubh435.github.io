@@ -21,6 +21,7 @@ import backImage from "./Shubham_textBackgound.png";
 import paralexImage from "./Shubham_Parallex.jpg";
 import project18 from "./doctorWebShubham.png";
 import project19 from "./RealEstateShubham.png";
+import project20 from "./realEstate2Shubham.png";
 import logoImage from "./sslogo.png";
 export {
   globImage,
@@ -46,5 +47,6 @@ export {
   projectImage17,
   project18,
   project19,
+  project20,
   logoImage
 };

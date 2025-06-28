@@ -1,4 +1,4 @@
-import { noImageFound, project18, project19, project1Image, project2Image, project3Image, projectImage10, projectImage11, projectImage12, projectImage13, projectImage14, projectImage15, projectImage16, projectImage17, projectImage4, projectImage5, projectImage7, projectImage8, projectImage9 } from "./assets"
+import { noImageFound, project18, project19, project1Image, project20, project2Image, project3Image, projectImage10, projectImage11, projectImage12, projectImage13, projectImage14, projectImage15, projectImage16, projectImage17, projectImage4, projectImage5, projectImage7, projectImage8, projectImage9 } from "./assets"
 
 export interface ProjectData {
     id: number,
@@ -228,5 +228,17 @@ export const projectdata: ProjectData[] = [
         tryLink: "https://healthcheck-nine.vercel.app/",
         rating: 2.9,
         technology:"React"
-    }
+    },
+    {
+        id: 20,
+        projectName: "Real Estate Web App",
+        projectImage: project20,
+        description: "The Realestate App is a user-friendly property showcasing solution designed to simplify the interaction between client and realestate providers.Basic UI to showcase with responsive",
+        moreDes: "Developed by Shubham",
+        subheader: "Current",
+        sourceCodeLink: "https://github.com/Personal-Team-HealthCheckup/doctorApp",
+        tryLink: "https://realestate-pi-one.vercel.app/",
+        rating: 3.9,
+        technology:"React"
+    },
 ]
