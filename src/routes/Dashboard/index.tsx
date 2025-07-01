@@ -4,6 +4,9 @@ import Slider from "../../components/Slider";
 import Project from "../../components/Project";
 import SkillSection from "../../components/SkillSection";
 import { Helmet, HelmetProvider } from "react-helmet-async";
+import Achievements from "../../components/Achievment";
+// import Experience from "../../components/Experience";
+import { Box } from "@mui/material";
 
 const HelmetWithChildren: React.FC<{ children?: React.ReactNode }> = ({ children }) => (
   <HelmetProvider>
@@ -47,9 +50,30 @@ class Dashboard extends React.Component<DashboardProps, DashboardState> {
         </HelmetWithChildren>
 
         <Slider />
+         <Box
+      className="about-achievements-wrapper bg-zinc-900"
+      sx={{
+        display: "flex",
+        flexDirection: "row", 
+        flexWrap: "wrap", 
+        justifyContent: "space-around",
+        alignItems: "flex-start",
+        gap: 4,
+        padding: "2rem",
+      }}
+    >
+      <Box sx={{ flex: 1, minWidth: "300px" }}>
         <AboutUs />
+      </Box>
+
+      <Box sx={{ flex: 1, minWidth: "300px" }}>
+        <Achievements />
+      </Box>
+    </Box>
         <SkillSection />
         <Project />
+      
+        {/* <Experience /> */}
       </>
     );
   }
