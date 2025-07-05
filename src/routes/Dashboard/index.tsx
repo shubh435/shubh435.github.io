@@ -7,16 +7,70 @@ import { Helmet, HelmetProvider } from "react-helmet-async";
 import Achievements from "../../components/Achievment";
 import Experience from "../../components/Experience";
 import { Box } from "@mui/material";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from 'react-intersection-observer';
 
 const HelmetWithChildren: React.FC<{ children?: React.ReactNode }> = ({ children }) => (
   <HelmetProvider>
     <Helmet>{children}</Helmet>
   </HelmetProvider>
 );
+const MotionBox = motion(Box);
 
 interface DashboardProps {}
 
 interface DashboardState {}
+
+const AboutAchievementsSection = () => {
+  const controls = useAnimation();
+  const [ref, inView] = useInView({ threshold: 0.2, triggerOnce: true });
+
+  React.useEffect(() => {
+    if (inView) {
+      controls.start('visible');
+    }
+  }, [inView, controls]);
+
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 40 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
+  };
+
+  return (
+    <MotionBox
+      ref={ref}
+      className="about-achievements-wrapper bg-zinc-900"
+      initial="hidden"
+      animate={controls}
+      variants={fadeInUp  as {}}
+      sx={{
+        display: 'flex',
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        justifyContent: 'space-around',
+        alignItems: 'flex-start',
+        gap: 4,
+        padding: '2rem',
+      }}
+    >
+      <MotionBox
+        variants={fadeInUp as {}}
+        sx={{ flex: 1, minWidth: '300px' }}
+      >
+        <AboutUs />
+      </MotionBox>
+
+      <MotionBox
+        variants={fadeInUp as {}}
+        transition={{ delay: 0.2 }}
+        sx={{ flex: 1, minWidth: '300px' }}
+      >
+        <Achievements />
+      </MotionBox>
+    </MotionBox>
+  );
+};
+
 
 class Dashboard extends React.Component<DashboardProps, DashboardState> {
   constructor(props: DashboardProps) {
@@ -50,29 +104,11 @@ class Dashboard extends React.Component<DashboardProps, DashboardState> {
         </HelmetWithChildren>
 
         <Slider />
-         <Box
-      className="about-achievements-wrapper bg-zinc-900"
-      sx={{
-        display: "flex",
-        flexDirection: "row", 
-        flexWrap: "wrap", 
-        justifyContent: "space-around",
-        alignItems: "flex-start",
-        gap: 4,
-        padding: "2rem",
-      }}
-    >
-      <Box sx={{ flex: 1, minWidth: "300px" }}>
-        <AboutUs />
-      </Box>
-
-      <Box sx={{ flex: 1, minWidth: "300px" }}>
-        <Achievements />
-      </Box>
-    </Box>
+        <AboutAchievementsSection/>
+         <Experience />
         <SkillSection />
         <Project />
-        <Experience />
+   
       </>
     );
   }
