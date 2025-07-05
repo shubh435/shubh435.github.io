@@ -5,7 +5,7 @@ import Project from "../../components/Project";
 import SkillSection from "../../components/SkillSection";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import Achievements from "../../components/Achievment";
-// import Experience from "../../components/Experience";
+import Experience from "../../components/Experience";
 import { Box } from "@mui/material";
 
 const HelmetWithChildren: React.FC<{ children?: React.ReactNode }> = ({ children }) => (
@@ -72,8 +72,7 @@ class Dashboard extends React.Component<DashboardProps, DashboardState> {
     </Box>
         <SkillSection />
         <Project />
-      
-        {/* <Experience /> */}
+        <Experience />
       </>
     );
   }
