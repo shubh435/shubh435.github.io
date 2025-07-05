@@ -1,10 +1,10 @@
-// SkillSection.js
+import { useState } from "react";
 import {
   FaReact, FaGithub, FaGitlab, FaAws, FaNode, FaGit,
 } from "react-icons/fa";
 import {
   SiTypescript, SiJavascript, SiRedux, SiJest, SiExpress,
-  SiMongodb, SiCypress, SiTailwindcss,SiMaterialdesign
+  SiMongodb, SiCypress, SiTailwindcss, SiMaterialdesign
 } from "react-icons/si";
 import { MdMobileFriendly } from "react-icons/md";
 import { AiOutlineDeploymentUnit } from "react-icons/ai";
@@ -25,24 +25,20 @@ const skills: Skill[] = [
   { name: "JavaScript", icon: <SiJavascript className="text-yellow-400" />, level: "Advanced", category: "Programming" },
   { name: "Redux", icon: <SiRedux className="text-purple-500" />, level: "Advanced", category: "Frontend" },
   { name: "Tailwind CSS", icon: <SiTailwindcss className="text-sky-400" />, level: "Advanced", category: "Frontend" },
-    { name: "Material UI", icon: <SiMaterialdesign className="text-indigo-400" />, level: "Advanced", category: "Frontend" },
-
-
+  { name: "Material UI", icon: <SiMaterialdesign className="text-indigo-400" />, level: "Advanced", category: "Frontend" },
   { name: "Node.js", icon: <FaNode className="text-green-500" />, level: "Advanced", category: "Backend" },
   { name: "Express.js", icon: <SiExpress className="text-white" />, level: "Advanced", category: "Backend" },
   { name: "MongoDB", icon: <SiMongodb className="text-green-600" />, level: "Intermediate", category: "Database" },
-
   { name: "AWS", icon: <FaAws className="text-orange-400" />, level: "Intermediate", category: "DevOps" },
   { name: "CI/CD", icon: <AiOutlineDeploymentUnit className="text-teal-300" />, level: "Advanced", category: "DevOps" },
-
   { name: "Git", icon: <FaGit className="text-red-500" />, level: "Advanced", category: "Version Control" },
   { name: "GitHub", icon: <FaGithub className="text-gray-300" />, level: "Advanced", category: "Version Control" },
   { name: "GitLab", icon: <FaGitlab className="text-orange-500" />, level: "Intermediate", category: "Version Control" },
-
   { name: "Jest", icon: <SiJest className="text-red-400" />, level: "Advanced", category: "Testing" },
   { name: "Enzyme", icon: <SiCypress className="text-lime-400" />, level: "Intermediate", category: "Testing" },
   { name: "Three.js", icon: <GiCube className="text-green-300" />, level: "Intermediate", category: "Frontend" },
 ];
+
 const getProgressWidth = (level: Skill["level"]) => {
   switch (level) {
     case "Beginner": return "w-1/3";
@@ -50,12 +46,17 @@ const getProgressWidth = (level: Skill["level"]) => {
     case "Advanced": return "w-full";
   }
 };
+
 const SkillSection = () => {
+  const [showAll, setShowAll] = useState(false);
+
+  const visibleSkills = showAll ? skills : skills.slice(0, 6);
+
   return (
-    <section      id="skill" className="bg-zinc-900 text-white p-8 rounded-xl shadow-lg max-w-5xl mx-auto">
+    <section id="skill" className="bg-zinc-900 text-white p-8 rounded-xl shadow-lg max-w-5xl mx-auto">
       <h2 className="text-3xl font-semibold mb-6">Skills</h2>
       <div className="grid md:grid-cols-3 sm:grid-cols-2 gap-6">
-        {skills.map((skill, idx) => (
+        {visibleSkills.map((skill, idx) => (
           <div key={idx} className="bg-zinc-800 p-4 rounded-lg hover:scale-[1.03] transition-all duration-200 shadow-md">
             <div className="flex items-center space-x-3">
               <div className="text-2xl">{skill.icon}</div>
@@ -74,6 +75,14 @@ const SkillSection = () => {
             </div>
           </div>
         ))}
+      </div>
+      <div className="text-center mt-6">
+        <button
+          onClick={() => setShowAll(!showAll)}
+          className="text-cyan-400 hover:underline text-sm"
+        >
+          {showAll ? "View Less" : "View More"}
+        </button>
       </div>
     </section>
   );

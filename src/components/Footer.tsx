@@ -1,155 +1,139 @@
 import React from "react";
-import { Box, Button, TextField } from "@mui/material";
-import "./Footer.css"
-import Grid2 from "@mui/material/Unstable_Grid2";
+import { FaGithub, FaLinkedin, FaTwitter, FaInstagram, FaMedium } from "react-icons/fa";
+import { SiLeetcode } from "react-icons/si";
+import { motion } from "framer-motion";
 
-interface FooterProps {}
+const socialLinks = [
+  { id: 1, name: "GitHub", icon: <FaGithub className="text-xl" />, url: "https://github.com/shubh435" },
+  { id: 2, name: "LeetCode", icon: <SiLeetcode className="text-xl" />, url: "https://leetcode.com/u/shubh435/" },
+  { id: 3, name: "LinkedIn", icon: <FaLinkedin className="text-xl" />, url: "https://www.linkedin.com/in/shubh435/" },
+  { id: 4, name: "Twitter", icon: <FaTwitter className="text-xl" />, url: "https://twitter.com/shubh435" },
+  { id: 5, name: "Medium", icon: <FaMedium className="text-xl" />, url: "https://medium.com/@shubh435" },
+  { id: 6, name: "Instagram", icon: <FaInstagram className="text-xl" />, url: "https://www.instagram.com/thesoftwaretack/" },
+];
 
-interface FooterState {}
-
-class Footer extends React.Component<FooterProps, FooterState> {
-  constructor(props: FooterProps) {
-    super(props);
-    this.state = {};
+const containerVariants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: "easeOut" }
   }
-  render() {
-    return (
-      <Box sx={{ bgcolor: "#000", color: "white",  }} id="footer">
-        {/* <Container sx={{ mx: "auto" }}>
-          <Grid container spacing={2}>
-            <Grid item xs={12} md={4}></Grid>
-            <Grid item xs={12} md={4}>
-              <Typography variant="h4">Quick Links</Typography>
-              <Box sx={{ mt: 1 }}>
-                <Link
-                  display={"block"}
-                  color={"inherit"}
-                  href="https://github.com/shubh435"
-                >
-                  Github
-                </Link>
-                <Link
-                  display={"block"}
-                  color={"inherit"}
-                  href="https://www.linkedin.com/in/shubhamsarode-dev/"
-                >
-                  Linkdin
-                </Link>
-                <Link
-                  display={"block"}
-                  color={"inherit"}
-                  href="https://shubhamsarode4355.blogspot.com/"
-                >
-                  Blog
-                </Link>
-              </Box>
-            </Grid>
-            <Grid item xs={12} md={4}>
-              <Typography variant="h4">Contact</Typography>
-              <Typography variant="body2" sx={{ mt: 1 }}>
-                Email:{" "}
-                <Link href="mailto:shubhamsarode435@gmail.com" color="inherit">
-                  shubhamsarode435
-                </Link>
-              </Typography>
-              <Typography variant="body2">
-                Mobile Number:{" "}
-                <Link href="mailto:8605234316" color="inherit">
-                  +91 8605234316
-                </Link>
-              </Typography>
-              <Typography variant="body2">
-                Portfolio:{" "}
-                <Link href="https://shubh435.github.io/" color="inherit">
-                  shubh435.github.io
-                </Link>
-              </Typography>
-            </Grid>
-          </Grid>
-          <Box sx={{ textAlign: "center", mt: 3 }}>
-            <Typography variant="body2">
-              © {new Date().getFullYear()} Shubham. All rights reserved.
-            </Typography>
-          </Box>
-        </Container> */}
-<section className="designs-section">
-  <Grid2 container  justifyContent={"center"}>
+};
 
-    {/* Left Column: Social Links */}
-    <Grid2 xs={12} md={5}>
-      <h2>Connect with Me</h2>
-      <div className="designs-links">
-        <a href="https://github.com/shubh435" target="_blank" rel="noopener noreferrer" className="link-item">
-          <i className="fab fa-github"></i> GitHub
-        </a>
-        <a href="https://leetcode.com/u/shubh435/" target="_blank" rel="noopener noreferrer" className="link-item">
-          <i className="fab fa-leetcode"></i> LeetCode
-        </a>
-        <a href="https://www.linkedin.com/in/shubh435/" target="_blank" rel="noopener noreferrer" className="link-item">
-          <i className="fab fa-linkedin"></i> LinkedIn
-        </a>
-        <a href="https://twitter.com/shubh435" target="_blank" rel="noopener noreferrer" className="link-item">
-          <i className="fab fa-twitter"></i> Twitter
-        </a>
+const listItemVariants = {
+  hidden: { opacity: 0, x: -30 },
+  visible: (i: number) => ({
+    opacity: 1,
+    x: 0,
+    transition: { delay: i * 0.1, duration: 0.4, ease: "easeOut" }
+  })
+};
+
+const Footer: React.FC = () => {
+  return (
+    <motion.footer
+      id="footer"
+      className="bg-black text-white py-12 px-4"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+    >
+      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
+
+        {/* Social Links */}
+        <motion.div>
+          <h2 className="text-2xl font-semibold mb-4">🌐 Connect with Me</h2>
+          <div className="flex flex-col gap-3">
+            {socialLinks.map((link, index) => (
+              <motion.a
+                key={link.id}
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 hover:text-cyan-400 transition-all duration-300"
+                custom={index}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+              >
+                {link.icon}
+                <span className="text-lg">{link.name}</span>
+              </motion.a>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Contact Form */}
+        <motion.div
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          viewport={{ once: true }}
+        >
+          <h2 className="text-2xl font-semibold mb-4">📬 Contact Me</h2>
+          <p className="mb-4 text-gray-400">
+            <strong>Email:</strong>{" "}
+            <a href="mailto:shubhamsarode435@gmail.com" className="text-cyan-400 hover:underline">
+              shubhamsarode435@gmail.com
+            </a>
+          </p>
+
+          <form className="flex flex-col gap-4">
+            <div>
+              <label htmlFor="fullname" className="block mb-1 text-sm">Full Name</label>
+              <input
+                id="fullname"
+                name="fullname"
+                type="text"
+                placeholder="Enter your full name"
+                className="w-full px-4 py-2 bg-zinc-800 border border-zinc-700 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-cyan-500"
+                required
+              />
+            </div>
+            <div>
+              <label htmlFor="email" className="block mb-1 text-sm">Email Address</label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                placeholder="Enter your email"
+                className="w-full px-4 py-2 bg-zinc-800 border border-zinc-700 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-cyan-500"
+                required
+              />
+            </div>
+            <div>
+              <label htmlFor="message" className="block mb-1 text-sm">Your Message</label>
+              <textarea
+                id="message"
+                name="message"
+                rows={4}
+                placeholder="Type your message..."
+                className="w-full px-4 py-2 bg-zinc-800 border border-zinc-700 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-cyan-500"
+                required
+              ></textarea>
+            </div>
+            <button
+              type="submit"
+              className="bg-cyan-500 hover:bg-cyan-600 text-white font-medium py-2 px-4 rounded-md transition duration-300"
+            >
+              Message Me
+            </button>
+          </form>
+        </motion.div>
       </div>
-    </Grid2>
 
-    {/* Right Column: Contact Form */}
-    <Grid2 xs={12} md={5}>
-      <div className="contact-info">
-        <p>
-          <strong>Email: </strong>
-          <a href="mailto:shubhamsarode435@gmail.com" className="contact-link">shubhamsarode435@gmail.com</a>
-        </p>
-
-        <form className="contact-form">
-          <div className="form-group">
-            <label htmlFor="fullname">Full Name</label>
-            <TextField
-              id="fullname"
-              name="fullname"
-              placeholder="Enter your full name"
-              fullWidth
-              required
-            />
-          </div>
-
-          <div className="form-group">
-            <label htmlFor="email">Email Address</label>
-            <TextField
-              id="email"
-              name="email"
-              placeholder="Enter your email"
-              type="email"
-              fullWidth
-              required
-            />
-          </div>
-
-          <div className="form-group">
-            <label htmlFor="message">Your Message</label>
-            <textarea
-              id="message"
-              name="message"
-              placeholder="Type your message..."
-              rows={5}
-              className="message-textarea"
-              required
-            ></textarea>
-          </div>
-
-          <Button type="submit" variant="contained"  color="primary">
-            Message Me
-          </Button>
-        </form>
-      </div>
-    </Grid2>
-
-  </Grid2>
-</section>
-      </Box>
-    );
-  }
-}
+      <motion.div
+        className="text-center text-gray-500 text-sm mt-12"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ delay: 0.6 }}
+        viewport={{ once: true }}
+      >
+        © {new Date().getFullYear()} Shubham Sarode. All rights reserved.
+      </motion.div>
+    </motion.footer>
+  );
+};
 
 export default Footer;
