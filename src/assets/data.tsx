@@ -1,5 +1,14 @@
 import { noImageFound, project18, project19, project1Image, project20, project2Image, project3Image, projectImage10, projectImage11, projectImage12, projectImage13, projectImage14, projectImage15, projectImage16, projectImage17, projectImage4, projectImage5, projectImage7, projectImage8, projectImage9 } from "./assets"
-
+import {
+  FaReact, FaGithub, FaGitlab, FaAws, FaNode, FaGit,
+} from "react-icons/fa";
+import {
+  SiTypescript, SiJavascript, SiRedux, SiJest, SiExpress,
+  SiMongodb, SiCypress, SiTailwindcss, SiMaterialdesign
+} from "react-icons/si";
+import { MdMobileFriendly } from "react-icons/md";
+import { AiOutlineDeploymentUnit } from "react-icons/ai";
+import { GiCube } from "react-icons/gi";
 export interface ProjectData {
     id: number,
     projectName: string,
@@ -242,3 +251,95 @@ export const projectdata: ProjectData[] = [
         technology:"React"
     },
 ]
+
+export const experiences = [
+  {
+    title: 'Product Engineer',
+    company: 'Shuru Technologies Private Limited',
+    location: 'Remote',
+    period: 'Jul 2025 - Present',
+    description: [
+      'Developing scalable and modular React Native applications for both Android and iOS platforms',
+      'Writing clean, testable, and maintainable code using TypeScript and Jest',
+    ],
+    technologies: ['React Native', 'TypeScript', 'Jest'],
+  },
+  {
+    title: 'Senior Software Engineer',
+    company: 'ATUM Information Technologies',
+    location: 'Pune',
+    period: 'Feb 2025 - Jun 2025',
+    description: [
+      'Integrated RESTful APIs with pagination, loading states, and advanced image optimization (lazy loading, compression), improving performance by 25%',
+      'Collaborated with designers, QA, backend engineers, and product managers to deliver pixel-perfect, high-quality features',
+      'Maintained code quality using TypeScript, implemented best practices, and enforced standards through peer reviews and CI/CD pipelines',
+    ],
+    technologies: ['React Native', 'TypeScript', 'CI/CD', 'Firebase', 'Jest', 'Enzyme', 'AWS'],
+  },
+  {
+    title: 'Software Engineer',
+    company: 'Extended Web App Tech',
+    location: 'Hyderabad',
+    period: 'Jul 2022 - Jan 2025',
+    description: [
+      'Built scalable web and mobile applications using React.js, React Native, and TypeScript',
+      'Led a team of 5–10 developers on internal initiatives while contributing significantly to client projects',
+      'Created reusable UI components using HOCs, custom hooks, and Redux Toolkit for state management',
+      'Achieved 100% unit test coverage using Jest and React Testing Library',
+      'Successfully published 2+ mobile apps on the App Store and Google Play Store',
+    ],
+    technologies: ['React', 'React Native', 'Redux Toolkit', 'Jest', 'Firebase'],
+  },
+  {
+    title: 'Associate Software Engineer',
+    company: 'Blastoserve Scientific',
+    location: 'Aurangabad',
+    period: 'Feb 2022 - May 2022',
+    description: [
+      'Developed cross-platform desktop applications using Electron.js',
+      'Enhanced responsive UI components using HTML, CSS, JavaScript, and React.js',
+    ],
+    technologies: ['Electron.js', 'JavaScript', 'HTML', 'CSS', 'React.js'],
+  },
+  {
+    title: 'Associate Software Engineer',
+    company: 'Teztecch',
+    location: 'Nagpur',
+    period: 'Sep 2021 - Dec 2021',
+    description: [
+      'Built dynamic websites using HTML, CSS, JavaScript, and WordPress',
+      'Maintained and updated live Detox and portfolio web applications with real-time data integration',
+    ],
+    technologies: ['JavaScript', 'WordPress', 'HTML', 'CSS'],
+  },
+];
+
+
+
+export type Skill = {
+  name: string;
+  icon: JSX.Element;
+  level: "Beginner" | "Intermediate" | "Advanced";
+  category: string;
+};
+
+export const skills: Skill[] = [
+  { name: "React", icon: <FaReact className="text-cyan-400" />, level: "Advanced", category: "Frontend" },
+  { name: "React Native", icon: <MdMobileFriendly className="text-pink-400" />, level: "Advanced", category: "Frontend" },
+  { name: "TypeScript", icon: <SiTypescript className="text-blue-500" />, level: "Advanced", category: "Programming" },
+  { name: "JavaScript", icon: <SiJavascript className="text-yellow-400" />, level: "Advanced", category: "Programming" },
+  { name: "Redux", icon: <SiRedux className="text-purple-500" />, level: "Advanced", category: "Frontend" },
+  { name: "Tailwind CSS", icon: <SiTailwindcss className="text-sky-400" />, level: "Advanced", category: "Frontend" },
+  { name: "Material UI", icon: <SiMaterialdesign className="text-indigo-400" />, level: "Advanced", category: "Frontend" },
+  { name: "Node.js", icon: <FaNode className="text-green-500" />, level: "Advanced", category: "Backend" },
+  { name: "Express.js", icon: <SiExpress className="text-white" />, level: "Advanced", category: "Backend" },
+  { name: "MongoDB", icon: <SiMongodb className="text-green-600" />, level: "Intermediate", category: "Database" },
+  { name: "AWS", icon: <FaAws className="text-orange-400" />, level: "Intermediate", category: "DevOps" },
+  { name: "CI/CD", icon: <AiOutlineDeploymentUnit className="text-teal-300" />, level: "Advanced", category: "DevOps" },
+  { name: "Git", icon: <FaGit className="text-red-500" />, level: "Advanced", category: "Version Control" },
+  { name: "GitHub", icon: <FaGithub className="text-gray-300" />, level: "Advanced", category: "Version Control" },
+  { name: "GitLab", icon: <FaGitlab className="text-orange-500" />, level: "Intermediate", category: "Version Control" },
+  { name: "Jest", icon: <SiJest className="text-red-400" />, level: "Advanced", category: "Testing" },
+  { name: "Enzyme", icon: <SiCypress className="text-lime-400" />, level: "Intermediate", category: "Testing" },
+  { name: "Three.js", icon: <GiCube className="text-green-300" />, level: "Intermediate", category: "Frontend" },
+];

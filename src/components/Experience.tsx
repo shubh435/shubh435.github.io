@@ -1,58 +1,7 @@
 import React from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-
-const experiences = [
-  {
-    title: 'Senior Software Engineer',
-    company: 'ATUM Information Technologies',
-    location: 'Pune',
-    period: 'Feb 2025 - Jun 2025',
-    description: [
-      'Integrated RESTful APIs with pagination, loading states, and image optimization (lazy loading, compression), improving performance by 25%',
-      'Built scalable and modular React Native apps for Android and iOS',
-      'Collaborated with designers, QA, backend, and product managers to deliver pixel-perfect robust features',
-      'Maintained clean code with TypeScript, enforced best practices, peer code reviews, and CI/CD pipelines',
-    ],
-    technologies: ['React Native', 'TypeScript', 'CI/CD', 'Firebase', 'Jest'],
-  },
-  {
-    title: 'Software Engineer',
-    company: 'Extended Web App Tech',
-    location: 'Hyderabad',
-    period: 'Jul 2022 - Jan 2025',
-    description: [
-      'Built scalable web and mobile apps using React JS, React Native, and TypeScript',
-      'Led team of 5–10 on internal projects while contributing to major client deliveries',
-      'Developed reusable UI with HOCs, custom hooks, and state management (Redux Toolkit)',
-      'Achieved 100% unit test coverage with Jest & React Testing Library',
-      'Published apps on App Store and Play Store with OTA updates and CI/CD pipelines',
-    ],
-    technologies: ['React', 'React Native', 'Redux Toolkit', 'Jest', 'Firebase'],
-  },
-  {
-    title: 'Associate Software Engineer',
-    company: 'Blastoserve Scientific',
-    location: 'Aurangabad',
-    period: 'Feb 2022 - May 2022',
-    description: [
-      'Developed cross-platform desktop apps using Electron.js',
-      'Enhanced responsive web interfaces with HTML, CSS, and JavaScript',
-    ],
-    technologies: ['Electron.js', 'JavaScript', 'HTML', 'CSS'],
-  },
-  {
-    title: 'Associate Software Engineer',
-    company: 'Teztecch',
-    location: 'Nagpur',
-    period: 'Sep 2021 - Dec 2021',
-    description: [
-      'Created dynamic web apps using HTML, CSS, JavaScript, and WordPress',
-      'Worked on live Detox web and portfolio apps to update real-time data',
-    ],
-    technologies: ['JavaScript', 'WordPress', 'HTML', 'CSS'],
-  },
-];
+import { experiences } from "../assets/data"
 
 const FadeInWhenVisible: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const controls = useAnimation();

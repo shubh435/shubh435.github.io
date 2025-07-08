@@ -1,43 +1,5 @@
 import { useState } from "react";
-import {
-  FaReact, FaGithub, FaGitlab, FaAws, FaNode, FaGit,
-} from "react-icons/fa";
-import {
-  SiTypescript, SiJavascript, SiRedux, SiJest, SiExpress,
-  SiMongodb, SiCypress, SiTailwindcss, SiMaterialdesign
-} from "react-icons/si";
-import { MdMobileFriendly } from "react-icons/md";
-import { AiOutlineDeploymentUnit } from "react-icons/ai";
-import { GiCube } from "react-icons/gi";
-
-
-type Skill = {
-  name: string;
-  icon: JSX.Element;
-  level: "Beginner" | "Intermediate" | "Advanced";
-  category: string;
-};
-
-const skills: Skill[] = [
-  { name: "React", icon: <FaReact className="text-cyan-400" />, level: "Advanced", category: "Frontend" },
-  { name: "React Native", icon: <MdMobileFriendly className="text-pink-400" />, level: "Advanced", category: "Frontend" },
-  { name: "TypeScript", icon: <SiTypescript className="text-blue-500" />, level: "Advanced", category: "Programming" },
-  { name: "JavaScript", icon: <SiJavascript className="text-yellow-400" />, level: "Advanced", category: "Programming" },
-  { name: "Redux", icon: <SiRedux className="text-purple-500" />, level: "Advanced", category: "Frontend" },
-  { name: "Tailwind CSS", icon: <SiTailwindcss className="text-sky-400" />, level: "Advanced", category: "Frontend" },
-  { name: "Material UI", icon: <SiMaterialdesign className="text-indigo-400" />, level: "Advanced", category: "Frontend" },
-  { name: "Node.js", icon: <FaNode className="text-green-500" />, level: "Advanced", category: "Backend" },
-  { name: "Express.js", icon: <SiExpress className="text-white" />, level: "Advanced", category: "Backend" },
-  { name: "MongoDB", icon: <SiMongodb className="text-green-600" />, level: "Intermediate", category: "Database" },
-  { name: "AWS", icon: <FaAws className="text-orange-400" />, level: "Intermediate", category: "DevOps" },
-  { name: "CI/CD", icon: <AiOutlineDeploymentUnit className="text-teal-300" />, level: "Advanced", category: "DevOps" },
-  { name: "Git", icon: <FaGit className="text-red-500" />, level: "Advanced", category: "Version Control" },
-  { name: "GitHub", icon: <FaGithub className="text-gray-300" />, level: "Advanced", category: "Version Control" },
-  { name: "GitLab", icon: <FaGitlab className="text-orange-500" />, level: "Intermediate", category: "Version Control" },
-  { name: "Jest", icon: <SiJest className="text-red-400" />, level: "Advanced", category: "Testing" },
-  { name: "Enzyme", icon: <SiCypress className="text-lime-400" />, level: "Intermediate", category: "Testing" },
-  { name: "Three.js", icon: <GiCube className="text-green-300" />, level: "Intermediate", category: "Frontend" },
-];
+import { Skill,skills } from "../assets/data";
 
 const getProgressWidth = (level: Skill["level"]) => {
   switch (level) {
