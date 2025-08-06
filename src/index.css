@@ -101,3 +101,20 @@
 ::-webkit-scrollbar-thumb:hover {
   background: hsla(255, 100%, 100%, .8); 
 }
+
+
+.animate a:hover img {
+  animation: updownicon 0.6s linear infinite;
+}
+
+@keyframes updownicon {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

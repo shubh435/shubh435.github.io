@@ -23,6 +23,9 @@ import project18 from "./doctorWebShubham.png";
 import project19 from "./RealEstateShubham.png";
 import project20 from "./realEstate2Shubham.png";
 import logoImage from "./sslogo.png";
+import fiverImage from "./fiverr-1.svg"
+import upworkImage from "./upwork.svg"
+import freelancerImage from "./freelancer-.jpg"
 export {
   globImage,
   project1Image,
@@ -48,5 +51,8 @@ export {
   project18,
   project19,
   project20,
-  logoImage
+  logoImage,
+  freelancerImage,
+  upworkImage,
+  fiverImage
 };
