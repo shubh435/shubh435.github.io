@@ -1,18 +1,82 @@
-import React from "react";
-import { FaGithub, FaLinkedin, FaTwitter, FaInstagram, FaMedium } from "react-icons/fa";
+import React, { useRef } from "react";
+import emailjs from "emailjs-com";
+import {
+  FaGithub,
+  FaLinkedin,
+  FaTwitter,
+  FaInstagram,
+  FaMedium,
+} from "react-icons/fa";
 import { SiLeetcode } from "react-icons/si";
 import { motion } from "framer-motion";
 
 const socialLinks = [
-  { id: 1, name: "GitHub", icon: <FaGithub className="text-xl" />, url: "https://github.com/shubh435" },
-  { id: 2, name: "LeetCode", icon: <SiLeetcode className="text-xl" />, url: "https://leetcode.com/u/shubh435/" },
-  { id: 3, name: "LinkedIn", icon: <FaLinkedin className="text-xl" />, url: "https://www.linkedin.com/in/shubh435/" },
-  { id: 4, name: "Twitter", icon: <FaTwitter className="text-xl" />, url: "https://twitter.com/shubh435" },
-  { id: 5, name: "Medium", icon: <FaMedium className="text-xl" />, url: "https://medium.com/@shubh435" },
-  { id: 6, name: "Instagram", icon: <FaInstagram className="text-xl" />, url: "https://www.instagram.com/thesoftwaretack/" },
+  {
+    id: 1,
+    name: "GitHub",
+    icon: <FaGithub className="text-xl" />,
+    url: "https://github.com/shubh435",
+  },
+  {
+    id: 2,
+    name: "LeetCode",
+    icon: <SiLeetcode className="text-xl" />,
+    url: "https://leetcode.com/u/shubh435/",
+  },
+  {
+    id: 3,
+    name: "LinkedIn",
+    icon: <FaLinkedin className="text-xl" />,
+    url: "https://www.linkedin.com/in/shubh435/",
+  },
+  {
+    id: 4,
+    name: "Twitter",
+    icon: <FaTwitter className="text-xl" />,
+    url: "https://twitter.com/shubh435",
+  },
+  {
+    id: 5,
+    name: "Medium",
+    icon: <FaMedium className="text-xl" />,
+    url: "https://medium.com/@shubh435",
+  },
+  {
+    id: 6,
+    name: "Instagram",
+    icon: <FaInstagram className="text-xl" />,
+    url: "https://www.instagram.com/thesoftwaretack/",
+  },
 ];
 
 const Footer: React.FC = () => {
+  const formRef = useRef<HTMLFormElement>(null);
+
+  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    if (!formRef.current) return;
+
+    emailjs
+      .sendForm(
+        process.env.REACT_APP_EMAILJS_SERVICE_ID!,
+        process.env.REACT_APP_EMAILJS_TEMPLATE_ID!,
+        formRef.current,
+        process.env.REACT_APP_EMAILJS_PUBLIC_KEY!
+      )
+      .then(
+        (result) => {
+          console.log("Email sent successfully!", result.text);
+          alert("Message sent!");
+          formRef.current?.reset(); // clear form
+        },
+        (error) => {
+          console.error("Failed to send email:", error.text);
+          alert("Failed to send message.");
+        }
+      );
+  };
+
   return (
     <motion.footer
       id="footer"
@@ -22,7 +86,6 @@ const Footer: React.FC = () => {
       viewport={{ once: true }}
     >
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
-
         {/* Social Links */}
         <motion.div>
           <h2 className="text-2xl font-semibold mb-4">🌐 Connect with Me</h2>
@@ -56,17 +119,26 @@ const Footer: React.FC = () => {
           <h2 className="text-2xl font-semibold mb-4">📬 Contact Me</h2>
           <p className="mb-4 text-gray-400">
             <strong>Email:</strong>{" "}
-            <a href="mailto:shubhamsarode435@gmail.com" className="text-cyan-400 hover:underline">
+            <a
+              href="mailto:shubhamsarode435@gmail.com"
+              className="text-cyan-400 hover:underline"
+            >
               shubhamsarode435@gmail.com
             </a>
           </p>
 
-          <form className="flex flex-col gap-4">
+          <form
+            ref={formRef}
+            onSubmit={sendEmail}
+            className="flex flex-col gap-4"
+          >
             <div>
-              <label htmlFor="fullname" className="block mb-1 text-sm">Full Name</label>
+              <label htmlFor="name" className="block mb-1 text-sm">
+                Full Name
+              </label>
               <input
-                id="fullname"
-                name="fullname"
+                id="name"
+                name="name"
                 type="text"
                 placeholder="Enter your full name"
                 className="w-full px-4 py-2 bg-zinc-800 border border-zinc-700 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-cyan-500"
@@ -74,7 +146,9 @@ const Footer: React.FC = () => {
               />
             </div>
             <div>
-              <label htmlFor="email" className="block mb-1 text-sm">Email Address</label>
+              <label htmlFor="email" className="block mb-1 text-sm">
+                Email Address
+              </label>
               <input
                 id="email"
                 name="email"
@@ -85,7 +159,9 @@ const Footer: React.FC = () => {
               />
             </div>
             <div>
-              <label htmlFor="message" className="block mb-1 text-sm">Your Message</label>
+              <label htmlFor="message" className="block mb-1 text-sm">
+                Your Message
+              </label>
               <textarea
                 id="message"
                 name="message"
