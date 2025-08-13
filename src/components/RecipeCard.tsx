@@ -11,9 +11,10 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import ShareIcon from "@mui/icons-material/RemoveRedEye";
 import { ProjectData } from "../assets/data";
 import { Link } from "react-router-dom";
-import "./style.css"
+import "./style.css";
 
 export default function RecipeReviewCard(props: ProjectData) {
+  const isVideo = /\.(mp4|mov)$/i.test(props.projectImage);
   return (
     <Card className="cardShubhamProject" sx={webstyle.card}>
       <CardHeader
@@ -42,19 +43,34 @@ export default function RecipeReviewCard(props: ProjectData) {
             </Link>
           </CardActions>
         }
-        
         sx={webstyle.cardHeader}
         title={props.projectName}
         subheader={props.subheader}
-        titleTypographyProps={{ sx: webstyle.titleTypography,variant:"h3" }}
-        subheaderTypographyProps={{ style: webstyle.subheaderTypography,variant:"h6" }}
+        titleTypographyProps={{ sx: webstyle.titleTypography, variant: "h3" }}
+        subheaderTypographyProps={{
+          style: webstyle.subheaderTypography,
+          variant: "h6",
+        }}
       />
-      <CardMedia
-        component="img"
-        sx={webstyle.cardMedia}
-        image={props.projectImage}
-        alt="Shubham Sarode"
-      />
+      {!isVideo ? (
+        <CardMedia
+          component="img"
+          sx={webstyle.cardMedia}
+          image={props.projectImage}
+          alt="Shubham Sarode"
+        />
+      ) : (
+        <CardMedia
+          component="video"
+          sx={webstyle.cardMedia}
+          src={props.projectImage}
+          title="Shubham Sarode"
+          autoPlay={false}
+          loop
+          muted={false}
+          controls
+        />
+      )}
       <CardContent sx={webstyle.cardContent}>
         <Typography variant="body2" component={"p"} sx={webstyle.typography}>
           {props.description}
@@ -67,46 +83,47 @@ export default function RecipeReviewCard(props: ProjectData) {
 const webstyle = {
   card: {
     height: 400,
-    display: 'flex',
-    flexDirection: 'column',
+    display: "flex",
+    flexDirection: "column",
     backgroundColor: "black !important",
     // background: "linear-gradient(180deg, hsl(310, 90%, 65%, 0.5) 2%, hsl(247, 90%, 25%, 0.5) 47%, hsl(247, 90%, 65%, 0.5) 97%) !important",
-    color: "white"
+    color: "white",
   },
   avatar: {
-    background: 'linear-gradient(180deg, rgba(70,170,114,1) 2%, rgba(0,0,0,1) 47%, rgba(45,160,164,1) 97%)',
-    color: 'white'
+    background:
+      "linear-gradient(180deg, rgba(70,170,114,1) 2%, rgba(0,0,0,1) 47%, rgba(45,160,164,1) 97%)",
+    color: "white",
   },
   cardActions: {
     display: "flex",
-    alignItems: "center"
+    alignItems: "center",
   },
   link: {
     color: "#fff",
     marginRight: 10,
     width: 20,
-    height: 20
+    height: 20,
   },
   cardHeader: {
-    color: 'white'
+    color: "white",
   },
   titleTypography: {
     textTransform: "capitalize",
-    color: 'white'
+    color: "white",
   },
   subheaderTypography: {
-    color: 'white'
+    color: "white",
   },
   cardMedia: {
     height: 194,
-    objectFit: 'cover'
+    objectFit: "cover",
   },
   cardContent: {
     flexGrow: 1,
-    overflowY: 'auto',
-    maxHeight: 100
+    overflowY: "auto",
+    maxHeight: 100,
   },
   typography: {
-    color: 'white'
-  }
-}
+    color: "white",
+  },
+};

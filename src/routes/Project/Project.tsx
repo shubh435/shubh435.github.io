@@ -4,7 +4,7 @@ import "./Project.css";
 import RecipeReviewCard from "../../components/RecipeCard";
 import { ProjectData, projectdata } from "../../assets/data";
 
-interface ProjectProps { }
+interface ProjectProps {}
 
 interface ProjectState {
   searchText: string;
@@ -12,21 +12,23 @@ interface ProjectState {
   searchData: ProjectData[];
 }
 
-const SearchIcon = () => (<div className="search-icon">
-  <svg
-    className="svg"
-    fill="none"
-    stroke="currentColor"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-    stroke-width="2"
-    viewBox="0 0 24 24"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <circle cx="11" cy="11" r="8"></circle>
-    <line x1="21" x2="16.65" y1="21" y2="16.65"></line>
-  </svg>
-</div>)
+const SearchIcon = () => (
+  <div className="search-icon">
+    <svg
+      className="svg"
+      fill="none"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <circle cx="11" cy="11" r="8"></circle>
+      <line x1="21" x2="16.65" y1="21" y2="16.65"></line>
+    </svg>
+  </div>
+);
 class Project extends React.Component<ProjectProps, ProjectState> {
   debounceSearch: (text: string) => void;
   constructor(props: ProjectProps) {
@@ -67,9 +69,11 @@ class Project extends React.Component<ProjectProps, ProjectState> {
   }
 
   render() {
-    const sortedArray = this.state.projectdata.sort((projectA, projectB) => projectB.rating - projectA.rating)
+    const sortedArray = this.state.projectdata.sort(
+      (projectA, projectB) => projectB.rating - projectA.rating
+    );
     return (
-      <Box sx={{ minHeight: "100vh", background: "black" , marginTop:"5%"}}>
+      <Box sx={{ minHeight: "100vh", background: "black", marginTop: "5%" }}>
         <Container component={"section"}>
           <Box
             sx={{ display: "flex", justifyContent: "center", paddingTop: "4%" }}
@@ -102,17 +106,17 @@ class Project extends React.Component<ProjectProps, ProjectState> {
           >
             {this.state.projectdata.length > 0 ? (
               sortedArray.map((projectdata) => (
-                  <Grid key={projectdata.id} item lg={4} md={6} sm={12} xs={12}>
-                    <RecipeReviewCard {...projectdata} />
-                  </Grid>
-                ))
+                <Grid key={projectdata.id} item lg={4} md={6} sm={12} xs={12}>
+                  <RecipeReviewCard {...projectdata} />
+                </Grid>
+              ))
             ) : (
               <Typography component={"p"}>No project found</Typography>
             )}
           </Grid>
         </Container>
       </Box>
-    )
+    );
   }
 }
 

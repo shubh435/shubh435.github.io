@@ -6,7 +6,6 @@ const Project = React.lazy(() => import("./Project/Project"));
 const KeyboardButton = React.lazy(() => import("../components/KeyboardButton"));
 const NoPageFound = React.lazy(() => import("./NoPageFoundPage"));
 
-
 interface RouteToNavigateProps {}
 
 interface RouteToNavigateState {}
@@ -34,12 +33,19 @@ class RouteToNavigate extends React.Component<
       <React.Suspense fallback={<Loader />}>
         <Routes>
           <Route path="/" element={<Layout />}>
-            <Route  index element={<Dashboard />} />
+            <Route index element={<Dashboard />} />
             <Route path="project" element={<Project />} />
           </Route>
-          <Route path="" element={<> <Outlet /></>}>
+          <Route
+            path=""
+            element={
+              <>
+                {" "}
+                <Outlet />
+              </>
+            }
+          >
             <Route path="keyboardbutton" element={<KeyboardButton />} />
-            
           </Route>
           <Route path="*" element={<NoPageFound />} />
         </Routes>

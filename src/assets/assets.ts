@@ -22,10 +22,14 @@ import paralexImage from "./Shubham_Parallex.jpg";
 import project18 from "./doctorWebShubham.png";
 import project19 from "./RealEstateShubham.png";
 import project20 from "./realEstate2Shubham.png";
+import project21 from "./shubham_cricket_Craft.png";
+import project22 from "./GingeeGrains.png";
+// @ts-ignore
+import project23 from "./lypsync.mp4";
 import logoImage from "./sslogo.png";
-import fiverImage from "./fiverr-1.svg"
-import upworkImage from "./upwork.svg"
-import freelancerImage from "./freelancer-.jpg"
+import fiverImage from "./fiverr-1.svg";
+import upworkImage from "./upwork.svg";
+import freelancerImage from "./freelancer-.jpg";
 export {
   globImage,
   project1Image,
@@ -51,8 +55,11 @@ export {
   project18,
   project19,
   project20,
+  project21,
+  project22,
+  project23,
   logoImage,
   freelancerImage,
   upworkImage,
-  fiverImage
+  fiverImage,
 };
