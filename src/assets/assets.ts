@@ -1,3 +1,4 @@
+// @ts-nocheck
 import globImage from "./Shubham_glob.jpeg";
 import project1Image from "./Shubham_doctor_app.png";
 import project2Image from "./Shubham_Color_Generator.png";
@@ -24,12 +25,14 @@ import project19 from "./RealEstateShubham.png";
 import project20 from "./realEstate2Shubham.png";
 import project21 from "./shubham_cricket_Craft.png";
 import project22 from "./GingeeGrains.png";
-// @ts-ignore
 import project23 from "./lypsync.mp4";
 import logoImage from "./sslogo.png";
 import fiverImage from "./fiverr-1.svg";
 import upworkImage from "./upwork.svg";
 import freelancerImage from "./freelancer-.jpg";
+import project24 from "./Shubham_cofee.png";
+import project25 from "./shubham_physiotherapy_demo.png";
+import project26 from "./Ai_petcare.png";
 export {
   globImage,
   project1Image,
@@ -58,6 +61,9 @@ export {
   project21,
   project22,
   project23,
+  project24,
+  project25,
+  project26,
   logoImage,
   freelancerImage,
   upworkImage,
