@@ -2,7 +2,7 @@ import { Box, Button, Container, Grid, Typography } from "@mui/material";
 import React from "react";
 import * as THREE from "three";
 import { RoomEnvironment } from "three/examples/jsm/environments/RoomEnvironment.js";
-import { globImage, starImage } from "../assets/assets";
+import { backgroundMedia } from "../assets/assets";
 import { IoIosEye } from "react-icons/io";
 import withRouter from "../utils/withRouter";
 import { navigateTo } from "../utils/utils";
@@ -16,7 +16,7 @@ const startRotaionTimeY = 0.0001;
 const speedRotaionTimeGlobeY = 0.005;
 const speedRotaionTimeGlobeX = 0.005;
 
-interface SliderState { }
+interface SliderState {}
 
 class Slider extends React.PureComponent<SliderProps, SliderState> {
   starsRef: React.RefObject<HTMLDivElement>;
@@ -47,7 +47,7 @@ class Slider extends React.PureComponent<SliderProps, SliderState> {
 
     // Load the star texture
     const textureLoader = new THREE.TextureLoader();
-    const starTexture = textureLoader.load(starImage);
+    const starTexture = textureLoader.load(backgroundMedia.star);
 
     const starGeometry = new THREE.BufferGeometry();
     const starMaterial = new THREE.PointsMaterial({
@@ -110,7 +110,7 @@ class Slider extends React.PureComponent<SliderProps, SliderState> {
 
     // Load a texture for the globe
     const textureLoader = new THREE.TextureLoader();
-    const texture = textureLoader.load(globImage, () => {
+    const texture = textureLoader.load(backgroundMedia.globe, () => {
       renderer.render(scene, camera);
     });
 
@@ -159,17 +159,26 @@ class Slider extends React.PureComponent<SliderProps, SliderState> {
         sx={{ position: "relative", background: "#000000", overflow: "hidden" }}
         id="/"
       >
-        <Box
-          ref={this.starsRef}
-          sx={webstyle.starContainer}
-        />
-        <Container
-          sx={webstyle.container}
-        >
+        <Box ref={this.starsRef} sx={webstyle.starContainer} />
+        <Container sx={webstyle.container}>
           <Grid container>
             <Grid item lg={2} md={2} component={"section"}></Grid>
-            <Grid item lg={4} md={4} sm={12} sx={{ m: "auto" }} component={"section"}>
-              <Box color="#fff" sx={{ width: "100%", zIndex: 10000, paddingTop:{xs:"14%", lg:"auto"} }}>
+            <Grid
+              item
+              lg={4}
+              md={4}
+              sm={12}
+              sx={{ m: "auto" }}
+              component={"section"}
+            >
+              <Box
+                color="#fff"
+                sx={{
+                  width: "100%",
+                  zIndex: 10000,
+                  paddingTop: { xs: "14%", lg: "auto" },
+                }}
+              >
                 <Typography component={"p"}>Hello, I'm</Typography>
                 <Typography
                   component={"h1"}
@@ -179,13 +188,13 @@ class Slider extends React.PureComponent<SliderProps, SliderState> {
                   Shubham Sarode
                 </Typography>
                 <Typography component={"p"}>
-                  A passionate Software Engineer with 3+ years of front-end development expertise,
-                   focused on building dynamic, user-friendly web and mobile applications. 
-                  Always eager to take on new challenges and create impactful digital experiences.
+                  A passionate Software Engineer with 3+ years of front-end
+                  development expertise, focused on building dynamic,
+                  user-friendly web and mobile applications. Always eager to
+                  take on new challenges and create impactful digital
+                  experiences.
                 </Typography>
-                <Box
-                  sx={webstyle.buttonStyle}
-                >
+                <Box sx={webstyle.buttonStyle}>
                   <Button
                     variant="outlined"
                     sx={webstyle.button}
@@ -208,10 +217,15 @@ class Slider extends React.PureComponent<SliderProps, SliderState> {
                 </Box>
               </Box>
             </Grid>
-            <Grid item lg={6} md={6} sm={12} sx={{ m: "auto" }} component={"section"} >
-              <Box
-                sx={webstyle.globContainer}
-              >
+            <Grid
+              item
+              lg={6}
+              md={6}
+              sm={12}
+              sx={{ m: "auto" }}
+              component={"section"}
+            >
+              <Box sx={webstyle.globContainer}>
                 <Box
                   ref={this.globeRef}
                   sx={{
@@ -229,25 +243,25 @@ class Slider extends React.PureComponent<SliderProps, SliderState> {
 
 export default withRouter(Slider);
 const webstyle = {
-  buttonStyle1:{
+  buttonStyle1: {
     display: "flex",
     justifyContent: "center",
     gap: 1,
   },
-  globContainer:{
+  globContainer: {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
     width: "100%",
-    height: "100%", 
+    height: "100%",
     position: "relative",
   },
-  button:{
+  button: {
     display: "flex",
     justifyContent: "center",
     color: "#fff",
   },
-  buttonStyle:{
+  buttonStyle: {
     width: "100%",
     display: "flex",
     justifyContent: "flex-start",
@@ -274,5 +288,5 @@ const webstyle = {
     justifyContent: "space-between",
     overflow: "hidden",
     zIndex: 10,
-  }
-}
+  },
+};

@@ -1,31 +1,4 @@
-import {
-  noImageFound,
-  project18,
-  project19,
-  project1Image,
-  project20,
-  project21,
-  project22,
-  project23,
-  project24,
-  project25,
-  project26,
-  project2Image,
-  project3Image,
-  projectImage10,
-  projectImage11,
-  projectImage12,
-  projectImage13,
-  projectImage14,
-  projectImage15,
-  projectImage16,
-  projectImage17,
-  projectImage4,
-  projectImage5,
-  projectImage7,
-  projectImage8,
-  projectImage9,
-} from "./assets";
+import { projectMedia, sharedMedia } from "./assets";
 import {
   FaReact,
   FaGithub,
@@ -66,7 +39,7 @@ export const projectdata: ProjectData[] = [
   {
     id: 1,
     projectName: "Doctor Mobile App",
-    projectImage: project1Image,
+    projectImage: projectMedia.doctorMobile,
     description:
       "The Doctor App is a user-friendly healthcare solution designed to simplify the interaction between patients and healthcare providers. Key features include appointment scheduling, secure patient records management, telemedicine support, prescription management, health monitoring integration, and secure payment processing. The app ensures efficient and convenient access to medical care, enhancing the overall patient experience.",
     moreDes: "Developed by Shubham",
@@ -81,7 +54,7 @@ export const projectdata: ProjectData[] = [
   {
     id: 2,
     projectName: "Color Palette Generator",
-    projectImage: project2Image,
+    projectImage: projectMedia.colorPalette,
     description:
       "The Color Palette Generator is a versatile tool designed to create and explore a wide range of color palettes. Users can generate random colors, customize hues, and save their favorite combinations. Perfect for designers, developers, and artists, this app enhances creativity by providing a seamless way to experiment with and utilize colors in various projects.",
     moreDes: "Developed by Shubham",
@@ -93,7 +66,7 @@ export const projectdata: ProjectData[] = [
   {
     id: 3,
     projectName: "Travel Planner App",
-    projectImage: project3Image,
+    projectImage: projectMedia.travelPlanner,
     description:
       "The Travel Planner App is a comprehensive platform designed to enhance the travel planning experience. It offers features such as destination discovery, itinerary creation, and booking management. Users can explore popular travel destinations, find accommodations, book flights, and plan activities all in one place. With integrated reviews, maps, and travel tips, the app provides a seamless and enjoyable way to organize and manage trips, making travel planning efficient and stress-free.",
     moreDes: "Developed by Shubham",
@@ -105,7 +78,7 @@ export const projectdata: ProjectData[] = [
   {
     id: 4,
     projectName: "Weather Forecast App",
-    projectImage: projectImage16,
+    projectImage: projectMedia.weatherDashboard,
     description:
       "The Weather Forecast App provides accurate and up-to-date weather information for any location. Users can view current weather conditions, hourly forecasts, and extended forecasts. The app also includes features such as weather alerts, radar maps, and customizable weather widgets.",
     moreDes: "Developed by Shubham",
@@ -117,7 +90,7 @@ export const projectdata: ProjectData[] = [
   {
     id: 5,
     projectName: "Responsive Startup Website",
-    projectImage: projectImage4,
+    projectImage: projectMedia.responsiveStartup,
     description:
       "Designed and developed a modern and responsive website tailored for startups using React JS. The website provides an engaging platform for startups to showcase their services and company information effectively.",
     moreDes: "Developed by Shubham",
@@ -129,7 +102,7 @@ export const projectdata: ProjectData[] = [
   {
     id: 6,
     projectName: "Cocktail API Task",
-    projectImage: projectImage5,
+    projectImage: projectMedia.cocktailExplorer,
     description:
       "Developed a modern and responsive website using React JS to interact with a cocktail API. The website allows users to search for cocktail recipes, view detailed information about each cocktail, and save their favorite recipes.",
     moreDes: "Developed by Shubham",
@@ -141,7 +114,7 @@ export const projectdata: ProjectData[] = [
   {
     id: 7,
     projectName: "Bootstrap Design Task",
-    projectImage: noImageFound,
+    projectImage: sharedMedia.fallback,
     description:
       "Designed and developed a modern and responsive website tailored for an agency using React JS and Bootstrap.",
     moreDes: "Developed by Shubham",
@@ -153,7 +126,7 @@ export const projectdata: ProjectData[] = [
   {
     id: 8,
     projectName: "Band Template",
-    projectImage: projectImage7,
+    projectImage: projectMedia.bandTemplate,
     description:
       "Designed and developed a modern and responsive website template for bands using React JS.",
     moreDes: "Developed by Shubham",
@@ -165,7 +138,7 @@ export const projectdata: ProjectData[] = [
   {
     id: 9,
     projectName: "E-commerce App",
-    projectImage: projectImage8,
+    projectImage: projectMedia.ecommerceStorefront,
     description:
       "Designed and developed a modern and responsive e-commerce website using React JS. The website provides a seamless shopping experience with features such as product search, detailed product pages, and a secure checkout process.",
     moreDes: "Developed by Shubham",
@@ -177,7 +150,7 @@ export const projectdata: ProjectData[] = [
   {
     id: 10,
     projectName: "Testimonial Slider",
-    projectImage: projectImage12,
+    projectImage: projectMedia.testimonialSlider,
     description:
       "Designed and developed a modern and responsive testimonial slider using JavaScript. The slider allows users to view and navigate through various testimonials.",
     moreDes: "Developed by Shubham",
@@ -190,7 +163,7 @@ export const projectdata: ProjectData[] = [
   {
     id: 11,
     projectName: "Color Flipper",
-    projectImage: projectImage9,
+    projectImage: projectMedia.colorFlipper,
     description:
       "Designed and developed a modern and responsive color flipper website using JavaScript. The website allows users to generate random colors and view their hex codes.",
     moreDes: "Developed by Shubham",
@@ -202,7 +175,7 @@ export const projectdata: ProjectData[] = [
   {
     id: 12,
     projectName: "React Movie App",
-    projectImage: projectImage10,
+    projectImage: projectMedia.movieApp,
     description:
       "Designed and developed a modern and responsive movie website using React JS. The website allows users to search for movies, view detailed information, and watch trailers.",
     moreDes: "Developed by Shubham",
@@ -214,7 +187,7 @@ export const projectdata: ProjectData[] = [
   {
     id: 13,
     projectName: "University Demo",
-    projectImage: projectImage11,
+    projectImage: projectMedia.university,
     description:
       "Designed and developed a modern and responsive university study website using JavaScript. The website provides information about various courses, faculties, and campus facilities.",
     moreDes: "Developed by Shubham",
@@ -226,7 +199,7 @@ export const projectdata: ProjectData[] = [
   {
     id: 14,
     projectName: "Practice Tabs Web App",
-    projectImage: projectImage13,
+    projectImage: projectMedia.menuShowcase,
     description:
       "Developed a practice web app using JavaScript to demonstrate the use of tabs for organizing content.",
     moreDes: "Developed by Shubham",
@@ -238,7 +211,7 @@ export const projectdata: ProjectData[] = [
   {
     id: 15,
     projectName: "Practice Agency Web App",
-    projectImage: projectImage14,
+    projectImage: projectMedia.agencyLanding,
     description:
       "Developed a practice web app using JavaScript to demonstrate the creation of a modern and responsive agency website.",
     moreDes: "Developed by Shubham",
@@ -250,7 +223,7 @@ export const projectdata: ProjectData[] = [
   {
     id: 16,
     projectName: "Bookly - Personalized Book Recommendation App",
-    projectImage: projectImage15,
+    projectImage: projectMedia.bookly,
     description:
       "Bookly is a web application designed to help users discover and track their next great read. Featuring an intuitive and user-friendly interface, Bookly allows users to browse a vast collection of books, read detailed descriptions, and receive personalized recommendations based on their reading preferences.",
     moreDes: "Developed by Shubham",
@@ -262,7 +235,7 @@ export const projectdata: ProjectData[] = [
   {
     id: 17,
     projectName: "Shopery - Organic E-commerce Shop",
-    projectImage: projectImage17,
+    projectImage: projectMedia.shoperyBanner,
     description:
       "Shopery is an organic e-commerce platform dedicated to providing customers with a wide range of eco-friendly, sustainable, and organic products. The website offers a seamless shopping experience, featuring categories like fresh produce, health supplements, eco-conscious personal care, and sustainable home goods. With a user-friendly interface and a focus on promoting environmentally responsible choices, Shopery aims to make it easy for customers to shop green and support a healthier lifestyle.",
     moreDes: "Developed by Shubham",
@@ -274,7 +247,7 @@ export const projectdata: ProjectData[] = [
   {
     id: 18,
     projectName: "Doctor Web App",
-    projectImage: project18,
+    projectImage: projectMedia.doctorWeb,
     description:
       "The Doctor App is a user-friendly healthcare solution designed to simplify the interaction between patients and healthcare providers. Key features include appointment scheduling, secure patient records management, telemedicine support, prescription management, health monitoring integration, and secure payment processing. The app ensures efficient and convenient access to medical care, enhancing the overall patient experience.",
     moreDes: "Developed by Shubham",
@@ -287,7 +260,7 @@ export const projectdata: ProjectData[] = [
   {
     id: 19,
     projectName: "Realestate Web App",
-    projectImage: project19,
+    projectImage: projectMedia.realEstatePrimary,
     description:
       "The Realestate App is a user-friendly property showcasing solution designed to simplify the interaction between client and realestate providers.Basic UI to showcase with responsive",
     moreDes: "Developed by Shubham",
@@ -300,7 +273,7 @@ export const projectdata: ProjectData[] = [
   {
     id: 20,
     projectName: "Real Estate Web App",
-    projectImage: project20,
+    projectImage: projectMedia.realEstateSecondary,
     description:
       "The Realestate App is a user-friendly property showcasing solution designed to simplify the interaction between client and realestate providers.Basic UI to showcase with responsive",
     moreDes: "Developed by Shubham",
@@ -313,7 +286,7 @@ export const projectdata: ProjectData[] = [
   {
     id: 21,
     projectName: "CricketCraft",
-    projectImage: project21,
+    projectImage: projectMedia.cricketCraft,
     description:
       "CricketCraft is a responsive web app designed to showcase cricket-related products with a clean and user-friendly interface. It serves as a basic yet effective platform for browsing and ordering selected cricket items.",
     moreDes: "Developed by Shubham Sarode",
@@ -326,7 +299,7 @@ export const projectdata: ProjectData[] = [
   {
     id: 22,
     projectName: "Gingee Grain",
-    projectImage: project22,
+    projectImage: projectMedia.gingeeGrains,
     description:
       "Gingee Grain is a professional, export-focused website designed to showcase premium Bajra (Pearl Millet) products for international buyers. It highlights product details, certifications, nutritional benefits, and export readiness with a clean, responsive, and SEO-friendly design.",
     moreDes: "Developed by Shubham Sarode",
@@ -339,7 +312,7 @@ export const projectdata: ProjectData[] = [
   {
     id: 23,
     projectName: "Lip Sync AI Avatar",
-    projectImage: project23,
+    projectImage: projectMedia.lipSyncDemo,
     description:
       "Lip Sync AI Avatar is an interactive React web app that synchronizes an animated avatar’s lip movements with spoken text in real time. It integrates AI-driven voice-to-animation technology, offering a smooth and engaging user experience for conversational interfaces and virtual assistants.",
     moreDes: "Developed by Shubham Sarode",
@@ -352,7 +325,7 @@ export const projectdata: ProjectData[] = [
   {
     id: 24,
     projectName: "Coffee Shop",
-    projectImage: project24,
+    projectImage: projectMedia.coffeeShop,
     description:
       "Coffee Shop is a modern web application designed to provide a seamless online ordering experience for coffee enthusiasts. It features a user-friendly interface, a variety of coffee options, and a secure payment gateway.",
     moreDes: "Developed by Shubham Sarode",
@@ -365,7 +338,7 @@ export const projectdata: ProjectData[] = [
   {
     id: 25,
     projectName: "Physiotherapy Demo",
-    projectImage: project25,
+    projectImage: projectMedia.physiotherapy,
     description:
       "Physiotherapy Demo is a modern web application designed to provide a seamless online experience for physiotherapy services. It features a user-friendly interface, a variety of treatment options, and a secure payment gateway.",
     moreDes: "Developed by Shubham Sarode",
@@ -378,7 +351,7 @@ export const projectdata: ProjectData[] = [
   {
     id: 26,
     projectName: "AI Pet Care",
-    projectImage: project26,
+    projectImage: projectMedia.aiPetCare,
     description:
       "AI Pet Care is a modern web application designed to provide a seamless online experience for pet care services. It features a user-friendly interface, a variety of treatment options, and a secure payment gateway.",
     moreDes: "Developed by Shubham Sarode",

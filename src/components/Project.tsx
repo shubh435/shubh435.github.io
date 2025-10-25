@@ -47,7 +47,7 @@ class Project extends React.PureComponent<ProjectProps, ProjectState> {
               variant="h2"
               m={1}
             >
-              Project
+              Projects
             </Typography>
             <Button
               onClick={() => navigateTo("/project", this.props.navigate)}

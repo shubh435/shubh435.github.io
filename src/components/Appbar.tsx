@@ -33,7 +33,7 @@ const navItems = [
   { id: 1, name: "Home", routes: "/#" },
   { id: 2, name: "About Me", routes: "#about" },
   { id: 3, name: "Skills", routes: "#skill" },
-  { id: 4, name: "Project", routes: "/project" },
+  { id: 4, name: "Projects", routes: "/project" },
   { id: 5, name: "Contact", routes: "#footer" },
 ];
 
