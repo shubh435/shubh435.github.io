@@ -16,8 +16,8 @@ const cardVariants = {
 
 const Testimonials: React.FC = () => {
   return (
-    <section className="py-16 px-5">
-      <div className="max-w-6xl mx-auto text-center space-y-4">
+    <section className="py-16 px-5 container mx-auto" id="testimonial">
+      <div className="max-w-6xl mx-auto text-center space-y-4 ">
         <p className="text-sm uppercase tracking-[0.3em] text-cyan-400">
           Trust Signals
         </p>

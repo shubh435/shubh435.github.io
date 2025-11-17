@@ -6,7 +6,7 @@ const AboutUs: React.FC = () => {
       id="about"
       className="section-shell w-full py-10 px-5 rounded-3xl shadow-lg"
     >
-      <div className="max-w-4xl mx-auto flex flex-col gap-6 text-center md:text-left">
+      <div className="max-w-4xl mx-auto flex flex-col  gap-6 text-center md:text-left">
         <h2 className="text-4xl font-bold">About Me</h2>
         <p className="text-lg text-muted">
           React & React Native engineer with <strong>3+ years</strong> of

@@ -36,7 +36,9 @@ const ParallaxShowcase: React.FC<ParallaxShowcaseProps> = ({ navigate }) => {
           Smooth-built interactions that guide hiring managers
         </h2>
         <p className="mx-auto max-w-3xl text-lg text-zinc-200">
-          Micro-interactions, scroll storytelling, and content hierarchy make long-form portfolios feel effortless. I prioritize calm motion, accessible color, and incremental delivery.
+          I build scalable, high-quality frontend experiences that drive real
+          results. I transform ideas into smooth, user-focused products with
+          precision.
         </p>
         <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
           <button

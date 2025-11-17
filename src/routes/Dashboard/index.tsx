@@ -47,7 +47,7 @@ const AboutAchievementsSection: React.FC = () => {
   return (
     <MotionBox
       ref={ref}
-      className="about-achievements-wrapper bg-zinc-900"
+      className="about-achievements-wrapper bg-zinc-900  "
       initial="hidden"
       animate={controls}
       variants={fadeInUp as {}}
@@ -57,20 +57,23 @@ const AboutAchievementsSection: React.FC = () => {
         flexWrap: "wrap",
         justifyContent: "space-around",
         alignItems: "flex-start",
-        gap: 4,
-        padding: "2rem",
       }}
     >
-      <MotionBox variants={fadeInUp as {}} sx={{ flex: 1, minWidth: "300px" }}>
-        <AboutUs />
-      </MotionBox>
-      <MotionBox
-        variants={fadeInUp as {}}
-        transition={{ delay: 0.2 }}
-        sx={{ flex: 1, minWidth: "300px" }}
-      >
-        <Achievements />
-      </MotionBox>
+      <div className="container mx-auto flex flex-col md:flex-row gap-8">
+        <MotionBox
+          variants={fadeInUp as {}}
+          sx={{ flex: 1, minWidth: "300px" }}
+        >
+          <AboutUs />
+        </MotionBox>
+        <MotionBox
+          variants={fadeInUp as {}}
+          transition={{ delay: 0.2 }}
+          sx={{ flex: 1, minWidth: "300px" }}
+        >
+          <Achievements />
+        </MotionBox>
+      </div>
     </MotionBox>
   );
 };
