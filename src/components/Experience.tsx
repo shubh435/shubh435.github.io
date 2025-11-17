@@ -31,7 +31,11 @@ const FadeInWhenVisible: React.FC<{ children: React.ReactNode }> = ({ children }
 
 const Experience: React.FC = () => {
   return (
-    <section id="experience" className="py-20 bg-black text-white">
+    <section
+      id="experience"
+      className="py-20 text-white"
+      style={{ background: "var(--bg-main)" }}
+    >
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">Work Experience</h2>
@@ -50,7 +54,7 @@ const Experience: React.FC = () => {
                 <div className="relative">
                   <div className="absolute left-6 w-4 h-4 bg-blue-500 rounded-full border-4 border-black shadow-lg hidden md:block"></div>
 
-                  <div className="md:ml-16 bg-gray-900 rounded-xl p-8 shadow-md hover:shadow-xl transition-all duration-300 hover:scale-[1.02]">
+                  <div className="md:ml-16 glass-panel p-8 shadow-md hover:shadow-xl transition-all duration-300 hover:scale-[1.02]">
                     <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
                       <div>
                         <h3 className="text-xl font-bold mb-1">{exp.title}</h3>

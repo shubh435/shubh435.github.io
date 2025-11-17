@@ -1,69 +1,127 @@
-import React from 'react';
-import withRouter from '../utils/withRouter';
+import React, { useMemo } from "react";
+import withRouter from "../utils/withRouter";
 
 interface ThreeDCardProps {
   title?: string;
   description?: string;
   imageUrl?: string;
-  id: number,
-  moreDes?: string,
-  subheader?: string,
-  tryLink?: string,
-  sorceCodeLink?: string,
-  rating?: number
-  navigate?:(text?:string) => void
+  id: number;
+  moreDes?: string;
+  subheader?: string;
+  tryLink?: string;
+  sourceCodeLink?: string;
+  rating?: number;
+  navigate?: (text?: string) => void;
 }
 
-const ThreeDCard: React.FC<ThreeDCardProps> = ({ title, description, imageUrl ,tryLink,sorceCodeLink,navigate}) => {
+const KEYWORDS = [
+  "React",
+  "React Native",
+  "TypeScript",
+  "Redux",
+  "Tailwind",
+  "Next.js",
+  "Firebase",
+  "Node",
+];
+
+const getSummaryPoints = (text?: string) => {
+  if (!text) return [];
+  return text
+    .split(/(?<=\.)\s+/)
+    .map((item) => item.trim())
+    .filter(Boolean)
+    .slice(0, 3);
+};
+
+const highlightText = (text: string) => {
+  const pattern = new RegExp(`(${KEYWORDS.join("|")})`, "gi");
+  return text.split(pattern).map((chunk, index) => {
+    const match = KEYWORDS.find(
+      (keyword) => keyword.toLowerCase() === chunk.toLowerCase()
+    );
+    if (match) {
+      return (
+        <span key={`${chunk}-${index}`} className="text-cyan-400 font-semibold">
+          {chunk}
+        </span>
+      );
+    }
+    return <span key={`${chunk}-${index}`}>{chunk}</span>;
+  });
+};
+
+const ThreeDCard: React.FC<ThreeDCardProps> = ({
+  title,
+  description,
+  imageUrl,
+  tryLink,
+  sourceCodeLink,
+  navigate,
+}) => {
+  const points = useMemo(() => getSummaryPoints(description), [description]);
+
   return (
-    <div className="preview ">
-    <div className=" flex items-center justify-center" style={{ perspective: '1000px' }}>
-      <div className="flex items-center justify-center relative transition-all duration-200 ease-linear inter-var" style={{ transformStyle: 'preserve-3d', transform: 'rotateY(0deg) rotateX(0deg)' }}>
-        <div className="[transform-style:preserve-3d] bg-gray-50 relative group/card dark:hover:shadow-2xl
-         dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2]
-          border-black/[0.1]
+    <div className="preview">
+      <div
+        className="flex items-center justify-center"
+        style={{ perspective: "1000px" }}
+      >
+        <div
+          className="flex items-center justify-center relative transition-all duration-200 ease-linear inter-var"
+          style={{ transformStyle: "preserve-3d" }}
+        >
+          <div
+            className="[transform-style:preserve-3d] surface-card relative group/card
+          border border-white/5
         w-full h-auto 
-         rounded-xl p-6 border">
-          <div className="w-fit transition duration-200 ease-linear text-xl font-bold text-neutral-600 dark:text-white">
-            {title}
-          </div>
-          <p className="w-fit transition duration-200 ease-linear text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300">
-            {description}
-          </p>
-          <div className="transition duration-200 ease-linear w-full mt-4">
-            <img
-              alt="shubham"
-              loading="lazy"
-              width="1000"
-              height="1000"
-              decoding="async"
-              className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
-              src={imageUrl}
-              style={{ color: 'transparent' }}
-            />
-          </div>
-          <div className="flex justify-between items-center mt-20">
-            <a
-              className="w-fit transition duration-200 ease-linear px-4 py-2 rounded-xl text-xs font-normal dark:text-white"
-              target="__blank"
-              href={tryLink}
-              style={{ transform: 'translateX(0px) translateY(0px) translateZ(0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg)' }}
-            >
-              Try now →
-            </a>
-            <button
-              className="w-fit transition duration-200 ease-linear px-4 py-2 rounded-xl bg-black dark:bg-white dark:text-black text-white text-xs font-bold"
-              style={{ transform: 'translateX(0px) translateY(0px) translateZ(0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg)' }}
-              onClick={()=>navigate && navigate(sorceCodeLink)}
-            >
-              Github
-            </button>
+         rounded-3xl p-6"
+          >
+            <div className="flex items-start justify-between gap-3">
+              <div className="text-xl font-bold">{title}</div>
+              <span className="rounded-full bg-white/10 px-3 py-1 text-xs text-white/80">
+                Featured
+              </span>
+            </div>
+            <div className="mt-3 space-y-2 text-sm text-muted">
+              {points.map((point, index) => (
+                <p key={index} className="line-clamp-3">
+                  {highlightText(point)}
+                </p>
+              ))}
+            </div>
+            <div className="transition duration-200 ease-linear w-full mt-4 overflow-hidden rounded-2xl shadow-2xl">
+              <img
+                alt={title}
+                loading="lazy"
+                decoding="async"
+                className="aspect-video w-full object-cover"
+                src={imageUrl}
+              />
+            </div>
+            <div className="flex flex-wrap items-center justify-between gap-2 mt-6">
+              <a
+                className="rounded-full border border-white/20 px-4 py-2 text-xs font-semibold text-white transition hover:border-cyan-400"
+                target="__blank"
+                rel="noreferrer"
+                href={tryLink}
+              >
+                Try now →
+              </a>
+              {sourceCodeLink ? (
+                <button
+                  className="rounded-full bg-white text-black px-4 py-2 text-xs font-bold"
+                  onClick={() => navigate && navigate(sourceCodeLink)}
+                >
+                  Github
+                </button>
+              ) : null}
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
   );
-}
+};
 
 export default withRouter(ThreeDCard);

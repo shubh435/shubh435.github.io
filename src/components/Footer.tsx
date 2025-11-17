@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import emailjs from "emailjs-com";
 import {
   FaGithub,
@@ -49,13 +49,60 @@ const socialLinks = [
   },
 ];
 
+type FormErrors = Partial<Record<"name" | "email" | "message", string>>;
+
 const Footer: React.FC = () => {
   const formRef = useRef<HTMLFormElement>(null);
+  const [formValues, setFormValues] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const [errors, setErrors] = useState<FormErrors>({});
+  const [toast, setToast] = useState<{ message: string; type: "success" | "error" } | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  const showToast = (message: string, type: "success" | "error") => {
+    setToast({ message, type });
+    setTimeout(() => setToast(null), 3600);
+  };
 
-    if (!formRef.current) return;
+  const validateForm = () => {
+    const validationErrors: FormErrors = {};
+    if (formValues.name.trim().length < 2) {
+      validationErrors.name = "Please enter at least 2 characters.";
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formValues.email.trim())) {
+      validationErrors.email = "Please enter a valid email address.";
+    }
+    if (formValues.message.trim().length < 10) {
+      validationErrors.message = "Share a few more details (10+ characters).";
+    }
+    setErrors(validationErrors);
+    return Object.keys(validationErrors).length === 0;
+  };
+
+  const handleChange = (
+    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = event.target;
+    setFormValues((prev) => ({ ...prev, [name]: value }));
+    if (errors[name as keyof FormErrors]) {
+      setErrors((prev) => ({ ...prev, [name]: undefined }));
+    }
+  };
+
+  const subjectValue = `Portfolio Inquiry – ${formValues.name || "Visitor"}`;
+
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    if (!validateForm() || !formRef.current) {
+      showToast("Please fix the highlighted fields.", "error");
+      return;
+    }
+
+    setIsSubmitting(true);
 
     emailjs
       .sendForm(
@@ -67,20 +114,23 @@ const Footer: React.FC = () => {
       .then(
         (result) => {
           console.log("Email sent successfully!", result.text);
-          alert("Message sent!");
-          formRef.current?.reset(); // clear form
+          showToast("Message sent successfully!", "success");
+          formRef.current?.reset();
+          setFormValues({ name: "", email: "", message: "" });
         },
         (error) => {
           console.error("Failed to send email:", error.text);
-          alert("Failed to send message.");
+          showToast("Failed to send message.", "error");
         }
-      );
+      )
+      .finally(() => setIsSubmitting(false));
   };
 
   return (
     <motion.footer
       id="footer"
-      className="bg-black text-white py-12 px-4"
+      className="text-white py-12 px-4"
+      style={{ background: "var(--bg-main)" }}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
@@ -127,11 +177,7 @@ const Footer: React.FC = () => {
             </a>
           </p>
 
-          <form
-            ref={formRef}
-            onSubmit={sendEmail}
-            className="flex flex-col gap-4"
-          >
+          <form ref={formRef} onSubmit={handleSubmit} className="flex flex-col gap-4">
             <div>
               <label htmlFor="name" className="block mb-1 text-sm">
                 Full Name
@@ -143,7 +189,13 @@ const Footer: React.FC = () => {
                 placeholder="Enter your full name"
                 className="w-full px-4 py-2 bg-zinc-800 border border-zinc-700 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-cyan-500"
                 required
+                value={formValues.name}
+                onChange={handleChange}
+                aria-invalid={Boolean(errors.name)}
               />
+              {errors.name && (
+                <p className="mt-1 text-sm text-rose-400">{errors.name}</p>
+              )}
             </div>
             <div>
               <label htmlFor="email" className="block mb-1 text-sm">
@@ -156,8 +208,15 @@ const Footer: React.FC = () => {
                 placeholder="Enter your email"
                 className="w-full px-4 py-2 bg-zinc-800 border border-zinc-700 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-cyan-500"
                 required
+                value={formValues.email}
+                onChange={handleChange}
+                aria-invalid={Boolean(errors.email)}
               />
+              {errors.email && (
+                <p className="mt-1 text-sm text-rose-400">{errors.email}</p>
+              )}
             </div>
+            <input type="hidden" name="subject" value={subjectValue} readOnly />
             <div>
               <label htmlFor="message" className="block mb-1 text-sm">
                 Your Message
@@ -169,13 +228,24 @@ const Footer: React.FC = () => {
                 placeholder="Type your message..."
                 className="w-full px-4 py-2 bg-zinc-800 border border-zinc-700 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-cyan-500"
                 required
+                value={formValues.message}
+                onChange={handleChange}
+                aria-invalid={Boolean(errors.message)}
               ></textarea>
+              {errors.message && (
+                <p className="mt-1 text-sm text-rose-400">{errors.message}</p>
+              )}
             </div>
+            <p className="text-xs text-gray-400">
+              Subject auto-fills as:{" "}
+              <span className="text-cyan-400">{subjectValue}</span>
+            </p>
             <button
               type="submit"
-              className="bg-cyan-500 hover:bg-cyan-600 text-white font-medium py-2 px-4 rounded-md transition duration-300"
+              className="bg-cyan-500 hover:bg-cyan-600 text-white font-medium py-2 px-4 rounded-md transition duration-300 disabled:opacity-60"
+              disabled={isSubmitting}
             >
-              Message Me
+              {isSubmitting ? "Sending..." : "Message Me"}
             </button>
           </form>
         </motion.div>
@@ -190,6 +260,17 @@ const Footer: React.FC = () => {
       >
         © {new Date().getFullYear()} Shubham Sarode. All rights reserved.
       </motion.div>
+      {toast && (
+        <div
+          role="status"
+          aria-live="assertive"
+          className={`toast-notification ${
+            toast.type === "success" ? "toast-success" : "toast-error"
+          }`}
+        >
+          {toast.message}
+        </div>
+      )}
     </motion.footer>
   );
 };

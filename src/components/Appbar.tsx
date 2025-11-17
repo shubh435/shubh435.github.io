@@ -12,12 +12,14 @@ import {
   Box,
   AppBar,
   Container,
+  Button,
 } from "@mui/material";
 import { Theme } from "@mui/system";
 import { withStyles } from "@mui/styles";
 import MenuIcon from "@mui/icons-material/Menu";
 import withRouter from "../utils/withRouter";
 import { navigateTo } from "../utils/utils";
+import ThemeToggle from "./ThemeToggle";
 interface DrawerAppBarProps {
   window?: () => Window;
   classes?: any;
@@ -26,6 +28,7 @@ interface DrawerAppBarProps {
 
 interface DrawerAppBarState {
   mobileOpen: boolean;
+  isScrolled: boolean;
 }
 
 const drawerWidth = 240;
@@ -45,8 +48,24 @@ class DrawerAppBar extends React.PureComponent<
     super(props);
     this.state = {
       mobileOpen: false,
+      isScrolled: false,
     };
   }
+
+  componentDidMount(): void {
+    window.addEventListener("scroll", this.handleScroll, { passive: true });
+  }
+
+  componentWillUnmount(): void {
+    window.removeEventListener("scroll", this.handleScroll);
+  }
+
+  handleScroll = () => {
+    const hasScrolled = window.scrollY > 30;
+    if (hasScrolled !== this.state.isScrolled) {
+      this.setState({ isScrolled: hasScrolled });
+    }
+  };
 
   handleDrawerToggle = () => {
     this.setState({
@@ -66,20 +85,62 @@ class DrawerAppBar extends React.PureComponent<
       <List>
         {navItems.map((item) => (
           <ListItem key={item.id} disablePadding>
-            <ListItemButton sx={{ textAlign: "center" }}  onClick={() => this.navigateTo(item.routes)}>
-              <ListItemText  sx={{ color: "#fff" }} primary={item.name} />
+            <ListItemButton
+              sx={{ textAlign: "center" }}
+              onClick={() => this.navigateTo(item.routes)}
+            >
+              <ListItemText sx={{ color: "#fff" }} primary={item.name} />
             </ListItemButton>
           </ListItem>
         ))}
+        <ListItem>
+          <Button
+            onClick={() =>
+              navigateTo(
+                "https://drive.google.com/uc?export=download&id=1jj2iw1bHdgiWZ-DPCCIwxll1guDj43VK",
+                this.props.navigate
+              )
+            }
+            variant="contained"
+            fullWidth
+          >
+            Download Resume
+          </Button>
+        </ListItem>
       </List>
     </Box>
   );
 
   render() {
     const { classes } = this.props;
+    const { isScrolled } = this.state;
     return (
-      <Box sx={{ display: "flex", background: "#000 !important" ,position:"relative",flexDirection: "column"}}>
-          <AppBar className={classes.appbarBackground} component="nav">
+      <Box
+        sx={{
+          display: "flex",
+          background: "transparent",
+          position: "relative",
+          flexDirection: "column",
+        }}
+      >
+        <AppBar
+          className={classes.appbarBackground}
+          component="nav"
+          position="fixed"
+          sx={{
+            backgroundColor: isScrolled
+              ? "rgba(10,10,15,0.8) !important"
+              : "rgba(0,0,0,0.2) !important",
+            backdropFilter: isScrolled ? "blur(22px)" : "none",
+            boxShadow: isScrolled
+              ? "0 10px 30px rgba(0,0,0,0.35)"
+              : "none",
+            borderBottom: isScrolled
+              ? "1px solid rgba(255,255,255,0.08)"
+              : "transparent",
+            transition: "background 0.3s ease, box-shadow 0.3s ease",
+          }}
+        >
         <Container>
             <Toolbar>
               <IconButton
@@ -107,24 +168,43 @@ class DrawerAppBar extends React.PureComponent<
               >
                 SSS
               </Typography>
-              <Box
-                sx={{
-                  display: { xs: "none", sm: "flex" },
-                  gap: "30px",
-                  width: "80%",
-                  justifyContent: "end",
-                }}
-              >
-                {navItems.map((item) => (
-                  <Typography
-                    variant="button"
-                    key={item.name}
-                    onClick={() => this.navigateTo(item.routes)}
-                    sx={{ color: "#fff" }}
-                  >
-                    {item.name}
-                  </Typography>
-                ))}
+              <Box sx={{
+                display: { xs: "none", sm: "flex" },
+                gap: "24px",
+                width: "80%",
+                justifyContent: "flex-end",
+                alignItems: "center"
+              }}>
+                <Box sx={{ display: "flex", gap: "24px" }}>
+                  {navItems.map((item) => (
+                    <Typography
+                      variant="button"
+                      key={item.name}
+                      onClick={() => this.navigateTo(item.routes)}
+                      sx={{ color: "#fff", cursor: "pointer" }}
+                    >
+                      {item.name}
+                    </Typography>
+                  ))}
+                </Box>
+                <Button
+                  variant="contained"
+                  sx={{
+                    borderRadius: "999px",
+                    textTransform: "none",
+                    background:
+                      "linear-gradient(120deg, #06b6d4 0%, #2563eb 100%)",
+                  }}
+                  onClick={() =>
+                    navigateTo(
+                      "https://drive.google.com/uc?export=download&id=1jj2iw1bHdgiWZ-DPCCIwxll1guDj43VK",
+                      this.props.navigate
+                    )
+                  }
+                >
+                  Download Resume
+                </Button>
+                <ThemeToggle />
               </Box>
             </Toolbar>
         </Container>

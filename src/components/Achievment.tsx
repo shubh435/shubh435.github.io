@@ -2,7 +2,7 @@
 
   const Achievements:React.FC<{}> = () => {
     return (
-      <section id="achievements" className="py-10 px-4 bg-zinc-900">
+      <section id="achievements" className="py-10 px-4 section-shell rounded-3xl">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl font-bold text-center text-white mb-6">
             🏆 Achievements

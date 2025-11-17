@@ -43,7 +43,7 @@ const platforms = [
 export default function FreelancingPage() {
   const navigate = useNavigate();
   return (
-    <section className="bg-black text-white">
+    <section className="text-white" style={{ background: "var(--bg-main)" }}>
       <div className="mx-auto flex min-h-screen max-w-6xl flex-col gap-20 px-5 py-16 sm:px-8 lg:px-12 lg:py-24">
         {/* Hero Section */}
         <header className="flex flex-col gap-12 lg:flex-row lg:items-center lg:justify-between">
@@ -108,9 +108,6 @@ export default function FreelancingPage() {
                 scale.
               </p>
             </div>
-            <span className="rounded-full border border-zinc-800 px-4 py-1 text-sm text-zinc-300">
-              Available for 2 new projects this quarter
-            </span>
           </div>
           <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
             {services.map((service, idx) => (
@@ -124,22 +121,6 @@ export default function FreelancingPage() {
                 <p className="mt-3 text-sm text-gray-300 md:text-base">
                   {service.desc}
                 </p>
-                <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-cyan-400 opacity-0 transition group-hover:opacity-100">
-                  See sample work
-                  <svg
-                    viewBox="0 0 24 24"
-                    className="h-4 w-4"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    aria-hidden="true"
-                  >
-                    <path d="M5 12h14"></path>
-                    <path d="m12 5 7 7-7 7"></path>
-                  </svg>
-                </span>
               </article>
             ))}
           </div>
@@ -148,15 +129,12 @@ export default function FreelancingPage() {
         {/* Platforms */}
         <section className="rounded-3xl border border-zinc-800 bg-zinc-900/50 p-10">
           <div className="flex flex-col gap-6 text-center sm:text-left">
-            <div className="flex flex-col items-center gap-3 sm:flex-row sm:justify-between">
-              <h2 className="text-2xl font-semibold md:text-3xl">
+            <div>
+              <h2 className="text-2xl font-semibold md:text-3xl text-center">
                 Available on trusted marketplaces
               </h2>
-              <p className="text-sm text-gray-400 md:text-base">
-                Verified profiles with 5★ client feedback
-              </p>
             </div>
-            <div className="flex flex-wrap items-center justify-center gap-8 sm:justify-start">
+            <div className="flex flex-wrap items-center justify-center mx-auto gap-8 sm:justify-start">
               {platforms.map((platform, idx) => (
                 <a
                   key={idx}

@@ -4,9 +4,38 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --bg-main: #05060a;
+  --bg-surface: #12131a;
+  --bg-card: #1c1d24;
+  --text-primary: #f5f5f7;
+  --text-muted: #9ca3af;
+  --accent: #0ea5e9;
+  --accent-strong: #06b6d4;
+  color-scheme: dark;
+}
+
+:root[data-theme="light"] {
+  --bg-main: #f5f7fb;
+  --bg-surface: #ffffff;
+  --bg-card: #f1f5f9;
+  --text-primary: #0f172a;
+  --text-muted: #475569;
+  --accent: #0ea5e9;
+  --accent-strong: #0284c7;
+  color-scheme: light;
+}
+
 @layer base {
   body {
-    @apply bg-[#141414] font-body;
+    @apply font-body;
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    transition: background-color 0.4s ease, color 0.4s ease;
   }
 }
 
@@ -119,4 +148,73 @@
   100% {
     transform: translateY(0);
   }
+}
+
+.section-shell {
+  background-color: var(--bg-surface);
+  color: var(--text-primary);
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+.surface-card {
+  background-color: var(--bg-card);
+  color: var(--text-primary);
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+.text-muted {
+  color: var(--text-muted);
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.glass-panel {
+  background: rgba(15, 23, 42, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(16px);
+  border-radius: 1.5rem;
+}
+
+:root[data-theme="light"] .glass-panel {
+  background: rgba(255, 255, 255, 0.7);
+  border-color: rgba(15, 23, 42, 0.05);
+}
+
+.fade-section {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.toast-notification {
+  position: fixed;
+  right: 1.5rem;
+  bottom: 2rem;
+  padding: 0.85rem 1.25rem;
+  border-radius: 999px;
+  font-weight: 600;
+  color: #fff;
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.25);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.toast-success {
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+}
+
+.toast-error {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
 }

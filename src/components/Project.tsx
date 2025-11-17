@@ -36,22 +36,36 @@ class Project extends React.PureComponent<ProjectProps, ProjectState> {
           <Box
             sx={{
               display: "flex",
+              flexDirection: { xs: "column", md: "row" },
               justifyContent: "space-between",
+              gap: 2,
               marginBottom: 2,
               width: "100%",
+              alignItems: { md: "center" },
             }}
           >
-            <Typography
-              component={"h2"}
-              className="text-white"
-              variant="h2"
-              m={1}
-            >
-              Projects
-            </Typography>
+            <div>
+              <Typography
+                component={"h2"}
+                className="text-white"
+                variant="h2"
+                m={1}
+              >
+                Projects
+              </Typography>
+              <Typography variant="body1" className="text-muted" ml={1}>
+                High-signal case studies with optimized assets & hover motion.
+              </Typography>
+            </div>
             <Button
               onClick={() => navigateTo("/project", this.props.navigate)}
               variant="contained"
+              sx={{
+                borderRadius: "999px",
+                textTransform: "none",
+                px: 3,
+                py: 1,
+              }}
             >
               View all
             </Button>

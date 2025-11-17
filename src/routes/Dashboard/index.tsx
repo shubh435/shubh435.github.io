@@ -10,6 +10,8 @@ import { Box } from "@mui/material";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import FreelancingPage from "../../components/FreelancingPage";
+import Testimonials from "../../components/Testimonials";
+import ParallaxShowcase from "../../components/ParallaxShowcase";
 
 const HelmetWithChildren: React.FC<{ children?: React.ReactNode }> = ({
   children,
@@ -24,7 +26,11 @@ const MotionBox = motion(Box);
 // Common animation variant
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: [0.16, 0.84, 0.44, 1] },
+  },
 };
 
 // Section with About + Achievements
@@ -101,8 +107,9 @@ const Dashboard: React.FC = () => {
         <meta property="og:type" content="website" />
         <meta
           property="og:image"
-          content="https://shubh435.github.io/shubham-image.jpg"
+          content="https://shubh435.github.io/shubham-og.jpg"
         />
+        <meta property="og:site_name" content="Shubham Sarode Portfolio" />
 
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
@@ -116,7 +123,7 @@ const Dashboard: React.FC = () => {
         />
         <meta
           name="twitter:image"
-          content="https://shubh435.github.io/shubham-image.jpg"
+          content="https://shubh435.github.io/shubham-og.jpg"
         />
 
         {/* Schema Markup for SEO */}
@@ -138,9 +145,17 @@ const Dashboard: React.FC = () => {
       </HelmetWithChildren>
 
       <Slider />
+      <ParallaxShowcase />
       <AboutAchievementsSection />
       <Experience />
-      <SkillSection />
+      <MotionBox
+        variants={fadeInUp as {}}
+        initial="hidden"
+        whileInView="visible"
+      >
+        <SkillSection />
+      </MotionBox>
+      <Testimonials />
       <MotionBox
         variants={fadeInUp as {}}
         initial="hidden"
@@ -148,7 +163,13 @@ const Dashboard: React.FC = () => {
       >
         <FreelancingPage />
       </MotionBox>
-      <Project />
+      <MotionBox
+        variants={fadeInUp as {}}
+        initial="hidden"
+        whileInView="visible"
+      >
+        <Project />
+      </MotionBox>
     </>
   );
 };

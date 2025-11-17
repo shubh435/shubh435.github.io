@@ -2,14 +2,61 @@ import React from "react";
 
 const AboutUs: React.FC = () => {
   return (
-    <section id="about" className="bg-zinc-900 text-white w-full py-10 px-4">
-      <div className="max-w-5xl mx-auto flex flex-col justify-center items-center text-center">
-        <h2 className="text-4xl font-bold  mb-6">About Me</h2>
-        <p className="text-lg  text-justify leading-relaxed">
-          I am Shubham Sarode, a Software Engineer with 3+ years of experience in front end development, specializing in React JS, React Native, and Redux. I hold a Master’s degree in Computer Science from North Maharashtra University and a Bachelor’s degree from RTMNU University. I have a strong track record in designing responsive web and mobile applications, improving code reusability, and streamlining state management.
-          <br /><br />
-          My projects include <strong>Parents Who Date</strong>, a React Native app for single parents, and <strong>Fudu</strong>, a platform blending features from Zomato and Instagram. Proficient in TypeScript, Jest, and Enzyme, I ensure high code quality and performance. I'm passionate about delivering innovative solutions that enhance user experience and exceed client expectations.
-          Let’s collaborate to bring your ideas to life!
+    <section
+      id="about"
+      className="section-shell w-full py-10 px-5 rounded-3xl shadow-lg"
+    >
+      <div className="max-w-4xl mx-auto flex flex-col gap-6 text-center md:text-left">
+        <h2 className="text-4xl font-bold">About Me</h2>
+        <p className="text-lg text-muted">
+          I’m{" "}
+          <span className="text-cyan-400 font-semibold">Shubham Sarode</span>, a
+          React & React Native engineer of experience shipping polished mobile
+          and web products for startups and enterprise teams.
+        </p>
+        <div className="grid gap-4 text-left">
+          <div className="surface-card rounded-2xl p-6 shadow-xl">
+            <h3 className="text-xl font-semibold mb-3 text-cyan-300">
+              What I focus on
+            </h3>
+            <ul className="space-y-2 text-base text-muted">
+              <li>
+                • Pixel-perfect front-ends using{" "}
+                <strong>React, React Native, and TypeScript</strong>
+              </li>
+              <li>
+                • Scalable design systems powered by{" "}
+                <strong>Tailwind CSS, MUI,</strong> and reusable hooks
+              </li>
+              <li>
+                • Performance, accessibility, and automated testing with{" "}
+                <strong>Jest</strong>
+              </li>
+            </ul>
+          </div>
+          <div className="surface-card rounded-2xl p-6 shadow-xl">
+            <h3 className="text-xl font-semibold mb-3 text-cyan-300">
+              Quick highlights
+            </h3>
+            <ul className="grid gap-2 text-base text-muted">
+              <li>
+                • Led feature teams for <strong>Builder.ai</strong> &{" "}
+                <strong>Extended Web App Tech</strong>
+              </li>
+              <li>
+                • Delivered social, fintech, and health apps such as{" "}
+                <strong>Parents Who Date</strong>
+              </li>
+              <li>
+                • Master’s in Computer Science; mentor for junior devs and
+                freelancers
+              </li>
+            </ul>
+          </div>
+        </div>
+        <p className="text-lg text-muted">
+          I love partnering with teams that want to move fast without
+          compromising craft. Let’s build something memorable.
         </p>
       </div>
     </section>

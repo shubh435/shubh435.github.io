@@ -556,3 +556,44 @@ export const skills: Skill[] = [
     category: "Frontend",
   },
 ];
+
+export type Testimonial = {
+  id: number;
+  quote: string;
+  name: string;
+  role: string;
+  company: string;
+  avatar: string;
+};
+
+export const testimonials: Testimonial[] = [
+  {
+    id: 1,
+    quote:
+      "Shubham rebuilt our React Native app with a modular architecture and cut our crash rate to almost zero. He is the engineer you call when the deadline is scary.",
+    name: "Sakshi Gahlaut",
+    role: "Project Manager",
+    company: "Builder.ai",
+    avatar: "https://api.dicebear.com/8.x/initials/svg?seed=SG",
+  },
+
+  {
+    id: 3,
+    quote:
+      "Shubham is a highly skilled developer with a strong work ethic. He consistently delivers high-quality code on time and is a pleasure to work with.",
+    name: "Raghav Chopra ",
+    role: "Technical Delivery Manager",
+    company: "Builder.ai",
+    avatar: "https://api.dicebear.com/8.x/initials/svg?seed=RC",
+  },
+
+  {
+    id: 3,
+    quote:
+      "From accessibility to analytics, Shubham thinks about the entire product experience. He elevated our design system and mentored our junior devs.",
+    name: "Sachin Basanwar ",
+    role: "MANAGING DIRECTOR",
+    company: "Extended Web App Tech",
+    avatar: "https://api.dicebear.com/8.x/initials/svg?seed=SB",
+  },
+];

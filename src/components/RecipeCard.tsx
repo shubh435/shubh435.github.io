@@ -13,10 +13,49 @@ import { ProjectData } from "../assets/data";
 import { Link } from "react-router-dom";
 import "./style.css";
 
+const CARD_KEYWORDS = [
+  "React",
+  "React Native",
+  "TypeScript",
+  "Redux",
+  "Next.js",
+  "Tailwind",
+  "Firebase",
+  "Node",
+];
+
+const toSummary = (text: string) =>
+  text
+    .split(/(?<=\.)\s+/)
+    .map((item) => item.trim())
+    .filter(Boolean)
+    .slice(0, 2);
+
+const emphasize = (sentence: string) => {
+  const pattern = new RegExp(`(${CARD_KEYWORDS.join("|")})`, "gi");
+  return sentence.split(pattern).map((part, index) => {
+    const match = CARD_KEYWORDS.find(
+      (keyword) => keyword.toLowerCase() === part.toLowerCase()
+    );
+    if (match) {
+      return (
+        <strong
+          key={`${part}-${index}`}
+          className="text-cyan-400 font-semibold"
+        >
+          {part}
+        </strong>
+      );
+    }
+    return <span key={`${part}-${index}`}>{part}</span>;
+  });
+};
+
 export default function RecipeReviewCard(props: ProjectData) {
   const isVideo = /\.(mp4|mov)$/i.test(props.projectImage);
+  const summary = toSummary(props.description);
   return (
-    <Card className="cardShubhamProject" sx={webstyle.card}>
+    <Card className="cardShubhamProject glass-panel" sx={webstyle.card}>
       <CardHeader
         avatar={
           <Avatar sx={webstyle.avatar} aria-label="recipe">
@@ -57,14 +96,16 @@ export default function RecipeReviewCard(props: ProjectData) {
           component="img"
           sx={webstyle.cardMedia}
           image={props.projectImage}
-          alt="Shubham Sarode"
+          alt={props.projectName}
+          loading="lazy"
+          decoding="async"
         />
       ) : (
         <CardMedia
           component="video"
           sx={webstyle.cardMedia}
           src={props.projectImage}
-          title="Shubham Sarode"
+          title={props.projectName}
           autoPlay={false}
           loop
           muted={false}
@@ -72,9 +113,17 @@ export default function RecipeReviewCard(props: ProjectData) {
         />
       )}
       <CardContent sx={webstyle.cardContent}>
-        <Typography variant="body2" component={"p"} sx={webstyle.typography}>
-          {props.description}
-        </Typography>
+        {summary.map((sentence, index) => (
+          <Typography
+            key={index}
+            variant="body2"
+            component={"p"}
+            sx={webstyle.typography}
+            className="line-clamp-3"
+          >
+            {emphasize(sentence)}
+          </Typography>
+        ))}
       </CardContent>
     </Card>
   );
@@ -82,12 +131,11 @@ export default function RecipeReviewCard(props: ProjectData) {
 
 const webstyle = {
   card: {
-    height: 400,
+    height: 420,
     display: "flex",
     flexDirection: "column",
-    backgroundColor: "black !important",
-    // background: "linear-gradient(180deg, hsl(310, 90%, 65%, 0.5) 2%, hsl(247, 90%, 25%, 0.5) 47%, hsl(247, 90%, 65%, 0.5) 97%) !important",
-    color: "white",
+    backgroundColor: "var(--bg-card)",
+    color: "var(--text-primary)",
   },
   avatar: {
     background:
@@ -115,15 +163,19 @@ const webstyle = {
     color: "white",
   },
   cardMedia: {
-    height: 194,
+    width: "100%",
+    aspectRatio: "16 / 9",
     objectFit: "cover",
+    margin: "0 auto",
+    boxShadow: "0 30px 60px rgba(0,0,0,0.25)",
   },
   cardContent: {
     flexGrow: 1,
-    overflowY: "auto",
-    maxHeight: 100,
+    display: "flex",
+    flexDirection: "column",
+    gap: 8,
   },
   typography: {
-    color: "white",
+    color: "var(--text-muted)",
   },
 };

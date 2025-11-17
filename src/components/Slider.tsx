@@ -4,6 +4,7 @@ import * as THREE from "three";
 import { RoomEnvironment } from "three/examples/jsm/environments/RoomEnvironment.js";
 import { backgroundMedia } from "../assets/assets";
 import { IoIosEye } from "react-icons/io";
+import { motion } from "framer-motion";
 import withRouter from "../utils/withRouter";
 import { navigateTo } from "../utils/utils";
 import "./style.css";
@@ -17,6 +18,14 @@ const speedRotaionTimeGlobeY = 0.005;
 const speedRotaionTimeGlobeX = 0.005;
 
 interface SliderState {}
+
+const MotionBox = motion(Box);
+
+const heroHighlights = [
+  "React Native Apps",
+  "Product UI Systems",
+  "Freelance Partnerships",
+];
 
 class Slider extends React.PureComponent<SliderProps, SliderState> {
   starsRef: React.RefObject<HTMLDivElement>;
@@ -171,15 +180,20 @@ class Slider extends React.PureComponent<SliderProps, SliderState> {
               sx={{ m: "auto" }}
               component={"section"}
             >
-              <Box
+              <MotionBox
                 color="#fff"
                 sx={{
                   width: "100%",
                   zIndex: 10000,
                   paddingTop: { xs: "14%", lg: "auto" },
                 }}
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, ease: [0.16, 0.84, 0.44, 1] }}
               >
-                <Typography component={"p"}>Hello, I'm</Typography>
+                <Typography component={"p"} className="text-muted">
+                  Hello, I'm
+                </Typography>
                 <Typography
                   component={"h1"}
                   variant="h1"
@@ -187,13 +201,12 @@ class Slider extends React.PureComponent<SliderProps, SliderState> {
                 >
                   Shubham Sarode
                 </Typography>
-                <Typography component={"p"}>
-                  A passionate Software Engineer with 3+ years of front-end
-                  development expertise, focused on building dynamic,
-                  user-friendly web and mobile applications. Always eager to
-                  take on new challenges and create impactful digital
-                  experiences.
+                <Typography component={"p"} className="mt-4 text-lg text-muted">
+                  Product-focused engineer helping founders ship fast with crisp
+                  <span> React Native</span> apps and
+                  <span> React web</span> interfaces.
                 </Typography>
+
                 <Box sx={webstyle.buttonStyle}>
                   <Button
                     variant="outlined"
@@ -214,8 +227,26 @@ class Slider extends React.PureComponent<SliderProps, SliderState> {
                   >
                     <span>Projects</span> <IoIosEye color={"#FFF"} size={20} />
                   </Button>
+                  {/* <Button
+                    variant="contained"
+                    color="primary"
+                    sx={{
+                      borderRadius: "999px",
+                      textTransform: "none",
+                      background:
+                        "linear-gradient(120deg, #f97316, #ef4444 70%)",
+                    }}
+                    onClick={() =>
+                      navigateTo(
+                        "https://drive.google.com/uc?export=download&id=1jj2iw1bHdgiWZ-DPCCIwxll1guDj43VK",
+                        this.props.navigate
+                      )
+                    }
+                  >
+                    Download Resume (PDF)
+                  </Button> */}
                 </Box>
-              </Box>
+              </MotionBox>
             </Grid>
             <Grid
               item
@@ -266,6 +297,7 @@ const webstyle = {
     display: "flex",
     justifyContent: "flex-start",
     gap: 2,
+    flexWrap: "wrap",
     mt: 3,
   },
   starContainer: {
