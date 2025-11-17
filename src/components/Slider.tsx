@@ -21,12 +21,6 @@ interface SliderState {}
 
 const MotionBox = motion(Box);
 
-const heroHighlights = [
-  "React Native Apps",
-  "Product UI Systems",
-  "Freelance Partnerships",
-];
-
 class Slider extends React.PureComponent<SliderProps, SliderState> {
   starsRef: React.RefObject<HTMLDivElement>;
   globeRef: React.RefObject<HTMLDivElement>;
