@@ -49,6 +49,8 @@ const socialLinks = [
   },
 ];
 
+const MotionButton = motion.button;
+
 type FormErrors = Partial<Record<"name" | "email" | "message", string>>;
 
 const Footer: React.FC = () => {
@@ -129,7 +131,7 @@ const Footer: React.FC = () => {
   return (
     <motion.footer
       id="footer"
-      className="text-white py-12 px-4"
+      className="text-white py-16 px-6 md:px-10"
       style={{ background: "var(--bg-main)" }}
       initial="hidden"
       whileInView="visible"
@@ -137,7 +139,7 @@ const Footer: React.FC = () => {
     >
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
         {/* Social Links */}
-        <motion.div>
+        <motion.div className="surface-card rounded-3xl p-8 shadow-xl space-y-4">
           <h2 className="text-2xl font-semibold mb-4">🌐 Connect with Me</h2>
           <div className="flex flex-col gap-3">
             {socialLinks.map((link, index) => (
@@ -161,6 +163,7 @@ const Footer: React.FC = () => {
 
         {/* Contact Form */}
         <motion.div
+          className="surface-card rounded-3xl p-8 shadow-xl"
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
@@ -177,7 +180,7 @@ const Footer: React.FC = () => {
             </a>
           </p>
 
-          <form ref={formRef} onSubmit={handleSubmit} className="flex flex-col gap-4">
+          <form ref={formRef} onSubmit={handleSubmit} className="flex flex-col gap-5">
             <div>
               <label htmlFor="name" className="block mb-1 text-sm">
                 Full Name
@@ -240,13 +243,30 @@ const Footer: React.FC = () => {
               Subject auto-fills as:{" "}
               <span className="text-cyan-400">{subjectValue}</span>
             </p>
-            <button
+            <MotionButton
               type="submit"
-              className="bg-cyan-500 hover:bg-cyan-600 text-white font-medium py-2 px-4 rounded-md transition duration-300 disabled:opacity-60"
               disabled={isSubmitting}
+              whileHover={{ scale: isSubmitting ? 1 : 1.02 }}
+              whileTap={{ scale: isSubmitting ? 1 : 0.97 }}
+              className="relative overflow-hidden rounded-full px-6 py-3 font-semibold text-white transition disabled:opacity-60"
             >
-              {isSubmitting ? "Sending..." : "Message Me"}
-            </button>
+              <span className="absolute inset-0 bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-500" />
+              <span className="absolute inset-0 bg-white/20 mix-blend-overlay animate-pulse" />
+              <span className="relative z-10 flex items-center justify-center gap-2">
+                {isSubmitting ? "Sending..." : "Send Message"}
+                {!isSubmitting && (
+                  <motion.span
+                    initial={{ x: 0 }}
+                    animate={{ x: [0, 4, 0] }}
+                    transition={{ repeat: Infinity, duration: 1.2 }}
+                    aria-hidden
+                    className="text-sm"
+                  >
+                    →
+                  </motion.span>
+                )}
+              </span>
+            </MotionButton>
           </form>
         </motion.div>
       </div>

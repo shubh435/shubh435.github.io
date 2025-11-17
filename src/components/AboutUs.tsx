@@ -9,10 +9,9 @@ const AboutUs: React.FC = () => {
       <div className="max-w-4xl mx-auto flex flex-col gap-6 text-center md:text-left">
         <h2 className="text-4xl font-bold">About Me</h2>
         <p className="text-lg text-muted">
-          I’m{" "}
-          <span className="text-cyan-400 font-semibold">Shubham Sarode</span>, a
-          React & React Native engineer of experience shipping polished mobile
-          and web products for startups and enterprise teams.
+          React & React Native engineer with <strong>3+ years</strong> of
+          experience shipping polished mobile and web products for startups and
+          enterprise teams.
         </p>
         <div className="grid gap-4 text-left">
           <div className="surface-card rounded-2xl p-6 shadow-xl">

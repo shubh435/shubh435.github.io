@@ -17,6 +17,7 @@ import {
   SiCypress,
   SiTailwindcss,
   SiMaterialdesign,
+  SiFirebase,
 } from "react-icons/si";
 import { MdMobileFriendly } from "react-icons/md";
 import { AiOutlineDeploymentUnit } from "react-icons/ai";
@@ -444,6 +445,7 @@ export type Skill = {
   icon: JSX.Element;
   level: "Beginner" | "Intermediate" | "Advanced";
   category: string;
+  group: "Frontend" | "Backend" | "Tools" | "Testing" | "Cloud";
 };
 
 export const skills: Skill[] = [
@@ -452,108 +454,133 @@ export const skills: Skill[] = [
     icon: <FaReact className="text-cyan-400" />,
     level: "Advanced",
     category: "Frontend",
+    group: "Frontend",
   },
   {
     name: "React Native",
     icon: <MdMobileFriendly className="text-pink-400" />,
     level: "Advanced",
     category: "Frontend",
+    group: "Frontend",
   },
   {
     name: "TypeScript",
     icon: <SiTypescript className="text-blue-500" />,
     level: "Advanced",
-    category: "Programming",
+    category: "Frontend",
+    group: "Frontend",
   },
   {
     name: "JavaScript",
     icon: <SiJavascript className="text-yellow-400" />,
     level: "Advanced",
-    category: "Programming",
+    category: "Frontend",
+    group: "Frontend",
   },
   {
     name: "Redux",
     icon: <SiRedux className="text-purple-500" />,
     level: "Advanced",
     category: "Frontend",
+    group: "Frontend",
   },
   {
     name: "Tailwind CSS",
     icon: <SiTailwindcss className="text-sky-400" />,
     level: "Advanced",
     category: "Frontend",
+    group: "Frontend",
   },
   {
     name: "Material UI",
     icon: <SiMaterialdesign className="text-indigo-400" />,
     level: "Advanced",
     category: "Frontend",
+    group: "Frontend",
   },
   {
     name: "Node.js",
     icon: <FaNode className="text-green-500" />,
     level: "Advanced",
     category: "Backend",
+    group: "Backend",
   },
   {
     name: "Express.js",
     icon: <SiExpress className="text-white" />,
     level: "Advanced",
     category: "Backend",
+    group: "Backend",
   },
   {
     name: "MongoDB",
     icon: <SiMongodb className="text-green-600" />,
     level: "Intermediate",
-    category: "Database",
+    category: "Backend",
+    group: "Backend",
   },
   {
     name: "AWS",
     icon: <FaAws className="text-orange-400" />,
     level: "Intermediate",
-    category: "DevOps",
+    category: "Cloud",
+    group: "Cloud",
   },
   {
     name: "CI/CD",
     icon: <AiOutlineDeploymentUnit className="text-teal-300" />,
     level: "Advanced",
     category: "DevOps",
+    group: "Tools",
   },
   {
     name: "Git",
     icon: <FaGit className="text-red-500" />,
     level: "Advanced",
     category: "Version Control",
+    group: "Tools",
   },
   {
     name: "GitHub",
     icon: <FaGithub className="text-gray-300" />,
     level: "Advanced",
     category: "Version Control",
+    group: "Tools",
   },
   {
     name: "GitLab",
     icon: <FaGitlab className="text-orange-500" />,
     level: "Intermediate",
     category: "Version Control",
+    group: "Tools",
   },
   {
     name: "Jest",
     icon: <SiJest className="text-red-400" />,
     level: "Advanced",
     category: "Testing",
+    group: "Testing",
   },
   {
     name: "Enzyme",
     icon: <SiCypress className="text-lime-400" />,
     level: "Intermediate",
     category: "Testing",
+    group: "Testing",
   },
   {
     name: "Three.js",
     icon: <GiCube className="text-green-300" />,
     level: "Intermediate",
     category: "Frontend",
+    group: "Frontend",
+  },
+  {
+    name: "Firebase",
+    icon: <SiFirebase className="text-orange-500" />,
+    level: "Intermediate",
+    category: "Cloud",
+    group: "Cloud",
   },
 ];
 
