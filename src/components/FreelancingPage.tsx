@@ -67,7 +67,7 @@ export default function FreelancingPage() {
               </button>
               <button
                 onClick={() => navigateTo("#footer", navigate)}
-                className="inline-flex w-full items-center justify-center rounded-lg border border-cyan-500 px-6 py-3 text-base font-semibold text-cyan-400 transition hover:border-cyan-400 hover:text-cyan-200 sm:w-auto"
+                className="inline-flex w-full items-center justify-center rounded-lg border  border-cyan-500 px-6 py-3 text-base font-semibold text-cyan-400 transition hover:border-cyan-400 hover:text-cyan-200 sm:w-auto"
               >
                 Book a call
               </button>

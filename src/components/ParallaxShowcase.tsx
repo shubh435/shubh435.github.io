@@ -30,15 +30,13 @@ const ParallaxShowcase: React.FC<ParallaxShowcaseProps> = ({ navigate }) => {
       </motion.div>
       <div className="mx-auto flex max-w-5xl flex-col gap-6 px-6 py-16 text-center text-white">
         <p className="text-sm uppercase tracking-[0.4em] text-cyan-300">
-          Smooth Scroll
+          Why hire me
         </p>
         <h2 className="text-3xl font-semibold md:text-4xl">
           Smooth-built interactions that guide hiring managers
         </h2>
         <p className="mx-auto max-w-3xl text-lg text-zinc-200">
-          I am Shubham Sarode, a Software Engineer with 3+ years of experience
-          in front end development
-          <br />
+          Micro-interactions, scroll storytelling, and content hierarchy make long-form portfolios feel effortless. I prioritize calm motion, accessible color, and incremental delivery.
         </p>
         <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
           <button

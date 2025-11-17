@@ -218,3 +218,14 @@ html {
 .toast-error {
   background: linear-gradient(135deg, #ef4444, #dc2626);
 }
+
+.progress-tracker {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  width: 100%;
+  transform-origin: 0 0;
+  z-index: 2000;
+  background: linear-gradient(90deg, #6366f1, #06b6d4, #22c55e);
+}

@@ -20,6 +20,7 @@ const speedRotaionTimeGlobeX = 0.005;
 interface SliderState {}
 
 const MotionBox = motion(Box);
+const MotionButton = motion(Button);
 
 class Slider extends React.PureComponent<SliderProps, SliderState> {
   starsRef: React.RefObject<HTMLDivElement>;
@@ -195,16 +196,21 @@ class Slider extends React.PureComponent<SliderProps, SliderState> {
                 >
                   Shubham Sarode
                 </Typography>
-                <Typography component={"p"} className="mt-4 text-lg text-muted">
-                  Product-focused engineer helping founders ship fast with crisp
-                  <span> React Native</span> apps and
-                  <span> React web</span> interfaces.
+                <Typography
+                  component={"p"}
+                  className="mt-4 text-lg text-muted"
+                  sx={{ maxWidth: { xs: "100%", md: "520px" } }}
+                >
+                  Product-focused engineer helping founders ship fast with crisp <span className="text-cyan-400">React Native</span> apps and
+                  <span className="text-cyan-400">React web</span> interfaces.
                 </Typography>
 
                 <Box sx={webstyle.buttonStyle}>
-                  <Button
+                  <MotionButton
                     variant="outlined"
                     sx={webstyle.button}
+                    whileHover={{ scale: 1.03, rotate: "-0.8deg", boxShadow: "0 20px 45px rgba(14,165,233,0.25)" }}
+                    whileTap={{ scale: 0.98 }}
                     onClick={() =>
                       navigateTo(
                         "https://drive.google.com/file/d/1jj2iw1bHdgiWZ-DPCCIwxll1guDj43VK/view?usp=sharing",
@@ -213,14 +219,16 @@ class Slider extends React.PureComponent<SliderProps, SliderState> {
                     }
                   >
                     Hire me
-                  </Button>
-                  <Button
+                  </MotionButton>
+                  <MotionButton
                     variant="outlined"
                     sx={webstyle.buttonStyle1}
+                    whileHover={{ scale: 1.03, rotate: "0.8deg", boxShadow: "0 20px 45px rgba(236,72,153,0.25)" }}
+                    whileTap={{ scale: 0.98 }}
                     onClick={() => navigateTo("/project", this.props.navigate)}
                   >
                     <span>Projects</span> <IoIosEye color={"#FFF"} size={20} />
-                  </Button>
+                  </MotionButton>
                   {/* <Button
                     variant="contained"
                     color="primary"

@@ -78,6 +78,20 @@
 
   <body>
     <div id="root"></div>
+    <div class="progress-tracker" id="progress-bar"></div>
+    <script>
+      var progressBar = document.getElementById('progress-bar');
+       progressBar.style.transform = 'scaleX(0)';
+      window.addEventListener('scroll', function () {
+        var doc = document.documentElement;
+        var scrolled = doc.scrollTop || document.body.scrollTop;
+        var height = doc.scrollHeight - doc.clientHeight;
+        if (progressBar && height > 0) {
+          var width = (scrolled / height) * 100;
+          progressBar.style.transform = 'scaleX(' + width / 100 + ')';
+        }
+      });
+    </script>
   </body>
 
 </html>

@@ -33,12 +33,16 @@ const Testimonials: React.FC = () => {
         {testimonials.map((testimonial, index) => (
           <motion.article
             key={testimonial.id}
-            className="surface-card rounded-3xl p-6 shadow-xl border border-white/5"
+            className="surface-card rounded-3xl p-6 border border-white/5"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
             variants={cardVariants}
             custom={index}
+            whileHover={{
+              y: -10,
+              boxShadow: "0 25px 60px rgba(15,23,42,0.45)",
+            }}
           >
             <p className="text-left text-lg leading-relaxed text-muted">
               “{testimonial.quote}”

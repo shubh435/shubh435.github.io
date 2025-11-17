@@ -48,7 +48,7 @@ const Experience: React.FC = () => {
         <div className="max-w-4xl mx-auto relative">
           <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500 to-cyan-500 hidden md:block"></div>
 
-          <div className="space-y-8">
+          <div className="space-y-10">
             {experiences.map((exp, index) => (
               <FadeInWhenVisible key={index}>
                 <div className="relative">

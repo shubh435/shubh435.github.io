@@ -42,7 +42,7 @@ export const projectdata: ProjectData[] = [
     projectName: "Doctor Mobile App",
     projectImage: projectMedia.doctorMobile,
     description:
-      "The Doctor App is a user-friendly healthcare solution designed to simplify the interaction between patients and healthcare providers. Key features include appointment scheduling, secure patient records management, telemedicine support, prescription management, health monitoring integration, and secure payment processing. The app ensures efficient and convenient access to medical care, enhancing the overall patient experience.",
+      "Mobile-first doctor companion app featuring real-time appointments, prescription tracking, telehealth calls, and push reminders. Built with React Native for buttery transitions across iOS and Android.",
     moreDes: "Developed by Shubham",
     subheader: "Current",
     sourceCodeLink: "https://github.com/shubh435/doctors_app",
@@ -250,7 +250,7 @@ export const projectdata: ProjectData[] = [
     projectName: "Doctor Web App",
     projectImage: projectMedia.doctorWeb,
     description:
-      "The Doctor App is a user-friendly healthcare solution designed to simplify the interaction between patients and healthcare providers. Key features include appointment scheduling, secure patient records management, telemedicine support, prescription management, health monitoring integration, and secure payment processing. The app ensures efficient and convenient access to medical care, enhancing the overall patient experience.",
+      "Responsive admin portal that lets clinics manage patients, slot calendars, prescriptions, and billing with live dashboards. Optimized for web accessibility and secure role-based workflows.",
     moreDes: "Developed by Shubham",
     subheader: "Current",
     sourceCodeLink: "https://github.com/Personal-Team-HealthCheckup/doctorApp",
