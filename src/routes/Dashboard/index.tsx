@@ -150,14 +150,7 @@ const Dashboard: React.FC = () => {
       <Slider />
       <ParallaxShowcase />
       <AboutAchievementsSection />
-      <Experience />
-      <MotionBox
-        variants={fadeInUp as {}}
-        initial="hidden"
-        whileInView="visible"
-      >
-        <SkillSection />
-      </MotionBox>
+
       <Testimonials />
       <MotionBox
         variants={fadeInUp as {}}
@@ -165,6 +158,14 @@ const Dashboard: React.FC = () => {
         whileInView="visible"
       >
         <FreelancingPage />
+      </MotionBox>
+      <Experience />
+      <MotionBox
+        variants={fadeInUp as {}}
+        initial="hidden"
+        whileInView="visible"
+      >
+        <SkillSection />
       </MotionBox>
       <MotionBox
         variants={fadeInUp as {}}
