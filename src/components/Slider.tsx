@@ -186,30 +186,38 @@ class Slider extends React.PureComponent<SliderProps, SliderState> {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: [0.16, 0.84, 0.44, 1] }}
               >
-                <Typography component={"p"} className="text-muted">
+                <Typography
+                  component={"p"}
+                  className="text-muted !text-gray-300"
+                >
                   Hello, I'm
                 </Typography>
                 <Typography
                   component={"h1"}
                   variant="h1"
-                  className="my-heading-text-shubham !text-[2.4rem]"
+                  className="my-heading-text-shubham !text-[2.4rem] "
                 >
                   Shubham Sarode
                 </Typography>
                 <Typography
                   component={"p"}
-                  className="mt-4 text-lg text-muted"
+                  className="mt-4 text-lg text-muted !text-gray-300"
                   sx={{ maxWidth: { xs: "100%", md: "520px" } }}
                 >
-                  Product-focused engineer helping founders ship fast with crisp <span className="text-cyan-400">React Native</span> apps and
-                  <span className="text-cyan-400">React web</span> interfaces.
+                  Product-focused engineer helping founders ship fast with crisp{" "}
+                  <b className="">React Native</b> apps and{" "}
+                  <b className="">React web</b> interfaces.
                 </Typography>
 
                 <Box sx={webstyle.buttonStyle}>
                   <MotionButton
                     variant="outlined"
                     sx={webstyle.button}
-                    whileHover={{ scale: 1.03, rotate: "-0.8deg", boxShadow: "0 20px 45px rgba(14,165,233,0.25)" }}
+                    whileHover={{
+                      scale: 1.03,
+                      rotate: "-0.8deg",
+                      boxShadow: "0 20px 45px rgba(14,165,233,0.25)",
+                    }}
                     whileTap={{ scale: 0.98 }}
                     onClick={() =>
                       navigateTo(
@@ -223,7 +231,11 @@ class Slider extends React.PureComponent<SliderProps, SliderState> {
                   <MotionButton
                     variant="outlined"
                     sx={webstyle.buttonStyle1}
-                    whileHover={{ scale: 1.03, rotate: "0.8deg", boxShadow: "0 20px 45px rgba(236,72,153,0.25)" }}
+                    whileHover={{
+                      scale: 1.03,
+                      rotate: "0.8deg",
+                      boxShadow: "0 20px 45px rgba(236,72,153,0.25)",
+                    }}
                     whileTap={{ scale: 0.98 }}
                     onClick={() => navigateTo("/project", this.props.navigate)}
                   >
