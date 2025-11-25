@@ -17,7 +17,7 @@ const ParallaxShowcase: React.FC<ParallaxShowcaseProps> = ({ navigate }) => {
   const y = useTransform(scrollYProgress, [0, 1], ["-20%", "10%"]);
 
   return (
-    <section ref={sectionRef} className="relative isolate my-16 min-h-[320px]">
+    <section ref={sectionRef} className="relative isolate pb-16">
       <motion.div style={{ y }} className="absolute inset-0 -z-10" aria-hidden>
         <img
           src={backgroundMedia.parallax}
