@@ -14,7 +14,9 @@ const ThemeToggle: React.FC = () => {
     if (stored) {
       return stored;
     }
-    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const prefersDark = window.matchMedia(
+      "(prefers-color-scheme: dark)"
+    ).matches;
     return prefersDark ? "dark" : "light";
   });
 
@@ -41,7 +43,9 @@ const ThemeToggle: React.FC = () => {
       aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
     >
       {theme === "dark" ? <FiSun size={16} /> : <FiMoon size={16} />}
-      <span className="text-sm font-medium capitalize">{theme} mode</span>
+      <span className="text-sm font-medium capitalize">
+        {theme !== "dark" ? "dark" : "light"} mode
+      </span>
     </button>
   );
 };

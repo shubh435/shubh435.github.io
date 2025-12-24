@@ -51,7 +51,9 @@ const socialLinks = [
 
 const MotionButton = motion.button;
 
-type FormErrors = Partial<Record<"name" | "email" | "message", string>>;
+type FormErrors = Partial<
+  Record<"name" | "email" | "message" | "inquiryType", string>
+>;
 
 const Footer: React.FC = () => {
   const formRef = useRef<HTMLFormElement>(null);
@@ -59,6 +61,7 @@ const Footer: React.FC = () => {
     name: "",
     email: "",
     message: "",
+    inquiryType: "",
   });
   const [errors, setErrors] = useState<FormErrors>({});
   const [toast, setToast] = useState<{ message: string; type: "success" | "error" } | null>(null);
@@ -80,12 +83,17 @@ const Footer: React.FC = () => {
     if (formValues.message.trim().length < 10) {
       validationErrors.message = "Share a few more details (10+ characters).";
     }
+    if (!formValues.inquiryType) {
+      validationErrors.inquiryType = "Pick the type of inquiry.";
+    }
     setErrors(validationErrors);
     return Object.keys(validationErrors).length === 0;
   };
 
   const handleChange = (
-    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    event: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
   ) => {
     const { name, value } = event.target;
     setFormValues((prev) => ({ ...prev, [name]: value }));
@@ -118,7 +126,7 @@ const Footer: React.FC = () => {
           console.log("Email sent successfully!", result.text);
           showToast("Message sent successfully!", "success");
           formRef.current?.reset();
-          setFormValues({ name: "", email: "", message: "" });
+          setFormValues({ name: "", email: "", message: "", inquiryType: "" });
         },
         (error) => {
           console.error("Failed to send email:", error.text);
@@ -219,6 +227,30 @@ const Footer: React.FC = () => {
                 <p className="mt-1 text-sm text-rose-400">{errors.email}</p>
               )}
             </div>
+            <div>
+              <label htmlFor="inquiryType" className="block mb-1 text-sm">
+                Inquiry Type
+              </label>
+              <select
+                id="inquiryType"
+                name="inquiryType"
+                className="w-full px-4 py-2 bg-zinc-800 border border-zinc-700 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-cyan-500"
+                value={formValues.inquiryType}
+                onChange={handleChange}
+                aria-invalid={Boolean(errors.inquiryType)}
+              >
+                <option value="">Select an option</option>
+                <option value="project">Project collaboration</option>
+                <option value="freelance">Freelance / Consulting</option>
+                <option value="mentorship">Mentorship</option>
+                <option value="speaking">Speaking / Content</option>
+              </select>
+              {errors.inquiryType && (
+                <p className="mt-1 text-sm text-rose-400">
+                  {errors.inquiryType}
+                </p>
+              )}
+            </div>
             <input type="hidden" name="subject" value={subjectValue} readOnly />
             <div>
               <label htmlFor="message" className="block mb-1 text-sm">
@@ -267,6 +299,17 @@ const Footer: React.FC = () => {
                 )}
               </span>
             </MotionButton>
+            <div className="flex flex-wrap items-center gap-3 text-xs text-muted">
+              <span>Prefer a call?</span>
+              <a
+                href="https://cal.com/shubh435/intro"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-cyan-400 hover:text-cyan-200 font-semibold"
+              >
+                Book a 20-min slot
+              </a>
+            </div>
           </form>
         </motion.div>
       </div>

@@ -34,6 +34,10 @@ export interface ProjectData {
   rating: number;
   technology?: string;
   category?: "Mobile" | "Web";
+  techStack?: string[];
+  problem?: string;
+  solution?: string;
+  role?: string;
 }
 
 export const projectdata: ProjectData[] = [
@@ -50,6 +54,12 @@ export const projectdata: ProjectData[] = [
     rating: 5,
     category: "Mobile",
     technology: "React Native",
+    techStack: ["React Native", "TypeScript", "Firebase", "Jest"],
+    problem:
+      "Clinics struggled with missed appointments and scattered patient communication across SMS, WhatsApp, and calls.",
+    solution:
+      "Built a unified mobile experience with appointment booking, prescription tracking, and secure messaging powered by Firebase sync.",
+    role: "Led mobile architecture, implemented push notifications, and tuned performance for low-end Android devices.",
   },
 
   {
@@ -75,6 +85,12 @@ export const projectdata: ProjectData[] = [
     sourceCodeLink: "https://github.com/shubh435/doctors_app",
     tryLink: "https://travel-web-app-mauve.vercel.app/",
     rating: 4.5,
+    techStack: ["React", "TypeScript", "Redux Toolkit", "Mapbox"],
+    problem:
+      "Travelers had to juggle spreadsheets and emails to coordinate itineraries across friends and vendors.",
+    solution:
+      "Centralized itinerary builder with saved routes, vendor embeds, and offline-friendly trip summaries.",
+    role: "Owned end-to-end UI implementation, state management, and UX flows for booking and sharing.",
   },
   {
     id: 4,
@@ -87,6 +103,12 @@ export const projectdata: ProjectData[] = [
     sourceCodeLink: "https://github.com/shubh435/weather-app",
     tryLink: "https://electron-react-demo-bzkb.vercel.app",
     rating: 3,
+    techStack: ["Electron", "React", "Chart.js"],
+    problem:
+      "Existing weather dashboards were slow on older hardware and lacked offline resilience.",
+    solution:
+      "Lightweight Electron desktop experience with cached forecasts, radar overlays, and keyboard-first navigation.",
+    role: "Implemented desktop packaging, accessibility shortcuts, and performance profiling.",
   },
   {
     id: 5,
@@ -99,6 +121,12 @@ export const projectdata: ProjectData[] = [
     sourceCodeLink: "https://github.com/shubh435/template-react-tailwind",
     tryLink: "https://template-react-tailwind.vercel.app/",
     rating: 3.6,
+    techStack: ["React", "Tailwind", "Framer Motion"],
+    problem:
+      "Early-stage founders needed a reusable marketing template that could be customized in under a day.",
+    solution:
+      "Composable Tailwind components with CMS-friendly sections, dark mode, and responsive defaults.",
+    role: "Created the component library, documentation, and theming system.",
   },
   {
     id: 6,
@@ -257,6 +285,12 @@ export const projectdata: ProjectData[] = [
     tryLink: "https://healthcheck-nine.vercel.app/",
     rating: 4.9,
     technology: "React|NextJS",
+    techStack: ["Next.js", "React", "TypeScript", "Tailwind", "Supabase"],
+    problem:
+      "Clinic staff needed a single source of truth for patient onboarding, scheduling, and billing across devices.",
+    solution:
+      "Responsive admin portal with RBAC, live dashboards, and appointment workflows optimized for tablet and desktop.",
+    role: "Architected frontend, defined design tokens, and shipped accessibility fixes for keyboard users.",
   },
   {
     id: 19,
@@ -270,6 +304,12 @@ export const projectdata: ProjectData[] = [
     tryLink: "https://healthcheck-nine.vercel.app/",
     rating: 2.9,
     technology: "React",
+    techStack: ["React", "TypeScript", "Leaflet", "Tailwind"],
+    problem:
+      "Agents needed a quick demo tool to showcase curated properties without exposing internal CRM data.",
+    solution:
+      "Launched a static-friendly catalogue with map previews, saved searches, and lead capture hooks.",
+    role: "Owned UI build, routing, and map integrations; added tracking for CTA conversions.",
   },
   {
     id: 20,
@@ -283,6 +323,12 @@ export const projectdata: ProjectData[] = [
     tryLink: "https://realestate-pi-one.vercel.app/",
     rating: 3.9,
     technology: "React",
+    techStack: ["React", "Styled Components", "Netlify"],
+    problem:
+      "Marketing teams struggled to A/B test hero messaging and CTAs without dev support.",
+    solution:
+      "Config-driven landing pages with reusable blocks, fast image loading, and localized content.",
+    role: "Implemented layout system, image optimization, and analytics events for conversion tracking.",
   },
   {
     id: 21,
@@ -361,6 +407,26 @@ export const projectdata: ProjectData[] = [
     tryLink: "https://ai-pet-care.vercel.app/#",
     rating: 3.9,
     technology: "React",
+  },
+  {
+    id: 27,
+    projectName: "DreamPlan - Financial Goal Planner",
+    projectImage: projectMedia.dreamPlan,
+    description:
+      "DreamPlan is a smart SIP calculator and financial goal planner that helps users turn their financial dreams into achievable goals. Features include personalized investment recommendations based on salary and goals, dream tracking with progress visualization, and multiple investment strategies (Conservative, Moderate, Aggressive).",
+    moreDes: "Developed by Shubham Sarode",
+    subheader: "Current",
+    sourceCodeLink: "https://github.com/shubh435/Dream-Planner",
+    tryLink: "https://dream-plan.vercel.app/",
+    rating: 4.5,
+    category: "Web",
+    technology: "React | TypeScript | Tailwind | Firebase",
+    techStack: ["React", "TypeScript", "Tailwind CSS", "Firebase", "Chart.js"],
+    problem:
+      "Users struggled to plan and track multiple financial goals simultaneously, often losing motivation without clear progress visualization and personalized investment guidance.",
+    solution:
+      "Built a comprehensive financial planner with SIP calculations, goal-based investment recommendations, progress tracking dashboards, and multiple risk-profile strategies to help users visualize their path to financial freedom.",
+    role: "Full-stack development including UI/UX design, Firebase integration for authentication and data persistence, SIP calculation algorithms, and responsive dashboard implementation.",
   },
 ];
 
@@ -622,5 +688,41 @@ export const testimonials: Testimonial[] = [
     role: "MANAGING DIRECTOR",
     company: "Extended Web App Tech",
     avatar: "https://api.dicebear.com/8.x/initials/svg?seed=SB",
+  },
+];
+
+export type BlogPost = {
+  id: number;
+  title: string;
+  description: string;
+  tags: string[];
+  link: string;
+};
+
+export const blogPosts: BlogPost[] = [
+  {
+    id: 1,
+    title: "My React Native Coding Interview Experience: Weather App Challenge",
+    description:
+      "A detailed walkthrough of my React Native coding interview for a mid-level position, including the problem statement, my approach, challenges faced, and key takeaways.",
+    tags: ["React Native", "Performance", "Tooling"],
+    link: "https://javascript.plainenglish.io/my-react-native-coding-interview-experience-weather-app-challenge-760c5ed5b4b5",
+  },
+  {
+    id: 2,
+    title:
+      "React Native Animation: Build a Bouncing Ball Loader in React Native",
+    description:
+      "Learn how to create a bouncing ball loader animation in React Native using the Animated API. This tutorial covers setting up the animation, configuring easing functions, and integrating it into your app for a polished user experience.",
+    tags: ["React Native", "Animation", "UI/UX"],
+    link: "https://javascript.plainenglish.io/react-native-animation-build-a-bouncing-ball-loader-in-react-native-de998811e488",
+  },
+  {
+    id: 3,
+    title: "Authentication Using Express, TypeScript, Node.js, and MongoDB",
+    description:
+      "A comprehensive guide on implementing user authentication in a web application using Express.js, TypeScript, Node.js, and MongoDB. This article covers setting up the server, creating user models, handling registration and login, and securing routes with JWT.",
+    tags: ["Node.js", "Express", "Authentication"],
+    link: "https://medium.com/@shubh435/authentication-using-express-typescript-node-js-and-mongodb-4c0963010042",
   },
 ];

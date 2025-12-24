@@ -12,7 +12,8 @@ import { useInView } from "react-intersection-observer";
 import FreelancingPage from "../../components/FreelancingPage";
 import Testimonials from "../../components/Testimonials";
 import ParallaxShowcase from "../../components/ParallaxShowcase";
-
+import BlogSection from "../../components/BlogSection";
+import SummarySection from "../../components/SummarySection";
 const HelmetWithChildren: React.FC<{ children?: React.ReactNode }> = ({
   children,
 }) => (
@@ -150,16 +151,15 @@ const Dashboard: React.FC = () => {
       <Slider />
       <ParallaxShowcase />
       <AboutAchievementsSection />
-
-      <Testimonials />
+      <SummarySection />
       <MotionBox
         variants={fadeInUp as {}}
         initial="hidden"
         whileInView="visible"
       >
-        <FreelancingPage />
+        <Experience />
       </MotionBox>
-      <Experience />
+
       <MotionBox
         variants={fadeInUp as {}}
         initial="hidden"
@@ -167,12 +167,29 @@ const Dashboard: React.FC = () => {
       >
         <SkillSection />
       </MotionBox>
+      <Testimonials />
+
+      <MotionBox
+        variants={fadeInUp as {}}
+        initial="hidden"
+        whileInView="visible"
+      >
+        <FreelancingPage />
+      </MotionBox>
+
       <MotionBox
         variants={fadeInUp as {}}
         initial="hidden"
         whileInView="visible"
       >
         <Project />
+      </MotionBox>
+      <MotionBox
+        variants={fadeInUp as {}}
+        initial="hidden"
+        whileInView="visible"
+      >
+        <BlogSection />
       </MotionBox>
     </>
   );

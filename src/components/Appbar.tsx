@@ -74,7 +74,7 @@ class DrawerAppBar extends React.PureComponent<
   };
 
   navigateTo = (routes: string) => {
-    navigateTo(routes,this.props.navigate)
+    navigateTo(routes, this.props.navigate);
   };
   drawer = (
     <Box onClick={this.handleDrawerToggle} sx={{ textAlign: "center" }}>
@@ -132,16 +132,14 @@ class DrawerAppBar extends React.PureComponent<
               ? "rgba(10,10,15,0.8) !important"
               : "rgba(0,0,0,0.2) !important",
             backdropFilter: isScrolled ? "blur(22px)" : "none",
-            boxShadow: isScrolled
-              ? "0 10px 30px rgba(0,0,0,0.35)"
-              : "none",
+            boxShadow: isScrolled ? "0 10px 30px rgba(0,0,0,0.35)" : "none",
             borderBottom: isScrolled
               ? "1px solid rgba(255,255,255,0.08)"
               : "transparent",
             transition: "background 0.3s ease, box-shadow 0.3s ease",
           }}
         >
-        <Container>
+          <Container>
             <Toolbar>
               <IconButton
                 color="inherit"
@@ -168,13 +166,15 @@ class DrawerAppBar extends React.PureComponent<
               >
                 SSS
               </Typography>
-              <Box sx={{
-                display: { xs: "none", sm: "flex" },
-                gap: "24px",
-                width: "80%",
-                justifyContent: "flex-end",
-                alignItems: "center"
-              }}>
+              <Box
+                sx={{
+                  display: { xs: "none", sm: "flex" },
+                  gap: "24px",
+                  width: "80%",
+                  justifyContent: "flex-end",
+                  alignItems: "center",
+                }}
+              >
                 <Box sx={{ display: "flex", gap: "24px" }}>
                   {navItems.map((item) => (
                     <Typography
@@ -207,8 +207,8 @@ class DrawerAppBar extends React.PureComponent<
                 <ThemeToggle />
               </Box>
             </Toolbar>
-        </Container>
-          </AppBar>
+          </Container>
+        </AppBar>
 
         <Box component="nav">
           <Drawer

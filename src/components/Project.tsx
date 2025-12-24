@@ -26,7 +26,9 @@ class Project extends React.PureComponent<ProjectProps, ProjectState> {
   }
 
   render() {
-    const sortedArray = this.state.projectData.sort((item1, item2) => item2.rating - item1.rating)
+    const sortedArray = this.state.projectData.sort(
+      (item1, item2) => item2.rating - item1.rating
+    );
     return (
       <section
         className={`bg-transparent back-imag-setup
@@ -44,17 +46,14 @@ class Project extends React.PureComponent<ProjectProps, ProjectState> {
               alignItems: { md: "center" },
             }}
           >
-            <div>
+            <div className="space-y-1">
               <Typography
                 component={"h2"}
                 className="text-white"
                 variant="h2"
                 m={1}
               >
-                Projects
-              </Typography>
-              <Typography variant="body1" className="text-muted" ml={1}>
-                High-signal case studies with optimized assets & hover motion.
+                My Projects
               </Typography>
             </div>
             <Button
@@ -64,26 +63,28 @@ class Project extends React.PureComponent<ProjectProps, ProjectState> {
                 borderRadius: "999px",
                 textTransform: "none",
                 px: 3,
-                py: 1,
+                py: 1.2,
+                background:
+                  "linear-gradient(135deg, #06b6d4 0%, #2563eb 60%, #7c3aed 100%)",
               }}
             >
-              View all
+              View all projects
             </Button>
           </Box>
-          <Grid container spacing={4} className="about-me-content" >
+          <Grid container spacing={4} className="about-me-content">
             {this.state.projectData.length > 0 ? (
-              sortedArray.slice(0,3).map((projectdata) => {
-                  return (
-                    <Grid item lg={4} md={6} sm={12} xs={12}>
-                      <ThreeDCard
-                        {...projectdata}
-                        title={projectdata.projectName}
-                        description={projectdata.description}
-                        imageUrl={projectdata.projectImage}
-                      />
-                    </Grid>
-                  );
-                })
+              sortedArray.slice(0, 3).map((projectdata) => {
+                return (
+                  <Grid item lg={4} md={6} sm={12} xs={12}>
+                    <ThreeDCard
+                      {...projectdata}
+                      title={projectdata.projectName}
+                      description={projectdata.description}
+                      imageUrl={projectdata.projectImage}
+                    />
+                  </Grid>
+                );
+              })
             ) : (
               <Typography component={"p"}>No project found</Typography>
             )}

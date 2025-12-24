@@ -148,6 +148,8 @@ export default function FreelancingPage() {
                     src={platform.image}
                     alt=""
                     className="h-full w-full object-contain"
+                    loading="lazy"
+                    decoding="async"
                   />
                 </a>
               ))}
