@@ -96,7 +96,7 @@ export default function RecipeReviewCard(props: ProjectData) {
           component="img"
           sx={webstyle.cardMedia}
           image={props.projectImage}
-          alt={props.projectName}
+          alt={`${props.projectName} - ${props.category || 'Web'} application screenshot showing the user interface`}
           loading="lazy"
           decoding="async"
         />
@@ -105,7 +105,7 @@ export default function RecipeReviewCard(props: ProjectData) {
           component="video"
           sx={webstyle.cardMedia}
           src={props.projectImage}
-          title={props.projectName}
+          title={`${props.projectName} demo video`}
           autoPlay={false}
           loop
           muted={false}

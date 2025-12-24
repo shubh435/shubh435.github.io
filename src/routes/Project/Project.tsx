@@ -52,9 +52,16 @@ class Project extends React.Component<ProjectProps, ProjectState> {
   };
 
   performSearch = (text: string) => {
-    const searchData = projectdata.filter((project) =>
-      project.projectName.toLowerCase().includes(text.toLowerCase())
-    );
+    const searchText = text.toLowerCase();
+    const searchData = projectdata.filter((project) => {
+      const matchesName = project.projectName.toLowerCase().includes(searchText);
+      const matchesDescription = project.description.toLowerCase().includes(searchText);
+      const matchesTechnology = project.technology?.toLowerCase().includes(searchText);
+      const matchesTechStack = project.techStack?.some(tech =>
+        tech.toLowerCase().includes(searchText)
+      );
+      return matchesName || matchesDescription || matchesTechnology || matchesTechStack;
+    });
     this.setState({ projectdata: searchData });
   };
 

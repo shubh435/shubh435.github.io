@@ -85,9 +85,10 @@ const highlightText = (text: string) => {
 };
 
 // Fallback image component for lazy loading
-const ImageWithFallback: React.FC<{ src?: string; alt?: string }> = ({
+const ImageWithFallback: React.FC<{ src?: string; alt?: string; category?: string }> = ({
   src,
   alt,
+  category,
 }) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [hasError, setHasError] = useState(false);
@@ -98,7 +99,7 @@ const ImageWithFallback: React.FC<{ src?: string; alt?: string }> = ({
         <div className="absolute inset-0 animate-pulse bg-zinc-700" />
       )}
       <img
-        alt={alt || "Project screenshot"}
+        alt={alt || `${category || 'Web'} application interface preview`}
         loading="lazy"
         decoding="async"
         className={`aspect-video w-full object-cover transition-opacity duration-300 ${
@@ -227,7 +228,11 @@ const ThreeDCard: React.FC<ThreeDCardProps> = ({
 
             {/* Project Image with Lazy Loading */}
             <div className="w-full mb-4 overflow-hidden rounded-2xl shadow-2xl group-hover/card:shadow-cyan-500/10 transition-shadow duration-300">
-              <ImageWithFallback src={imageUrl} alt={`${title} screenshot`} />
+              <ImageWithFallback
+                src={imageUrl}
+                alt={`${title} - ${category || 'Web'} application screenshot showcasing main features and user interface`}
+                category={category}
+              />
             </div>
 
             {/* Case Study Preview */}
