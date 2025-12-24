@@ -220,10 +220,7 @@ class Slider extends React.PureComponent<SliderProps, SliderState> {
                     }}
                     whileTap={{ scale: 0.98 }}
                     onClick={() =>
-                      navigateTo(
-                        "https://drive.google.com/file/d/1jj2iw1bHdgiWZ-DPCCIwxll1guDj43VK/view?usp=sharing",
-                        this.props.navigate
-                      )
+                      navigateTo("#Freelancing", this.props.navigate)
                     }
                   >
                     Hire me

@@ -43,7 +43,11 @@ const platforms = [
 export default function FreelancingPage() {
   const navigate = useNavigate();
   return (
-    <section className="text-white" style={{ background: "var(--bg-main)" }}>
+    <section
+      id="Freelancing"
+      className="text-white"
+      style={{ background: "var(--bg-main)" }}
+    >
       <div className="mx-auto flex min-h-screen max-w-6xl flex-col gap-20 px-5 py-16 sm:px-8 lg:px-12 lg:py-24">
         {/* Hero Section */}
         <header className="flex flex-col gap-12 lg:flex-row lg:items-center lg:justify-between">
