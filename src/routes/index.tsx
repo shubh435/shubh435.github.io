@@ -1,6 +1,8 @@
 import * as React from "react";
 import { Routes, Route, Outlet } from "react-router-dom";
 import Layout from "../components/Layout";
+import PrivacyPolicy from "./PrivacyPolicy";
+import TermCondition from "./TermCondition";
 const Dashboard = React.lazy(() => import("./Dashboard"));
 const Project = React.lazy(() => import("./Project/Project"));
 const KeyboardButton = React.lazy(() => import("../components/KeyboardButton"));
@@ -32,6 +34,8 @@ class RouteToNavigate extends React.Component<
     return (
       <React.Suspense fallback={<Loader />}>
         <Routes>
+          <Route path="privacy-policy/*" element={<PrivacyPolicy />} />
+          <Route path="term-condition/*" element={<TermCondition />} />
           <Route path="/" element={<Layout />}>
             <Route index element={<Dashboard />} />
             <Route path="project" element={<Project />} />
@@ -47,6 +51,7 @@ class RouteToNavigate extends React.Component<
           >
             <Route path="keyboardbutton" element={<KeyboardButton />} />
           </Route>
+
           <Route path="*" element={<NoPageFound />} />
         </Routes>
       </React.Suspense>

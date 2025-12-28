@@ -1,14 +1,5 @@
 import React from "react";
-import {
-  FaCode,
-  FaMobileAlt,
-  FaPaintBrush,
-  FaRocket,
-  FaCheckCircle,
-  FaAward,
-  FaUsers,
-  FaGraduationCap,
-} from "react-icons/fa";
+import { FaCode, FaMobileAlt, FaPaintBrush, FaRocket } from "react-icons/fa";
 import { motion } from "framer-motion";
 
 const MotionDiv = motion.div;
@@ -37,15 +28,6 @@ const keyStrengths = [
     description: "Optimized code with 100% test coverage using Jest",
   },
 ];
-
-const cardVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: { delay: i * 0.1, duration: 0.4, ease: "easeOut" },
-  }),
-};
 
 const AboutUs: React.FC = () => {
   return (
