@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/static/css/main.5a5c9aad.css",
-    "main.js": "/static/js/main.1576ee21.js",
+    "main.css": "/static/css/main.56d64ffb.css",
+    "main.js": "/static/js/main.464029f7.js",
     "static/css/216.40c395c9.chunk.css": "/static/css/216.40c395c9.chunk.css",
-    "static/js/216.be29959f.chunk.js": "/static/js/216.be29959f.chunk.js",
-    "static/css/859.90f62fcc.chunk.css": "/static/css/859.90f62fcc.chunk.css",
-    "static/js/859.6da7ce77.chunk.js": "/static/js/859.6da7ce77.chunk.js",
+    "static/js/216.bef766af.chunk.js": "/static/js/216.bef766af.chunk.js",
+    "static/css/615.15564326.chunk.css": "/static/css/615.15564326.chunk.css",
+    "static/js/615.291f3118.chunk.js": "/static/js/615.291f3118.chunk.js",
     "static/css/856.1906aa2b.chunk.css": "/static/css/856.1906aa2b.chunk.css",
     "static/js/856.fd113a00.chunk.js": "/static/js/856.fd113a00.chunk.js",
     "static/js/390.48f1bb0f.chunk.js": "/static/js/390.48f1bb0f.chunk.js",
     "static/js/453.3f1fb51b.chunk.js": "/static/js/453.3f1fb51b.chunk.js",
     "static/js/771.77565b17.chunk.js": "/static/js/771.77565b17.chunk.js",
     "static/js/536.7501b614.chunk.js": "/static/js/536.7501b614.chunk.js",
-    "static/js/45.8c5ffa21.chunk.js": "/static/js/45.8c5ffa21.chunk.js",
+    "static/js/76.ec2c420c.chunk.js": "/static/js/76.ec2c420c.chunk.js",
     "static/media/RealEstateShubham.png": "/static/media/RealEstateShubham.4200de66760260fb07c6.png",
     "static/media/lypsync.mp4": "/static/media/lypsync.acbcd163c371b2e143e9.mp4",
     "static/media/Shubham_Moview_app.png": "/static/media/Shubham_Moview_app.f4f1c0d1c1ccf9148328.png",
@@ -33,6 +33,7 @@
     "static/media/GingeeGrains.png": "/static/media/GingeeGrains.25960d1ca810f6cb93da.png",
     "static/media/Shubham_agency.png": "/static/media/Shubham_agency.a84a222abc49ff0cbc7a.png",
     "static/media/Shubham_Menu.png": "/static/media/Shubham_Menu.a93482bea280b4ee8701.png",
+    "static/media/shubham_medireminder.png": "/static/media/shubham_medireminder.067ed70038f24f682d4e.png",
     "static/media/Shubham_doctor_app.png": "/static/media/Shubham_doctor_app.d47966afd9ea7482f926.png",
     "static/media/Shubham_glob.jpeg": "/static/media/Shubham_glob.e337878b83eb262f4ed0.jpeg",
     "static/media/doctorWebShubham.png": "/static/media/doctorWebShubham.6ca1b80e8b4a59df89c7.png",
@@ -56,22 +57,22 @@
     "index.html": "/index.html",
     "static/media/fiverr-1.svg": "/static/media/fiverr-1.fa5fb83fb5737faccbe5078af8970901.svg",
     "static/media/upwork.svg": "/static/media/upwork.58ab2b206b333195261e5b7b5253fc1d.svg",
-    "main.5a5c9aad.css.map": "/static/css/main.5a5c9aad.css.map",
-    "main.1576ee21.js.map": "/static/js/main.1576ee21.js.map",
+    "main.56d64ffb.css.map": "/static/css/main.56d64ffb.css.map",
+    "main.464029f7.js.map": "/static/js/main.464029f7.js.map",
     "216.40c395c9.chunk.css.map": "/static/css/216.40c395c9.chunk.css.map",
-    "216.be29959f.chunk.js.map": "/static/js/216.be29959f.chunk.js.map",
-    "859.90f62fcc.chunk.css.map": "/static/css/859.90f62fcc.chunk.css.map",
-    "859.6da7ce77.chunk.js.map": "/static/js/859.6da7ce77.chunk.js.map",
+    "216.bef766af.chunk.js.map": "/static/js/216.bef766af.chunk.js.map",
+    "615.15564326.chunk.css.map": "/static/css/615.15564326.chunk.css.map",
+    "615.291f3118.chunk.js.map": "/static/js/615.291f3118.chunk.js.map",
     "856.1906aa2b.chunk.css.map": "/static/css/856.1906aa2b.chunk.css.map",
     "856.fd113a00.chunk.js.map": "/static/js/856.fd113a00.chunk.js.map",
     "390.48f1bb0f.chunk.js.map": "/static/js/390.48f1bb0f.chunk.js.map",
     "453.3f1fb51b.chunk.js.map": "/static/js/453.3f1fb51b.chunk.js.map",
     "771.77565b17.chunk.js.map": "/static/js/771.77565b17.chunk.js.map",
     "536.7501b614.chunk.js.map": "/static/js/536.7501b614.chunk.js.map",
-    "45.8c5ffa21.chunk.js.map": "/static/js/45.8c5ffa21.chunk.js.map"
+    "76.ec2c420c.chunk.js.map": "/static/js/76.ec2c420c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.5a5c9aad.css",
-    "static/js/main.1576ee21.js"
+    "static/css/main.56d64ffb.css",
+    "static/js/main.464029f7.js"
   ]
 }
