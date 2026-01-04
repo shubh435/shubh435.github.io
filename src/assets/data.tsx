@@ -61,7 +61,26 @@ export const projectdata: ProjectData[] = [
       "Built a unified mobile experience with appointment booking, prescription tracking, and secure messaging powered by Firebase sync.",
     role: "Led mobile architecture, implemented push notifications, and tuned performance for low-end Android devices.",
   },
-
+  {
+    id: 1,
+    projectName: "MediReminder - Pills Reminder",
+    projectImage: projectMedia.mediminderImage,
+    description:
+      "Never miss a dose with MediReminder! This React Native app helps you manage your medication schedule effortlessly. Set reminders, track your pill intake, and stay on top of your health.",
+    moreDes: "Developed by Shubham",
+    subheader: "Current",
+    sourceCodeLink: "private",
+    tryLink: "https://medireminder-pills-reminder.vercel.app",
+    rating: 5,
+    category: "Mobile",
+    technology: "React Native",
+    techStack: ["React Native", "TypeScript", "Firebase", "Jest"],
+    problem:
+      "Patients often forget to take their medications on time, leading to health complications and missed doses.",
+    solution:
+      "Developed a mobile app that allows users to set medication reminders, track their pill intake, and receive notifications when it's time to take their medicine.",
+    role: "Led the mobile app development, implemented user-friendly interfaces, and integrated Firebase for real-time data synchronization.",
+  },
   {
     id: 2,
     projectName: "Color Palette Generator",

@@ -33,6 +33,7 @@ import weatherAppImage from "./Shubham_Weather.png";
 import realEstatePrimaryImage from "./RealEstateShubham.png";
 import realEstateSecondaryImage from "./realEstate2Shubham.png";
 import dreamPlanImage from "./Shubham_DreamPlan.png";
+import mediminderImage from "./shubham_medireminder.png";
 
 export const projectMedia = {
   doctorMobile: doctorMobileImage,
@@ -61,6 +62,7 @@ export const projectMedia = {
   physiotherapy: physiotherapyImage,
   aiPetCare: aiPetCareImage,
   dreamPlan: dreamPlanImage,
+  mediminderImage: mediminderImage,
 } as const;
 
 export type ProjectMediaKey = keyof typeof projectMedia;
