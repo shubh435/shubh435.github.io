@@ -78,10 +78,10 @@ class DrawerAppBar extends React.PureComponent<
   };
   drawer = (
     <Box onClick={this.handleDrawerToggle} sx={{ textAlign: "center" }}>
-      <Typography variant="h6" sx={{ my: 2 }}>
+      <Typography variant="h6" sx={{ my: 2, color: "var(--text-primary)" }}>
         SSS
       </Typography>
-      <Divider />
+      <Divider sx={{ borderColor: "var(--border-subtle)" }} />
       <List>
         {navItems.map((item) => (
           <ListItem key={item.id} disablePadding>
@@ -89,7 +89,10 @@ class DrawerAppBar extends React.PureComponent<
               sx={{ textAlign: "center" }}
               onClick={() => this.navigateTo(item.routes)}
             >
-              <ListItemText sx={{ color: "#fff" }} primary={item.name} />
+              <ListItemText
+                sx={{ color: "var(--text-primary)" }}
+                primary={item.name}
+              />
             </ListItemButton>
           </ListItem>
         ))}
@@ -103,6 +106,11 @@ class DrawerAppBar extends React.PureComponent<
             }
             variant="contained"
             fullWidth
+            sx={{
+              background: "var(--accent-gradient)",
+              borderRadius: "999px",
+              textTransform: "none",
+            }}
           >
             Download Resume
           </Button>
@@ -129,14 +137,14 @@ class DrawerAppBar extends React.PureComponent<
           position="fixed"
           sx={{
             backgroundColor: isScrolled
-              ? "rgba(10,10,15,0.8) !important"
-              : "rgba(0,0,0,0.2) !important",
+              ? "var(--bg-surface) !important"
+              : "transparent !important",
             backdropFilter: isScrolled ? "blur(22px)" : "none",
-            boxShadow: isScrolled ? "0 10px 30px rgba(0,0,0,0.35)" : "none",
+            boxShadow: isScrolled ? "var(--shadow-md)" : "none",
             borderBottom: isScrolled
-              ? "1px solid rgba(255,255,255,0.08)"
+              ? "1px solid var(--border-subtle)"
               : "transparent",
-            transition: "background 0.3s ease, box-shadow 0.3s ease",
+            transition: "all 0.3s ease",
           }}
         >
           <Container>
@@ -157,11 +165,8 @@ class DrawerAppBar extends React.PureComponent<
                   width: "18%",
                   fontSize: "18px",
                   display: { xs: "none", sm: "block" },
-                  backgroundImage:
-                    "https://www.shutterstock.com/image-illustration/3d-illustration-colorful-wavy-multicolor-260nw-1897581025.jpg",
-                  // color: "transparent",
-                  // textCli
-                  backgroundClip: "text",
+                  color: "var(--text-primary)",
+                  fontWeight: 700,
                 }}
               >
                 SSS
@@ -181,7 +186,14 @@ class DrawerAppBar extends React.PureComponent<
                       variant="button"
                       key={item.name}
                       onClick={() => this.navigateTo(item.routes)}
-                      sx={{ color: "#fff", cursor: "pointer" }}
+                      sx={{
+                        color: "var(--text-primary)",
+                        cursor: "pointer",
+                        transition: "color 0.2s ease",
+                        "&:hover": {
+                          color: "var(--accent)",
+                        },
+                      }}
                     >
                       {item.name}
                     </Typography>
@@ -192,8 +204,7 @@ class DrawerAppBar extends React.PureComponent<
                   sx={{
                     borderRadius: "999px",
                     textTransform: "none",
-                    background:
-                      "linear-gradient(120deg, #06b6d4 0%, #2563eb 100%)",
+                    background: "var(--accent-gradient)",
                   }}
                   onClick={() =>
                     navigateTo(
@@ -224,7 +235,8 @@ class DrawerAppBar extends React.PureComponent<
               "& .MuiDrawer-paper": {
                 boxSizing: "border-box",
                 width: drawerWidth,
-                background: "#0d0d0d",
+                background: "var(--bg-card)",
+                borderRight: "1px solid var(--border-subtle)",
               },
             }}
           >
@@ -237,7 +249,7 @@ class DrawerAppBar extends React.PureComponent<
 }
 const styles: any = (theme: Theme) => ({
   appbarBackground: {
-    background: "#000000 !important",
+    background: "transparent !important",
     top: 0,
     zIndex: 1100,
   },

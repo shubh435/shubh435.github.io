@@ -9,24 +9,64 @@ html {
 }
 
 :root {
-  --bg-main: #05060a;
-  --bg-surface: #12131a;
-  --bg-card: #1c1d24;
-  --text-primary: #f5f5f7;
-  --text-muted: #9ca3af;
-  --accent: #0ea5e9;
-  --accent-strong: #06b6d4;
+  /* Base Theme - Softer than pure black */
+  --bg-main: #0F1115;
+  --bg-surface: #1a1d24;
+  --bg-card: #242830;
+  --bg-tertiary: #2d3139;
+
+  /* Text Hierarchy */
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+
+  /* Accent Colors */
+  --accent: #06b6d4;
+  --accent-strong: #0891b2;
+  --accent-gradient: linear-gradient(135deg, #06b6d4 0%, #3b82f6 60%, #6366f1 100%);
+
+  /* Borders & Dividers */
+  --border-subtle: rgba(148, 163, 184, 0.1);
+  --border-focus: rgba(6, 182, 212, 0.3);
+  --border-hover: rgba(6, 182, 212, 0.2);
+
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.4);
+  --shadow-glow: 0 0 32px rgba(6, 182, 212, 0.15);
+
   color-scheme: dark;
 }
 
 :root[data-theme="light"] {
-  --bg-main: #f5f7fb;
+  /* Base Theme - Light backgrounds */
+  --bg-main: #f8fafc;
   --bg-surface: #ffffff;
-  --bg-card: #f1f5f9;
+  --bg-card: #ffffff;
+  --bg-tertiary: #f1f5f9;
+
+  /* Text Hierarchy - Inverted for light mode */
   --text-primary: #0f172a;
-  --text-muted: #475569;
-  --accent: #0ea5e9;
-  --accent-strong: #0284c7;
+  --text-secondary: #334155;
+  --text-muted: #64748b;
+
+  /* Accent Colors - Same as dark mode */
+  --accent: #06b6d4;
+  --accent-strong: #0891b2;
+  --accent-gradient: linear-gradient(135deg, #06b6d4 0%, #3b82f6 60%, #6366f1 100%);
+
+  /* Borders & Dividers - Darker for light mode */
+  --border-subtle: rgba(15, 23, 42, 0.1);
+  --border-focus: rgba(6, 182, 212, 0.4);
+  --border-hover: rgba(6, 182, 212, 0.3);
+
+  /* Shadows - Lighter for light mode */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+  --shadow-glow: 0 0 32px rgba(6, 182, 212, 0.2);
+
   color-scheme: light;
 }
 
@@ -228,4 +268,336 @@ html {
   transform-origin: 0 0;
   z-index: 2000;
   background: linear-gradient(90deg, #6366f1, #06b6d4, #22c55e);
+}
+
+/* Project Card Enhancements */
+.project-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  min-height: 560px;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--border-hover);
+  box-shadow: var(--shadow-lg), var(--shadow-glow);
+}
+
+.project-card-image {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 0.75rem;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-card-image {
+  transform: scale(1.05);
+}
+
+/* Tech Pills */
+.tech-pill {
+  padding: 0.375rem 0.75rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  transition: all 0.2s ease;
+}
+
+.tech-pill:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent);
+  background: rgba(6, 182, 212, 0.1);
+}
+
+/* Filter Pills */
+.filter-pill {
+  padding: 0.5rem 1rem;
+  background: transparent;
+  border: 1px solid var(--border-subtle);
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filter-pill:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.filter-pill.active {
+  background: var(--accent-gradient);
+  border-color: transparent;
+  color: white;
+}
+
+/* Category Badges */
+.badge-mobile {
+  background: rgba(236, 72, 153, 0.1);
+  color: #f472b6;
+  border: 1px solid rgba(236, 72, 153, 0.3);
+}
+
+.badge-web {
+  background: rgba(6, 182, 212, 0.1);
+  color: #06b6d4;
+  border: 1px solid rgba(6, 182, 212, 0.3);
+}
+
+.badge-current {
+  background: rgba(16, 185, 129, 0.1);
+  color: #10b981;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.badge-year {
+  background: rgba(148, 163, 184, 0.1);
+  color: #94a3b8;
+  border: 1px solid rgba(148, 163, 184, 0.3);
+}
+
+/* Button Styles */
+.btn-primary {
+  background: var(--accent-gradient);
+  border: none;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-primary:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 16px rgba(6, 182, 212, 0.3);
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-secondary:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: rgba(6, 182, 212, 0.05);
+}
+
+/* Search Bar */
+.search-container-modern {
+  max-width: 32rem;
+  margin: 0 auto 3rem;
+  position: relative;
+}
+
+.search-input-modern {
+  width: 100%;
+  padding: 0.75rem 1rem 0.75rem 3rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 0.75rem;
+  color: var(--text-primary);
+  font-size: 0.875rem;
+  transition: all 0.2s ease;
+}
+
+.search-input-modern::placeholder {
+  color: var(--text-muted);
+}
+
+.search-input-modern:focus {
+  outline: none;
+  border-color: rgba(6, 182, 212, 0.5);
+  box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.1);
+}
+
+.search-icon-modern {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  pointer-events: none;
+}
+
+/* Light Mode Adjustments */
+:root[data-theme="light"] .project-card {
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.08), 0 1px 3px rgba(15, 23, 42, 0.04);
+  border-color: rgba(15, 23, 42, 0.1);
+}
+
+:root[data-theme="light"] .project-card:hover {
+  box-shadow:
+    0 12px 32px rgba(15, 23, 42, 0.12),
+    0 4px 16px rgba(6, 182, 212, 0.15);
+  border-color: rgba(6, 182, 212, 0.2);
+}
+
+:root[data-theme="light"] .tech-pill {
+  background: rgba(6, 182, 212, 0.08);
+  border-color: rgba(6, 182, 212, 0.25);
+  color: #0891b2;
+}
+
+:root[data-theme="light"] .tech-pill:hover {
+  background: rgba(6, 182, 212, 0.15);
+  border-color: var(--accent);
+  color: #0e7490;
+}
+
+:root[data-theme="light"] .filter-pill {
+  border-color: rgba(15, 23, 42, 0.2);
+  background: rgba(255, 255, 255, 0.8);
+}
+
+:root[data-theme="light"] .filter-pill:hover {
+  background: rgba(6, 182, 212, 0.05);
+  border-color: var(--accent);
+}
+
+:root[data-theme="light"] .btn-secondary {
+  border-color: rgba(15, 23, 42, 0.2);
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.8);
+}
+
+:root[data-theme="light"] .btn-secondary:hover {
+  background: rgba(6, 182, 212, 0.1);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* Light Mode - Search Input */
+:root[data-theme="light"] .search-input-modern {
+  background: #ffffff;
+  border-color: rgba(15, 23, 42, 0.15);
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+}
+
+:root[data-theme="light"] .search-input-modern:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.15);
+  background: #ffffff;
+}
+
+/* Light Mode - Glass Panel */
+:root[data-theme="light"] .glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  border-color: rgba(15, 23, 42, 0.08);
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
+}
+
+/* Light Mode - Badge Enhancements */
+:root[data-theme="light"] .badge-mobile {
+  background: rgba(236, 72, 153, 0.12);
+  color: #db2777;
+  border-color: rgba(236, 72, 153, 0.35);
+}
+
+:root[data-theme="light"] .badge-web {
+  background: rgba(6, 182, 212, 0.12);
+  color: #0891b2;
+  border-color: rgba(6, 182, 212, 0.35);
+}
+
+:root[data-theme="light"] .badge-current {
+  background: rgba(16, 185, 129, 0.12);
+  color: #059669;
+  border-color: rgba(16, 185, 129, 0.35);
+}
+
+:root[data-theme="light"] .badge-year {
+  background: rgba(100, 116, 139, 0.12);
+  color: #475569;
+  border-color: rgba(100, 116, 139, 0.3);
+}
+
+/* Light Mode - Navbar Enhancements */
+:root[data-theme="light"] .MuiAppBar-root {
+  background: rgba(255, 255, 255, 0.85) !important;
+  backdrop-filter: blur(22px) saturate(180%);
+  box-shadow: 0 2px 12px rgba(15, 23, 42, 0.08) !important;
+}
+
+/* Light Mode - Drawer */
+:root[data-theme="light"] .MuiDrawer-paper {
+  background: var(--bg-card) !important;
+  box-shadow: -2px 0 12px rgba(15, 23, 42, 0.1);
+}
+
+/* Light Mode - Divider */
+:root[data-theme="light"] .MuiDivider-root {
+  border-color: var(--border-subtle) !important;
+}
+
+/* Light Mode - Form Inputs */
+:root[data-theme="light"] input,
+:root[data-theme="light"] textarea,
+:root[data-theme="light"] select {
+  background: #ffffff !important;
+  color: var(--text-primary) !important;
+  border-color: rgba(15, 23, 42, 0.15) !important;
+}
+
+:root[data-theme="light"] input:focus,
+:root[data-theme="light"] textarea:focus,
+:root[data-theme="light"] select:focus {
+  border-color: var(--accent) !important;
+  outline: none !important;
+  box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.1) !important;
+}
+
+:root[data-theme="light"] input::placeholder,
+:root[data-theme="light"] textarea::placeholder {
+  color: var(--text-muted) !important;
+  opacity: 0.7;
+}
+
+/* Light Mode - Surface Card */
+:root[data-theme="light"] .surface-card {
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+/* Light Mode - Section Shell */
+:root[data-theme="light"] .section-shell {
+  background: var(--bg-surface);
+}
+
+/* Light Mode - Scrollbar */
+:root[data-theme="light"] ::-webkit-scrollbar-thumb {
+  background: rgba(15, 23, 42, 0.3);
+}
+
+:root[data-theme="light"] ::-webkit-scrollbar-thumb:hover {
+  background: rgba(15, 23, 42, 0.5);
+}
+
+:root[data-theme="light"] ::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.05);
 }

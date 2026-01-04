@@ -16,14 +16,14 @@ const GROUPS: Array<Skill["group"] | "All"> = [
   "Cloud",
 ];
 
-const levelBadge = (level: Skill["level"]) => {
-  const base =
-    "text-[11px] px-2 py-1 rounded-full border font-semibold tracking-wide";
+const levelBadge = (level: Skill["level"]) => "text-[11px] px-2 py-1 rounded-full border font-semibold tracking-wide";
+
+const levelBadgeStyle = (level: Skill["level"]) => {
   if (level === "Advanced")
-    return `${base} border-emerald-400/40 text-emerald-200 bg-emerald-500/10`;
+    return { borderColor: "rgba(52, 211, 153, 0.4)", color: "#a7f3d0", background: "rgba(16, 185, 129, 0.1)" };
   if (level === "Intermediate")
-    return `${base} border-amber-400/40 text-amber-200 bg-amber-500/10`;
-  return `${base} border-gray-400/40 text-gray-200 bg-gray-500/10`;
+    return { borderColor: "rgba(251, 191, 36, 0.4)", color: "#fde68a", background: "rgba(245, 158, 11, 0.1)" };
+  return { borderColor: "var(--border-subtle)", color: "var(--text-muted)", background: "var(--bg-tertiary)" };
 };
 
 const SkillSection = () => {
@@ -48,12 +48,13 @@ const SkillSection = () => {
   return (
     <section
       id="skill"
-      className="section-shell text-white p-8 rounded-3xl shadow-lg max-w-6xl mx-auto"
+      className="section-shell p-8 rounded-3xl shadow-lg max-w-6xl mx-auto"
+      style={{ color: "var(--text-primary)" }}
       aria-labelledby="skills-heading"
     >
       <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between mb-6">
         <div>
-          <p className="text-sm uppercase tracking-[0.3em] text-cyan-400 font-medium">
+          <p className="text-sm uppercase tracking-[0.3em] font-medium" style={{ color: "var(--accent)" }}>
             Skills
           </p>
           <h2 id="skills-heading" className="text-3xl font-semibold">
@@ -68,11 +69,31 @@ const SkillSection = () => {
             <button
               key={group}
               onClick={() => setActiveGroup(group)}
-              className={`rounded-full px-3 py-1 text-sm border transition ${
+              className="rounded-full px-3 py-1 text-sm border transition"
+              style={
                 activeGroup === group
-                  ? "border-cyan-400 text-cyan-200 bg-cyan-500/10"
-                  : "border-white/10 text-muted hover:border-cyan-400/60 hover:text-white"
-              }`}
+                  ? {
+                      borderColor: "var(--accent)",
+                      color: "var(--accent)",
+                      background: "rgba(6, 182, 212, 0.1)",
+                    }
+                  : {
+                      borderColor: "var(--border-subtle)",
+                      color: "var(--text-muted)",
+                    }
+              }
+              onMouseEnter={(e) => {
+                if (activeGroup !== group) {
+                  e.currentTarget.style.borderColor = "var(--accent)";
+                  e.currentTarget.style.color = "var(--text-primary)";
+                }
+              }}
+              onMouseLeave={(e) => {
+                if (activeGroup !== group) {
+                  e.currentTarget.style.borderColor = "var(--border-subtle)";
+                  e.currentTarget.style.color = "var(--text-muted)";
+                }
+              }}
               aria-pressed={activeGroup === group}
             >
               {group}
@@ -81,14 +102,14 @@ const SkillSection = () => {
         </div>
       </div>
 
-      <div className="mb-4 flex flex-wrap gap-3 text-xs text-muted">
-        <span className="px-3 py-2 rounded-xl bg-white/5 border border-white/10">
+      <div className="mb-4 flex flex-wrap gap-3 text-xs" style={{ color: "var(--text-muted)" }}>
+        <span className="px-3 py-2 rounded-xl" style={{ background: "var(--bg-tertiary)", border: "1px solid var(--border-subtle)" }}>
           {highlights.advanced}+ advanced skills
         </span>
-        <span className="px-3 py-2 rounded-xl bg-white/5 border border-white/10">
+        <span className="px-3 py-2 rounded-xl" style={{ background: "var(--bg-tertiary)", border: "1px solid var(--border-subtle)" }}>
           {highlights.tools}+ delivery & tooling habits
         </span>
-        <span className="px-3 py-2 rounded-xl bg-white/5 border border-white/10">
+        <span className="px-3 py-2 rounded-xl" style={{ background: "var(--bg-tertiary)", border: "1px solid var(--border-subtle)" }}>
           Hover cards for depth and favorite tools
         </span>
       </div>
@@ -97,7 +118,10 @@ const SkillSection = () => {
         {filtered.map((skill, idx) => (
           <article
             key={`${skill.name}-${idx}`}
-            className="surface-card p-4 rounded-2xl border border-white/5 hover:border-cyan-400/40 hover:-translate-y-1 transition-all duration-200 shadow-md"
+            className="surface-card p-4 rounded-2xl hover:-translate-y-1 transition-all duration-200 shadow-md"
+            style={{ border: "1px solid var(--border-subtle)" }}
+            onMouseEnter={(e) => e.currentTarget.style.borderColor = "var(--accent)"}
+            onMouseLeave={(e) => e.currentTarget.style.borderColor = "var(--border-subtle)"}
             role="listitem"
             aria-label={`${skill.name} skill level ${skill.level}`}
           >
@@ -106,14 +130,15 @@ const SkillSection = () => {
                 <div className="text-2xl">{skill.icon}</div>
                 <div>
                   <h3 className="text-lg font-medium">{skill.name}</h3>
-                  <p className="text-sm text-gray-400">{skill.category}</p>
+                  <p className="text-sm" style={{ color: "var(--text-muted)" }}>{skill.category}</p>
                 </div>
               </div>
-              <span className={levelBadge(skill.level)}>{skill.level}</span>
+              <span className={levelBadge(skill.level)} style={levelBadgeStyle(skill.level)}>{skill.level}</span>
             </div>
             <div className="mt-4 space-y-2">
               <div
-                className="h-2 bg-zinc-800 rounded"
+                className="h-2 rounded"
+                style={{ background: "var(--bg-tertiary)" }}
                 role="progressbar"
                 aria-valuemin={0}
                 aria-valuemax={100}
@@ -126,12 +151,11 @@ const SkillSection = () => {
                 }
               >
                 <div
-                  className={`h-2 bg-gradient-to-r from-purple-400 via-blue-400 to-cyan-400 rounded ${
-                    LEVEL_WIDTH[skill.level]
-                  }`}
+                  className={`h-2 rounded ${LEVEL_WIDTH[skill.level]}`}
+                  style={{ background: "var(--accent-gradient)" }}
                 />
               </div>
-              <p className="text-xs text-gray-400">
+              <p className="text-xs" style={{ color: "var(--text-muted)" }}>
                 Recently used in:{" "}
                 {skill.group === "Frontend"
                   ? "React/React Native shipping"

@@ -139,8 +139,8 @@ const Footer: React.FC = () => {
   return (
     <motion.footer
       id="footer"
-      className="text-white py-16 px-6 md:px-10"
-      style={{ background: "var(--bg-main)" }}
+      className="py-16 px-6 md:px-10"
+      style={{ background: "var(--bg-main)", color: "var(--text-primary)" }}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
@@ -156,7 +156,10 @@ const Footer: React.FC = () => {
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 hover:text-cyan-400 transition-all duration-300"
+                className="flex items-center gap-3 transition-all duration-300"
+                style={{ color: "var(--text-primary)" }}
+                onMouseEnter={(e) => e.currentTarget.style.color = "var(--accent)"}
+                onMouseLeave={(e) => e.currentTarget.style.color = "var(--text-primary)"}
                 custom={index}
                 initial="hidden"
                 whileInView="visible"
@@ -178,11 +181,12 @@ const Footer: React.FC = () => {
           viewport={{ once: true }}
         >
           <h2 className="text-2xl font-semibold mb-4">📬 Contact Me</h2>
-          <p className="mb-4 text-gray-400">
+          <p className="mb-4" style={{ color: "var(--text-muted)" }}>
             <strong>Email:</strong>{" "}
             <a
               href="mailto:shubhamsarode435@gmail.com"
-              className="text-cyan-400 hover:underline"
+              className="hover:underline"
+              style={{ color: "var(--accent)" }}
             >
               shubhamsarode435@gmail.com
             </a>
@@ -198,7 +202,14 @@ const Footer: React.FC = () => {
                 name="name"
                 type="text"
                 placeholder="Enter your full name"
-                className="w-full px-4 py-2 bg-zinc-800 border border-zinc-700 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-cyan-500"
+                className="w-full px-4 py-2 rounded-md focus:outline-none focus:ring-2"
+                style={{
+                  background: "var(--bg-card)",
+                  border: "1px solid var(--border-subtle)",
+                  color: "var(--text-primary)",
+                }}
+                onFocus={(e) => e.currentTarget.style.borderColor = "var(--accent)"}
+                onBlur={(e) => e.currentTarget.style.borderColor = "var(--border-subtle)"}
                 required
                 value={formValues.name}
                 onChange={handleChange}
@@ -217,7 +228,14 @@ const Footer: React.FC = () => {
                 name="email"
                 type="email"
                 placeholder="Enter your email"
-                className="w-full px-4 py-2 bg-zinc-800 border border-zinc-700 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-cyan-500"
+                className="w-full px-4 py-2 rounded-md focus:outline-none focus:ring-2"
+                style={{
+                  background: "var(--bg-card)",
+                  border: "1px solid var(--border-subtle)",
+                  color: "var(--text-primary)",
+                }}
+                onFocus={(e) => e.currentTarget.style.borderColor = "var(--accent)"}
+                onBlur={(e) => e.currentTarget.style.borderColor = "var(--border-subtle)"}
                 required
                 value={formValues.email}
                 onChange={handleChange}
@@ -234,7 +252,14 @@ const Footer: React.FC = () => {
               <select
                 id="inquiryType"
                 name="inquiryType"
-                className="w-full px-4 py-2 bg-zinc-800 border border-zinc-700 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-cyan-500"
+                className="w-full px-4 py-2 rounded-md focus:outline-none focus:ring-2"
+                style={{
+                  background: "var(--bg-card)",
+                  border: "1px solid var(--border-subtle)",
+                  color: "var(--text-primary)",
+                }}
+                onFocus={(e) => e.currentTarget.style.borderColor = "var(--accent)"}
+                onBlur={(e) => e.currentTarget.style.borderColor = "var(--border-subtle)"}
                 value={formValues.inquiryType}
                 onChange={handleChange}
                 aria-invalid={Boolean(errors.inquiryType)}
@@ -261,7 +286,14 @@ const Footer: React.FC = () => {
                 name="message"
                 rows={4}
                 placeholder="Type your message..."
-                className="w-full px-4 py-2 bg-zinc-800 border border-zinc-700 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-cyan-500"
+                className="w-full px-4 py-2 rounded-md focus:outline-none focus:ring-2"
+                style={{
+                  background: "var(--bg-card)",
+                  border: "1px solid var(--border-subtle)",
+                  color: "var(--text-primary)",
+                }}
+                onFocus={(e) => e.currentTarget.style.borderColor = "var(--accent)"}
+                onBlur={(e) => e.currentTarget.style.borderColor = "var(--border-subtle)"}
                 required
                 value={formValues.message}
                 onChange={handleChange}
@@ -271,9 +303,9 @@ const Footer: React.FC = () => {
                 <p className="mt-1 text-sm text-rose-400">{errors.message}</p>
               )}
             </div>
-            <p className="text-xs text-gray-400">
+            <p className="text-xs" style={{ color: "var(--text-muted)" }}>
               Subject auto-fills as:{" "}
-              <span className="text-cyan-400">{subjectValue}</span>
+              <span style={{ color: "var(--accent)" }}>{subjectValue}</span>
             </p>
             <MotionButton
               type="submit"
@@ -299,13 +331,14 @@ const Footer: React.FC = () => {
                 )}
               </span>
             </MotionButton>
-            <div className="flex flex-wrap items-center gap-3 text-xs text-muted">
+            <div className="flex flex-wrap items-center gap-3 text-xs" style={{ color: "var(--text-muted)" }}>
               <span>Prefer a call?</span>
               <a
                 href="https://cal.com/shubh435/intro"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-cyan-400 hover:text-cyan-200 font-semibold"
+                className="font-semibold"
+                style={{ color: "var(--accent)" }}
               >
                 Book a 20-min slot
               </a>
@@ -315,7 +348,8 @@ const Footer: React.FC = () => {
       </div>
 
       <motion.div
-        className="text-center text-gray-500 text-sm mt-12"
+        className="text-center text-sm mt-12"
+        style={{ color: "var(--text-muted)" }}
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ delay: 0.6 }}

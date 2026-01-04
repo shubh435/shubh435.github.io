@@ -39,15 +39,15 @@ const AboutUs: React.FC = () => {
       <div className="max-w-4xl mx-auto flex flex-col gap-6 text-center md:text-left">
         {/* Section Header */}
         <div className="space-y-2">
-          <p className="text-sm uppercase tracking-[0.3em] text-cyan-400 font-medium">
+          <p className="text-sm uppercase tracking-[0.3em] font-medium" style={{ color: "var(--accent)" }}>
             About Me
           </p>
           <h2 id="about-heading" className="text-3xl md:text-4xl font-bold">
             Building Digital Experiences
           </h2>
-          <p className="text-lg text-muted max-w-2xl">
+          <p className="text-lg max-w-2xl" style={{ color: "var(--text-muted)" }}>
             React & React Native engineer with{" "}
-            <strong className="text-white">3+ years</strong> of experience
+            <strong style={{ color: "var(--text-primary)" }}>3+ years</strong> of experience
             shipping polished mobile and web products for startups and
             enterprise teams.
           </p>
@@ -58,7 +58,10 @@ const AboutUs: React.FC = () => {
           {keyStrengths.map((strength, index) => (
             <MotionDiv
               key={strength.title}
-              className="surface-card rounded-2xl p-5 shadow-lg border border-white/5 hover:border-cyan-500/30 transition-all duration-300"
+              className="surface-card rounded-2xl p-5 shadow-lg transition-all duration-300"
+              style={{ border: "1px solid var(--border-subtle)" }}
+              onMouseEnter={(e) => e.currentTarget.style.borderColor = "var(--accent)"}
+              onMouseLeave={(e) => e.currentTarget.style.borderColor = "var(--border-subtle)"}
               custom={index}
               initial="hidden"
               whileInView="visible"
@@ -70,10 +73,10 @@ const AboutUs: React.FC = () => {
                   {strength.icon}
                 </div>
                 <div className="text-left">
-                  <h3 className="font-semibold text-white mb-1">
+                  <h3 className="font-semibold mb-1" style={{ color: "var(--text-primary)" }}>
                     {strength.title}
                   </h3>
-                  <p className="text-sm text-muted">{strength.description}</p>
+                  <p className="text-sm" style={{ color: "var(--text-muted)" }}>{strength.description}</p>
                 </div>
               </div>
             </MotionDiv>

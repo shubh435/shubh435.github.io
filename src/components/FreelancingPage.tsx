@@ -45,54 +45,92 @@ export default function FreelancingPage() {
   return (
     <section
       id="Freelancing"
-      className="text-white"
-      style={{ background: "var(--bg-main)" }}
+      style={{
+        background: "var(--bg-main)",
+        color: "var(--text-primary)",
+      }}
     >
       <div className="mx-auto flex min-h-screen max-w-6xl flex-col gap-20 px-5 py-16 sm:px-8 lg:px-12 lg:py-24">
         {/* Hero Section */}
         <header className="flex flex-col gap-12 lg:flex-row lg:items-center lg:justify-between">
           <div className="max-w-3xl space-y-6 text-center lg:text-left">
-            <p className="text-sm font-semibold uppercase tracking-[0.35em] text-cyan-400">
+            <p
+              className="text-sm font-semibold uppercase tracking-[0.35em]"
+              style={{ color: "var(--accent)" }}
+            >
               Freelance Services
             </p>
-            <h1 className="text-4xl font-bold leading-tight md:text-5xl">
-              Let’s build something impactful together
+            <h1
+              className="text-4xl font-bold leading-tight md:text-5xl"
+              style={{ color: "var(--text-primary)" }}
+            >
+              Let's build something impactful together
             </h1>
-            <p className="text-lg text-gray-300 md:text-xl">
+            <p
+              className="text-lg md:text-xl"
+              style={{ color: "var(--text-muted)" }}
+            >
               I partner with startups and product teams on conversion-driven
               interfaces, resilient mobile apps, and full-stack web experiences.
             </p>
             <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center lg:justify-start">
               <button
                 onClick={() => navigateTo("#footer", navigate)}
-                className="inline-flex w-full items-center justify-center rounded-lg bg-cyan-500 px-6 py-3 text-base font-semibold text-white shadow transition hover:bg-cyan-600 sm:w-auto"
+                className="btn-primary inline-flex w-full items-center justify-center rounded-lg px-6 py-3 text-base font-semibold shadow transition sm:w-auto"
+                style={{ background: "var(--accent-gradient)", color: "white" }}
               >
                 Contact Me
               </button>
               <button
                 onClick={() => navigateTo("#footer", navigate)}
-                className="inline-flex w-full items-center justify-center rounded-lg border  border-cyan-500 px-6 py-3 text-base font-semibold text-cyan-400 transition hover:border-cyan-400 hover:text-cyan-200 sm:w-auto"
+                className="btn-secondary inline-flex w-full items-center justify-center rounded-lg px-6 py-3 text-base font-semibold transition sm:w-auto"
+                style={{
+                  border: "1px solid var(--accent)",
+                  color: "var(--accent)",
+                  background: "transparent",
+                }}
               >
                 Book a call
               </button>
             </div>
           </div>
 
-          <div className="grid w-full max-w-md gap-4 rounded-2xl border border-zinc-800 bg-gradient-to-br from-zinc-900 via-zinc-950 to-black p-8 shadow-xl">
-            <h2 className="text-xl font-semibold text-white md:text-2xl">
+          <div
+            className="grid w-full max-w-md gap-4 rounded-2xl p-8 shadow-xl surface-card"
+            style={{
+              background: "var(--bg-card)",
+              border: "1px solid var(--border-subtle)",
+            }}
+          >
+            <h2
+              className="text-xl font-semibold md:text-2xl"
+              style={{ color: "var(--text-primary)" }}
+            >
               What you can expect
             </h2>
-            <ul className="space-y-3 text-left text-sm text-gray-300 md:text-base">
+            <ul
+              className="space-y-3 text-left text-sm md:text-base"
+              style={{ color: "var(--text-muted)" }}
+            >
               <li className="flex items-start gap-3">
-                <span className="mt-1 h-2 w-2 rounded-full bg-cyan-500"></span>
+                <span
+                  className="mt-1 h-2 w-2 rounded-full"
+                  style={{ background: "var(--accent)" }}
+                ></span>
                 Figma-to-production handoffs with Tailwind-first UI architecture
               </li>
               <li className="flex items-start gap-3">
-                <span className="mt-1 h-2 w-2 rounded-full bg-cyan-500"></span>
+                <span
+                  className="mt-1 h-2 w-2 rounded-full"
+                  style={{ background: "var(--accent)" }}
+                ></span>
                 Iterative delivery with async updates and Loom walkthroughs
               </li>
               <li className="flex items-start gap-3">
-                <span className="mt-1 h-2 w-2 rounded-full bg-cyan-500"></span>
+                <span
+                  className="mt-1 h-2 w-2 rounded-full"
+                  style={{ background: "var(--accent)" }}
+                ></span>
                 Performance budgets, accessibility guardrails, and deployment
                 support
               </li>
@@ -104,10 +142,16 @@ export default function FreelancingPage() {
         <section>
           <div className="mb-10 flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
             <div>
-              <h2 className="text-3xl font-semibold md:text-4xl">
+              <h2
+                className="text-3xl font-semibold md:text-4xl"
+                style={{ color: "var(--text-primary)" }}
+              >
                 Services I provide
               </h2>
-              <p className="mt-2 text-base text-gray-400 md:text-lg">
+              <p
+                className="mt-2 text-base md:text-lg"
+                style={{ color: "var(--text-muted)" }}
+              >
                 Tailored React and React Native solutions tuned for launch or
                 scale.
               </p>
@@ -117,12 +161,22 @@ export default function FreelancingPage() {
             {services.map((service, idx) => (
               <article
                 key={idx}
-                className="group flex h-full flex-col rounded-2xl border border-zinc-800 bg-zinc-900/60 p-6 shadow-lg transition hover:-translate-y-1 hover:border-cyan-500/60 hover:shadow-cyan-500/10"
+                className="group flex h-full flex-col rounded-2xl p-6 shadow-lg transition hover:-translate-y-1 surface-card"
+                style={{
+                  background: "var(--bg-card)",
+                  border: "1px solid var(--border-subtle)",
+                }}
               >
-                <h3 className="text-xl font-semibold text-white">
+                <h3
+                  className="text-xl font-semibold"
+                  style={{ color: "var(--text-primary)" }}
+                >
                   {service.title}
                 </h3>
-                <p className="mt-3 text-sm text-gray-300 md:text-base">
+                <p
+                  className="mt-3 text-sm md:text-base"
+                  style={{ color: "var(--text-muted)" }}
+                >
                   {service.desc}
                 </p>
               </article>
@@ -131,10 +185,19 @@ export default function FreelancingPage() {
         </section>
 
         {/* Platforms */}
-        <section className="rounded-3xl border border-zinc-800 bg-zinc-900/50 p-10">
+        <section
+          className="rounded-3xl p-10 surface-card"
+          style={{
+            background: "var(--bg-card)",
+            border: "1px solid var(--border-subtle)",
+          }}
+        >
           <div className="flex flex-col gap-6 text-center sm:text-left">
             <div>
-              <h2 className="text-2xl font-semibold md:text-3xl text-center">
+              <h2
+                className="text-2xl font-semibold md:text-3xl text-center"
+                style={{ color: "var(--text-primary)" }}
+              >
                 Available on trusted marketplaces
               </h2>
             </div>
@@ -145,7 +208,11 @@ export default function FreelancingPage() {
                   href={platform.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex h-16 w-16 items-center justify-center rounded-full border border-zinc-700 bg-zinc-950 p-4 transition hover:border-cyan-500 hover:bg-zinc-900"
+                  className="flex h-16 w-16 items-center justify-center rounded-full p-4 transition hover:border-cyan-500"
+                  style={{
+                    border: "2px solid var(--border-subtle)",
+                    background: "var(--bg-tertiary)",
+                  }}
                   aria-label={platform.alt}
                 >
                   <img

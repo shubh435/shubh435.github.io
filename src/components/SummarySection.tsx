@@ -42,25 +42,26 @@ function SummarySection() {
       <div className="max-w-6xl mx-auto space-y-6">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
           <div className="space-y-1">
-            <p className="text-xs uppercase tracking-[0.3em] text-cyan-400 font-medium">
+            <p className="text-xs uppercase tracking-[0.3em] font-medium" style={{ color: "var(--accent)" }}>
               Snapshot
             </p>
             <h2 id="summary-heading" className="text-2xl md:text-3xl font-bold">
               Quick summary without the scroll
             </h2>
           </div>
-          <div className="hidden md:flex items-center gap-2 text-sm text-muted">
-            <span className="w-2 h-2 bg-cyan-400 rounded-full" />
+          <div className="hidden md:flex items-center gap-2 text-sm" style={{ color: "var(--text-muted)" }}>
+            <span className="w-2 h-2 rounded-full" style={{ background: "var(--accent)" }} />
             <span>Available for fast-paced builds & audits</span>
           </div>
         </div>
 
         <div className="grid lg:grid-cols-[1.15fr,0.85fr] gap-6 items-stretch">
           {/* Quick Highlights - Scannable List */}
-          <div className="surface-card rounded-2xl p-6 shadow-xl border border-white/5 h-full">
-            <h3 className="text-lg font-semibold mb-4 text-cyan-300 flex items-center gap-2">
+          <div className="surface-card rounded-2xl p-6 shadow-xl h-full" style={{ border: "1px solid var(--border-subtle)" }}>
+            <h3 className="text-lg font-semibold mb-4 flex items-center gap-2" style={{ color: "var(--accent)" }}>
               <span
-                className="w-2 h-2 bg-cyan-400 rounded-full"
+                className="w-2 h-2 rounded-full"
+                style={{ background: "var(--accent)" }}
                 aria-hidden="true"
               ></span>
               Quick Highlights
@@ -69,7 +70,10 @@ function SummarySection() {
               {highlights.map((item, index) => (
                 <MotionDiv
                   key={index}
-                  className="flex items-center gap-3 text-base text-muted hover:text-white transition-colors"
+                  className="flex items-center gap-3 text-base transition-colors"
+                  style={{ color: "var(--text-muted)" }}
+                  onMouseEnter={(e) => e.currentTarget.style.color = "var(--text-primary)"}
+                  onMouseLeave={(e) => e.currentTarget.style.color = "var(--text-muted)"}
                   custom={index + 4}
                   initial="hidden"
                   whileInView="visible"
@@ -82,11 +86,11 @@ function SummarySection() {
             </ul>
           </div>
 
-          <div className="surface-card rounded-2xl p-6 border border-white/5 h-full flex flex-col gap-4">
-            <h3 className="text-lg font-semibold text-cyan-300">
+          <div className="surface-card rounded-2xl p-6 h-full flex flex-col gap-4" style={{ border: "1px solid var(--border-subtle)" }}>
+            <h3 className="text-lg font-semibold" style={{ color: "var(--accent)" }}>
               Delivery Style
             </h3>
-            <div className="space-y-3 text-muted">
+            <div className="space-y-3" style={{ color: "var(--text-muted)" }}>
               <p className="flex items-start gap-3">
                 <FaCheckCircle
                   className="text-green-400 mt-1 flex-shrink-0"
@@ -116,7 +120,7 @@ function SummarySection() {
                 </span>
               </p>
             </div>
-            <div className="mt-auto pt-4 border-t border-white/5 text-sm text-muted">
+            <div className="mt-auto pt-4 text-sm" style={{ borderTop: "1px solid var(--border-subtle)", color: "var(--text-muted)" }}>
               Collaboration-first, async-friendly, and ready for hands-on coding
               or audits.
             </div>
@@ -125,15 +129,16 @@ function SummarySection() {
 
         {/* What I focus on */}
         <div className="grid md:grid-cols-2 gap-6 items-stretch">
-          <div className="surface-card rounded-2xl p-6 border border-white/5 h-full">
-            <h3 className="text-lg font-semibold mb-3 text-cyan-300">
+          <div className="surface-card rounded-2xl p-6 h-full" style={{ border: "1px solid var(--border-subtle)" }}>
+            <h3 className="text-lg font-semibold mb-3" style={{ color: "var(--accent)" }}>
               What I Focus On
             </h3>
-            <ul className="space-y-3 text-left text-muted" role="list">
+            <ul className="space-y-3 text-left" style={{ color: "var(--text-muted)" }} role="list">
               {focusAreas.map((item) => (
                 <li key={item} className="flex items-start gap-3">
                   <span
-                    className="mt-1 h-2 w-2 rounded-full bg-cyan-400 flex-shrink-0"
+                    className="mt-1 h-2 w-2 rounded-full flex-shrink-0"
+                    style={{ background: "var(--accent)" }}
                     aria-hidden="true"
                   ></span>
                   <span className="leading-relaxed">{item}</span>
@@ -142,21 +147,21 @@ function SummarySection() {
             </ul>
           </div>
 
-          <div className="surface-card rounded-2xl p-6 border border-white/5 h-full flex flex-col justify-between">
+          <div className="surface-card rounded-2xl p-6 h-full flex flex-col justify-between" style={{ border: "1px solid var(--border-subtle)" }}>
             <div className="space-y-3">
-              <h3 className="text-lg font-semibold text-cyan-300">
+              <h3 className="text-lg font-semibold" style={{ color: "var(--accent)" }}>
                 Let&apos;s Build Something
               </h3>
-              <p className="text-lg text-muted leading-relaxed">
+              <p className="text-lg leading-relaxed" style={{ color: "var(--text-muted)" }}>
                 I love partnering with teams that want to move fast without
                 compromising craft.{" "}
-                <strong className="text-white not-italic">
+                <strong className="not-italic" style={{ color: "var(--text-primary)" }}>
                   Let&apos;s build something memorable.
                 </strong>
               </p>
             </div>
-            <div className="flex items-center gap-2 text-sm text-muted mt-4">
-              <span className="w-8 h-px bg-gradient-to-r from-cyan-400 to-transparent" />
+            <div className="flex items-center gap-2 text-sm mt-4" style={{ color: "var(--text-muted)" }}>
+              <span className="w-8 h-px" style={{ background: "linear-gradient(to right, var(--accent), transparent)" }} />
               <span>Based in Pune · Comfortable across time zones</span>
             </div>
           </div>

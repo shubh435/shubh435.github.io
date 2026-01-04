@@ -1,50 +1,36 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { FiMoon, FiSun } from "react-icons/fi";
-
-type ThemeMode = "dark" | "light";
-
-const storageKey = "portfolio-theme";
+import { useTheme } from "../context/ThemeContext";
 
 const ThemeToggle: React.FC = () => {
-  const [theme, setTheme] = useState<ThemeMode>(() => {
-    if (typeof window === "undefined") {
-      return "dark";
-    }
-    const stored = window.localStorage.getItem(storageKey) as ThemeMode | null;
-    if (stored) {
-      return stored;
-    }
-    const prefersDark = window.matchMedia(
-      "(prefers-color-scheme: dark)"
-    ).matches;
-    return prefersDark ? "dark" : "light";
-  });
-
-  useEffect(() => {
-    const root = document.documentElement;
-    root.dataset.theme = theme;
-    if (theme === "dark") {
-      root.classList.add("dark");
-    } else {
-      root.classList.remove("dark");
-    }
-    window.localStorage.setItem(storageKey, theme);
-  }, [theme]);
-
-  const toggleTheme = () => {
-    setTheme((prev) => (prev === "dark" ? "light" : "dark"));
-  };
+  const { theme, toggleTheme } = useTheme();
 
   return (
     <button
       type="button"
       onClick={toggleTheme}
-      className="ml-3 flex items-center gap-2 rounded-full border border-white/20 px-3 py-1 text-white transition hover:border-cyan-400 hover:text-cyan-300"
+      className="ml-3 flex items-center gap-2 rounded-full border px-3 py-1.5 transition-all duration-200"
+      style={{
+        borderColor: "var(--border-subtle)",
+        color: "var(--text-primary)",
+      }}
+      onMouseEnter={(e) => {
+        e.currentTarget.style.borderColor = "var(--accent)";
+        e.currentTarget.style.color = "var(--accent)";
+      }}
+      onMouseLeave={(e) => {
+        e.currentTarget.style.borderColor = "var(--border-subtle)";
+        e.currentTarget.style.color = "var(--text-primary)";
+      }}
       aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
     >
-      {theme === "dark" ? <FiSun size={16} /> : <FiMoon size={16} />}
+      {theme === "dark" ? (
+        <FiSun size={16} className="transition-transform hover:rotate-45" />
+      ) : (
+        <FiMoon size={16} className="transition-transform hover:rotate-12" />
+      )}
       <span className="text-sm font-medium capitalize">
-        {theme !== "dark" ? "dark" : "light"} mode
+        {theme === "dark" ? "Light" : "Dark"}
       </span>
     </button>
   );
