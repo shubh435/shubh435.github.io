@@ -80,6 +80,7 @@ const SkillSection = () => {
                   : {
                       borderColor: "var(--border-subtle)",
                       color: "var(--text-muted)",
+                      background: "var(--bg-card)",
                     }
               }
               onMouseEnter={(e) => {
