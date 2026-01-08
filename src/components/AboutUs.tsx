@@ -39,7 +39,7 @@ const AboutUs: React.FC = () => {
       <div className="max-w-4xl mx-auto flex flex-col gap-6 text-center md:text-left">
         {/* Section Header */}
         <div className="space-y-2">
-          <p className="text-sm uppercase tracking-[0.3em] font-medium" style={{ color: "var(--accent)" }}>
+          <p className="text-sm uppercase tracking-[0.3em] font-medium" style={{ color: "var(--accent-text)" }}>
             About Me
           </p>
           <h2 id="about-heading" className="text-3xl md:text-4xl font-bold">

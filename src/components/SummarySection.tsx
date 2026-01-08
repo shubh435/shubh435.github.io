@@ -42,7 +42,7 @@ function SummarySection() {
       <div className="max-w-6xl mx-auto space-y-6">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
           <div className="space-y-1">
-            <p className="text-xs uppercase tracking-[0.3em] font-medium" style={{ color: "var(--accent)" }}>
+            <p className="text-xs uppercase tracking-[0.3em] font-medium" style={{ color: "var(--accent-text)" }}>
               Snapshot
             </p>
             <h2 id="summary-heading" className="text-2xl md:text-3xl font-bold">
@@ -58,7 +58,7 @@ function SummarySection() {
         <div className="grid lg:grid-cols-[1.15fr,0.85fr] gap-6 items-stretch">
           {/* Quick Highlights - Scannable List */}
           <div className="surface-card rounded-2xl p-6 shadow-xl h-full" style={{ border: "1px solid var(--border-subtle)" }}>
-            <h3 className="text-lg font-semibold mb-4 flex items-center gap-2" style={{ color: "var(--accent)" }}>
+            <h3 className="text-lg font-semibold mb-4 flex items-center gap-2" style={{ color: "var(--accent-text)" }}>
               <span
                 className="w-2 h-2 rounded-full"
                 style={{ background: "var(--accent)" }}
@@ -88,7 +88,7 @@ function SummarySection() {
           </div>
 
           <div className="surface-card rounded-2xl p-6 h-full flex flex-col gap-4" style={{ border: "1px solid var(--border-subtle)" }}>
-            <h3 className="text-lg font-semibold" style={{ color: "var(--accent)" }}>
+            <h3 className="text-lg font-semibold" style={{ color: "var(--accent-text)" }}>
               Delivery Style
             </h3>
             <div className="space-y-3" style={{ color: "var(--text-muted)" }}>
@@ -131,7 +131,7 @@ function SummarySection() {
         {/* What I focus on */}
         <div className="grid md:grid-cols-2 gap-6 items-stretch">
           <div className="surface-card rounded-2xl p-6 h-full" style={{ border: "1px solid var(--border-subtle)" }}>
-            <h3 className="text-lg font-semibold mb-3" style={{ color: "var(--accent)" }}>
+            <h3 className="text-lg font-semibold mb-3" style={{ color: "var(--accent-text)" }}>
               What I Focus On
             </h3>
             <ul className="space-y-3 text-left" style={{ color: "var(--text-muted)" }}>
@@ -150,7 +150,7 @@ function SummarySection() {
 
           <div className="surface-card rounded-2xl p-6 h-full flex flex-col justify-between" style={{ border: "1px solid var(--border-subtle)" }}>
             <div className="space-y-3">
-              <h3 className="text-lg font-semibold" style={{ color: "var(--accent)" }}>
+              <h3 className="text-lg font-semibold" style={{ color: "var(--accent-text)" }}>
                 Let&apos;s Build Something
               </h3>
               <p className="text-lg leading-relaxed" style={{ color: "var(--text-muted)" }}>

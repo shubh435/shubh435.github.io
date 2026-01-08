@@ -186,7 +186,7 @@ const Footer: React.FC = () => {
             <a
               href="mailto:shubhamsarode435@gmail.com"
               className="hover:underline"
-              style={{ color: "var(--accent)" }}
+              style={{ color: "var(--accent-text)" }}
             >
               shubhamsarode435@gmail.com
             </a>
@@ -305,7 +305,7 @@ const Footer: React.FC = () => {
             </div>
             <p className="text-xs" style={{ color: "var(--text-muted)" }}>
               Subject auto-fills as:{" "}
-              <span style={{ color: "var(--accent)" }}>{subjectValue}</span>
+              <span style={{ color: "var(--accent-text)" }}>{subjectValue}</span>
             </p>
             <MotionButton
               type="submit"
@@ -338,7 +338,7 @@ const Footer: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-semibold"
-                style={{ color: "var(--accent)" }}
+                style={{ color: "var(--accent-text)" }}
               >
                 Book a 20-min slot
               </a>

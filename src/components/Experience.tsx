@@ -58,7 +58,7 @@ const Experience: React.FC = () => {
                     <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
                       <div>
                         <h3 className="text-xl font-bold mb-1">{exp.title}</h3>
-                        <div className="font-semibold" style={{ color: "var(--accent)" }}>{exp.company}</div>
+                        <div className="font-semibold" style={{ color: "var(--accent-text)" }}>{exp.company}</div>
                       </div>
                       <div className="text-sm md:text-right mt-4 md:mt-0" style={{ color: "var(--text-muted)" }}>
                         <div className="mb-1">{exp.period}</div>

@@ -56,7 +56,7 @@ export default function FreelancingPage() {
           <div className="max-w-3xl space-y-6 text-center lg:text-left">
             <p
               className="text-sm font-semibold uppercase tracking-[0.35em]"
-              style={{ color: "var(--accent)" }}
+              style={{ color: "var(--accent-text)" }}
             >
               Freelance Services
             </p>
@@ -86,7 +86,7 @@ export default function FreelancingPage() {
                 className="btn-secondary inline-flex w-full items-center justify-center rounded-lg px-6 py-3 text-base font-semibold transition sm:w-auto"
                 style={{
                   border: "1px solid var(--accent)",
-                  color: "var(--accent)",
+                  color: "var(--accent-text)",
                   background: "transparent",
                 }}
               >

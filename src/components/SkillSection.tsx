@@ -54,7 +54,7 @@ const SkillSection = () => {
     >
       <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between mb-6">
         <div>
-          <p className="text-sm uppercase tracking-[0.3em] font-medium" style={{ color: "var(--accent)" }}>
+          <p className="text-sm uppercase tracking-[0.3em] font-medium" style={{ color: "var(--accent-text)" }}>
             Skills
           </p>
           <h2 id="skills-heading" className="text-3xl font-semibold">
@@ -74,7 +74,7 @@ const SkillSection = () => {
                 activeGroup === group
                   ? {
                       borderColor: "var(--accent)",
-                      color: "var(--accent)",
+                      color: "var(--accent-text)",
                       background: "rgba(6, 182, 212, 0.1)",
                     }
                   : {

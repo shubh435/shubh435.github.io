@@ -23,6 +23,7 @@ html {
   /* Accent Colors */
   --accent: #06b6d4;
   --accent-strong: #0891b2;
+  --accent-text: #0e7490; /* Darker cyan for WCAG AA contrast (4.5:1+) */
   --accent-gradient: linear-gradient(135deg, #06b6d4 0%, #3b82f6 60%, #6366f1 100%);
 
   /* Borders & Dividers */
@@ -54,6 +55,7 @@ html {
   /* Accent Colors - Same as dark mode */
   --accent: #06b6d4;
   --accent-strong: #0891b2;
+  --accent-text: #0e7490; /* Darker cyan for WCAG AA contrast on white */
   --accent-gradient: linear-gradient(135deg, #06b6d4 0%, #3b82f6 60%, #6366f1 100%);
 
   /* Borders & Dividers - Darker for light mode */
