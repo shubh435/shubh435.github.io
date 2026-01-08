@@ -41,8 +41,9 @@ class Slider extends React.PureComponent<SliderProps, SliderState> {
       1000
     );
     const renderer = new THREE.WebGLRenderer({ antialias: true });
+    const pixelRatio = Math.min(window.devicePixelRatio, 1.5);
+    renderer.setPixelRatio(pixelRatio);
     renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.setPixelRatio(window.devicePixelRatio);
     renderer.outputEncoding = THREE.sRGBEncoding;
     this.starsRef.current?.appendChild(renderer.domElement);
 
@@ -62,7 +63,7 @@ class Slider extends React.PureComponent<SliderProps, SliderState> {
     });
 
     const starVertices = [];
-    for (let i = 0; i < 10000; i++) {
+    for (let i = 0; i < 2500; i++) {
       const x = THREE.MathUtils.randFloatSpread(2000);
       const y = THREE.MathUtils.randFloatSpread(2000);
       const z = THREE.MathUtils.randFloatSpread(2000);
@@ -97,8 +98,9 @@ class Slider extends React.PureComponent<SliderProps, SliderState> {
       1000
     );
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    const pixelRatio = Math.min(window.devicePixelRatio, 1.5);
+    renderer.setPixelRatio(pixelRatio);
     renderer.setSize(window.innerWidth / 1.5, window.innerHeight / 1.5); // Increase size of renderer
-    renderer.setPixelRatio(window.devicePixelRatio);
     renderer.outputEncoding = THREE.sRGBEncoding;
     this.globeRef.current?.appendChild(renderer.domElement);
 
@@ -110,7 +112,7 @@ class Slider extends React.PureComponent<SliderProps, SliderState> {
     ).texture;
 
     // Create a sphere geometry for the globe with increased radius
-    const geometry = new THREE.SphereGeometry(2, 32, 32); // Increase the size from 1 to 2
+    const geometry = new THREE.SphereGeometry(2, 24, 24); // Slightly lighter mesh than the previous 32 segments
 
     // Load a texture for the globe
     const textureLoader = new THREE.TextureLoader();

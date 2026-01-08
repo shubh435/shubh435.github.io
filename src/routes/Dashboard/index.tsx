@@ -14,6 +14,7 @@ import Testimonials from "../../components/Testimonials";
 import ParallaxShowcase from "../../components/ParallaxShowcase";
 import BlogSection from "../../components/BlogSection";
 import SummarySection from "../../components/SummarySection";
+import { backgroundMedia } from "../../assets/assets";
 const HelmetWithChildren: React.FC<{ children?: React.ReactNode }> = ({
   children,
 }) => (
@@ -97,6 +98,12 @@ const Dashboard: React.FC = () => {
         />
         <meta name="author" content="Shubham Sarode" />
         <link rel="canonical" href="https://shubh435.github.io/" />
+        <link
+          rel="preload"
+          as="image"
+          href={backgroundMedia.parallax}
+          fetchPriority="high"
+        />
 
         {/* Open Graph for Facebook / LinkedIn */}
         <meta

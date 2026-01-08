@@ -23,7 +23,8 @@ const ParallaxShowcase: React.FC<ParallaxShowcaseProps> = ({ navigate }) => {
           src={backgroundMedia.parallax}
           alt=""
           className="h-full w-full object-cover"
-          loading="lazy"
+          loading="eager"
+          fetchPriority="high"
           decoding="async"
         />
         <div className="absolute inset-0 bg-black/70"></div>
