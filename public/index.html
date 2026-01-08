@@ -3,6 +3,12 @@
 
 <head>
   <meta charset="utf-8" />
+
+  <!-- DNS prefetch for faster resource loading -->
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
@@ -10,6 +16,12 @@
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'" />
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" /></noscript>
+
+  <!-- Inline critical CSS for LCP image (instant render) -->
+  <style>
+    .parallax-image{will-change:transform;transform:translateZ(0)}
+    .parallax-image img{content-visibility:auto}
+  </style>
 
   <link rel="icon" type="image/svg+xml" href="%PUBLIC_URL%/favicon.svg" />
   <link rel="alternate icon" type="image/png" href="%PUBLIC_URL%/sslogo.png" />
@@ -72,13 +84,19 @@
       }
     </script>
 
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-C2GZKMCJSJ"></script>
+  <!-- Defer Google Analytics to not block render -->
   <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
+    window.addEventListener('load', function() {
+      var script = document.createElement('script');
+      script.async = true;
+      script.src = 'https://www.googletagmanager.com/gtag/js?id=G-C2GZKMCJSJ';
+      document.head.appendChild(script);
 
-    gtag('config', 'G-C2GZKMCJSJ');
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-C2GZKMCJSJ');
+    });
   </script>
 </head>
 

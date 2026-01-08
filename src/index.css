@@ -601,3 +601,24 @@ html {
 :root[data-theme="light"] ::-webkit-scrollbar-track {
   background: rgba(15, 23, 42, 0.05);
 }
+
+/* ========================================
+   PERFORMANCE OPTIMIZATION: CSS Parallax
+   ======================================== */
+/* Pure CSS parallax - no JavaScript blocking render */
+.parallax-image {
+  will-change: transform;
+  transform: translateZ(0); /* GPU acceleration */
+}
+
+/* Smooth parallax on scroll using CSS only */
+@media (prefers-reduced-motion: no-preference) {
+  .parallax-image {
+    transform: translate3d(0, -10%, 0);
+  }
+}
+
+/* Content containment for better performance */
+.parallax-image img {
+  content-visibility: auto;
+}

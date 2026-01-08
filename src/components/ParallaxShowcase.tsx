@@ -1,6 +1,5 @@
 import React, { useRef } from "react";
 import { backgroundMedia } from "../assets/assets";
-import { motion, useScroll, useTransform } from "framer-motion";
 import { navigateTo } from "../utils/utils";
 import withRouter from "../utils/withRouter";
 
@@ -10,15 +9,11 @@ interface ParallaxShowcaseProps {
 
 const ParallaxShowcase: React.FC<ParallaxShowcaseProps> = ({ navigate }) => {
   const sectionRef = useRef<HTMLDivElement | null>(null);
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start end", "end start"],
-  });
-  const y = useTransform(scrollYProgress, [0, 1], ["-20%", "10%"]);
 
   return (
     <section ref={sectionRef} className="relative isolate pb-16">
-      <motion.div style={{ y }} className="absolute inset-0 -z-10" aria-hidden>
+      {/* CSS-based parallax - much faster than JS */}
+      <div className="absolute inset-0 -z-10 parallax-image" aria-hidden="true">
         <picture>
           <source srcSet={backgroundMedia.parallaxWebP} type="image/webp" />
           <img
@@ -31,7 +26,7 @@ const ParallaxShowcase: React.FC<ParallaxShowcaseProps> = ({ navigate }) => {
           />
         </picture>
         <div className="absolute inset-0 bg-black/70"></div>
-      </motion.div>
+      </div>
       <div className="mx-auto flex max-w-5xl flex-col gap-6 px-6 py-16 text-center text-white">
         <p className="text-sm uppercase tracking-[0.4em] text-cyan-300">
           Why hire me
