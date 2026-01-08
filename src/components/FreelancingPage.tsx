@@ -217,7 +217,7 @@ export default function FreelancingPage() {
                 >
                   <img
                     src={platform.image}
-                    alt=""
+                    alt={platform.alt}
                     className="h-full w-full object-contain"
                     loading="lazy"
                     decoding="async"

@@ -66,22 +66,23 @@ function SummarySection() {
               ></span>
               Quick Highlights
             </h3>
-            <ul className="space-y-3" role="list">
+            <ul className="space-y-3">
               {highlights.map((item, index) => (
-                <MotionDiv
-                  key={index}
-                  className="flex items-center gap-3 text-base transition-colors"
-                  style={{ color: "var(--text-muted)" }}
-                  onMouseEnter={(e) => e.currentTarget.style.color = "var(--text-primary)"}
-                  onMouseLeave={(e) => e.currentTarget.style.color = "var(--text-muted)"}
-                  custom={index + 4}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true }}
-                >
-                  <span className="text-lg flex-shrink-0">{item.icon}</span>
-                  <span>{item.text}</span>
-                </MotionDiv>
+                <li key={index}>
+                  <MotionDiv
+                    className="flex items-center gap-3 text-base transition-colors"
+                    style={{ color: "var(--text-muted)" }}
+                    onMouseEnter={(e) => e.currentTarget.style.color = "var(--text-primary)"}
+                    onMouseLeave={(e) => e.currentTarget.style.color = "var(--text-muted)"}
+                    custom={index + 4}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                  >
+                    <span className="text-lg flex-shrink-0">{item.icon}</span>
+                    <span>{item.text}</span>
+                  </MotionDiv>
+                </li>
               ))}
             </ul>
           </div>
@@ -133,7 +134,7 @@ function SummarySection() {
             <h3 className="text-lg font-semibold mb-3" style={{ color: "var(--accent)" }}>
               What I Focus On
             </h3>
-            <ul className="space-y-3 text-left" style={{ color: "var(--text-muted)" }} role="list">
+            <ul className="space-y-3 text-left" style={{ color: "var(--text-muted)" }}>
               {focusAreas.map((item) => (
                 <li key={item} className="flex items-start gap-3">
                   <span
