@@ -88,7 +88,7 @@ const Testimonials: React.FC = () => {
             </div>
 
             {/* Rating Stars */}
-            <div className="flex gap-1 mb-4" aria-label="5 star rating">
+            <div className="flex gap-1 mb-4" role="img" aria-label="5 star rating">
               {[...Array(5)].map((_, i) => (
                 <FaStar key={i} className="text-yellow-400 text-sm" aria-hidden="true" />
               ))}
