@@ -25,13 +25,12 @@ const HelmetWithChildren: React.FC<{ children?: React.ReactNode }> = ({
 
 const MotionBox = motion(Box);
 
-// Common animation variant
+// Optimized animation variant - reduced complexity
 const fadeInUp = {
-  hidden: { opacity: 0, y: 40 },
+  hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    y: 0,
-    transition: { duration: 0.6, ease: [0.16, 0.84, 0.44, 1] },
+    transition: { duration: 0.4 },
   },
 };
 

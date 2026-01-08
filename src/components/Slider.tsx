@@ -1,13 +1,15 @@
 import { Box, Button, Container, Grid, Typography } from "@mui/material";
 import React from "react";
-import * as THREE from "three";
-import { RoomEnvironment } from "three/examples/jsm/environments/RoomEnvironment.js";
 import { backgroundMedia } from "../assets/assets";
 import { IoIosEye } from "react-icons/io";
 import { motion } from "framer-motion";
 import withRouter from "../utils/withRouter";
 import { navigateTo } from "../utils/utils";
 import "./style.css";
+
+// Lazy load Three.js to reduce initial bundle size
+let THREE: any = null;
+let RoomEnvironment: any = null;
 interface SliderProps {
   navigate: (text: string) => void;
 }
@@ -25,6 +27,9 @@ const MotionButton = motion(Button);
 class Slider extends React.PureComponent<SliderProps, SliderState> {
   starsRef: React.RefObject<HTMLDivElement>;
   globeRef: React.RefObject<HTMLDivElement>;
+  private isMountedFlag = false;
+  private idleCallbackId?: number;
+  private fallbackTimeoutId?: number;
 
   constructor(props: SliderProps) {
     super(props);
@@ -34,6 +39,7 @@ class Slider extends React.PureComponent<SliderProps, SliderState> {
   }
 
   generateStars = () => {
+    if (!THREE || !this.starsRef.current) return;
     const camera = new THREE.PerspectiveCamera(
       75,
       window.innerWidth / window.innerHeight,
@@ -91,6 +97,7 @@ class Slider extends React.PureComponent<SliderProps, SliderState> {
   };
 
   renderGlobe = () => {
+    if (!THREE || !RoomEnvironment || !this.globeRef.current) return;
     const camera = new THREE.PerspectiveCamera(
       75,
       window.innerWidth / window.innerHeight,
@@ -154,9 +161,46 @@ class Slider extends React.PureComponent<SliderProps, SliderState> {
     animateGlobe();
   };
 
+  async loadThreeJS() {
+    if (!THREE) {
+      const threeModule = await import("three");
+      THREE = threeModule;
+      const { RoomEnvironment: RoomEnv } = await import(
+        "three/examples/jsm/environments/RoomEnvironment.js"
+      );
+      RoomEnvironment = RoomEnv;
+    }
+  }
+
   componentDidMount(): void {
-    this.generateStars();
-    this.renderGlobe();
+    this.isMountedFlag = true;
+    // Defer Three.js loading to not block main thread
+    const initThreeJS = async () => {
+      await this.loadThreeJS();
+      if (!this.isMountedFlag) return;
+      this.generateStars();
+      this.renderGlobe();
+    };
+
+    // Use requestIdleCallback to defer heavy work
+    if ("requestIdleCallback" in window) {
+      (window as any).requestIdleCallback(initThreeJS, {
+        timeout: 2000,
+      });
+    } else {
+      // Fallback for browsers without requestIdleCallback
+      setTimeout(initThreeJS, 100);
+    }
+  }
+
+  componentWillUnmount(): void {
+    this.isMountedFlag = false;
+    if (this.idleCallbackId && "cancelIdleCallback" in window) {
+      (window as any).cancelIdleCallback(this.idleCallbackId);
+    }
+    if (this.fallbackTimeoutId) {
+      window.clearTimeout(this.fallbackTimeoutId);
+    }
   }
 
   render() {
