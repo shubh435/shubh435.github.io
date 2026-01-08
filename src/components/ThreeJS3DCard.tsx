@@ -1,4 +1,4 @@
-import React, { useMemo, useState, Suspense } from "react";
+import React, { useMemo, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import withRouter from "../utils/withRouter";
 import {
