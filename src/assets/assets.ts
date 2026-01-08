@@ -16,11 +16,13 @@ import fiverrLogo from "./fiverr-1.svg";
 import freelancerLogo from "./freelancer-.jpg";
 import gingeeGrainsImage from "./GingeeGrains.png";
 import globeImage from "./Shubham_glob.jpeg";
+import globeImageWebP from "./Shubham_glob.webp";
 import lipSyncPreview from "./lypsync.mp4";
 import logoImage from "./sslogo.png";
 import menuTabsImage from "./Shubham_Menu.png";
 import movieAppImage from "./Shubham_Moview_app.png";
 import parallaxImage from "./Shubham_Parallex.jpg";
+import parallaxImageWebP from "./Shubham_Parallex.webp";
 import physiotherapyImage from "./shubham_physiotherapy_demo.png";
 import responsiveStartupImage from "./Shubham_Responsive_img.png";
 import sliderStarImage from "./Shubham_star.png";
@@ -69,8 +71,10 @@ export type ProjectMediaKey = keyof typeof projectMedia;
 
 export const backgroundMedia = {
   globe: globeImage,
+  globeWebP: globeImageWebP,
   star: sliderStarImage,
   parallax: parallaxImage,
+  parallaxWebP: parallaxImageWebP,
   textTexture: textBackgroundImage,
 } as const;
 

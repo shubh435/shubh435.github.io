@@ -101,6 +101,13 @@ const Dashboard: React.FC = () => {
         <link
           rel="preload"
           as="image"
+          href={backgroundMedia.parallaxWebP}
+          type="image/webp"
+          fetchPriority="high"
+        />
+        <link
+          rel="preload"
+          as="image"
           href={backgroundMedia.parallax}
           fetchPriority="high"
         />

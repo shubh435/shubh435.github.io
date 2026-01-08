@@ -19,14 +19,17 @@ const ParallaxShowcase: React.FC<ParallaxShowcaseProps> = ({ navigate }) => {
   return (
     <section ref={sectionRef} className="relative isolate pb-16">
       <motion.div style={{ y }} className="absolute inset-0 -z-10" aria-hidden>
-        <img
-          src={backgroundMedia.parallax}
-          alt=""
-          className="h-full w-full object-cover"
-          loading="eager"
-          fetchPriority="high"
-          decoding="async"
-        />
+        <picture>
+          <source srcSet={backgroundMedia.parallaxWebP} type="image/webp" />
+          <img
+            src={backgroundMedia.parallax}
+            alt=""
+            className="h-full w-full object-cover"
+            loading="eager"
+            fetchPriority="high"
+            decoding="async"
+          />
+        </picture>
         <div className="absolute inset-0 bg-black/70"></div>
       </motion.div>
       <div className="mx-auto flex max-w-5xl flex-col gap-6 px-6 py-16 text-center text-white">
