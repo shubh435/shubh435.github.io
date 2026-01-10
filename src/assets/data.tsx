@@ -506,6 +506,36 @@ export const projectdata: ProjectData[] = [
       "Built a comprehensive financial planner with SIP calculations, goal-based investment recommendations, progress tracking dashboards, and multiple risk-profile strategies to help users visualize their path to financial freedom.",
     role: "Full-stack development including UI/UX design, Firebase integration for authentication and data persistence, SIP calculation algorithms, and responsive dashboard implementation.",
   },
+  {
+    id: 28,
+    projectName: "Gourmet Italian Food",
+    projectImage: sharedMedia.fallback,
+    description:
+      "Restaurant microsite built for a premium Italian kitchen (demo experience). Highlights chef specials, seasonal tasting menus, and gallery-driven storytelling with calls-to-action for reservations and catering inquiries.",
+    moreDes: "Developed by Shubham Sarode",
+    subheader: "2024",
+    sourceCodeLink: "private",
+    tryLink: "https://gourmet-italian-food.vercel.app/",
+    rating: 4.2,
+    category: "Web",
+    technology: "Next.js | Tailwind",
+    techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
+  },
+  {
+    id: 29,
+    projectName: "Hitchki Restaurant Experience",
+    projectImage: sharedMedia.fallback,
+    description:
+      "High-energy hospitality site showcasing Hitchki’s menu, ambience, and events (demo experience). Features hero storytelling, curated signature dishes, and location/contact sections tuned for quick table bookings.",
+    moreDes: "Developed by Shubham Sarode",
+    subheader: "2024",
+    sourceCodeLink: "private",
+    tryLink: "https://hitchki-xi.vercel.app/",
+    rating: 4.3,
+    category: "Web",
+    technology: "Next.js | Tailwind",
+    techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Animations"],
+  },
 ];
 
 export const experiences = [
