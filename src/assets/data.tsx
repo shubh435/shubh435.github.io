@@ -509,7 +509,7 @@ export const projectdata: ProjectData[] = [
   {
     id: 28,
     projectName: "Gourmet Italian Food",
-    projectImage: sharedMedia.fallback,
+    projectImage: projectMedia.orosImage,
     description:
       "Restaurant microsite built for a premium Italian kitchen (demo experience). Highlights chef specials, seasonal tasting menus, and gallery-driven storytelling with calls-to-action for reservations and catering inquiries.",
     moreDes: "Developed by Shubham Sarode",
@@ -524,7 +524,7 @@ export const projectdata: ProjectData[] = [
   {
     id: 29,
     projectName: "Hitchki Restaurant Experience",
-    projectImage: sharedMedia.fallback,
+    projectImage: projectMedia.hitchkiImage,
     description:
       "High-energy hospitality site showcasing Hitchki’s menu, ambience, and events (demo experience). Features hero storytelling, curated signature dishes, and location/contact sections tuned for quick table bookings.",
     moreDes: "Developed by Shubham Sarode",
@@ -554,8 +554,7 @@ export const projectdata: ProjectData[] = [
       "Needed a polished landing experience to showcase the lounge ambience and drive online food orders and menu views.",
     solution:
       "Built a lightweight Next.js site with bold hero imagery, direct Swiggy/menu calls-to-action, and clear operating details for quick decision making.",
-    role:
-      "Designed and implemented the landing experience, optimized responsive layout, and tuned imagery for fast first paint.",
+    role: "Designed and implemented the landing experience, optimized responsive layout, and tuned imagery for fast first paint.",
   },
 ];
 

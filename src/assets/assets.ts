@@ -37,6 +37,8 @@ import realEstatePrimaryImage from "./RealEstateShubham.png";
 import realEstateSecondaryImage from "./realEstate2Shubham.png";
 import dreamPlanImage from "./Shubham_DreamPlan.png";
 import mediminderImage from "./shubham_medireminder.png";
+import orosImage from "./oros_shubham.png";
+import hitchkiImage from "./shubham_hitchki.png";
 
 export const projectMedia = {
   doctorMobile: doctorMobileImage,
@@ -47,6 +49,8 @@ export const projectMedia = {
   bandTemplate: bandTemplateImage,
   ecommerceStorefront: ecommerceImage,
   eternityEats: eternityEatsImage,
+  orosImage: orosImage,
+  hitchkiImage: hitchkiImage,
   colorFlipper: colorFlipperImage,
   movieApp: movieAppImage,
   university: universityImage,
