@@ -11,6 +11,7 @@ import cricketCraftImage from "./shubham_cricket_Craft.png";
 import doctorMobileImage from "./Shubham_doctor_app.png";
 import doctorWebImage from "./doctorWebShubham.png";
 import ecommerceImage from "./Shubham_Eccomerce.png";
+import eternityEatsImage from "./Shubham_Eternity_Eats.png";
 import fallbackImage from "./shubham_no_Image_found.jpg";
 import fiverrLogo from "./fiverr-1.svg";
 import freelancerLogo from "./freelancer-.jpg";
@@ -45,6 +46,7 @@ export const projectMedia = {
   cocktailExplorer: cocktailExplorerImage,
   bandTemplate: bandTemplateImage,
   ecommerceStorefront: ecommerceImage,
+  eternityEats: eternityEatsImage,
   colorFlipper: colorFlipperImage,
   movieApp: movieAppImage,
   university: universityImage,

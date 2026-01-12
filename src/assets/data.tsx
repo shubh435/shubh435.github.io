@@ -536,6 +536,27 @@ export const projectdata: ProjectData[] = [
     technology: "Next.js | Tailwind",
     techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Animations"],
   },
+  {
+    id: 30,
+    projectName: "Eternity Eats - Aura Restro Lounge",
+    projectImage: projectMedia.eternityEats,
+    description:
+      "Restaurant microsite for Aura Restro Lounge with hero ordering CTAs, menu preview, gallery-ready layout, and contact/hours surfaced up front. Built for fast conversions from Swiggy and direct calls.",
+    moreDes: "Developed by Shubham Sarode",
+    subheader: "Current",
+    sourceCodeLink: "private",
+    tryLink: "https://eternity-eats.vercel.app/",
+    rating: 4.4,
+    category: "Web",
+    technology: "Next.js | Tailwind",
+    techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Animations"],
+    problem:
+      "Needed a polished landing experience to showcase the lounge ambience and drive online food orders and menu views.",
+    solution:
+      "Built a lightweight Next.js site with bold hero imagery, direct Swiggy/menu calls-to-action, and clear operating details for quick decision making.",
+    role:
+      "Designed and implemented the landing experience, optimized responsive layout, and tuned imagery for fast first paint.",
+  },
 ];
 
 export const experiences = [
