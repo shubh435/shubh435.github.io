@@ -1,9 +1,9 @@
 {
   "files": {
-    "main.css": "/static/css/main.f0ecc0be.css",
-    "main.js": "/static/js/main.b49d8692.js",
+    "main.css": "/static/css/main.02279527.css",
+    "main.js": "/static/js/main.5b701ed1.js",
     "static/css/216.874eaab5.chunk.css": "/static/css/216.874eaab5.chunk.css",
-    "static/js/216.fed7b192.chunk.js": "/static/js/216.fed7b192.chunk.js",
+    "static/js/216.d7e92bbb.chunk.js": "/static/js/216.d7e92bbb.chunk.js",
     "static/css/615.15564326.chunk.css": "/static/css/615.15564326.chunk.css",
     "static/js/615.291f3118.chunk.js": "/static/js/615.291f3118.chunk.js",
     "static/css/856.1906aa2b.chunk.css": "/static/css/856.1906aa2b.chunk.css",
@@ -14,14 +14,17 @@
     "static/js/445.6f7093a2.chunk.js": "/static/js/445.6f7093a2.chunk.js",
     "static/js/771.77565b17.chunk.js": "/static/js/771.77565b17.chunk.js",
     "static/js/367.a98c8052.chunk.js": "/static/js/367.a98c8052.chunk.js",
-    "static/js/363.6dcd4d7c.chunk.js": "/static/js/363.6dcd4d7c.chunk.js",
+    "static/js/996.48a7e49b.chunk.js": "/static/js/996.48a7e49b.chunk.js",
     "static/media/RealEstateShubham.png": "/static/media/RealEstateShubham.4200de66760260fb07c6.png",
     "static/media/lypsync.mp4": "/static/media/lypsync.acbcd163c371b2e143e9.mp4",
+    "static/media/shubham_hitchki.png": "/static/media/shubham_hitchki.4377011a51540c4c24fd.png",
     "static/media/Shubham_Moview_app.png": "/static/media/Shubham_Moview_app.f4f1c0d1c1ccf9148328.png",
     "static/media/Shubham_University.png": "/static/media/Shubham_University.3d91ddb29e32735c3fb6.png",
+    "static/media/Shubham_Eternity_Eats.png": "/static/media/Shubham_Eternity_Eats.cea23a6b0c01ccc0bdf8.png",
     "static/media/shubham_cricket_Craft.png": "/static/media/shubham_cricket_Craft.799c556ee4c66b19c3ce.png",
     "static/media/Shubham_Cocktail.png": "/static/media/Shubham_Cocktail.83e6f451df253d257ba3.png",
     "static/media/Shubham_cofee.png": "/static/media/Shubham_cofee.420e8be1dc61c349fd2a.png",
+    "static/media/oros_shubham.png": "/static/media/oros_shubham.dccfbf9992a4ba54009d.png",
     "static/media/Shubham_Travel.png": "/static/media/Shubham_Travel.8dbd6dd48735db600e29.png",
     "static/media/realEstate2Shubham.png": "/static/media/realEstate2Shubham.95968552571b64641ff2.png",
     "static/media/Bannar Big.svg": "/static/media/Bannar Big.786149cd4e3ffb6d104369fe141fc460.svg",
@@ -61,10 +64,10 @@
     "index.html": "/index.html",
     "static/media/fiverr-1.svg": "/static/media/fiverr-1.fa5fb83fb5737faccbe5078af8970901.svg",
     "static/media/upwork.svg": "/static/media/upwork.58ab2b206b333195261e5b7b5253fc1d.svg",
-    "main.f0ecc0be.css.map": "/static/css/main.f0ecc0be.css.map",
-    "main.b49d8692.js.map": "/static/js/main.b49d8692.js.map",
+    "main.02279527.css.map": "/static/css/main.02279527.css.map",
+    "main.5b701ed1.js.map": "/static/js/main.5b701ed1.js.map",
     "216.874eaab5.chunk.css.map": "/static/css/216.874eaab5.chunk.css.map",
-    "216.fed7b192.chunk.js.map": "/static/js/216.fed7b192.chunk.js.map",
+    "216.d7e92bbb.chunk.js.map": "/static/js/216.d7e92bbb.chunk.js.map",
     "615.15564326.chunk.css.map": "/static/css/615.15564326.chunk.css.map",
     "615.291f3118.chunk.js.map": "/static/js/615.291f3118.chunk.js.map",
     "856.1906aa2b.chunk.css.map": "/static/css/856.1906aa2b.chunk.css.map",
@@ -75,10 +78,10 @@
     "445.6f7093a2.chunk.js.map": "/static/js/445.6f7093a2.chunk.js.map",
     "771.77565b17.chunk.js.map": "/static/js/771.77565b17.chunk.js.map",
     "367.a98c8052.chunk.js.map": "/static/js/367.a98c8052.chunk.js.map",
-    "363.6dcd4d7c.chunk.js.map": "/static/js/363.6dcd4d7c.chunk.js.map"
+    "996.48a7e49b.chunk.js.map": "/static/js/996.48a7e49b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f0ecc0be.css",
-    "static/js/main.b49d8692.js"
+    "static/css/main.02279527.css",
+    "static/js/main.5b701ed1.js"
   ]
 }
