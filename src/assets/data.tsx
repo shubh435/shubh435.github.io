@@ -508,7 +508,7 @@ export const projectdata: ProjectData[] = [
   },
   {
     id: 28,
-    projectName: "Gourmet Italian Food",
+    projectName: "Demo - Gourmet Italian Food",
     projectImage: projectMedia.orosImage,
     description:
       "Restaurant microsite built for a premium Italian kitchen (demo experience). Highlights chef specials, seasonal tasting menus, and gallery-driven storytelling with calls-to-action for reservations and catering inquiries.",
@@ -523,7 +523,7 @@ export const projectdata: ProjectData[] = [
   },
   {
     id: 29,
-    projectName: "Hitchki Restaurant Experience",
+    projectName: "Demo - Hitchki Restaurant Experience",
     projectImage: projectMedia.hitchkiImage,
     description:
       "High-energy hospitality site showcasing Hitchki’s menu, ambience, and events (demo experience). Features hero storytelling, curated signature dishes, and location/contact sections tuned for quick table bookings.",
@@ -538,7 +538,7 @@ export const projectdata: ProjectData[] = [
   },
   {
     id: 30,
-    projectName: "Eternity Eats - Aura Restro Lounge",
+    projectName: "Demo - Eternity Eats - Aura Restro Lounge",
     projectImage: projectMedia.eternityEats,
     description:
       "Restaurant microsite for Aura Restro Lounge with hero ordering CTAs, menu preview, gallery-ready layout, and contact/hours surfaced up front. Built for fast conversions from Swiggy and direct calls.",
