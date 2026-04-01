@@ -2,6 +2,7 @@ import React from "react";
 import { testimonials } from "../assets/data";
 import { motion } from "framer-motion";
 import { FaQuoteLeft, FaStar, FaLinkedin } from "react-icons/fa";
+import { calculateDateDifference } from "../utils/utils";
 
 const MotionArticle = motion.article;
 
@@ -21,14 +22,14 @@ const cardVariants = {
 const trustStats = [
   { value: "5+", label: "Apps Shipped" },
   { value: "100%", label: "Test Coverage" },
-  { value: "3+", label: "Years Experience" },
+  { value: calculateDateDifference("2022-06-25"), label: "Years Experience" },
   { value: "10+", label: "Happy Clients" },
 ];
 
 const Testimonials: React.FC = () => {
   return (
-    <section 
-      className="py-16 px-5 container mx-auto" 
+    <section
+      className="py-16 px-5 container mx-auto"
       id="testimonial"
       aria-labelledby="testimonials-heading"
     >
@@ -37,7 +38,10 @@ const Testimonials: React.FC = () => {
         <p className="text-sm uppercase tracking-[0.3em] text-cyan-400 font-medium">
           Trust Signals
         </p>
-        <h2 id="testimonials-heading" className="text-3xl md:text-4xl font-bold">
+        <h2
+          id="testimonials-heading"
+          className="text-3xl md:text-4xl font-bold"
+        >
           Testimonials from Clients & Teammates
         </h2>
         <p className="text-muted max-w-3xl mx-auto">
@@ -47,7 +51,7 @@ const Testimonials: React.FC = () => {
       </div>
 
       {/* Trust Stats Bar */}
-      <motion.div 
+      <motion.div
         className="mt-10 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -55,11 +59,13 @@ const Testimonials: React.FC = () => {
         transition={{ duration: 0.5 }}
       >
         {trustStats.map((stat, index) => (
-          <div 
+          <div
             key={index}
             className="surface-card rounded-2xl p-4 text-center border border-white/5"
           >
-            <p className="text-2xl md:text-3xl font-bold text-cyan-400">{stat.value}</p>
+            <p className="text-2xl md:text-3xl font-bold text-cyan-400">
+              {stat.value}
+            </p>
             <p className="text-sm text-muted mt-1">{stat.label}</p>
           </div>
         ))}
@@ -83,14 +89,25 @@ const Testimonials: React.FC = () => {
             aria-label={`Testimonial from ${testimonial.name}`}
           >
             {/* Quote Icon */}
-            <div className="absolute top-4 right-4 text-cyan-500/20 text-4xl" aria-hidden="true">
+            <div
+              className="absolute top-4 right-4 text-cyan-500/20 text-4xl"
+              aria-hidden="true"
+            >
               <FaQuoteLeft />
             </div>
 
             {/* Rating Stars */}
-            <div className="flex gap-1 mb-4" role="img" aria-label="5 star rating">
+            <div
+              className="flex gap-1 mb-4"
+              role="img"
+              aria-label="5 star rating"
+            >
               {[...Array(5)].map((_, i) => (
-                <FaStar key={i} className="text-yellow-400 text-sm" aria-hidden="true" />
+                <FaStar
+                  key={i}
+                  className="text-yellow-400 text-sm"
+                  aria-hidden="true"
+                />
               ))}
             </div>
 
@@ -111,16 +128,14 @@ const Testimonials: React.FC = () => {
                 decoding="async"
               />
               <div className="flex-1 text-left">
-                <cite className="font-semibold not-italic block">{testimonial.name}</cite>
-                <p className="text-sm text-muted">
-                  {testimonial.role}
-                </p>
-                <p className="text-xs text-cyan-400">
-                  {testimonial.company}
-                </p>
+                <cite className="font-semibold not-italic block">
+                  {testimonial.name}
+                </cite>
+                <p className="text-sm text-muted">{testimonial.role}</p>
+                <p className="text-xs text-cyan-400">{testimonial.company}</p>
               </div>
               {/* LinkedIn indicator for credibility */}
-              <div 
+              <div
                 className="text-blue-400 opacity-50 group-hover:opacity-100 transition-opacity"
                 aria-hidden="true"
               >
@@ -129,7 +144,7 @@ const Testimonials: React.FC = () => {
             </footer>
 
             {/* Subtle gradient overlay on hover */}
-            <div 
+            <div
               className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"
               aria-hidden="true"
             />
@@ -138,7 +153,7 @@ const Testimonials: React.FC = () => {
       </div>
 
       {/* CTA to Add Testimonial */}
-      <motion.div 
+      <motion.div
         className="mt-12 text-center"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
