@@ -22,7 +22,7 @@ import { navigateTo } from '../utils/utils';
 import ThemeToggle from './ThemeToggle';
 interface DrawerAppBarProps {
   window?: () => Window;
-  classes?: any;
+  classes?: Record<string, string>;
   navigate: (text: string) => void;
 }
 
@@ -238,7 +238,7 @@ class DrawerAppBar extends React.PureComponent<DrawerAppBarProps, DrawerAppBarSt
     );
   }
 }
-const styles: any = (theme: Theme) => ({
+const styles = (_theme: Theme) => ({
   appbarBackground: {
     background: 'transparent !important',
     top: 0,

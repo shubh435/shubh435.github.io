@@ -16,7 +16,7 @@ const GROUPS: Array<Skill['group'] | 'All'> = [
   'Cloud',
 ];
 
-const levelBadge = (level: Skill['level']) =>
+const levelBadge = (_level: Skill['level']) =>
   'text-[11px] px-2 py-1 rounded-full border font-semibold tracking-wide';
 
 const levelBadgeStyle = (level: Skill['level']) => {

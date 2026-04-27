@@ -112,15 +112,13 @@ const Footer: React.FC = () => {
         process.env.REACT_APP_EMAILJS_PUBLIC_KEY!
       )
       .then(
-        result => {
-          console.log('Email sent successfully!', result.text);
+        () => {
           showToast('Message sent successfully!', 'success');
           formRef.current?.reset();
           setFormValues({ name: '', email: '', message: '', inquiryType: '' });
         },
         error => {
-          console.error('Failed to send email:', error.text);
-          showToast('Failed to send message.', 'error');
+          showToast('Failed to send message.' + JSON.stringify(error), 'error');
         }
       )
       .finally(() => setIsSubmitting(false));

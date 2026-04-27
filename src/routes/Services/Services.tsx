@@ -38,7 +38,6 @@ import { navigateTo } from '../../utils/utils';
 import { brandMedia } from '../../assets/assets';
 
 const MotionDiv = motion.div;
-const MotionSection = motion.section;
 
 const fadeUp = {
   hidden: { opacity: 0, y: 32 },

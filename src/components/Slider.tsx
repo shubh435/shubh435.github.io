@@ -8,7 +8,9 @@ import { navigateTo } from '../utils/utils';
 import './style.css';
 
 // Lazy load Three.js to reduce initial bundle size
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 let THREE: any = null;
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 let RoomEnvironment: any = null;
 interface SliderProps {
   navigate: (text: string) => void;
@@ -177,7 +179,11 @@ class Slider extends React.PureComponent<SliderProps, SliderState> {
 
     // Use requestIdleCallback to defer heavy work
     if ('requestIdleCallback' in window) {
-      (window as any).requestIdleCallback(initThreeJS, {
+      (
+        window as Window & {
+          requestIdleCallback: (cb: () => void, opts?: { timeout: number }) => number;
+        }
+      ).requestIdleCallback(initThreeJS, {
         timeout: 2000,
       });
     } else {
@@ -189,7 +195,9 @@ class Slider extends React.PureComponent<SliderProps, SliderState> {
   componentWillUnmount(): void {
     this.isMountedFlag = false;
     if (this.idleCallbackId && 'cancelIdleCallback' in window) {
-      (window as any).cancelIdleCallback(this.idleCallbackId);
+      (window as Window & { cancelIdleCallback: (id: number) => void }).cancelIdleCallback(
+        this.idleCallbackId
+      );
     }
     if (this.fallbackTimeoutId) {
       window.clearTimeout(this.fallbackTimeoutId);

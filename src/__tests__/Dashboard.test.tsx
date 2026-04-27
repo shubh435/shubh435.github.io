@@ -1,4 +1,4 @@
-import { screen, render } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import Dashboard from '../routes/Dashboard/index';
 
 jest.mock('three/examples/jsm/environments/RoomEnvironment.js', () => {});

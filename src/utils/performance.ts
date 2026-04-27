@@ -13,7 +13,7 @@ export const isLowEndDevice = (): boolean => {
   if (typeof navigator === 'undefined') return false;
 
   // Check for device memory (if available)
-  const memory = (navigator as any).deviceMemory;
+  const memory = (navigator as Navigator & { deviceMemory?: number }).deviceMemory;
   if (memory && memory < 4) return true;
 
   // Check for hardware concurrency (CPU cores)
@@ -45,7 +45,11 @@ export const getAnimationConfig = () => {
 // Defer execution until browser is idle
 export const runWhenIdle = (callback: () => void, timeout = 2000) => {
   if ('requestIdleCallback' in window) {
-    (window as any).requestIdleCallback(callback, { timeout });
+    (
+      window as Window & {
+        requestIdleCallback: (cb: () => void, opts?: { timeout: number }) => number;
+      }
+    ).requestIdleCallback(callback, { timeout });
   } else {
     setTimeout(callback, 100);
   }
