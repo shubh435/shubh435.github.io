@@ -37,7 +37,8 @@ const navItems = [
   { id: 2, name: "About Me", routes: "#about" },
   { id: 3, name: "Skills", routes: "#skill" },
   { id: 4, name: "Projects", routes: "/project" },
-  { id: 5, name: "Contact", routes: "#footer" },
+  { id: 5, name: "Services", routes: "/services" },
+  { id: 6, name: "Contact", routes: "#footer" },
 ];
 
 class DrawerAppBar extends React.PureComponent<
@@ -101,7 +102,7 @@ class DrawerAppBar extends React.PureComponent<
             onClick={() =>
               navigateTo(
                 "https://drive.google.com/uc?export=download&id=1jj2iw1bHdgiWZ-DPCCIwxll1guDj43VK",
-                this.props.navigate
+                this.props.navigate,
               )
             }
             variant="contained"
@@ -209,7 +210,7 @@ class DrawerAppBar extends React.PureComponent<
                   onClick={() =>
                     navigateTo(
                       "https://drive.google.com/uc?export=download&id=1jj2iw1bHdgiWZ-DPCCIwxll1guDj43VK",
-                      this.props.navigate
+                      this.props.navigate,
                     )
                   }
                 >

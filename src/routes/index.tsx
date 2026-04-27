@@ -5,6 +5,7 @@ import PrivacyPolicy from "./PrivacyPolicy";
 import TermCondition from "./TermCondition";
 const Dashboard = React.lazy(() => import("./Dashboard"));
 const Project = React.lazy(() => import("./Project/Project"));
+const Services = React.lazy(() => import("./Services/Services"));
 const KeyboardButton = React.lazy(() => import("../components/KeyboardButton"));
 const NoPageFound = React.lazy(() => import("./NoPageFoundPage"));
 
@@ -39,6 +40,7 @@ class RouteToNavigate extends React.Component<
           <Route path="/" element={<Layout />}>
             <Route index element={<Dashboard />} />
             <Route path="project" element={<Project />} />
+            <Route path="services" element={<Services />} />
           </Route>
           <Route
             path=""
