@@ -127,7 +127,7 @@ class DrawerAppBar extends React.PureComponent<DrawerAppBarProps, DrawerAppBarSt
         }}
       >
         <AppBar
-          className={classes.appbarBackground}
+          className={classes?.appbarBackground}
           component="nav"
           position="fixed"
           sx={{
