@@ -1,10 +1,5 @@
-import React from "react";
-import {
-  Location,
-  NavigateFunction,
-  useLocation,
-  useNavigate,
-} from "react-router-dom";
+import React from 'react';
+import { Location, NavigateFunction, useLocation, useNavigate } from 'react-router-dom';
 
 const withRouter = (Child: any) => {
   return (props: any) => {

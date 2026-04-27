@@ -1,23 +1,21 @@
-import React, { useEffect } from "react";
-import AboutUs from "../../components/AboutUs";
-import Slider from "../../components/Slider";
-import Project from "../../components/Project";
-import SkillSection from "../../components/SkillSection";
-import { Helmet, HelmetProvider } from "react-helmet-async";
-import Achievements from "../../components/Achievment";
-import Experience from "../../components/Experience";
-import { Box } from "@mui/material";
-import { motion, useAnimation } from "framer-motion";
-import { useInView } from "react-intersection-observer";
-import FreelancingPage from "../../components/FreelancingPage";
-import Testimonials from "../../components/Testimonials";
-import ParallaxShowcase from "../../components/ParallaxShowcase";
-import BlogSection from "../../components/BlogSection";
-import SummarySection from "../../components/SummarySection";
-import { backgroundMedia } from "../../assets/assets";
-const HelmetWithChildren: React.FC<{ children?: React.ReactNode }> = ({
-  children,
-}) => (
+import React, { useEffect } from 'react';
+import AboutUs from '../../components/AboutUs';
+import Slider from '../../components/Slider';
+import Project from '../../components/Project';
+import SkillSection from '../../components/SkillSection';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
+import Achievements from '../../components/Achievment';
+import Experience from '../../components/Experience';
+import { Box } from '@mui/material';
+import { motion, useAnimation } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+import FreelancingPage from '../../components/FreelancingPage';
+import Testimonials from '../../components/Testimonials';
+import ParallaxShowcase from '../../components/ParallaxShowcase';
+import BlogSection from '../../components/BlogSection';
+import SummarySection from '../../components/SummarySection';
+import { backgroundMedia } from '../../assets/assets';
+const HelmetWithChildren: React.FC<{ children?: React.ReactNode }> = ({ children }) => (
   <HelmetProvider>
     <Helmet>{children}</Helmet>
   </HelmetProvider>
@@ -41,7 +39,7 @@ const AboutAchievementsSection: React.FC = () => {
 
   useEffect(() => {
     if (inView) {
-      controls.start("visible");
+      controls.start('visible');
     }
   }, [inView, controls]);
 
@@ -53,24 +51,21 @@ const AboutAchievementsSection: React.FC = () => {
       animate={controls}
       variants={fadeInUp as {}}
       sx={{
-        display: "flex",
-        flexDirection: "row",
-        flexWrap: "wrap",
-        justifyContent: "space-around",
-        alignItems: "flex-start",
+        display: 'flex',
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        justifyContent: 'space-around',
+        alignItems: 'flex-start',
       }}
     >
       <div className="container mx-auto flex flex-col md:flex-row gap-8">
-        <MotionBox
-          variants={fadeInUp as {}}
-          sx={{ flex: 1, minWidth: "300px" }}
-        >
+        <MotionBox variants={fadeInUp as {}} sx={{ flex: 1, minWidth: '300px' }}>
           <AboutUs />
         </MotionBox>
         <MotionBox
           variants={fadeInUp as {}}
           transition={{ delay: 0.2 }}
-          sx={{ flex: 1, minWidth: "300px" }}
+          sx={{ flex: 1, minWidth: '300px' }}
         >
           <Achievements />
         </MotionBox>
@@ -83,10 +78,7 @@ const Dashboard: React.FC = () => {
   return (
     <>
       <HelmetWithChildren>
-        <title>
-          Shubham Sarode | Software Engineer | React Native & React JS
-          Freelancer
-        </title>
+        <title>Shubham Sarode | Software Engineer | React Native & React JS Freelancer</title>
         <meta
           name="description"
           content="Welcome to Shubham Sarode's Portfolio – a professional React Native and React JS web developer freelancer. Expert in creating high-quality mobile and web applications tailored to your needs."
@@ -104,12 +96,7 @@ const Dashboard: React.FC = () => {
           type="image/webp"
           fetchPriority="high"
         />
-        <link
-          rel="preload"
-          as="image"
-          href={backgroundMedia.parallax}
-          fetchPriority="high"
-        />
+        <link rel="preload" as="image" href={backgroundMedia.parallax} fetchPriority="high" />
 
         {/* Open Graph for Facebook / LinkedIn */}
         <meta
@@ -122,26 +109,17 @@ const Dashboard: React.FC = () => {
         />
         <meta property="og:url" content="https://shubh435.github.io/" />
         <meta property="og:type" content="website" />
-        <meta
-          property="og:image"
-          content="https://shubh435.github.io/shubham-og.jpg"
-        />
+        <meta property="og:image" content="https://shubh435.github.io/shubham-og.jpg" />
         <meta property="og:site_name" content="Shubham Sarode Portfolio" />
 
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          name="twitter:title"
-          content="Shubham Sarode | React Native & React JS Freelancer"
-        />
+        <meta name="twitter:title" content="Shubham Sarode | React Native & React JS Freelancer" />
         <meta
           name="twitter:description"
           content="Freelancer specializing in React Native mobile apps and React JS web development. See my portfolio."
         />
-        <meta
-          name="twitter:image"
-          content="https://shubh435.github.io/shubham-og.jpg"
-        />
+        <meta name="twitter:image" content="https://shubh435.github.io/shubham-og.jpg" />
 
         {/* Schema Markup for SEO */}
         <script type="application/ld+json">
@@ -165,43 +143,23 @@ const Dashboard: React.FC = () => {
       <ParallaxShowcase />
       <AboutAchievementsSection />
       <SummarySection />
-      <MotionBox
-        variants={fadeInUp as {}}
-        initial="hidden"
-        whileInView="visible"
-      >
+      <MotionBox variants={fadeInUp as {}} initial="hidden" whileInView="visible">
         <Experience />
       </MotionBox>
 
-      <MotionBox
-        variants={fadeInUp as {}}
-        initial="hidden"
-        whileInView="visible"
-      >
+      <MotionBox variants={fadeInUp as {}} initial="hidden" whileInView="visible">
         <SkillSection />
       </MotionBox>
       <Testimonials />
 
-      <MotionBox
-        variants={fadeInUp as {}}
-        initial="hidden"
-        whileInView="visible"
-      >
+      <MotionBox variants={fadeInUp as {}} initial="hidden" whileInView="visible">
         <FreelancingPage />
       </MotionBox>
 
-      <MotionBox
-        variants={fadeInUp as {}}
-        initial="hidden"
-        whileInView="visible"
-      >
+      <MotionBox variants={fadeInUp as {}} initial="hidden" whileInView="visible">
         <Project />
       </MotionBox>
-      <MotionBox
-        variants={fadeInUp as {}}
-        initial="hidden"
-        whileInView="visible"
-      >
+      <MotionBox variants={fadeInUp as {}} initial="hidden" whileInView="visible">
         <BlogSection />
       </MotionBox>
     </>

@@ -1,11 +1,11 @@
-import { Box, Button, Container, Grid, Typography } from "@mui/material";
-import React from "react";
-import { backgroundMedia } from "../assets/assets";
-import { IoIosEye } from "react-icons/io";
-import { motion } from "framer-motion";
-import withRouter from "../utils/withRouter";
-import { navigateTo } from "../utils/utils";
-import "./style.css";
+import { Box, Button, Container, Grid, Typography } from '@mui/material';
+import React from 'react';
+import { backgroundMedia } from '../assets/assets';
+import { IoIosEye } from 'react-icons/io';
+import { motion } from 'framer-motion';
+import withRouter from '../utils/withRouter';
+import { navigateTo } from '../utils/utils';
+import './style.css';
 
 // Lazy load Three.js to reduce initial bundle size
 let THREE: any = null;
@@ -77,10 +77,7 @@ class Slider extends React.PureComponent<SliderProps, SliderState> {
       starVertices.push(x, y, z);
     }
 
-    starGeometry.setAttribute(
-      "position",
-      new THREE.Float32BufferAttribute(starVertices, 3)
-    );
+    starGeometry.setAttribute('position', new THREE.Float32BufferAttribute(starVertices, 3));
     const stars = new THREE.Points(starGeometry, starMaterial);
     scene.add(stars);
 
@@ -113,10 +110,7 @@ class Slider extends React.PureComponent<SliderProps, SliderState> {
 
     const pmremGenerator = new THREE.PMREMGenerator(renderer);
     const scene = new THREE.Scene();
-    scene.environment = pmremGenerator.fromScene(
-      new RoomEnvironment(),
-      0.04
-    ).texture;
+    scene.environment = pmremGenerator.fromScene(new RoomEnvironment(), 0.04).texture;
 
     // Create a sphere geometry for the globe with increased radius
     const geometry = new THREE.SphereGeometry(2, 24, 24); // Slightly lighter mesh than the previous 32 segments
@@ -141,10 +135,10 @@ class Slider extends React.PureComponent<SliderProps, SliderState> {
       mouseY = -(event.clientY / window.innerHeight) * 2 + 1;
     };
 
-    window.addEventListener("mousemove", onMouseMove);
+    window.addEventListener('mousemove', onMouseMove);
 
     // On window resize
-    window.addEventListener("resize", () => {
+    window.addEventListener('resize', () => {
       camera.aspect = window.innerWidth / window.innerHeight;
       camera.updateProjectionMatrix();
       renderer.setSize(window.innerWidth / 1.5, window.innerHeight / 1.5);
@@ -163,11 +157,10 @@ class Slider extends React.PureComponent<SliderProps, SliderState> {
 
   async loadThreeJS() {
     if (!THREE) {
-      const threeModule = await import("three");
+      const threeModule = await import('three');
       THREE = threeModule;
-      const { RoomEnvironment: RoomEnv } = await import(
-        "three/examples/jsm/environments/RoomEnvironment.js"
-      );
+      const { RoomEnvironment: RoomEnv } =
+        await import('three/examples/jsm/environments/RoomEnvironment.js');
       RoomEnvironment = RoomEnv;
     }
   }
@@ -183,7 +176,7 @@ class Slider extends React.PureComponent<SliderProps, SliderState> {
     };
 
     // Use requestIdleCallback to defer heavy work
-    if ("requestIdleCallback" in window) {
+    if ('requestIdleCallback' in window) {
       (window as any).requestIdleCallback(initThreeJS, {
         timeout: 2000,
       });
@@ -195,7 +188,7 @@ class Slider extends React.PureComponent<SliderProps, SliderState> {
 
   componentWillUnmount(): void {
     this.isMountedFlag = false;
-    if (this.idleCallbackId && "cancelIdleCallback" in window) {
+    if (this.idleCallbackId && 'cancelIdleCallback' in window) {
       (window as any).cancelIdleCallback(this.idleCallbackId);
     }
     if (this.fallbackTimeoutId) {
@@ -205,54 +198,41 @@ class Slider extends React.PureComponent<SliderProps, SliderState> {
 
   render() {
     return (
-      <Box
-        sx={{ position: "relative", background: "#000000", overflow: "hidden" }}
-        id="/"
-      >
+      <Box sx={{ position: 'relative', background: '#000000', overflow: 'hidden' }} id="/">
         <Box ref={this.starsRef} sx={webstyle.starContainer} />
         <Container sx={webstyle.container}>
           <Grid container>
-            <Grid item lg={2} md={2} component={"section"}></Grid>
-            <Grid
-              item
-              lg={4}
-              md={4}
-              sm={12}
-              sx={{ m: "auto" }}
-              component={"section"}
-            >
+            <Grid item lg={2} md={2} component={'section'}></Grid>
+            <Grid item lg={4} md={4} sm={12} sx={{ m: 'auto' }} component={'section'}>
               <MotionBox
                 color="#fff"
                 sx={{
-                  width: "100%",
+                  width: '100%',
                   zIndex: 10000,
-                  paddingTop: { xs: "14%", lg: "auto" },
+                  paddingTop: { xs: '14%', lg: 'auto' },
                 }}
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: [0.16, 0.84, 0.44, 1] }}
               >
-                <Typography
-                  component={"p"}
-                  className="text-muted !text-gray-300"
-                >
+                <Typography component={'p'} className="text-muted !text-gray-300">
                   Hello, I'm
                 </Typography>
                 <Typography
-                  component={"h1"}
+                  component={'h1'}
                   variant="h1"
                   className="my-heading-text-shubham !text-[2.4rem] "
                 >
                   Shubham Sarode
                 </Typography>
                 <Typography
-                  component={"p"}
+                  component={'p'}
                   className="mt-4 text-lg text-muted !text-gray-300"
-                  sx={{ maxWidth: { xs: "100%", md: "520px" } }}
+                  sx={{ maxWidth: { xs: '100%', md: '520px' } }}
                 >
-                  Product-focused engineer helping founders ship fast with crisp{" "}
-                  <b className="">React Native</b> apps and{" "}
-                  <b className="">React web</b> interfaces.
+                  Product-focused engineer helping founders ship fast with crisp{' '}
+                  <b className="">React Native</b> apps and <b className="">React web</b>{' '}
+                  interfaces.
                 </Typography>
 
                 <Box sx={webstyle.buttonStyle}>
@@ -261,13 +241,11 @@ class Slider extends React.PureComponent<SliderProps, SliderState> {
                     sx={webstyle.button}
                     whileHover={{
                       scale: 1.03,
-                      rotate: "-0.8deg",
-                      boxShadow: "0 20px 45px rgba(14,165,233,0.25)",
+                      rotate: '-0.8deg',
+                      boxShadow: '0 20px 45px rgba(14,165,233,0.25)',
                     }}
                     whileTap={{ scale: 0.98 }}
-                    onClick={() =>
-                      navigateTo("#Freelancing", this.props.navigate)
-                    }
+                    onClick={() => navigateTo('#Freelancing', this.props.navigate)}
                   >
                     Hire me
                   </MotionButton>
@@ -276,13 +254,13 @@ class Slider extends React.PureComponent<SliderProps, SliderState> {
                     sx={webstyle.buttonStyle1}
                     whileHover={{
                       scale: 1.03,
-                      rotate: "0.8deg",
-                      boxShadow: "0 20px 45px rgba(236,72,153,0.25)",
+                      rotate: '0.8deg',
+                      boxShadow: '0 20px 45px rgba(236,72,153,0.25)',
                     }}
                     whileTap={{ scale: 0.98 }}
-                    onClick={() => navigateTo("/project", this.props.navigate)}
+                    onClick={() => navigateTo('/project', this.props.navigate)}
                   >
-                    <span>Projects</span> <IoIosEye color={"#FFF"} size={20} />
+                    <span>Projects</span> <IoIosEye color={'#FFF'} size={20} />
                   </MotionButton>
                   {/* <Button
                     variant="contained"
@@ -305,14 +283,7 @@ class Slider extends React.PureComponent<SliderProps, SliderState> {
                 </Box>
               </MotionBox>
             </Grid>
-            <Grid
-              item
-              lg={6}
-              md={6}
-              sm={12}
-              sx={{ m: "auto" }}
-              component={"section"}
-            >
+            <Grid item lg={6} md={6} sm={12} sx={{ m: 'auto' }} component={'section'}>
               <Box sx={webstyle.globContainer}>
                 <Box
                   ref={this.globeRef}
@@ -332,50 +303,50 @@ class Slider extends React.PureComponent<SliderProps, SliderState> {
 export default withRouter(Slider);
 const webstyle = {
   buttonStyle1: {
-    display: "flex",
-    justifyContent: "center",
+    display: 'flex',
+    justifyContent: 'center',
     gap: 1,
   },
   globContainer: {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    width: "100%",
-    height: "100%",
-    position: "relative",
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '100%',
+    height: '100%',
+    position: 'relative',
   },
   button: {
-    display: "flex",
-    justifyContent: "center",
-    color: "#fff",
+    display: 'flex',
+    justifyContent: 'center',
+    color: '#fff',
   },
   buttonStyle: {
-    width: "100%",
-    display: "flex",
-    justifyContent: "flex-start",
+    width: '100%',
+    display: 'flex',
+    justifyContent: 'flex-start',
     gap: 2,
-    flexWrap: "wrap",
+    flexWrap: 'wrap',
     mt: 3,
   },
   starContainer: {
-    position: "absolute",
+    position: 'absolute',
     top: 0,
     left: 0,
-    width: "100%",
-    height: "100%",
+    width: '100%',
+    height: '100%',
     zIndex: 0,
   },
   container: {
-    position: "relative",
-    mx: "auto",
-    display: "flex",
-    flexDirection: "row",
-    alignItems: "center",
-    textAlign: "left",
-    background: "transparent",
-    minHeight: "100vh",
-    justifyContent: "space-between",
-    overflow: "hidden",
+    position: 'relative',
+    mx: 'auto',
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    textAlign: 'left',
+    background: 'transparent',
+    minHeight: '100vh',
+    justifyContent: 'space-between',
+    overflow: 'hidden',
     zIndex: 10,
   },
 };

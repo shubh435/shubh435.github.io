@@ -1,6 +1,6 @@
-import React, { createContext, useContext, useEffect, useState } from "react";
+import React, { createContext, useContext, useEffect, useState } from 'react';
 
-export type ThemeMode = "dark" | "light";
+export type ThemeMode = 'dark' | 'light';
 
 interface ThemeContextType {
   theme: ThemeMode;
@@ -10,26 +10,24 @@ interface ThemeContextType {
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
-const STORAGE_KEY = "portfolio-theme";
+const STORAGE_KEY = 'portfolio-theme';
 
-export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({
-  children,
-}) => {
+export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [theme, setThemeState] = useState<ThemeMode>(() => {
     // Check if we're in browser environment
-    if (typeof window === "undefined") {
-      return "dark";
+    if (typeof window === 'undefined') {
+      return 'dark';
     }
 
     // Check localStorage first
     const stored = window.localStorage.getItem(STORAGE_KEY) as ThemeMode | null;
-    if (stored === "dark" || stored === "light") {
+    if (stored === 'dark' || stored === 'light') {
       return stored;
     }
 
     // Check system preference
-    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    return prefersDark ? "dark" : "light";
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    return prefersDark ? 'dark' : 'light';
   });
 
   useEffect(() => {
@@ -39,22 +37,22 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({
     root.dataset.theme = theme;
 
     // Add/remove dark class for Tailwind dark mode support
-    if (theme === "dark") {
-      root.classList.add("dark");
+    if (theme === 'dark') {
+      root.classList.add('dark');
     } else {
-      root.classList.remove("dark");
+      root.classList.remove('dark');
     }
 
     // Persist to localStorage
     window.localStorage.setItem(STORAGE_KEY, theme);
 
     // Dispatch custom event for other components that might need to know
-    const event = new CustomEvent("themechange", { detail: { theme } });
+    const event = new CustomEvent('themechange', { detail: { theme } });
     window.dispatchEvent(event);
   }, [theme]);
 
   const toggleTheme = () => {
-    setThemeState((prev) => (prev === "dark" ? "light" : "dark"));
+    setThemeState(prev => (prev === 'dark' ? 'light' : 'dark'));
   };
 
   const setTheme = (newTheme: ThemeMode) => {
@@ -67,16 +65,14 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({
     setTheme,
   };
 
-  return (
-    <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>
-  );
+  return <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>;
 };
 
 // Custom hook to use theme context
 export const useTheme = (): ThemeContextType => {
   const context = useContext(ThemeContext);
   if (context === undefined) {
-    throw new Error("useTheme must be used within a ThemeProvider");
+    throw new Error('useTheme must be used within a ThemeProvider');
   }
   return context;
 };

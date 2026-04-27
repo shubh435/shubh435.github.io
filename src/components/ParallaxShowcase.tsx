@@ -1,7 +1,7 @@
-import React, { useRef } from "react";
-import { backgroundMedia } from "../assets/assets";
-import { navigateTo } from "../utils/utils";
-import withRouter from "../utils/withRouter";
+import React, { useRef } from 'react';
+import { backgroundMedia } from '../assets/assets';
+import { navigateTo } from '../utils/utils';
+import withRouter from '../utils/withRouter';
 
 interface ParallaxShowcaseProps {
   navigate: (path: string) => void;
@@ -28,27 +28,24 @@ const ParallaxShowcase: React.FC<ParallaxShowcaseProps> = ({ navigate }) => {
         <div className="absolute inset-0 bg-black/70"></div>
       </div>
       <div className="mx-auto flex max-w-5xl flex-col gap-6 px-6 py-16 text-center text-white">
-        <p className="text-sm uppercase tracking-[0.4em] text-cyan-300">
-          Why hire me
-        </p>
+        <p className="text-sm uppercase tracking-[0.4em] text-cyan-300">Why hire me</p>
         <h2 className="text-3xl font-semibold md:text-4xl">
           Smooth-built interactions that guide hiring managers
         </h2>
         <p className="mx-auto max-w-3xl text-lg text-zinc-200">
-          I build scalable, high-quality frontend experiences that drive real
-          results. I transform ideas into smooth, user-focused products with
-          precision.
+          I build scalable, high-quality frontend experiences that drive real results. I transform
+          ideas into smooth, user-focused products with precision.
         </p>
         <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
           <button
             className="rounded-full bg-white/10 px-6 py-3 text-sm font-semibold tracking-wide backdrop-blur hover:bg-white/20 transition"
-            onClick={() => navigateTo("/project", navigate)}
+            onClick={() => navigateTo('/project', navigate)}
           >
             Browse showcase work
           </button>
           <button
             className="rounded-full bg-cyan-500 px-6 py-3 text-sm font-semibold tracking-wide text-white hover:bg-cyan-400 transition"
-            onClick={() => navigateTo("#footer", navigate)}
+            onClick={() => navigateTo('#footer', navigate)}
           >
             Talk about your idea
           </button>

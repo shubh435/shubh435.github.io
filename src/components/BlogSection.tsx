@@ -1,7 +1,7 @@
-import React from "react";
-import { blogPosts } from "../assets/data";
-import { FaExternalLinkAlt, FaTag } from "react-icons/fa";
-import { motion } from "framer-motion";
+import React from 'react';
+import { blogPosts } from '../assets/data';
+import { FaExternalLinkAlt, FaTag } from 'react-icons/fa';
+import { motion } from 'framer-motion';
 
 const MotionArticle = motion.article;
 
@@ -14,9 +14,7 @@ const BlogSection: React.FC = () => {
     >
       <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-8">
         <div>
-          <p className="text-sm uppercase tracking-[0.3em] text-cyan-400 font-medium">
-            Writing
-          </p>
+          <p className="text-sm uppercase tracking-[0.3em] text-cyan-400 font-medium">Writing</p>
           <h2 id="blog-heading" className="text-3xl font-semibold">
             Articles & Playbooks
           </h2>
@@ -47,16 +45,12 @@ const BlogSection: React.FC = () => {
             transition={{ delay: index * 0.05, duration: 0.4 }}
           >
             <div className="flex items-start justify-between gap-3">
-              <h3 className="text-xl font-semibold leading-tight">
-                {post.title}
-              </h3>
-              <span className="text-muted text-xs flex-shrink-0">
-                {post.tags[0]}
-              </span>
+              <h3 className="text-xl font-semibold leading-tight">{post.title}</h3>
+              <span className="text-muted text-xs flex-shrink-0">{post.tags[0]}</span>
             </div>
             <p className="text-sm text-muted flex-1">{post.description}</p>
             <div className="flex flex-wrap gap-2 text-xs text-muted" aria-label="Tags">
-              {post.tags.map((tag) => (
+              {post.tags.map(tag => (
                 <span
                   key={tag}
                   className="inline-flex items-center gap-1 px-2 py-1 rounded-full bg-white/5 border border-white/10"

@@ -1,4 +1,4 @@
-import * as React from "react";
+import * as React from 'react';
 import {
   Typography,
   Toolbar,
@@ -13,13 +13,13 @@ import {
   AppBar,
   Container,
   Button,
-} from "@mui/material";
-import { Theme } from "@mui/system";
-import { withStyles } from "@mui/styles";
-import MenuIcon from "@mui/icons-material/Menu";
-import withRouter from "../utils/withRouter";
-import { navigateTo } from "../utils/utils";
-import ThemeToggle from "./ThemeToggle";
+} from '@mui/material';
+import { Theme } from '@mui/system';
+import { withStyles } from '@mui/styles';
+import MenuIcon from '@mui/icons-material/Menu';
+import withRouter from '../utils/withRouter';
+import { navigateTo } from '../utils/utils';
+import ThemeToggle from './ThemeToggle';
 interface DrawerAppBarProps {
   window?: () => Window;
   classes?: any;
@@ -33,18 +33,15 @@ interface DrawerAppBarState {
 
 const drawerWidth = 240;
 const navItems = [
-  { id: 1, name: "Home", routes: "/#" },
-  { id: 2, name: "About Me", routes: "#about" },
-  { id: 3, name: "Skills", routes: "#skill" },
-  { id: 4, name: "Projects", routes: "/project" },
-  { id: 5, name: "Services", routes: "/services" },
-  { id: 6, name: "Contact", routes: "#footer" },
+  { id: 1, name: 'Home', routes: '/#' },
+  { id: 2, name: 'About Me', routes: '#about' },
+  { id: 3, name: 'Skills', routes: '#skill' },
+  { id: 4, name: 'Projects', routes: '/project' },
+  { id: 5, name: 'Services', routes: '/services' },
+  { id: 6, name: 'Contact', routes: '#footer' },
 ];
 
-class DrawerAppBar extends React.PureComponent<
-  DrawerAppBarProps,
-  DrawerAppBarState
-> {
+class DrawerAppBar extends React.PureComponent<DrawerAppBarProps, DrawerAppBarState> {
   constructor(props: DrawerAppBarProps) {
     super(props);
     this.state = {
@@ -54,11 +51,11 @@ class DrawerAppBar extends React.PureComponent<
   }
 
   componentDidMount(): void {
-    window.addEventListener("scroll", this.handleScroll, { passive: true });
+    window.addEventListener('scroll', this.handleScroll, { passive: true });
   }
 
   componentWillUnmount(): void {
-    window.removeEventListener("scroll", this.handleScroll);
+    window.removeEventListener('scroll', this.handleScroll);
   }
 
   handleScroll = () => {
@@ -78,22 +75,19 @@ class DrawerAppBar extends React.PureComponent<
     navigateTo(routes, this.props.navigate);
   };
   drawer = (
-    <Box onClick={this.handleDrawerToggle} sx={{ textAlign: "center" }}>
-      <Typography variant="h6" sx={{ my: 2, color: "var(--text-primary)" }}>
+    <Box onClick={this.handleDrawerToggle} sx={{ textAlign: 'center' }}>
+      <Typography variant="h6" sx={{ my: 2, color: 'var(--text-primary)' }}>
         SSS
       </Typography>
-      <Divider sx={{ borderColor: "var(--border-subtle)" }} />
+      <Divider sx={{ borderColor: 'var(--border-subtle)' }} />
       <List>
-        {navItems.map((item) => (
+        {navItems.map(item => (
           <ListItem key={item.id} disablePadding>
             <ListItemButton
-              sx={{ textAlign: "center" }}
+              sx={{ textAlign: 'center' }}
               onClick={() => this.navigateTo(item.routes)}
             >
-              <ListItemText
-                sx={{ color: "var(--text-primary)" }}
-                primary={item.name}
-              />
+              <ListItemText sx={{ color: 'var(--text-primary)' }} primary={item.name} />
             </ListItemButton>
           </ListItem>
         ))}
@@ -101,16 +95,16 @@ class DrawerAppBar extends React.PureComponent<
           <Button
             onClick={() =>
               navigateTo(
-                "https://drive.google.com/uc?export=download&id=1jj2iw1bHdgiWZ-DPCCIwxll1guDj43VK",
-                this.props.navigate,
+                'https://drive.google.com/uc?export=download&id=1jj2iw1bHdgiWZ-DPCCIwxll1guDj43VK',
+                this.props.navigate
               )
             }
             variant="contained"
             fullWidth
             sx={{
-              background: "var(--accent-gradient)",
-              borderRadius: "999px",
-              textTransform: "none",
+              background: 'var(--accent-gradient)',
+              borderRadius: '999px',
+              textTransform: 'none',
             }}
           >
             Download Resume
@@ -126,10 +120,10 @@ class DrawerAppBar extends React.PureComponent<
     return (
       <Box
         sx={{
-          display: "flex",
-          background: "transparent",
-          position: "relative",
-          flexDirection: "column",
+          display: 'flex',
+          background: 'transparent',
+          position: 'relative',
+          flexDirection: 'column',
         }}
       >
         <AppBar
@@ -137,15 +131,11 @@ class DrawerAppBar extends React.PureComponent<
           component="nav"
           position="fixed"
           sx={{
-            backgroundColor: isScrolled
-              ? "var(--bg-surface) !important"
-              : "transparent !important",
-            backdropFilter: isScrolled ? "blur(22px)" : "none",
-            boxShadow: isScrolled ? "var(--shadow-md)" : "none",
-            borderBottom: isScrolled
-              ? "1px solid var(--border-subtle)"
-              : "transparent",
-            transition: "all 0.3s ease",
+            backgroundColor: isScrolled ? 'var(--bg-surface) !important' : 'transparent !important',
+            backdropFilter: isScrolled ? 'blur(22px)' : 'none',
+            boxShadow: isScrolled ? 'var(--shadow-md)' : 'none',
+            borderBottom: isScrolled ? '1px solid var(--border-subtle)' : 'transparent',
+            transition: 'all 0.3s ease',
           }}
         >
           <Container>
@@ -155,7 +145,7 @@ class DrawerAppBar extends React.PureComponent<
                 aria-label="open drawer"
                 edge="start"
                 onClick={this.handleDrawerToggle}
-                sx={{ mr: 2, display: { sm: "none" } }}
+                sx={{ mr: 2, display: { sm: 'none' } }}
               >
                 <MenuIcon />
               </IconButton>
@@ -163,10 +153,10 @@ class DrawerAppBar extends React.PureComponent<
                 variant="h1"
                 component="div"
                 sx={{
-                  width: "18%",
-                  fontSize: "18px",
-                  display: { xs: "none", sm: "block" },
-                  color: "var(--text-primary)",
+                  width: '18%',
+                  fontSize: '18px',
+                  display: { xs: 'none', sm: 'block' },
+                  color: 'var(--text-primary)',
                   fontWeight: 700,
                 }}
               >
@@ -174,25 +164,25 @@ class DrawerAppBar extends React.PureComponent<
               </Typography>
               <Box
                 sx={{
-                  display: { xs: "none", sm: "flex" },
-                  gap: "24px",
-                  width: "80%",
-                  justifyContent: "flex-end",
-                  alignItems: "center",
+                  display: { xs: 'none', sm: 'flex' },
+                  gap: '24px',
+                  width: '80%',
+                  justifyContent: 'flex-end',
+                  alignItems: 'center',
                 }}
               >
-                <Box sx={{ display: "flex", gap: "24px" }}>
-                  {navItems.map((item) => (
+                <Box sx={{ display: 'flex', gap: '24px' }}>
+                  {navItems.map(item => (
                     <Typography
                       variant="button"
                       key={item.name}
                       onClick={() => this.navigateTo(item.routes)}
                       sx={{
-                        color: "var(--text-primary)",
-                        cursor: "pointer",
-                        transition: "color 0.2s ease",
-                        "&:hover": {
-                          color: "var(--accent)",
+                        color: 'var(--text-primary)',
+                        cursor: 'pointer',
+                        transition: 'color 0.2s ease',
+                        '&:hover': {
+                          color: 'var(--accent)',
                         },
                       }}
                     >
@@ -203,14 +193,14 @@ class DrawerAppBar extends React.PureComponent<
                 <Button
                   variant="contained"
                   sx={{
-                    borderRadius: "999px",
-                    textTransform: "none",
-                    background: "var(--accent-gradient)",
+                    borderRadius: '999px',
+                    textTransform: 'none',
+                    background: 'var(--accent-gradient)',
                   }}
                   onClick={() =>
                     navigateTo(
-                      "https://drive.google.com/uc?export=download&id=1jj2iw1bHdgiWZ-DPCCIwxll1guDj43VK",
-                      this.props.navigate,
+                      'https://drive.google.com/uc?export=download&id=1jj2iw1bHdgiWZ-DPCCIwxll1guDj43VK',
+                      this.props.navigate
                     )
                   }
                 >
@@ -232,12 +222,12 @@ class DrawerAppBar extends React.PureComponent<
               keepMounted: true, // Better open performance on mobile.
             }}
             sx={{
-              display: { xs: "block", sm: "none" },
-              "& .MuiDrawer-paper": {
-                boxSizing: "border-box",
+              display: { xs: 'block', sm: 'none' },
+              '& .MuiDrawer-paper': {
+                boxSizing: 'border-box',
                 width: drawerWidth,
-                background: "var(--bg-card)",
-                borderRight: "1px solid var(--border-subtle)",
+                background: 'var(--bg-card)',
+                borderRight: '1px solid var(--border-subtle)',
               },
             }}
           >
@@ -250,7 +240,7 @@ class DrawerAppBar extends React.PureComponent<
 }
 const styles: any = (theme: Theme) => ({
   appbarBackground: {
-    background: "transparent !important",
+    background: 'transparent !important',
     top: 0,
     zIndex: 1100,
   },

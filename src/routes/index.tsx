@@ -1,22 +1,19 @@
-import * as React from "react";
-import { Routes, Route, Outlet } from "react-router-dom";
-import Layout from "../components/Layout";
-import PrivacyPolicy from "./PrivacyPolicy";
-import TermCondition from "./TermCondition";
-const Dashboard = React.lazy(() => import("./Dashboard"));
-const Project = React.lazy(() => import("./Project/Project"));
-const Services = React.lazy(() => import("./Services/Services"));
-const KeyboardButton = React.lazy(() => import("../components/KeyboardButton"));
-const NoPageFound = React.lazy(() => import("./NoPageFoundPage"));
+import * as React from 'react';
+import { Routes, Route, Outlet } from 'react-router-dom';
+import Layout from '../components/Layout';
+import PrivacyPolicy from './PrivacyPolicy';
+import TermCondition from './TermCondition';
+const Dashboard = React.lazy(() => import('./Dashboard'));
+const Project = React.lazy(() => import('./Project/Project'));
+const Services = React.lazy(() => import('./Services/Services'));
+const KeyboardButton = React.lazy(() => import('../components/KeyboardButton'));
+const NoPageFound = React.lazy(() => import('./NoPageFoundPage'));
 
 interface RouteToNavigateProps {}
 
 interface RouteToNavigateState {}
 
-class RouteToNavigate extends React.Component<
-  RouteToNavigateProps,
-  RouteToNavigateState
-> {
+class RouteToNavigate extends React.Component<RouteToNavigateProps, RouteToNavigateState> {
   constructor(props: RouteToNavigateProps) {
     super(props);
     this.state = {};
@@ -46,7 +43,7 @@ class RouteToNavigate extends React.Component<
             path=""
             element={
               <>
-                {" "}
+                {' '}
                 <Outlet />
               </>
             }

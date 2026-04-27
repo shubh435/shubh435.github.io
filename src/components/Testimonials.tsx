@@ -1,8 +1,8 @@
-import React from "react";
-import { testimonials } from "../assets/data";
-import { motion } from "framer-motion";
-import { FaQuoteLeft, FaStar, FaLinkedin } from "react-icons/fa";
-import { calculateDateDifference } from "../utils/utils";
+import React from 'react';
+import { testimonials } from '../assets/data';
+import { motion } from 'framer-motion';
+import { FaQuoteLeft, FaStar, FaLinkedin } from 'react-icons/fa';
+import { calculateDateDifference } from '../utils/utils';
 
 const MotionArticle = motion.article;
 
@@ -20,10 +20,10 @@ const cardVariants = {
 
 // Stats for social proof
 const trustStats = [
-  { value: "5+", label: "Apps Shipped" },
-  { value: "100%", label: "Test Coverage" },
-  { value: calculateDateDifference("2022-06-25"), label: "Years Experience" },
-  { value: "10+", label: "Happy Clients" },
+  { value: '5+', label: 'Apps Shipped' },
+  { value: '100%', label: 'Test Coverage' },
+  { value: calculateDateDifference('2022-06-25'), label: 'Years Experience' },
+  { value: '10+', label: 'Happy Clients' },
 ];
 
 const Testimonials: React.FC = () => {
@@ -38,15 +38,12 @@ const Testimonials: React.FC = () => {
         <p className="text-sm uppercase tracking-[0.3em] text-cyan-400 font-medium">
           Trust Signals
         </p>
-        <h2
-          id="testimonials-heading"
-          className="text-3xl md:text-4xl font-bold"
-        >
+        <h2 id="testimonials-heading" className="text-3xl md:text-4xl font-bold">
           Testimonials from Clients & Teammates
         </h2>
         <p className="text-muted max-w-3xl mx-auto">
-          5+ releases shipped across healthcare, social, and SaaS products.
-          Here's what people say about collaborating with me.
+          5+ releases shipped across healthcare, social, and SaaS products. Here's what people say
+          about collaborating with me.
         </p>
       </div>
 
@@ -63,9 +60,7 @@ const Testimonials: React.FC = () => {
             key={index}
             className="surface-card rounded-2xl p-4 text-center border border-white/5"
           >
-            <p className="text-2xl md:text-3xl font-bold text-cyan-400">
-              {stat.value}
-            </p>
+            <p className="text-2xl md:text-3xl font-bold text-cyan-400">{stat.value}</p>
             <p className="text-sm text-muted mt-1">{stat.label}</p>
           </div>
         ))}
@@ -84,30 +79,19 @@ const Testimonials: React.FC = () => {
             custom={index}
             whileHover={{
               y: -10,
-              boxShadow: "0 25px 60px rgba(15,23,42,0.45)",
+              boxShadow: '0 25px 60px rgba(15,23,42,0.45)',
             }}
             aria-label={`Testimonial from ${testimonial.name}`}
           >
             {/* Quote Icon */}
-            <div
-              className="absolute top-4 right-4 text-cyan-500/20 text-4xl"
-              aria-hidden="true"
-            >
+            <div className="absolute top-4 right-4 text-cyan-500/20 text-4xl" aria-hidden="true">
               <FaQuoteLeft />
             </div>
 
             {/* Rating Stars */}
-            <div
-              className="flex gap-1 mb-4"
-              role="img"
-              aria-label="5 star rating"
-            >
+            <div className="flex gap-1 mb-4" role="img" aria-label="5 star rating">
               {[...Array(5)].map((_, i) => (
-                <FaStar
-                  key={i}
-                  className="text-yellow-400 text-sm"
-                  aria-hidden="true"
-                />
+                <FaStar key={i} className="text-yellow-400 text-sm" aria-hidden="true" />
               ))}
             </div>
 
@@ -128,9 +112,7 @@ const Testimonials: React.FC = () => {
                 decoding="async"
               />
               <div className="flex-1 text-left">
-                <cite className="font-semibold not-italic block">
-                  {testimonial.name}
-                </cite>
+                <cite className="font-semibold not-italic block">{testimonial.name}</cite>
                 <p className="text-sm text-muted">{testimonial.role}</p>
                 <p className="text-xs text-cyan-400">{testimonial.company}</p>
               </div>
@@ -160,9 +142,7 @@ const Testimonials: React.FC = () => {
         viewport={{ once: true }}
         transition={{ delay: 0.5 }}
       >
-        <p className="text-muted text-sm mb-4">
-          Worked with me? I'd love to hear your feedback.
-        </p>
+        <p className="text-muted text-sm mb-4">Worked with me? I'd love to hear your feedback.</p>
         <a
           href="https://www.linkedin.com/in/shubh435/"
           target="_blank"

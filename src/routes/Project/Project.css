@@ -5,7 +5,8 @@
   border-radius: 80% 80%;
   display: flex;
   --color: rgba(67, 67, 67, 0.2);
-  background-image: linear-gradient(to right, var(--color) 1px, transparent 1px),
+  background-image:
+    linear-gradient(to right, var(--color) 1px, transparent 1px),
     linear-gradient(to bottom, var(--color) 1px, transparent 1px);
   background-size: 0.5rem 0.5rem;
   flex-direction: column;
@@ -26,27 +27,29 @@
 }
 
 .border-light::before {
-  content: "";
+  content: '';
   position: absolute;
   width: 40px;
   height: 20px;
   border-radius: 50%;
   top: 0%;
   left: 0%;
-  box-shadow: 0px 0px 30px 5px hsl(310, 90%, 65%, 0.5),
+  box-shadow:
+    0px 0px 30px 5px hsl(310, 90%, 65%, 0.5),
     0px 0px 30px 30px hsla(310, 91%, 25%, 0.5);
   animation: border-light 16s linear infinite;
 }
 
 .border-light::after {
-  content: "";
+  content: '';
   position: absolute;
   top: 0%;
   left: 0%;
   width: 40px;
   height: 20px;
   border-radius: 50%;
-  box-shadow: 0px 0px 30px 5px hsl(247, 90%, 65%, 0.5),
+  box-shadow:
+    0px 0px 30px 5px hsl(247, 90%, 65%, 0.5),
     0px 0px 30px 30px hsl(247, 90%, 25%, 0.5);
   animation: border-light 16s linear infinite -8s;
 }
@@ -90,7 +93,7 @@
 }
 
 .input-content::before {
-  content: "";
+  content: '';
   position: absolute;
   height: 300px;
   aspect-ratio: 1/1;
@@ -110,7 +113,7 @@
 }
 
 .input-content::after {
-  content: "";
+  content: '';
   position: absolute;
   height: 300px;
   aspect-ratio: 1/1;
@@ -155,22 +158,24 @@
 }
 
 .light::after {
-  content: "";
+  content: '';
   position: absolute;
   right: 0%;
   bottom: -50%;
-  box-shadow: 0px 0px 30px 5px hsl(247, 90%, 25%),
+  box-shadow:
+    0px 0px 30px 5px hsl(247, 90%, 25%),
     0px 0px 30px 20px hsl(247, 90%, 55%);
   animation: rotate-light 16s linear infinite -8s;
   z-index: 4;
 }
 
 .light::before {
-  content: "";
+  content: '';
   position: absolute;
   right: 100%;
   bottom: 150%;
-  box-shadow: 0px 0px 30px 5px hsl(310, 90%, 25%),
+  box-shadow:
+    0px 0px 30px 5px hsl(310, 90%, 25%),
     0px 0px 30px 20px hsl(310, 90%, 55%);
   animation: rotate-light 16s linear infinite;
 }
@@ -206,12 +211,7 @@
   border: none;
   padding: 5px 0px 5px 10px;
   color: rgb(67, 67, 67);
-  background: linear-gradient(
-    25deg,
-    white,
-    rgb(126, 126, 126) 20%,
-    rgba(67, 67, 67, 0.143)
-  );
+  background: linear-gradient(25deg, white, rgb(126, 126, 126) 20%, rgba(67, 67, 67, 0.143));
   display: flex;
   flex: 1;
   -webkit-background-clip: text;
@@ -267,14 +267,11 @@
   display: grid;
   cursor: pointer;
   padding: 5px;
-  background: linear-gradient(
-    to bottom,
-    rgba(67, 67, 67, 0.143),
-    rgba(255, 255, 255, 0)
-  );
+  background: linear-gradient(to bottom, rgba(67, 67, 67, 0.143), rgba(255, 255, 255, 0));
   border-radius: 20% 20%;
   transition: all 0.3s;
-  box-shadow: inset -1px 7px 5px -2px rgb(255, 255, 255, 0.1),
+  box-shadow:
+    inset -1px 7px 5px -2px rgb(255, 255, 255, 0.1),
     inset 0px 9px 5px -2px rgb(255 255 255 / 5%),
     inset 0px -10px 5px -4px rgb(255, 255, 255, 0.05),
     inset 0 0 0px 1px rgb(255 255 255 / 5%),
