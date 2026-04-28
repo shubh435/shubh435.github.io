@@ -442,10 +442,6 @@ const ServicesPage: React.FC = () => {
                     ))}
                   </div>
 
-                  {/* Pricing */}
-                  <p className="mt-3 text-xs font-semibold" style={{ color: 'var(--accent-text)' }}>
-                    {service.pricing}
-                  </p>
                 </MotionDiv>
               ))}
             </MotionDiv>
